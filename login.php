@@ -16,7 +16,7 @@
                         <h2 style="color: #263baf">ADMIN LOGIN</h2>
                     </div>
                     <div class="login-body">
-                        <form action="submit/login-submit.php" method="POST">
+                        <form action=" " method="POST">
                             <div class="form-group">
                                 <label for="">Email or Username</label>
                                 <input type="text" name="email" class="form-control" placeholder="Enter Your Email or Username">
