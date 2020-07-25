@@ -7,6 +7,7 @@
 
     if(isset($_POST['register_submit']))
     {
+        $id = $_POST['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $username = $_POST['username'];
