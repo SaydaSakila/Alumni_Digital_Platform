@@ -1,7 +1,7 @@
 <?php 
   session_start();
   if (!isset($_SESSION['username'])) {
-    header('location:login.php');
+    header("location:login.php");
   }
 ?>
 
@@ -140,6 +140,11 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
+       <li class="nav-item">
+            <a href="logout.php" class="nav-link" title="Logout" >
+                <i class="fas fa-sign-out-alt" ></i>
+            </a>
+        </li>
     </ul>
   </nav>
   <!-- /.navbar -->

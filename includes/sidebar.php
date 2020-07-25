@@ -54,6 +54,12 @@
                 </a>
               </li>
             </ul>
+              <li class="nav-item">
+                <a href="logout.php" class="nav-link"  >
+                  <i class="fas fa-sign-out-alt" style="margin-left:5px"></i>
+                  <p style="margin-left:9px;">Logout</p>
+                </a>
+              </li>
           </li>
         </ul>
       </nav>

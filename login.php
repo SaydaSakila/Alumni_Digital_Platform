@@ -21,7 +21,7 @@
             <div class="table-cell">
                 <div class="login-box">
                     <div class="login-header">
-                        <h2 style="color: #263baf">ADMIN LOGIN</h2>
+                        <h2 style="color: #585858">ADMIN LOGIN</h2>
                     </div>
                     <div class="login-body">
                         <form action="submit/login-submit.php" method="POST">
