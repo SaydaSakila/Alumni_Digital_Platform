@@ -10,12 +10,12 @@
 
         if (empty($email)) 
         {
-            $errors['email'] = "Email field can not be empty";            
+            $errors['email'] = "Email Field Can not be Empty";            
         }
 
         if (empty($password)) 
         {
-            $errors['password'] = "Password field can not be empty";            
+            $errors['password'] = "Password Field Can not be Empty";            
         }
 
         if ($email  && $password) 
@@ -33,7 +33,7 @@
             } 
             else 
             {
-                $errors['email'] = "Invalid email or password"; 
+                $errors['email'] = "Invalid Email or Password"; 
                 $_SESSION['errors'] = $errors;
                 header('location:../login.php');
             }

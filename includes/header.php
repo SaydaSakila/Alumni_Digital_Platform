@@ -1,8 +1,25 @@
 <?php 
+  //header file include
+  include dirname(__FILE__).'/../database/database.php';
+
   session_start();
   if (!isset($_SESSION['username'])) {
     header("location:login.php");
   }
+  if(isset($_SESSION['errors']))
+  {
+      $err = $_SESSION['errors'];
+      unset($_SESSION['errors']);
+  }
+  if(isset($_SESSION['success']))
+  {
+      $message = $_SESSION['success'];
+      unset($_SESSION['success']);
+  }
+
+    $db = new Database();
+    //var_dump($db);die();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +55,9 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">User_List</a>
       </li>
     </ul>
 

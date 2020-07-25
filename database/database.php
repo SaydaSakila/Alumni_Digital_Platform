@@ -18,5 +18,26 @@ class Database
                 die('Database connection failed. '.$this->conn->connect_error.__LINE__);
             }
     }
+    public function getData($queryy)
+    {
+        $result = $this->conn->query($queryy);
+        if($result->num_rows > 0)
+        {
+            return $result;
+        }
+        return false;
+    }
+    public function store($queryy)
+    {
+        $result = $this->conn->query($queryy);
+        if($result)
+        {
+            return true;
+        }
+        else{
+            $this->error = $this->conn->error.__LINE__ ;
+        }
+        return false;
+    }
 }
 ?>
