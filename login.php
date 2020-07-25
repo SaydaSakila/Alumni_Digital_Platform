@@ -52,6 +52,11 @@
                             <div class="form-group">
                                 <input type="submit" name="login_submit" class="login-btn" value="LOGIN">
                             </div>
+                            <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
+                                
+                                <a href="admin-registration.php" class="btn btn-primary btn-lg active" >New Admin Registration?</a>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>

@@ -33,8 +33,8 @@
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>
                                     <td>
-                                        <a href="#" style="background:#2E8857;border-radius:5px;color:white;padding: 5px;border:2px solid #2E8857;"><b>Edit</b></a>
-                                        <a href="#" style="background:#800000;border-radius:5px;color:white;padding: 5px;border:2px solid #800000;"><b>Delete</b></a>
+                                        <a href="#" style="background:#2E8857;border-radius:5px;color:white;padding: 5px;border:2px solid #2E8857;"><i class="fas fa-user-edit"></i><b>Edit</b></a>
+                                        <a href="delete-user.php?delete=<?php echo $user['id']; ?>" style="background:#800000;border-radius:5px;color:white;padding: 5px;border:2px solid #800000;"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                     </td>
                                 </tr>
                             <?php
