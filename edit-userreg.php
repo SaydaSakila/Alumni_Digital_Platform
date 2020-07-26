@@ -3,16 +3,20 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
    $db = new Database();
+
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
         
         $sql = "SELECT * from users where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();   
-
+    }
+    if (isset($_SESSION['old_data'])) 
+    {
+        $data = $_SESSION['old_data'];
+        unset($_SESSION['old_data']);
     }
 ?>
-
 
 <div class="row">
     <div class="col-md-6 offset-md-3">

@@ -4,11 +4,14 @@
      include dirname(__FILE__).'/database/database.php';
     session_start();
 
+
+
     $db = new Database();
     $errors = [];
     $success = [];
 
-
+    $_SESSION['old_data'] = $_POST;
+    
     if(isset($_POST['update']))
 	{
         $id = $_POST['id'];
