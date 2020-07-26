@@ -1,26 +1,25 @@
 <?php
-    $page_title = 'Create User';
+    $page_title = 'Edit User';
     // include header file
     include dirname(__FILE__). '/includes/header.php';
-       $db = new Database();
-
-   /* if(isset($_GET['user'])){
-        $id=$_GET['user'];
+   $db = new Database();
+    if(isset($_GET['edit'])){
+        $id=$_GET['edit'];
         
         $sql = "SELECT * from users where id='$id'";
-        $user = $db->mysqli_fetch_assoc($this->conn->query($sql));
-        //var_dump($data);
- 
-    }*/
+        $result = mysqli_fetch_assoc($this->conn->query($sql));
+
+    }
 ?>
+
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create New User</h3>
+                <h3 class="card-title">Edit User Information</h3>
             </div>
-            <form action="submit/register-submit.php" method="POST">
+            <form action="update-userreg.php" method="POST">
                 <div class="card-body">
                     <?php 
                         if (isset($message['success_message'])) {
@@ -33,7 +32,7 @@
                     
                     <div class="form-group">
                         <label for="_name">Name</label>
-                        <input type="text" name="name" id="_name" value='<?php /* echo $user['name']; */?>' class="form-control" placeholder="Enter Name">
+                        <input type="text" name="name" id="_name" value='<?php  echo $result['name']; ?>' class="form-control" placeholder="Update Your Name">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['name'])) {
@@ -44,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_email">Email</label>
-                        <input type="email" name="email" id="_email" class="form-control" placeholder="Enter Email">
+                        <input type="email" name="email" id="_email" class="form-control" placeholder="Update Your Email">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['email'])) {
@@ -55,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_username">Username</label>
-                        <input type="text" name="username" id="_username" class="form-control" placeholder="Enter Username">
+                        <input type="text" name="username" id="_username" class="form-control" placeholder="Update Your Username">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['username'])) {
@@ -66,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_pass">Password</label>
-                        <input type="password" name="password" id="_pass" class="form-control" placeholder="Enter Password">
+                        <input type="password" name="password" id="_pass" class="form-control" placeholder="Update Your Password">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['password'])) {
@@ -77,7 +76,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_phone">Phone</label>
-                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Enter Phone Number">
+                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Update Your Phone Number">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['phone'])) {
@@ -88,7 +87,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_address">Address</label>
-                        <input type="text" name="address" id="_address" class="form-control" placeholder="Enter Address">
+                        <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['address'])) {
@@ -97,9 +96,16 @@
                             ?>
                         </span>
                     </div>
+                
+                        <div class="form-group">
+                             <label for="exampleFormControlFile1">Image file Input</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                  
+
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="register_submit">SUBMIT</button>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="submit">UPDATE</button>
                 </div>
             </form>
         </div>

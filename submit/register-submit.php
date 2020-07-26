@@ -37,7 +37,7 @@
             } 
             else 
             {
-                $pass = sha1($password);
+                $password = sha1($password);
                 // store register
                 $insert_query = "INSERT INTO users (name, email, username, password, phone, address) VALUES('$name', '$email', '$username', '$password', '$phone', '$address')";
                 $run = $db->store($insert_query);
