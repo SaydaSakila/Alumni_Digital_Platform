@@ -1,10 +1,16 @@
 <?php 
-     $page_title = 'Update User';
-    // include header file
-    include dirname(__FILE__). '/includes/header.php';
+    
+    //include database 
+     include dirname(__FILE__).'/database/database.php';
+    session_start();
+
+    $db = new Database();
+    $errors = [];
+    $success = [];
 
 
-    if(isset($_POST['update_userinfo'])){
+    if(isset($_POST['update']))
+	{
         $id = $_POST['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -14,35 +20,57 @@
         $address = $_POST['address'];
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) ){
-            $sql = "UPDATE users SET name='$name', username='$username',
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) )
+        {
+            $password = sha1($_POST['password']);
+	        $sql = "UPDATE users SET name='$name', username='$username',
             phone='$phone', email='$email', address='$address', password='$password' where id='$id' ";
-            //var_dump($sql) ; die();
 
-            $result = $this->conn->query($sql);
+            $result = $db->conn->query($sql);
             //var_dump($result) ; die();
 
             if($result){
-                 $message='Data Updated Successfully';
-                header('Location:user-list.php');
+                $_SESSION['message'] = "User ID $id Data Updated Successfully!";
+            	$_SESSION['msg_type'] = "warning";
+            	header('location:user-list.php');
             } 
             else{
-                 $message='Something went wrong';
-                
+                $_SESSION['message'] = "User Data Can not be Updated !!";
+                $_SESSION['msg_type'] = "danger";
+                header('location:user-list.php');
             }
             
         }
-        else{
-             $message = 'All fields are required';
-            
+        else
+        {
+            if (empty($name)) 
+            {
+                $errors['name'] = "Name Field Can not be Empty";            
+            }
+            if (empty($username)) 
+            {
+                $errors['username'] = "Username Field Can not be Empty";            
+            }
+            if (empty($email)) 
+            {
+                $errors['email'] = "Email Field Can not be Empty";            
+            }
+            if (empty($phone)) 
+            {
+                $errors['phone'] = "Phone Field Can not be Empty";            
+            }
+            if (empty($password)) 
+            {
+                $errors['password'] = "Password Field Can not be Empty";            
+            }
+            if (empty($address)) 
+            {
+                $errors['address'] = "Address Field Can not be Empty";            
+            }
+            $_SESSION['errors'] = $errors;
+            header('location:edit-userreg.php');
         }
          
     }
-    
-
-    
-?>
-<?php
-    // include footer file
-    include dirname(__FILE__). '/includes/footer.php';
+ 
 ?>

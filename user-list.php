@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h3  style="margin-top:1px ;border:1px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title" ><b>User List</b> </h3>
+        <h3  style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title" ><b>User List</b> </h3>
         <a href="user-register.php" class="btn btn-outline-secondary" > Add New User</a>
         
         
