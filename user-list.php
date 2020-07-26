@@ -5,13 +5,28 @@
     //get users list
     $query = "SELECT * FROM users";
     $users = $db->getData($query); 
+
 ?>
 
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">User List</h3>
+        <h3  style="margin-top:1px ;border:1px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title" ><b>User List</b> </h3>
+        <a href="user-register.php" class="btn btn-outline-secondary" > Add New User</a>
+        
+        
     </div>
     <div class="card-body">
+        <?php 
+
+        if (isset($_SESSION['message'])): ?>
+        <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
+            <?php 
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+            ?>
+        </div>
+        <?php endif ?>
+
         <table class="table table-bordered" style="text-align:center;">
             <thead>
                 <tr>

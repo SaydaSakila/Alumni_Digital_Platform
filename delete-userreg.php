@@ -1,22 +1,28 @@
 <?php 
-    //$page_title = 'Delete User';
-    // include header file
-    //include dirname(__FILE__). '/includes/header.php';
+    
     //include database 
-     include dirname(__FILE__).'/../database/database.php';
+     include dirname(__FILE__).'/database/database.php';
+    session_start();
 
-    //$db = new Database();
+    $db = new Database();
+    $errors = [];
+    $success = [];
 
     if(isset($_GET['delete']))
     {
         $id=$_GET['delete'];
         
         $sql = "DELETE FROM users where id='$id'";
-        $result = $this->conn->query($sql);
+        $result = $db->conn->query($sql);
         //var_dump($result);
         if($result)
         {
+            //$success['message'] = "User Data Deleted Successfully";
+            //$_SESSION['success'] = $success;
+            $_SESSION['message'] = "User ID $id Data Deleted Successfully";
+            $_SESSION['msg_type'] = "danger";
             header('location:user-list.php');
+            
         }
      
     }

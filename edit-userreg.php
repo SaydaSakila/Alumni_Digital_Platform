@@ -7,7 +7,7 @@
         $id=$_GET['edit'];
         
         $sql = "SELECT * from users where id='$id'";
-        $result = mysqli_fetch_assoc($this->conn->query($sql));
+        $result = mysqli_fetch_assoc($db->conn->query($sql));
 
     }
 ?>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_email">Email</label>
-                        <input type="email" name="email" id="_email" class="form-control" placeholder="Update Your Email">
+                        <input type="email" name="email" id="_email" value='<?php  echo $result['email']; ?>' class="form-control" placeholder="Update Your Email">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['email'])) {
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_username">Username</label>
-                        <input type="text" name="username" id="_username" class="form-control" placeholder="Update Your Username">
+                        <input type="text" name="username" id="_username"  value='<?php  echo $result['username']; ?>' class="form-control" placeholder="Update Your Username">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['username'])) {
@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_pass">Password</label>
-                        <input type="password" name="password" id="_pass" class="form-control" placeholder="Update Your Password">
+                        <input type="password" name="password" id="_pass" value='<?php  echo $result['password']; ?>' class="form-control" placeholder="Update Your Password">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['password'])) {
@@ -76,7 +76,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_phone">Phone</label>
-                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Update Your Phone Number">
+                        <input type="text" name="phone" id="_phone" value='<?php  echo $result['phone']; ?>' class="form-control" placeholder="Update Your Phone Number">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['phone'])) {
@@ -87,7 +87,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_address">Address</label>
-                        <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address">
+                        <input type="text" name="address" id="_address" value='<?php  echo $result['address']; ?>' class="form-control" placeholder="Update Your Address">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['address'])) {

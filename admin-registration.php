@@ -6,6 +6,11 @@
         $errors = $_SESSION['errors'];
         unset($_SESSION['errors']);
     }
+    if(isset($_SESSION['success']))
+    {
+      $message = $_SESSION['success'];
+      unset($_SESSION['success']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +39,7 @@
                                 if (isset($message['error_message'])) {
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
+                              
                                 ?>
                             <div class="form-group">
                                 <label for="">Name</label>

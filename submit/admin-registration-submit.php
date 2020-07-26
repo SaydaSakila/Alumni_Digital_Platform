@@ -10,12 +10,14 @@
         $name = $_POST['name'];
         $username = $_POST['username'];
         $email = htmlspecialchars(trim($_POST['email']));
-        $password = sha1($_POST['password']);
-        $confpassword = sha1($_POST['confpassword']);
+        $password = $_POST['password'];
+        $confpassword = $_POST['confpassword'];
         if ($name && $email  && $password && $confpassword)
         {
             if($password==$confpassword)
             {
+                $password = sha1($_POST['password']);
+                
                 // store register
                 $insert_query = "INSERT into admins (`name`, `username`, `email`, `password`) 
                     VALUES('$name', '$username', '$email', '$password' )";
@@ -35,7 +37,10 @@
             }
             else
             {
-                $errors='Your Password Does not match';
+                
+                $errors['password']='Your Password Does not match';
+                $_SESSION['errors'] = $errors;
+                header('location:../admin-registration.php');
             }
         }
         else

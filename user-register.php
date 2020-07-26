@@ -4,11 +4,11 @@
     include dirname(__FILE__). '/includes/header.php';
        $db = new Database();
 
-   /* if(isset($_GET['user'])){
+   /*if(isset($_GET['user'])){
         $id=$_GET['user'];
         
         $sql = "SELECT * from users where id='$id'";
-        $user = $db->mysqli_fetch_assoc($this->conn->query($sql));
+        $user = mysqli_fetch_assoc($db->conn->query($sql));
         //var_dump($data);
  
     }*/
@@ -33,7 +33,7 @@
                     
                     <div class="form-group">
                         <label for="_name">Name</label>
-                        <input type="text" name="name" id="_name" value='<?php /* echo $user['name']; */?>' class="form-control" placeholder="Enter Name">
+                        <input type="text" name="name" id="_name" value='<?php /* echo $user['name'];*/ ?>' class="form-control" placeholder="Enter Name">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['name'])) {
