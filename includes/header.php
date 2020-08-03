@@ -57,7 +57,10 @@
         <a href="contact.php" class="nav-link">Contact</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="user-list.php" class="nav-link">User_List</a>
+        <a href="user-list.php" class="nav-link">Alumni List</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="student-list.php" class="nav-link">Student List</a>
       </li>
     </ul>
 
