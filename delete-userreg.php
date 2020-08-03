@@ -17,7 +17,7 @@
         //var_dump($result);
         if($result)
         {
-            $_SESSION['message'] = "User ID $id Data Deleted Successfully!!";
+            $_SESSION['message'] = "Alumni ID $id Data Deleted Successfully!!";
             $_SESSION['msg_type'] = "danger";
             header('location:user-list.php');
             

@@ -14,8 +14,10 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address']; 
+        $batch = $_POST['batch'];
+        $passingyear = $_POST['passingyear'];
 
-        if($name && $email && $username && $password)
+        if($name && $email && $username && $password && $batch && $passingyear)
         {
             // unique validation
             $email_exists_query = "SELECT * FROM users WHERE email = '$email'";
@@ -39,7 +41,7 @@
             {
                 $password = sha1($password);
                 // store register
-                $insert_query = "INSERT INTO users (name, email, username, password, phone, address) VALUES('$name', '$email', '$username', '$password', '$phone', '$address')";
+                $insert_query = "INSERT INTO users (name, email, username, password, phone, address, batch, passingyear) VALUES('$name', '$email', '$username', '$password', '$phone', '$address', '$batch', '$passingyear')";
                 $run = $db->store($insert_query);
                 //var_dump($run);
                 if ($run) 
@@ -71,6 +73,14 @@
             if (empty($password)) 
             {
                 $errors['password'] = "Password Field Can not be Empty";
+            }
+            if (empty($batch)) 
+            {
+                $errors['batch'] = "batch Field Can not be Empty";
+            }
+            if (empty($passingyear)) 
+            {
+                $errors['passingyear'] = "passingyear Field Can not be Empty";
             }
             $_SESSION['errors'] = $errors;
             header('location:../user-register.php');

@@ -1,5 +1,5 @@
 <?php
-    $page_title = 'Create User';
+    $page_title = 'Create User - Alumni';
     // include header file
     include dirname(__FILE__). '/includes/header.php';
        $db = new Database();
@@ -18,7 +18,7 @@
     <div class="col-md-6 offset-md-3">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Create New User</h3>
+                <h3 class="card-title">Create New User - Alumni</h3>
             </div>
             <form action="submit/register-submit.php" method="POST">
                 <div class="card-body">
@@ -93,6 +93,28 @@
                             <?php 
                                 if(isset($err['address'])) {
                                     echo $err['address'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="_batch">Batch</label>
+                        <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['batch'])) {
+                                    echo $err['batch'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="_passingyear">Passing Year</label>
+                        <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Enter Passing Year">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['passingyear'])) {
+                                    echo $err['passingyear'];
                                 }
                             ?>
                         </span>
