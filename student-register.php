@@ -33,7 +33,7 @@
                     
                     <div class="form-group">
                         <label for="_name">Name</label>
-                        <input type="text" name="name" id="_name" value='<?php /* echo $user['name'];*/ ?>' class="form-control" placeholder="Enter Name">
+                        <input type="text" name="name" id="_name" value='<?php /* echo $user['name'];*/ ?>' class="form-control" placeholder="Enter Student Name">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['name'])) {
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_email">Email</label>
-                        <input type="email" name="email" id="_email" class="form-control" placeholder="Enter Email">
+                        <input type="email" name="email" id="_email" class="form-control" placeholder="Enter Student Email">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['email'])) {
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_username">Username</label>
-                        <input type="text" name="username" id="_username" class="form-control" placeholder="Enter Username">
+                        <input type="text" name="username" id="_username" class="form-control" placeholder="Enter Student Username">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['username'])) {
@@ -65,8 +65,19 @@
                         </span>
                     </div>
                     <div class="form-group">
+                        <label for="_universityid">University ID</label>
+                        <input type="text" name="universityid" id="_universityid" class="form-control" placeholder="Enter Student University ID">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['universityid'])) {
+                                    echo $err['universityid'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                    <div class="form-group">
                         <label for="_pass">Password</label>
-                        <input type="password" name="password" id="_pass" class="form-control" placeholder="Enter Password">
+                        <input type="password" name="password" id="_pass" class="form-control" placeholder="Enter Student Password">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['password'])) {
@@ -77,7 +88,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_phone">Phone</label>
-                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Enter Phone Number">
+                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Enter Student Phone Number">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['phone'])) {
@@ -88,7 +99,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_address">Address</label>
-                        <input type="text" name="address" id="_address" class="form-control" placeholder="Enter Address">
+                        <input type="text" name="address" id="_address" class="form-control" placeholder="Enter Student Address">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['address'])) {
@@ -99,7 +110,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_batch">Batch</label>
-                        <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch">
+                        <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Student Batch">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['batch'])) {
@@ -111,7 +122,7 @@
                     
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="register_submit">SUBMIT</button>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="studentregister_submit">SUBMIT</button>
                 </div>
             </form>
         </div>
