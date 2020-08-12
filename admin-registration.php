@@ -80,7 +80,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Enter Your Password">
+                               <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
+                                <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
+                                    pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required>
                                 <span class = "text-danger">
                                 <?php 
                                     if(isset($errors['password'])) 
@@ -116,6 +118,40 @@
             </div>
         </div>
     </div>    
+    <script>
+        var myInput = document.getElementById("psw");
+
+        var length = document.getElementById("length");
+
+        // When the user clicks on the password field, show the message box
+        myInput.onfocus = function() 
+        {
+            document.getElementById("message").style.display = "block";
+        }
+
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function() 
+        {
+            document.getElementById("message").style.display = "none";
+        }
+
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() 
+        {
+ 
+            // Validate length
+            if(myInput.value.length >= 8) 
+            {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+            } 
+            else 
+            {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+            }
+        }
+    </script> 
 </body>
 </html>
 
