@@ -22,11 +22,12 @@
 
 </head>
 <body>
-    <div class="login-wrapper">
+    <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');  background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
         <div class="table">
             <div class="table-cell">
                 <div class="login-box">
                     <div class="login-header">
+                     <img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:70px;width:70px;" />
                         <h2 style="color: #585858">ADMIN REGISTRATION</h2>
                     </div>
                     <div class="login-body">

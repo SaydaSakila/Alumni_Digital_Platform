@@ -37,6 +37,8 @@ body {
     width: 400px;
     background-color: #fff;
     padding: 20px;
+    border-radius: 3%;
+
 }
 
 .login-header {
