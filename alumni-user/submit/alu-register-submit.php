@@ -15,7 +15,7 @@
         $confpassword = $_POST['confpassword'];
         $batch = $_POST['batch'];
         $passingyear = $_POST['passingyear'];
-        if ($name && $email  && $password && $confpassword && $batch && $passingyear)
+        if ($name && $username  && $password && $confpassword && $batch && $passingyear)
         {
             if($password==$confpassword)
             {
@@ -28,6 +28,7 @@
                  //var_dump($run);
                 if ($run) 
                 {
+                    
                     $success['success_message'] = "Alumni Registered Successfully";
                 } 
                 else 
@@ -54,7 +55,7 @@
             }
             if (empty($username)) 
             {
-                $errors['username'] = "Username Field Can not be Empty";            
+                $errors['username'] = "University ID Field Can not be Empty";            
             }
             if (empty($email)) 
             {
@@ -70,11 +71,11 @@
             }
             if (empty($batch)) 
             {
-                $errors['batch'] = "batch Field Can not be Empty";
+                $errors['batch'] = "Batch Field Can not be Empty";
             }
             if (empty($passingyear)) 
             {
-                $errors['passingyear'] = "passingyear Field Can not be Empty";
+                $errors['passingyear'] = "Passingyear Field Can not be Empty";
             }
             $_SESSION['errors'] = $errors;
             header('location:../alumni-registration.php');

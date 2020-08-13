@@ -5,7 +5,7 @@
     $errors = [];
     $_SESSION['old_data'] = $_POST;
 
-    if (isset($_POST['alulogin_submit'])) 
+    if (isset($_POST['stulogin_submit'])) 
     {
         $username = htmlspecialchars(trim($_POST['username']));
         $password = htmlspecialchars(trim($_POST['password']));
@@ -24,7 +24,7 @@
         {
             $password = sha1($password);
             // attempt for login
-            $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+            $query = "SELECT * FROM students WHERE username='$username' AND password='$password'";
             $run  = $db->conn->query($query);
             
             if ($run->num_rows > 0) 

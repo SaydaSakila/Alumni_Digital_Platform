@@ -31,20 +31,20 @@
                         <h2 style="color: #585858">STUDENT LOGIN</h2>
                     </div>
                     <div class="login-body">
-                        <form action="submit/login-submit.php" method="POST">
+                        <form action="submit/stulogin-submit.php" method="POST">
                             <div class="form-group">
-                                <label for="">Email or Username</label>
-                                <input type="text" name="email" class="form-control" placeholder="Enter Your Email or Username" value="<?php 
-                                    if(isset($data['name'])) 
+                                <label for="">University ID</label>
+                                <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                    if(isset($data['username'])) 
                                     {
-                                        echo $data['name'];
+                                        echo $data['username'];
                                     }
                                 ?>">
                                 <span class = "text-danger">
                                 <?php 
-                                     if(isset($errors['email'])) 
+                                     if(isset($errors['username'])) 
                                     {
-                                        echo $errors['email'];
+                                        echo $errors['username'];
                                     }
                                 ?>
                                 </span>
@@ -70,7 +70,7 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="login_submit" class="login-btn" value="LOGIN">
+                                <input type="submit" name="stulogin_submit" class="login-btn" value="LOGIN">
                             </div>
                             <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
                                 

@@ -1,6 +1,5 @@
 
 <?php 
-    //$db = new Database();
     session_start();
     if (isset($_SESSION['errors'])) 
     {
@@ -33,89 +32,89 @@
             <div class="table-cell">
                 <div class="login-box">
                     <div class="login-header">
-                        <h2 style="color: #585858"><img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:15px;width:15px;" />ALUMNI REGISTRATION</h2>
+                        <h2 style="color: #585858"><img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:20px;width:20px;" />ALUMNI REGISTRATION</h2>
                     </div>
                     <div class="login-body">
                         <form action="submit/alu-register-submit.php" method="POST">
                             <div class="card-body">
                                 <?php 
                                 if (isset($message['success_message'])) {
-                                    echo '<div class="alert alert-success">'.$message['success_message'].'</div>';
+                                    echo '<div class="alert alert-success" role="alert">'.$message['success_message'].'</div>';
                                 }
                                 if (isset($message['error_message'])) {
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
                               
                                 ?>
-                            <div class="form-group">
-                                <label for="">Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="<?php 
-                                    if(isset($data['name'])) 
-                                    {
-                                        echo $data['name'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['name'])) 
-                                    {
-                                        echo $errors['name'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Username</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Your Username" value="<?php 
-                                    if(isset($data['username'])) 
-                                    {
-                                        echo $data['username'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['username'])) 
-                                    {
-                                        echo $errors['username'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
-                                    if(isset($data['email'])) 
-                                    {
-                                        echo $data['email'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['email'])) 
-                                    {
-                                        echo $errors['email'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                               <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
-                                <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                    pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
-                                    if(isset($data['password'])) 
-                                    {
-                                        echo $data['password'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                    if(isset($errors['password'])) 
-                                    {
-                                        echo $errors['password'];
-                                    }
-                                ?>
-                                </span>
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="<?php 
+                                        if(isset($data['name'])) 
+                                        {
+                                            echo $data['name'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                           if(isset($errors['name'])) 
+                                            {
+                                            echo $errors['name'];
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">University ID</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                        if(isset($data['username'])) 
+                                        {
+                                            echo $data['username'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                    <?php 
+                                            if(isset($errors['username'])) 
+                                            {
+                                                echo $errors['username'];
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
+                                        if(isset($data['email'])) 
+                                        {
+                                            echo $data['email'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                        if(isset($errors['email'])) 
+                                        {
+                                            echo $errors['email'];
+                                        }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
+                                    <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
+                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
+                                        if(isset($data['password'])) 
+                                        {
+                                            echo $data['password'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                        if(isset($errors['password'])) 
+                                        {
+                                            echo $errors['password'];
+                                        }
+                                        ?>
+                                    </span>
                             </div>
                             <div class="form-group">
                                 <label for="">Confirm Password</label>
@@ -150,22 +149,22 @@
                             ?>
                         </span>
                     </div>
-                    <div class="form-group">
-                        <label for="_passingyear">Passing Year</label>
-                        <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Enter Passing Year" value="<?php 
-                                    if(isset($data['passingyear'])) 
-                                    {
-                                        echo $data['passingyear'];
+                        <div class="form-group">
+                            <label for="_passingyear">Passing Year</label>
+                            <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Enter Passing Year" value="<?php 
+                                        if(isset($data['passingyear'])) 
+                                        {
+                                            echo $data['passingyear'];
+                                        }
+                            ?>">
+                            <span class="text-danger">
+                                <?php 
+                                    if(isset($err['passingyear'])) {
+                                        echo $err['passingyear'];
                                     }
-                                ?>">
-                        <span class="text-danger">
-                            <?php 
-                                if(isset($err['passingyear'])) {
-                                    echo $err['passingyear'];
-                                }
-                            ?>
-                        </span>
-                    </div>
+                                ?>
+                            </span>
+                        </div>
                             <div class="form-group">
                                 <input type="submit"  name="alumniregistration_submit" class="login-btn" value="REGISTRATION" >
                             </div>

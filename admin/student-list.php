@@ -11,7 +11,7 @@
 <div class="card">
     <div class="card-header">
         <h3  style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title" ><b>User List - Student </b> </h3>
-        <a href="student-register.php" class="btn btn-outline-secondary" > Add New User - Student</a>
+        <a href="student-register.php" class="btn btn-secondary" > Add New User - Student</a>
         
         
     </div>
@@ -37,7 +37,6 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
-                    <th>University_ID</th>
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Batch</th>
@@ -55,7 +54,6 @@
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>
-                                    <td><?php echo $user['universityid'] ?></td>
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>

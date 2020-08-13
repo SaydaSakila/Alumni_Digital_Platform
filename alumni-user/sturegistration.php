@@ -32,11 +32,11 @@
             <div class="table-cell">
                 <div class="login-box">
                     <div class="login-header">
-                     <img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:70px;width:70px;" />
-                        <h2 style="color: #585858">STUDENT REGISTRATION</h2>
+                        <h2 style="color: #585858">
+                            <img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:20px;width:20px;" />STUDENT REGISTRATION</h2>
                     </div>
                     <div class="login-body">
-                        <form action="submit/admin-registration-submit.php" method="POST">
+                        <form action="submit/sturegister-submit.php" method="POST">
                             <div class="card-body">
                                 <?php 
                                 if (isset($message['success_message'])) {
@@ -47,75 +47,75 @@
                                 }
                               
                                 ?>
-                            <div class="form-group">
-                                <label for="">Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="<?php 
-                                    if(isset($data['name'])) 
-                                    {
-                                        echo $data['name'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['name'])) 
-                                    {
-                                        echo $errors['name'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Username</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Your Username" value="<?php 
-                                    if(isset($data['username'])) 
-                                    {
-                                        echo $data['username'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['username'])) 
-                                    {
-                                        echo $errors['username'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
-                                    if(isset($data['email'])) 
-                                    {
-                                        echo $data['email'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['email'])) 
-                                    {
-                                        echo $errors['email'];
-                                    }
-                                ?>
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                               <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
-                                <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                    pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
-                                    if(isset($data['password'])) 
-                                    {
-                                        echo $data['password'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                    if(isset($errors['password'])) 
-                                    {
-                                        echo $errors['password'];
-                                    }
-                                ?>
-                                </span>
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="<?php 
+                                        if(isset($data['name'])) 
+                                        {
+                                            echo $data['name'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                           if(isset($errors['name'])) 
+                                            {
+                                            echo $errors['name'];
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">University ID</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                        if(isset($data['username'])) 
+                                        {
+                                            echo $data['username'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                    <?php 
+                                            if(isset($errors['username'])) 
+                                            {
+                                                echo $errors['username'];
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
+                                        if(isset($data['email'])) 
+                                        {
+                                            echo $data['email'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                        if(isset($errors['email'])) 
+                                        {
+                                            echo $errors['email'];
+                                        }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
+                                    <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
+                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
+                                        if(isset($data['password'])) 
+                                        {
+                                            echo $data['password'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                        if(isset($errors['password'])) 
+                                        {
+                                            echo $errors['password'];
+                                        }
+                                        ?>
+                                    </span>
                             </div>
                             <div class="form-group">
                                 <label for="">Confirm Password</label>
@@ -135,11 +135,28 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <input type="submit"  name="registration_submit" class="login-btn" value="REGISTRATION" >
+                        <label for="_batch">Batch</label>
+                        <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch" value="<?php 
+                                    if(isset($data['batch'])) 
+                                    {
+                                        echo $data['batch'];
+                                    }
+                                ?>">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['batch'])) {
+                                    echo $err['batch'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                        
+                            <div class="form-group">
+                                <input type="submit"  name="studentregistration_submit" class="login-btn" value="REGISTRATION" >
                             </div>
                             <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
                                 
-                                <p>Already have an Account?<a href="login.php" class="btn btn-primary btn-lg active" >Login Here</a></p>
+                                <p>Already have an Account?<a href="stulogin.php" class="btn btn-primary btn-lg active" >Login Here</a></p>
                             </div>
                             </div>
                         </form>

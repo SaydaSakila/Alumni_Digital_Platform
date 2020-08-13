@@ -33,18 +33,18 @@
                     <div class="login-body">
                         <form action="submit/login-submit.php" method="POST">
                             <div class="form-group">
-                                <label for="">Email or Username</label>
-                                <input type="text" name="email" class="form-control" placeholder="Enter Your Email or Username" value="<?php 
-                                    if(isset($data['email'])) 
+                                <label for="">University ID</label>
+                                <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                    if(isset($data['username'])) 
                                     {
-                                        echo $data['email'];
+                                        echo $data['username'];
                                     }
                                 ?>">
                                 <span class = "text-danger">
                                 <?php 
-                                     if(isset($errors['email'])) 
+                                     if(isset($errors['username'])) 
                                     {
-                                        echo $errors['email'];
+                                        echo $errors['username'];
                                     }
                                 ?>
                                 </span>
