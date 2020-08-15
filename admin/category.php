@@ -27,6 +27,9 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Category Record</b></h3></th>
+                    </tr>
+                    <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Action</th>

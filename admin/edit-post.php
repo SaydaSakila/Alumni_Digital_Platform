@@ -9,13 +9,18 @@
         
         $sql = "SELECT * from posts where id='$id'";
         $run  = $db->conn->query($sql);
-        $data = $run->fetch_assoc();   
+        $data = $run->fetch_assoc();
+        
+        //var_dump($data);die();   
     }
     if (isset($_SESSION['old_data'])) 
     {
         $data = $_SESSION['old_data'];
         unset($_SESSION['old_data']);
     }
+    
+    $query = "SELECT * FROM categories";
+    $categories = $db->getData($query);
 ?>
 
 <div class="row">
@@ -50,7 +55,7 @@
 
                     <div class="form-group">
                         <label for="">Content</label>
-                        <textarea name="content" rows="5" value='<?php  echo $data['content']; ?>' class="form-control" placeholder="Update Blog Content"></textarea>
+                        <textarea name="content" rows="5" class="form-control" placeholder="Update Blog Content"> <?php  echo $data['content']; ?></textarea>
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['content'])) {
@@ -63,12 +68,13 @@
                     <div class="form-group">
                         <label for="">Category</label>
                         <select name="category"  class="form-control">
-                            <option alue='<?php  echo $data['category']; ?>'>Select Category</option>
+                            <option >Select Category</option>
                             <?php
                                 if ($categories) {
                                     while($category = $categories->fetch_assoc()) {
                                         ?>
-                                            <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+
+                                            <option value="<?php echo $category['id']; ?>" <?php echo $category['id']== $data['category_id'] ? "Selected" : "" ?> ><?php echo $category['name']; ?> </option>
                                         <?php
                                     }
                                 }

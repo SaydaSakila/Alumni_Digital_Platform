@@ -30,6 +30,8 @@
             {
                 $user = $run->fetch_assoc();
                 $_SESSION['username'] = $user['username'];
+                $_SESSION['admin_id'] = $user['id'];
+
                 header('location:../index.php');
             } 
             else 

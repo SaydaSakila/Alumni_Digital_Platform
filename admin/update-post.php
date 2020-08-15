@@ -21,7 +21,7 @@
         if(!empty($title) && !empty($content) && !empty($category))
         {
 	        $sql = "UPDATE posts SET title='$title', content='$content',
-            category='$category' where id='$id' ";
+            category_id='$category' where id='$id' ";
             $result = $db->conn->query($sql);
 
             if($result){
