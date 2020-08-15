@@ -37,20 +37,20 @@
             {
                 $errors['username'] = "Invalid University ID or Password"; 
                 $_SESSION['errors'] = $errors;
-                header('location:../login.php');
+                header('location:../stulogin.php');
             }
             
         } 
         else 
         {
             $_SESSION['errors'] = $errors;
-            header('location:../login.php');
+            header('location:../stulogin.php');
         }
         
     } 
     else 
     {
-        header('location:../login.php');
+        header('location:../stulogin.php');
     }
 ?>
 

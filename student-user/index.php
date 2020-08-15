@@ -3,7 +3,7 @@
     // header include
    // include dirname(__FILE__).'/includes/header.php';
 ?>
-<img src="assets/img/user.png" alt="Welcome Icon" style="height:100%;weight:100%; align:center" />
+<img src="assets/img/a.jpg" alt="Welcome Icon" style="height:100%;weight:100%; align:center" />
 
 <?php
     // footer include

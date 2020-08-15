@@ -104,6 +104,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Blog Manage
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="category.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Categories</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="posts.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Blogs</p>
+              </a>
+            </li>
+          </ul>
+        </li>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link"  >
                   <i class="fas fa-sign-out-alt" style="margin-left:5px"></i>
