@@ -6,6 +6,7 @@
 
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
+        //$id = $_SESSION['id'];
         
         $sql = "SELECT * from users where id='$id'";
         $run  = $db->conn->query($sql);
@@ -20,7 +21,7 @@
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <div class="card">
+        <div class="card" style="padding:10%;">
             <div class="card-header">
                 <h3 class="card-title">Edit User Information - Alumni</h3>
             </div>
@@ -38,7 +39,13 @@
                     
                     <div class="form-group">
                         <label for="_name">Name</label>
-                        <input type="text" name="name" id="_name" value='<?php  echo $data['name']; ?>' class="form-control" placeholder="Update Your Name">
+                        <input type="text" name="name" id="_name" class="form-control" placeholder="Update Your Name"
+                        value="<?php 
+                            if(isset($data['name'])) 
+                            {
+                                echo $data['name'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['name'])) {
@@ -49,7 +56,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_email">Email</label>
-                        <input type="email" name="email" id="_email" value='<?php  echo $data['email']; ?>' class="form-control" placeholder="Update Your Email">
+                        <input type="email" name="email" id="_email" class="form-control" placeholder="Update Your Email" value="<?php 
+                            if(isset($data['email'])) 
+                            {
+                                echo $data['email'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['email'])) {
@@ -59,8 +71,13 @@
                         </span>
                     </div>
                     <div class="form-group">
-                        <label for="_username">Username</label>
-                        <input type="text" name="username" id="_username"  value='<?php  echo $data['username']; ?>' class="form-control" placeholder="Update Your Username">
+                        <label for="_username">University ID</label>
+                        <input type="text" name="username" id="_username" class="form-control" placeholder="Update Your University ID" value="<?php 
+                                        if(isset($data['username'])) 
+                                        {
+                                            echo $data['username'];
+                                        }
+                                    ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['username'])) {
@@ -71,7 +88,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_pass">Password</label>
-                        <input type="password" name="password" id="_pass" value='<?php  echo $data['password']; ?>' class="form-control" placeholder="Update Your Password">
+                        <input type="password" name="password" id="_pass"  class="form-control" placeholder="Update Your Password" value="<?php 
+                            if(isset($data['password'])) 
+                            {
+                                echo $data['password'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['password'])) {
@@ -82,7 +104,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_phone">Phone</label>
-                        <input type="text" name="phone" id="_phone" value='<?php  echo $data['phone']; ?>' class="form-control" placeholder="Update Your Phone Number">
+                        <input type="text" name="phone" id="_phone" class="form-control" placeholder="Update Your Phone Number" value="<?php 
+                            if(isset($data['phone'])) 
+                            {
+                                echo $data['phone'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['phone'])) {
@@ -93,7 +120,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_address">Address</label>
-                        <input type="text" name="address" id="_address" value='<?php  echo $data['address']; ?>' class="form-control" placeholder="Update Your Address">
+                        <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address" value="<?php 
+                            if(isset($data['address'])) 
+                            {
+                                echo $data['address'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['address'])) {
@@ -104,7 +136,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_batch">Batch No</label>
-                        <input type="text" name="batch" id="_batch" value='<?php  echo $data['batch']; ?>' class="form-control" placeholder="Update Your Batch Info">
+                        <input type="text" name="batch" id="_batch" class="form-control" placeholder="Update Your Batch Info" value="<?php 
+                            if(isset($data['batch'])) 
+                            {
+                                echo $data['batch'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['batch'])) {
@@ -115,7 +152,12 @@
                     </div>
                     <div class="form-group">
                         <label for="_passingyear">Passing Year</label>
-                        <input type="text" name="passingyear" id="_passingyear" value='<?php  echo $data['passingyear']; ?>' class="form-control" placeholder="Update Your Passing Year Info">
+                        <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Update Your Passing Year Info" value="<?php 
+                            if(isset($data['passingyear'])) 
+                            {
+                                echo $data['passingyear'];
+                            }
+                        ?>">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['passingyear'])) {
@@ -133,7 +175,7 @@
 
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="update">UPDATE</button>
+                    <button type="submit" class="btn btn-secondary btn-lg btn-block" name="update-alu">UPDATE</button>
                 </div>
             </form>
         </div>

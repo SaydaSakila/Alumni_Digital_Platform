@@ -9,8 +9,8 @@
     $success = [];
 
     $_SESSION['old_data'] = $_POST;
-    
-    if(isset($_POST['update']))
+
+    if(isset($_POST['update-alu']))
 	{
         $id = $_POST['id'];
         $name = $_POST['name'];
@@ -27,20 +27,21 @@
         {
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', passingyear='$passingyear' where id='$id' ";
+            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', passingyear='$passingyear' where id='$id'";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();
 
             if($result){
                 $_SESSION['message'] = "Alumni ID $id Name $name Data Updated Successfully!";
-            	$_SESSION['msg_type'] = "warning";
-            	header('location:user-list.php');
+                $_SESSION['msg_type'] = "warning";
+                $_SESSION['name'] = $name;
+            	header('location:index.php');
             } 
             else{
                 $_SESSION['message'] = "User Data Can not be Updated !!";
                 $_SESSION['msg_type'] = "danger";
-                header('location:user-list.php');
+                header('location:edit-userreg.php');
             }
             
         }

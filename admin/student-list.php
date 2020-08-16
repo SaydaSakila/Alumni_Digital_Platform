@@ -40,7 +40,7 @@
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Batch</th>
-                    <!-- <th>Photo</th> -->
+                    <th>Photo</th> 
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -57,7 +57,7 @@
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>
-                                   <!-- <td><?php /* echo $user['photo'] */ ?></td> -->
+                                    <td><?php /* echo $user['photo'] */ ?></td> 
                                     <td>
                                         <a href="edit-studentreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
                                     </td>

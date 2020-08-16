@@ -9,8 +9,8 @@
     $success = [];
 
     $_SESSION['old_data'] = $_POST;
-    
-    if(isset($_POST['update']))
+
+    if(isset($_POST['update-stu']))
 	{
         $id = $_POST['id'];
         $name = $_POST['name'];
@@ -20,27 +20,27 @@
         $phone = $_POST['phone'];
         $address = $_POST['address'];
         $batch = $_POST['batch'];
-        $passingyear = $_POST['passingyear'];
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch))
         {
             $password = sha1($_POST['password']);
-	        $sql = "UPDATE users SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', passingyear='$passingyear' where id='$id' ";
+	        $sql = "UPDATE students SET name='$name', username='$username',
+            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch' where id='$id'";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();
 
             if($result){
-                $_SESSION['message'] = "Alumni ID $id Name $name Data Updated Successfully!";
-            	$_SESSION['msg_type'] = "warning";
-            	header('location:user-list.php');
+                $_SESSION['message'] = "Student ID $id Name $name Data Updated Successfully!";
+                $_SESSION['msg_type'] = "warning";
+                $_SESSION['name'] = $name;
+            	header('location:index.php');
             } 
             else{
                 $_SESSION['message'] = "User Data Can not be Updated !!";
                 $_SESSION['msg_type'] = "danger";
-                header('location:user-list.php');
+                header('location:edit-userreg.php');
             }
             
         }
@@ -74,10 +74,7 @@
             {
                 $errors['batch'] = "Batch Field Can not be Empty";            
             }
-            if (empty($passingyear)) 
-            {
-                $errors['passingyear'] = "Passing Year Field Can not be Empty";            
-            }
+           
             $_SESSION['errors'] = $errors;
             header('location:edit-userreg.php');
         }

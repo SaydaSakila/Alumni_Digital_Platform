@@ -1,6 +1,6 @@
 <?php 
   //header file include
-  //include dirname(__FILE__).'/../../database/database.php';
+  include dirname(__FILE__).'/../../database/database.php';
 
   session_start();
     if (!isset($_SESSION['username']) || ($_SESSION['actor']!== "students")) {
@@ -19,7 +19,8 @@
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
   }
-
+    $id = $_SESSION['id'];
+    $name = $_SESSION['name'];
     //$db = new Database();
     //var_dump($db);die();
 ?>
@@ -77,7 +78,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
           <li><a href="#portfolio">Blog</a></li>
@@ -87,7 +88,8 @@
               <i class="fas fa-sign-out-alt"></i>
             </a>
           </li>
-          <li class="menu-has-children"><a href="">Student Profile</a> 
+          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?></a>
+          <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"> 
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->

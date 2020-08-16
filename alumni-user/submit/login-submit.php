@@ -32,6 +32,8 @@
                 $user = $run->fetch_assoc();
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['actor'] = "users";
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
 
 
                 header('location:../index.php');
