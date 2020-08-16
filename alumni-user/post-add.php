@@ -1,20 +1,39 @@
 <?php
     $page_title = 'Post Create';
     // header include
-    include dirname(__FILE__). '/includes/header.php';
+   // include dirname(__FILE__). '/includes/header.php';
 
-    $query = "SELECT * FROM categories";
-    $categories = $db->getData($query);
+    //$query = "SELECT * FROM categories";
+   // $categories = $db->getData($query);
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Alumni Digital Platform</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="assets/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
 
     <div class="row">
         <div class="col-md-6 offset-md-3">
-        <div class="card">
+        <div class="card" style="">
             <div class="card-header">
                 <h3 style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title">Create Blog</h3>
-                <div class="card-header-action">
-                    <a href="posts.php" class="btn btn-primary">Blog List</a>
-                </div>
+                
             </div>
             <div class="card-body">
                 <?php 
@@ -25,7 +44,7 @@
                         echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                     }
                 ?>
-                <form action="submit/post-add-submit.php" method="POST">
+                <form action="" method="POST">
                     <div class="form-group">
                         <label for="">Title</label>
                         <input type="text" name="title" class="form-control" placeholder="Enter Post Title">
@@ -81,8 +100,9 @@
         </div>
         </div>
     </div>
-
+                            </body>
+                            </html>
 <?php
     // footer include
-    include dirname(__FILE__). '/includes/footer.php';
+   // include dirname(__FILE__). '/includes/footer.php';
 ?>
