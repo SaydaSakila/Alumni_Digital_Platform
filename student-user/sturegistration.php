@@ -24,6 +24,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link href="css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 
 </head>
 <body>
@@ -32,8 +34,9 @@
             <div class="table-cell">
                 <div class="login-box">
                     <div class="login-header">
-                        <h2 style="color: #585858">
-                            <img src="assets/img/registration.png" id="icon" alt="User Icon" style="height:20px;width:20px;" />STUDENT REGISTRATION</h2>
+                        <h4 style="color: #585858">
+                            <img src="assets/img/registration.png" id="icon" alt="User Icon" 
+                            style="height:20px;width:20px;" />STUDENT REGISTRATION</h4>
                     </div>
                     <div class="login-body">
                         <form action="submit/sturegister-submit.php" method="POST">
@@ -154,9 +157,10 @@
                             <div class="form-group">
                                 <input type="submit"  name="studentregistration_submit" class="login-btn" value="REGISTRATION" >
                             </div>
-                            <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
+                            <div class="form-group">
                                 
-                                <p>Already have an Account?<a href="stulogin.php" class="btn btn-primary btn-lg active" >Login Here</a></p>
+                               <a href="stulogin.php" class="btn btn-primary " >Login as Student</a>
+                               <a href="../index.php" class="btn btn-warning" style="float:right" >Home Page</a>
                             </div>
                             </div>
                         </form>

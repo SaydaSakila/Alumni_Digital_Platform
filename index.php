@@ -44,7 +44,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">Alumni Digital Platform</a></h1>
+        <h1><a href="index.php" class="scrollto">Alumni Digital Platform</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -54,15 +54,15 @@
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
-          <li><a href="post-add.php">Blog</a></li>
+          <li><a href="#portfolio">Blog</a></li>
           <li><a href="#team">Events</a></li>
-          <li class="menu-has-children"><a href="">LOGGED-IN</a>
+          <li class="menu-has-children"><a href="">LOG-IN</a>
+            <ul>
+              <li><a href="alumni-user/login.php">ALUMNI</a></li>
+              <li><a href="student-user/stulogin.php">STUDENT</a></li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a href="logout.php" class="nav-link" title="Logout">LOGOUT
-              <i class="fas fa-sign-out-alt"></i>
-            </a>
-          </li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>

@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="csss/login.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
     <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');  background-repeat: no-repeat;background-attachment: fixed;background-size: cover;" >
@@ -72,10 +72,12 @@
                             <div class="form-group">
                                 <input type="submit" name="alulogin_submit" class="login-btn" value="LOGIN">
                             </div>
-                            <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
+                            <div class="form-group"  >
                                 
-                                <a href="alumni-registration.php" class="btn btn-primary btn-lg active" >New Alumni Registration?</a>
+                                <a href="alumni-registration.php" class="btn btn-primary" >New Alumni Registration</a>
+                                <a href="../index.php" class="btn btn-warning" style="float:right" >Home Page</a>
                             </div>
+                            
                             
                         </form>
                     </div>
