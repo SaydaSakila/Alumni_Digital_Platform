@@ -3,7 +3,8 @@
   include dirname(__FILE__).'/../../database/database.php';
 
   session_start();
-  if (!isset($_SESSION['username'])) {
+  //if (!isset($_SESSION['username'])) {
+    if (!isset($_SESSION['username']) || ($_SESSION['actor']!== "admins")) {
     header("location:login.php");
   }
   if(isset($_SESSION['errors']))

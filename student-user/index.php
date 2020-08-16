@@ -5,6 +5,11 @@
 ?>
 
 <?php
+    // contents include
+    include dirname(__FILE__). '/includes/content.php';
+?>
+
+<?php
     // footer include
     include dirname(__FILE__). '/includes/footer.php';
 ?>

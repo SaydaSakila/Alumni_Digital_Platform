@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="assets/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 </head>
 <body>
@@ -73,9 +74,8 @@
                             <div class="form-group">
                                 <input type="submit" name="login_submit" class="login-btn" value="LOGIN">
                             </div>
-                            <div class="form-group" style="text-align:center; border:2px solid #5c5c5e;border-radius:10px;" >
-                                
-                                <a href="admin-registration.php" class="btn btn-primary btn-lg active" >New Admin Registration?</a>
+                            <div class="form-group" >
+                                <a href="admin-registration.php" class="btn btn-primary btn-lg btn-block " >New Admin Registration</a>
                             </div>
                             
                         </form>
