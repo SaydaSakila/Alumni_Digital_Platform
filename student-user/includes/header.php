@@ -4,7 +4,7 @@
 
   session_start();
   if (!isset($_SESSION['username'])) {
-    header("location:login.php");
+    header("location:stulogin.php");
   }
   if(isset($_SESSION['errors']))
   {
@@ -19,8 +19,8 @@
 
     //$db = new Database();
     //var_dump($db);die();
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,15 +77,14 @@
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
-          <li><a href="post-add.php">Blog</a></li>
-          <li><a href="#team">Events</a></li>
-          
+          <li><a href="#portfolio">Blog</a></li>
+          <li><a href="#team">Events</a></li> 
           <li class="nav-item">
             <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
               <i class="fas fa-sign-out-alt"></i>
             </a>
           </li>
-          <li class="menu-has-children"><a href="">Alumni Profile</a> 
+          <li class="menu-has-children"><a href="">Student Profile</a> 
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->
