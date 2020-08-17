@@ -19,7 +19,7 @@
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
 
-    //$db = new Database();
+    $db = new Database();
     //var_dump($db);die();
 
 ?>

@@ -1,7 +1,7 @@
 <?php
     $page_title = 'Post Create';
     // header include
-    include dirname(__FILE__). '/includes/header.php';
+    include dirname(__FILE__).'/includes/header.php';
 
     $query = "SELECT * FROM categories";
     $categories = $db->getData($query);

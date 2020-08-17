@@ -1,13 +1,10 @@
 <?php
     $page_title = 'Post Create';
-
     // header include
     include dirname(__FILE__).'/includes/header.php';
 
-
-
-    //$query = "SELECT * FROM categories";
-   // $categories = $db->getData($query);
+    $query = "SELECT * FROM categories";
+    $categories = $db->getData($query);
 ?>
 
 
@@ -15,9 +12,11 @@
                         background-position: center center;
                         background-attachment: fixed;">
         <div class="col-md-6 offset-md-3">
-        <div class="card" style="margin-top:100px;margin-bottom:70px;">
+        <div class="container" style="margin-top:200px;margin-bottom:70px;background-color:#333;
+                            border-radius:10px;
+                            opacity:0.9;">
             <div class="card-header">
-                <h3 style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title">Create Blog</h3>
+                <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Blog</h3>
                 
             </div>
             <div class="card-body">
@@ -31,7 +30,7 @@
                 ?>
                 <form action="" method="POST">
                     <div class="form-group">
-                        <label for="">Title</label>
+                        <label for="" style="color:#fff">Title</label>
                         <input type="text" name="title" class="form-control" placeholder="Enter Post Title">
                         <span class="text-danger">
                             <?php 
@@ -43,7 +42,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Content</label>
+                        <label for="" style="color:#fff">Content</label>
                         <textarea name="content" rows="5" class="form-control" placeholder="Enter Blog Content"></textarea>
                         <span class="text-danger">
                             <?php 
@@ -55,7 +54,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Category</label>
+                        <label for="" style="color:#fff">Category</label>
                         <select name="category"  class="form-control">
                             <option value="">Select Category</option>
                             <?php
@@ -78,7 +77,10 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-success btn-lg btn-block" type="submit" name="post_submit">Save Blog</button>
+                        <button class="btn btn-success btn-lg btn-block" type="submit" name="alu-post_submit">Save Blog</button>
+                    </div>
+                    <div class="form-group ">
+                        <a href="category-add.php" class="btn btn-warning" style="float:right" >Want to Add Category?</a>
                     </div>
                 </form>
             </div>

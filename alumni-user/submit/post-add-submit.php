@@ -5,15 +5,17 @@
 
     $errors = [];
 
-    if (isset($_POST['post_submit'])) {
+    if (isset($_POST['alu-post_submit'])) {
         $title = htmlspecialchars(trim($_POST['title']));
         $content = htmlspecialchars(trim($_POST['content']));
         $category = htmlspecialchars(trim($_POST['category']));
 
         if ($title && $content && $category) {
             $admin_id = $_SESSION['admin_id'];
+            $users_id = $_SESSION['users_id'];
+
             // store Post
-            $query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";
+            $query = "INSERT INTO posts (category_id, admin_id, users_id, title, content) VALUES('$category', '$admin_id', $users_id, '$title', '$content')";
             $run = $db->store($query);
             
             if ($run) {
