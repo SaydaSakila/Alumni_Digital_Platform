@@ -12,7 +12,7 @@
                         background-position: center center;
                         background-attachment: fixed;">
         <div class="col-md-6 offset-md-3">
-        <div class="container" style="margin-top:200px;margin-bottom:70px;background-color:#333;
+        <div class="container" style="margin-top:100px;margin-bottom:70px;background-color:#333;
                             border-radius:10px;
                             opacity:0.9;">
             <div class="card-header">

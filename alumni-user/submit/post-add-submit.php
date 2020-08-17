@@ -12,10 +12,11 @@
 
         if ($title && $content && $category) {
             $admin_id = $_SESSION['admin_id'];
-            $users_id = $_SESSION['users_id'];
+            /$users_id = $_SESSION['users_id'];
 
             // store Post
-            $query = "INSERT INTO posts (category_id, admin_id, users_id, title, content) VALUES('$category', '$admin_id', $users_id, '$title', '$content')";
+            //$query = "INSERT INTO posts (category_id, admin_id, users_id, title, content) VALUES('$category', '$admin_id', $users_id, '$title', '$content')";
+            $query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";
             $run = $db->store($query);
             
             if ($run) {

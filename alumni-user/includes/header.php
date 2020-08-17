@@ -83,18 +83,21 @@
             <ul>
               <li><a href="category-add.php">Add Category</a></li>
               <li><a href="post-add.php">Post Blog</a></li>
+              <li><a href="#view blog">View Blogs</a></li>
             </ul>
           </li>
           <li><a href="#team">Events</a></li>
           
-          <li class="nav-item">
-            <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
-              <i class="fas fa-sign-out-alt"></i>
-            </a>
-          </li>
-          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?> <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a> 
-          
-
+          <li class="menu-has-children"><a href=""><?php echo $name; ?> 
+              <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
+            <ul>
+              <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">EDIT PROFILE</a></li>
+              <li class="nav-item">
+                  <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
+                      <i class="fas fa-sign-out-alt"></i>
+                  </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->

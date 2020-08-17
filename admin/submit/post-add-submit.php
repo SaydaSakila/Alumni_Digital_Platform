@@ -46,4 +46,4 @@
         
     } else {
         header('location:../post-add.php');
-    }
+    }?>

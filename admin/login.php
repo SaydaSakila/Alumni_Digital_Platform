@@ -23,7 +23,7 @@
 
 </head>
 <body>
-    <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');  background-repeat: no-repeat;background-attachment: fixed;background-size: cover;" >
+    <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');background-position: center center;  background-repeat: no-repeat;background-attachment: fixed;background-size: cover;" >
         
         <div class="table">
             <div class="table-cell">
