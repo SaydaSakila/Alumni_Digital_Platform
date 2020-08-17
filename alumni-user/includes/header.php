@@ -79,7 +79,12 @@
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
-          <li><a href="post-add.php">Blog</a></li>
+          <li class="menu-has-children"><a href="">Blog</a>
+            <ul>
+              <li><a href="">Add Category</a></li>
+              <li><a href="post-add copy.php">Post Blog</a></li>
+            </ul>
+          </li>
           <li><a href="#team">Events</a></li>
           
           <li class="nav-item">

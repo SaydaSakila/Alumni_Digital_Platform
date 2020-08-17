@@ -21,7 +21,8 @@
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <div class="card" style="padding:10%;">
+        <div class="card" style="padding:30px;
+                        margin-top:300px;">
             <div class="card-header">
                 <h3 class="card-title">Edit User Information - Alumni</h3>
             </div>

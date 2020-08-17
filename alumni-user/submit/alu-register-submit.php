@@ -29,7 +29,7 @@
                 if ($run) 
                 {
                     
-                    $success['success_message'] = "Alumni Registered Successfully";
+                    $success['success_message'] = "Alumni $name Registered Successfully";
                 } 
                 else 
                 {

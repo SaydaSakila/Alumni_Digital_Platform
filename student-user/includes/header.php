@@ -89,7 +89,7 @@
             </a>
           </li>
           <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?></a>
-          <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"> 
+          <img src="../student-user/img/stuavater.png" alt="Avatar" style="width:30px;height:30px;"> 
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->

@@ -79,13 +79,14 @@
           <li><a href="#services">Career Opportunity</a></li>
           <li><a href="#portfolio">Blog</a></li>
           <li><a href="#team">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li class="menu-has-children"><a href="">LOG-IN</a>
             <ul>
               <li><a href="alumni-user/login.php">ALUMNI</a></li>
               <li><a href="student-user/stulogin.php">STUDENT</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
