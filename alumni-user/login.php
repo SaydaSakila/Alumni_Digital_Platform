@@ -96,6 +96,7 @@
                             <div class="form-group">   
                                     <label for="">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
+                                    
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
                                         pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
                                         if(isset($data['password'])) 
@@ -103,6 +104,7 @@
                                             echo $data['password'];
                                         }
                                     ?>">
+                                    
                                     <span class = "text-danger">
                                         <?php 
                                         if(isset($errors['password'])) 
