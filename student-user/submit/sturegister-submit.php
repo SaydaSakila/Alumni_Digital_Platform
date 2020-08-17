@@ -16,6 +16,24 @@
         $batch = $_POST['batch'];
         if ($name && $username  && $password && $confpassword && $batch)
         {
+            // unique validation
+            $email_exists_query = "SELECT * FROM users WHERE email = '$email'";
+            $email_exists = $db->getData($email_exists_query);
+            if ($email_exists) 
+            {
+                $errors['email'] = "Email Already Exist";
+            }
+            $username_exists_query = "SELECT * FROM users WHERE username = '$username'";
+            $username_exists = $db->getData($username_exists_query);
+            if ($username_exists) 
+            {
+                $errors['username'] = "Username Already Exist";
+            }
+            if ($email_exists || $username_exists) 
+            {
+                $_SESSION['errors'] = $errors;
+                header('location:../sturegistration.php');
+            }
             if($password==$confpassword)
             {
                 $password = sha1($_POST['password']);

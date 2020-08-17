@@ -43,11 +43,14 @@
                     #ui{
                         background-color:#333;
                         padding:30px;
-                        margin-top:50px;
+                        margin-top:40px;
                         border-radius:10px;
                         opacity:0.9;
                     }
-                    #ui label,h3{
+                    #ui label{
+                        color:#fff;
+                    }
+                    #ui h3{
                         color:#fff;
                     }
                     .center {
@@ -67,7 +70,7 @@
                     <div id="ui">
                     <img src="img/stuavater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
                     <h3 class="text-center">STUDENT REGISTRATION</h3>
-                        <form action="submit/sturegister-submit.php" method="POST" class="form-group text-center">
+                        <form action="submit/sturegister-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
                                     echo '<div class="alert alert-success " role="alert">'.$message['success_message'].'</div>';
@@ -114,21 +117,23 @@
                                     </span>
                                 </div>
                             </div>
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
-                                        if(isset($data['email'])) 
-                                        {
-                                            echo $data['email'];
-                                        }
-                                    ?>">
-                                    <span class = "text-danger">
-                                        <?php 
-                                        if(isset($errors['email'])) 
-                                        {
-                                            echo $errors['email'];
-                                        }
-                                        ?>
-                                    </span>
+                            <div class="form-group ">
+                                <label for="">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
+                                    if(isset($data['email'])) 
+                                    {
+                                        echo $data['email'];
+                                    }
+                                ?>">
+                                <span class = "text-danger">
+                                    <?php 
+                                    if(isset($errors['email'])) 
+                                    {
+                                        echo $errors['email'];
+                                    }
+                                    ?>
+                                </span>
+                            </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label for="">Password</label>

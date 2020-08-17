@@ -63,7 +63,7 @@
                     <div id="ui">
                     <img src="img/stuavater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
                     <h1 class="text-center">STUDENTS LOGIN</h1>
-                        <form action="submit/stulogin-submit.php" method="POST" class="form-group text-center">
+                        <form action="submit/stulogin-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
                                     echo '<div class="alert alert-success " role="alert">'.$message['success_message'].'</div>';

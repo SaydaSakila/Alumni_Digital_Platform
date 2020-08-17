@@ -67,7 +67,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="index.php" class="scrollto">Alumni Digital Platform</a></h1>
+        <h1><a href="index.php" class="scrollto"><img src="img/logoadp.png" alt="Avatar" style="width:50px;height:50px;"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>

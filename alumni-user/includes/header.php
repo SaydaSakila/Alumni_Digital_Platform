@@ -17,7 +17,7 @@
       unset($_SESSION['success']);
   }
     $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
+    $name = $_SESSION['username'];
 
     $db = new Database();
     //var_dump($db);die();
@@ -69,7 +69,7 @@
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
-        <h1><a href="../index.php" class="scrollto">Alumni Digital Platform</a></h1>
+        <h1><a href="../index.php" class="scrollto"><img src="../alumni-user/img/logoadp.png" alt="Avatar" style="width:50px;height:50px;"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
       </div>
@@ -81,7 +81,6 @@
           <li><a href="#services">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="">Blog</a>
             <ul>
-              <li><a href="category-add.php">Add Category</a></li>
               <li><a href="post-add.php">Post Blog</a></li>
               <li><a href="#view blog">View Blogs</a></li>
             </ul>
