@@ -81,8 +81,8 @@
           <li><a href="#services">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="">Blog</a>
             <ul>
-              <li><a href="">Add Category</a></li>
-              <li><a href="post-add copy.php">Post Blog</a></li>
+              <li><a href="category-add.php">Add Category</a></li>
+              <li><a href="post-add.php">Post Blog</a></li>
             </ul>
           </li>
           <li><a href="#team">Events</a></li>
@@ -92,8 +92,8 @@
               <i class="fas fa-sign-out-alt"></i>
             </a>
           </li>
-          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?></a> 
-          <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;">
+          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?> <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a> 
+          
 
           </li>
         </ul>

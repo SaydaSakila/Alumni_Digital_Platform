@@ -88,8 +88,8 @@
               <i class="fas fa-sign-out-alt"></i>
             </a>
           </li>
-          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?></a>
-          <img src="../student-user/img/stuavater.png" alt="Avatar" style="width:30px;height:30px;"> 
+          <li class="menu-has-children"><a href="edit-userreg.php?edit=<?php echo $id; ?>"> <?php echo $name; ?> <img src="../student-user/img/stuavater.png" alt="Avatar" style="width:30px;height:30px;"></a>
+           
           </li>
         </ul>
       </nav><!-- #nav-menu-container -->

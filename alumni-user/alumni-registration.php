@@ -65,8 +65,8 @@
                 <div class="col-lg-3"> </div>
                 <div class="col-lg-6"> 
                     <div id="ui">
-                    <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
-                    <h3 class="text-center">ALUMNI REGISTRATION</h3>
+                        <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
+                        <h3 class="text-center">ALUMNI REGISTRATION</h3>
                         <form action="submit/alu-register-submit.php" method="POST" class="form-group text-center">
                             <?php 
                                 if (isset($message['success_message'])) {

@@ -11,11 +11,13 @@
 ?>
 
 
-    <div class="row">
+    <div class="row" style="background-image: url('assets/img/5.jpg');background-size: cover;
+                        background-position: center center;
+                        background-attachment: fixed;">
         <div class="col-md-6 offset-md-3">
-        <div class="card" style="padding:10%;">
+        <div class="card" style="margin-top:100px;margin-bottom:70px;">
             <div class="card-header">
-                <h3 style="text-align:center" class="card-title">Create Blog</h3>
+                <h3 style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title">Create Blog</h3>
                 
             </div>
             <div class="card-body">

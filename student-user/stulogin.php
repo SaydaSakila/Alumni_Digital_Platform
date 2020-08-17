@@ -73,24 +73,26 @@
                                 }
                               
                             ?>
-                            
-                                    <label for="">University ID</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
-                                    if(isset($data['username'])) 
-                                    {
-                                        echo $data['username'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['username'])) 
-                                    {
-                                        echo $errors['username'];
-                                    }
-                                ?>
-                                </span>
-                                
-                               
+                                <div class="form-group">
+
+                                     <label for="">University ID</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                        if(isset($data['username'])) 
+                                        {
+                                            echo $data['username'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                    <?php 
+                                        if(isset($errors['username'])) 
+                                        {
+                                            echo $errors['username'];
+                                        }
+                                    ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+
                                     <label for="">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
@@ -108,7 +110,7 @@
                                         }
                                         ?>
                                     </span><br>
-                         
+                                </div>
                                 <input type="submit"  name="stulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
