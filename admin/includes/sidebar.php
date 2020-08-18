@@ -122,13 +122,19 @@
             <li class="nav-item">
               <a href="posts.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Admin Blogs</p>
+                <p>Admins Blog</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="uposts.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Alumni Blogs</p>
+                <p>Alumnis Blog</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="sposts.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Students Blog</p>
               </a>
             </li>
           </ul>

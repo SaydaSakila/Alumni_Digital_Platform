@@ -3,11 +3,11 @@
     // header include
     include dirname(__FILE__). '/includes/header.php';
  
-    $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
-            LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id";
+    $query = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
+            LEFT JOIN categories ON sposts.category_id=categories.id 
+            LEFT JOIN students ON sposts.student_id=students.id";
     $posts = $db->getData($query);
-    $user_id= $_SESSION['id'];
+    $student_id= $_SESSION['id'];
 
     
 ?>
@@ -56,10 +56,10 @@
                         </div>
                         <div class="card-footer">
                           
-                                <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
+                                <li class="list-group-item">Posted By : <?php echo $post['student_name']; ?></li>
                                 <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
                                 <?php 
-                                    if($post['user_id']==$user_id){?>  
+                                    if($post['student_id']==$student_id){?>  
                                     <li class="list-group-item"><a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
                                     <a href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a></li>
                                         

@@ -75,6 +75,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="uposts.php" class="nav-link">Alumni Blog List</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="sposts.php" class="nav-link">Student Blog List</a>
+      </li>
     </ul>
 
     <!-- SEARCH FORM -->

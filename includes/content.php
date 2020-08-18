@@ -176,7 +176,7 @@
       <div class="container">
 
         <header class="section-header wow fadeInUp">
-          <h3>Services</h3>
+          <h3>Career Opportunity</h3>
           <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
         </header>
 
@@ -535,7 +535,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     <section id="team">
       <div class="container">
         <div class="section-header wow fadeInUp">
-          <h3>Team</h3>
+          <h3>Events</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
