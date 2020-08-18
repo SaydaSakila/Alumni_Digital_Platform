@@ -53,7 +53,7 @@
                                             <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
                                             <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
                                         </ul>
-                                    
+                                    </div>
                                 </div><br>
                     <?php
                             }

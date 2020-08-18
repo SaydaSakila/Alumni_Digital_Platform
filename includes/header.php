@@ -74,7 +74,7 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
           <li><a href="posts.php">Blog</a></li>
