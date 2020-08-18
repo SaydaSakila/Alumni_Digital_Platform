@@ -333,6 +333,12 @@
             </ul>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12">
+         
+              <a href="login.php" class="btn btn-success btn-block"  >Add New Blog</a>
+          </div>
+        </div>
         
 
 <!-- ######### Try -->

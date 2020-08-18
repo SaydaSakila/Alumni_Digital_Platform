@@ -14,7 +14,7 @@
     <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
                             background-attachment: fixed;">>
-        <div class="col-sm" style="margin-top:150px;margin-left:50px;margin-right:30px;margin-bottom:50px;
+        <div class="col-sm" style="margin-top:150px;margin-left:150px;margin-right:150px;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
             <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
                                     border-radius:10px;">-->
