@@ -47,7 +47,13 @@
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                         <div class="card-header">
-                            <?php echo $post['title']; ?>
+                            <?php echo $post['title']; 
+                           
+                                    if($post['student_id']==$student_id){?>  
+                                  <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i>Edit</a>
+                                    <a href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</a>
+                                        
+                                <?php }?>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $post['category_name']; ?></h5>
@@ -58,12 +64,11 @@
                           
                                 <li class="list-group-item">Posted By : <?php echo $post['student_name']; ?></li>
                                 <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
-                                <?php 
-                                    if($post['student_id']==$student_id){?>  
-                                    <li class="list-group-item"><a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                    <a href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a></li>
-                                        
-                                <?php }?>
+                                
+                                <li class="list-group-item"><form action="" id="usrform" >
+                                    <input type="text" name="comment" placeholder="Enter Your Comments">
+                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                </form></li>
                         </div>
                 </div>
             </div>

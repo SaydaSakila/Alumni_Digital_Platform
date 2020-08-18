@@ -13,8 +13,7 @@
         $subject = $_POST['subject'];
         $message = $_POST['message'];
         if ($name && $email  && $subject && $message)
-        {
-                
+        {    
                 // store register
                 $insert_query = "INSERT into contacts (`name`, `email`, `subject`, `message`) 
                     VALUES('$name', '$email', '$subject', '$message' )";
@@ -30,12 +29,7 @@
                 }
                 $_SESSION['success'] = $success;
                 header('location:../index.php');*/
-
-            
-           
         }
-        
     } 
-
 ?>
 

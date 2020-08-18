@@ -371,6 +371,10 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                           
                                 <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
                                 <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
+                                <li class="list-group-item"><form action="login.php" id="usrform" >
+                                    <input type="text" name="comment" placeholder="Enter Your Comments">
+                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                </form></li>
                         </div>
                 </div>
             </div>
