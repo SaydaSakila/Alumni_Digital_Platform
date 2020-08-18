@@ -1,6 +1,6 @@
 <?php 
   //database file include
-  //include dirname(__FILE__).'/../../database/database.php';
+  include dirname(__FILE__).'/../database/database.php';
 
   session_start();
   /*if (isset($_SESSION['username'])) {
@@ -17,7 +17,7 @@
       unset($_SESSION['success']);
   }
 
-    //$db = new Database();
+    $db = new Database();
     //var_dump($db);die();
 
 ?>
@@ -77,7 +77,7 @@
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
-          <li><a href="#portfolio">Blog</a></li>
+          <li><a href="posts.php">Blog</a></li>
           <li><a href="#team">Events</a></li>
           <li><a href="#contact">Contact</a></li>
           <li class="menu-has-children"><a href="">LOG-IN</a>

@@ -48,6 +48,7 @@
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/   SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -86,7 +87,7 @@
           <li class="menu-has-children"><a href="">Blog</a>
             <ul>
               <li><a href="post-add.php">Post Blog</a></li>
-              <li><a href="#view blog">View Blogs</a></li>
+              <li><a href="posts.php">View Blogs</a></li>
             </ul>
           </li>
           <li><a href="#team">Events</a></li>
