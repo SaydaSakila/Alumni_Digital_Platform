@@ -641,7 +641,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="contact-address">
               <i class="ion-ios-location-outline"></i>
               <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+              <address>Uttara, Dhaka-1230</address>
             </div>
           </div>
 
@@ -649,7 +649,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="contact-phone">
               <i class="ion-ios-telephone-outline"></i>
               <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+              <p><a href="tel:+155895548855">+8801622064668</a></p>
             </div>
           </div>
 
@@ -657,7 +657,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
+              <p><a href="mailto:info@example.com">16303029@iubat.edu</a></p>
             </div>
           </div>
 
@@ -665,8 +665,8 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
 
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
+          <div id="errormessage">Message Sent Failed</div>
+          <form action="../../submit/contact-submit.php" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -685,7 +685,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            <div class="text-center"><button type="submit" name="contact_submit" value="Send Message">Send Message</button>
+                
+            </div>
           </form>
         </div>
 
