@@ -77,6 +77,7 @@
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
+          <li><a href="#portfolio">HomeBlog</a></li>
           <li><a href="posts.php">Blog</a></li>
           <li><a href="#team">Events</a></li>
           <li><a href="#contact">Contact</a></li>

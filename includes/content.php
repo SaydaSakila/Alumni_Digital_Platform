@@ -320,7 +320,7 @@
       <div class="container">
 
         <header class="section-header">
-          <h3 class="section-title">Our Portfolio</h3>
+          <h3 class="section-title">Blogs</h3>
         </header>
 
         <div class="row">
@@ -333,10 +333,61 @@
             </ul>
           </div>
         </div>
+        
 
-        <div class="row portfolio-container">
+<!-- ######### Try -->
+<?php 
+$query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
+            LEFT JOIN categories ON uposts.category_id=categories.id 
+            LEFT JOIN users ON uposts.user_id=users.id";
+    $posts = $db->getData($query);
+?>
+        <div class="row ">
+            <?php
+                if ($posts) 
+                {
+                  while($post = $posts->fetch_assoc()) 
+                  {
+              ?>
+                                    
+            <div class="col-sm-4 "  >
+                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                        <div class="card-header">
+                            <?php echo $post['title']; ?>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $post['category_name']; ?></h5>
+                            <p class="card-text"><?php echo $post['content']; ?>
+                            
+                        </div>
+                        <div class="card-footer">
+                          
+                                <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
+                                <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
+                        </div>
+                </div>
+            </div>
+                                  
+              <?php
+                  }
+                ?>
+                <?php
+                  } 
+                  else 
+                  {
+                ?>
+                    <div class="card text-center"><p>No Blog found</p></div>
+                <?php
+                  }
+                ?>
+        </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+<!-- ######### Try -->
+<!--==========================
+      Portfolio Section
+    ============================--> 
+<!--          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
             <div class="portfolio-wrap">
               <figure>
                 <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
@@ -345,7 +396,7 @@
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
+                <h4><a href="#">App #</a></h4>
                 <p>App</p>
               </div>
             </div>
@@ -468,12 +519,14 @@
                 <h4><a href="#">Web 1</a></h4>
                 <p>Web</p>
               </div>
-            </div>
+            </div>-->
           </div>
 
         </div>
 
       </div>
+
+
     </section><!-- #portfolio -->
 
     <!--==========================
