@@ -41,7 +41,8 @@
   <link rel="stylesheet" href="assets/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <!-- include summernote css/js -->
+
+ <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
  
@@ -69,7 +70,10 @@
         <a href="student-list.php" class="nav-link">Student List</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="posts.php" class="nav-link">Blog List</a>
+        <a href="posts.php" class="nav-link">Admin Blog List</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="uposts.php" class="nav-link">Alumni Blog List</a>
       </li>
     </ul>
 
