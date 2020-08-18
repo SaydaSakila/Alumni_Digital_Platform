@@ -7,7 +7,7 @@
 
     if (isset($_POST['post_submit'])) {
         $title = htmlspecialchars(trim($_POST['title']));
-        $content = htmlspecialchars(trim($_POST['content']));
+        $content = $_POST['content'];
         $category = htmlspecialchars(trim($_POST['category']));
 
         if ($title && $content && $category) {

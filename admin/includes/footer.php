@@ -26,5 +26,14 @@
 <script src="assets/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/js/demo.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote();
+    });
+  </script>
+
 </body>
 </html>

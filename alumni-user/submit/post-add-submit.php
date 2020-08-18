@@ -7,13 +7,13 @@
 
     if (isset($_POST['alu-post_submit'])) {
         $title = htmlspecialchars(trim($_POST['title']));
-        $content = htmlspecialchars(trim($_POST['content']));
+        $content = $_POST['content'];
         $category = htmlspecialchars(trim($_POST['category']));
 
         if ($title && $content && $category) {
             //$admin_id = $_SESSION['admin_id'];
-            $user_id = $_SESSION['user_id'];
-
+            $user_id = $_SESSION['id'];
+           
             // store Post
             $query = "INSERT INTO uposts (category_id, user_id, title, content) VALUES('$category', '$user_id', '$title', '$content')";
             //$query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";

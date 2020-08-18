@@ -42,7 +42,10 @@
                     }
                     #ui{
                         background-color:#333;
-                        padding:30px;
+                        padding-left:30px;
+                        padding-right:30px;
+                        padding-top:30px;
+                        padding-bottom:2px;
                         margin-top:40px;
                         border-radius:10px;
                         opacity:0.9;
@@ -200,10 +203,9 @@
                                                 echo $err['passingyear'];
                                             }
                                         ?>
-                                    </span>
+                                    </span><br>
                                 </div>
                             </div>
-                            
                            
                                 <input type="submit"  name="alumniregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>
                             <div class="row">

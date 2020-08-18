@@ -32,7 +32,7 @@
                     <h3 class="card-title" style="text-align:center;color:#fff;">Edit User Information - Alumni</h3>
                 </div>
                 <form action="update-userreg.php" method="POST">
-                    <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>
+                   
                     <div class="card-body">
                         <?php 
                             if (isset($message['success_message'])) {

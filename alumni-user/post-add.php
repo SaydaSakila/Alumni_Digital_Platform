@@ -12,9 +12,9 @@
                         background-position: center center;
                         background-attachment: fixed;">
         <div class="col-md-6 offset-md-3">
-            <div class="container" style="margin-top:100px;margin-bottom:70px;background-color:#333;
+            <div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#899;
                                 border-radius:10px;
-                                opacity:0.9;">
+                                ">
                 <div class="card-header">
                     <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Blog</h3>
                     <div class="card-header-action">
@@ -44,8 +44,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="" style="color:#fff">Content</label>
-                            <textarea name="content" id="summernote" rows="5" class="form-control" placeholder="Enter Blog Content"></textarea>
+                            <label for="" >Content</label>
+                            <textarea name="content" id="summernote" rows="5" class="form-control"  placeholder="Enter Blog Content"></textarea>
                             <span class="text-danger">
                                 <?php 
                                     if(isset($err['content'])) {
@@ -53,11 +53,7 @@
                                     }
                                 ?>
                             </span>
-                            <script>
-                                $(document).ready(function() {
-                                    $('#summernote').summernote();
-                                });
-                            </script>
+                            
                         </div>
 
                         <div class="form-group">

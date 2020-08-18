@@ -35,7 +35,13 @@
                 $_SESSION['errors'] = $errors;
                 header('location:../alumni-registration.php');
             }
-            if($password==$confpassword)
+            if(strlen($password)<8)
+            {
+                $errors['password']='Your Password must contain at least 8 or more characters';
+                $_SESSION['errors'] = $errors;
+                header('location:../alumni-registration.php');
+            }
+            else if($password==$confpassword)
             {
                 $password = sha1($_POST['password']);
                 

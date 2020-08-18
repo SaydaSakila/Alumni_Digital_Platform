@@ -42,7 +42,10 @@
                     }
                     #ui{
                         background-color:#333;
-                        padding:30px;
+                        padding-left:30px;
+                        padding-right:30px;
+                        padding-top:30px;
+                        padding-bottom:2px;
                         margin-top:40px;
                         border-radius:10px;
                         opacity:0.9;
@@ -172,6 +175,8 @@
                                     </span>
                                 </div>
                             </div>
+                                <div class="form-group ">
+
                                     <label for="_batch">Batch</label>
                                     <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch" value="<?php 
                                                 if(isset($data['batch'])) 
@@ -186,7 +191,7 @@
                                             }
                                         ?>
                                     </span><br>
-                                                            
+                                </div>                            
                            
                                 <input type="submit"  name="studentregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>
                             <div class="row">

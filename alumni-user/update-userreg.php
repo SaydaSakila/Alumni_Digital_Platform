@@ -12,7 +12,7 @@
 
     if(isset($_POST['update-alu']))
 	{
-        $id = $_POST['id'];
+        $id = $_SESSION['id'];
         $name = $_POST['name'];
         $email = $_POST['email'];
         $username = $_POST['username'];
