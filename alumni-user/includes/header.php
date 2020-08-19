@@ -88,7 +88,9 @@
           <li class="menu-has-children"><a href="#portfolio">Blog</a>
             <ul>
               <li><a href="post-add.php">Post Blog</a></li>
-              <li><a href="posts.php">View Blogs</a></li>
+              <!--<li><a href="posts.php">View Blogs</a></li>-->
+              <li><a href="#portfolio">All Blogs</a></li>
+
             </ul>
           </li>
           <li class="menu-has-children"><a href="#team">Events</a>
@@ -97,9 +99,8 @@
               <li><a href="">View Events</a></li>
             </ul>
           </li>
-          <li><a href="#team">Events</a></li>
           
-          <li class="menu-has-children"><a href=""><?php echo $name; ?> 
+          <li class="menu-has-children"><a href="#home"><?php echo $name; ?> 
               <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
               <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">EDIT PROFILE</a></li>

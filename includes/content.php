@@ -764,7 +764,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage">Message Sent Failed</div>
-          <form action="../submit/contact-submit.php" method="post" role="form" class="contactForm">
+          <form action="/submit/contact-submit.php" method="post" role="form" class="contactForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />

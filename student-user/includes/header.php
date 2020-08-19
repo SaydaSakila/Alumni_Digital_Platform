@@ -87,7 +87,8 @@
           <li class="menu-has-children"><a href="#portfolio">Blog</a>
             <ul>
               <li><a href="post-add.php">Post Blog</a></li>
-              <li><a href="posts.php">View Blogs</a></li>
+              <!--<li><a href="posts.php">View Blogs</a></li>-->
+              <li><a href="#portfolio">All Blogs</a></li>
             </ul>
           </li>
           <li><a href="#team">Events</a></li> 
