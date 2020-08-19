@@ -61,8 +61,8 @@
                         </div>
                         <div class="card-footer">
                           
-                                <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
-                                <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
+                                <li class="list-group-item">By: <?php echo $post['user_name']; ?> (<?php echo $post['created_at']; ?>)</li>
+                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                             
                                 <li class="list-group-item"><form action="" id="usrform" >
                                     <input type="text" name="comment" placeholder="Enter Your Comments">

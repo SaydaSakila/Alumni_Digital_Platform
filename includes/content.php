@@ -356,7 +356,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                   {
               ?>
                                     
-            <div class="col-sm-4 portfolio-item filter-app"  >
+            <div class="col-sm-4 "  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                         <div class="card-header">
@@ -369,8 +369,8 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                         <div class="card-footer">
                           
-                                <li class="list-group-item">Posted By : <?php echo $post['user_name']; ?></li>
-                                <li class="list-group-item">Post Time : <?php echo $post['created_at']; ?></li>
+                                <li class="list-group-item">By: <?php echo $post['user_name']; ?> (<?php echo $post['created_at']; ?>)</li>
+                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                                 <li class="list-group-item"><form action="login.php" id="usrform" >
                                     <input type="text" name="comment" placeholder="Enter Your Comments">
                                     <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
