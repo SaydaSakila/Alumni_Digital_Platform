@@ -352,17 +352,28 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
 
  
   //student blog
-    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
+    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as user_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
             LEFT JOIN students ON sposts.student_id=students.id";
     $posts1 = $db->getData($query1);
     //$student_id= $_SESSION['id'];
 
     //admin blog
-    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
+    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as user_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
             LEFT JOIN admins ON posts.admin_id=admins.id";
     $posts2 = $db->getData($query2);
+   /* $UnionJoinPosts= "SELECT 'Alumni' as  title, content, user_name, created_at
+                      FROM $query
+                      UNION
+                      SELECT 'Student', title, content, user_name, created_at
+                      FROM $query1
+                      UNION
+                      SELECT 'Admin', title, content, user_name, created_at
+                      FROM $query2
+                      Order by created_at DESC";   
+     $posts4 = $db->getData($UnionJoinPosts);*/
+
 ?>
         <div class="row ">
             <?php
@@ -385,7 +396,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                         <div class="card-footer">
                           
-                                <li class="list-group-item">By: <?php echo $post['user_name']; ?> (<?php echo $post['created_at']; ?>)</li>
+                                <li class="list-group-item">By: <?php echo $post['user_name']; ?>, (<?php echo $post['created_at']; ?>)</li>
                               <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                                 <li class="list-group-item"><form action="login.php" id="usrform" >
                                     <input type="text" name="comment" placeholder="Enter Your Comments">
@@ -421,7 +432,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         <div class="card-footer">
                           
                                 
-                                <li class="list-group-item">By: <?php echo $post1['student_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
+                                <li class="list-group-item">By: <?php echo $post1['user_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
                               <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                                 
                                 <li class="list-group-item"><form action="" id="usrform" >
@@ -455,7 +466,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                         <div class="card-footer">
                           
-                                <li class="list-group-item">By: <?php echo $post2['admin_name']; ?> (<?php echo $post2['created_at']; ?>)</li>
+                                <li class="list-group-item">By: <?php echo $post2['user_name']; ?> (<?php echo $post2['created_at']; ?>)</li>
                               <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                                 <li class="list-group-item"><form action="login.php" id="usrform" >
                                     <input type="text" name="comment" placeholder="Enter Your Comments">
@@ -755,16 +766,43 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
 <?php 
       $db = new Database();
   
+   // session_start();
+    if (isset($_SESSION['errors'])) 
+    {
+        $errors = $_SESSION['errors'];
+        unset($_SESSION['errors']);
+    }
+    if(isset($_SESSION['success']))
+    {
+      $message = $_SESSION['success'];
+      unset($_SESSION['success']);
+    }
     if(isset($_SESSION['old_data']))
     {
       $data = $_SESSION['old_data'];
       unset($_SESSION['old_data']);
     }
+
+    //if(isset($_SESSION['old_data']))
+   // {
+   //   $data = $_SESSION['old_data'];
+  //    unset($_SESSION['old_data']);
+  //  }
 ?>
         <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage">Message Sent Failed</div>
-          <form action="/submit/contact-submit.php" method="post" role="form" class="contactForm">
+        <!--  <div id="sendmessage">Your message has been sent. Thank you!</div>-->
+        <!--  <div id="errormessage">Message Sent Failed</div>-->
+         
+          <form action="submit/contact-submit.php" method="post" role="form" class="contactForm">
+          <?php 
+                                if (isset($message['success_message'])) {
+                                    echo '<div class="alert alert-success " role="alert">'.$message['success_message'].'</div>';
+                                }
+                                if (isset($message['error_message'])) {
+                                    echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
+                                }
+                              
+                            ?>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -783,10 +821,11 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
               <div class="validation"></div>
             </div>
-            <div class="text-center"><button type="submit" name="contact_submit" value="Send Message">Send Message</button>
+            <div class="text-center"><button type="submit" name="contact_submit" value="Send_Message">Send Message</button>
                 
             </div>
           </form>
         </div>
 
       </div>
+      
