@@ -327,9 +327,9 @@
           <div class="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Academic</li>
+              <li data-filter=".filter-card">Career</li>
+              <li data-filter=".filter-web">Others</li>
             </ul>
           </div>
         </div>
@@ -356,7 +356,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                   {
               ?>
                                     
-            <div class="col-sm-4 "  >
+            <div class="col-sm-4 portfolio-item filter-app"  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                         <div class="card-header">
