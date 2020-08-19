@@ -343,10 +343,20 @@
 
 <!-- ######### Try -->
 <?php 
+//alumni blog
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
             LEFT JOIN users ON uposts.user_id=users.id";
     $posts = $db->getData($query);
+    //$user_id= $_SESSION['id'];
+
+ 
+  //student blog
+    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
+            LEFT JOIN categories ON sposts.category_id=categories.id 
+            LEFT JOIN students ON sposts.student_id=students.id";
+    $posts1 = $db->getData($query1);
+    //$student_id= $_SESSION['id'];
 ?>
         <div class="row ">
             <?php
@@ -381,9 +391,46 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                   
               <?php
                   }
-                ?>
-                <?php
+             
                   } 
+
+                if ($posts1) 
+                {
+                  while($post1 = $posts1->fetch_assoc()) 
+                  {
+              ?>
+                                    
+            <div class="col-sm-4 "  >
+                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                        <div class="card-header">
+                            <?php echo $post1['category_name']; ?>
+                           
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $post1['title']; ?></h5>
+                            <p class="card-text"><?php echo $post1['content']; ?>
+                            
+                        </div>
+                        <div class="card-footer">
+                          
+                                
+                                <li class="list-group-item">By: <?php echo $post1['student_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
+                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                
+                                <li class="list-group-item"><form action="" id="usrform" >
+                                    <input type="text" name="comment" placeholder="Enter Your Comments">
+                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                </form></li>
+                        </div>
+                </div>
+            </div>
+                                  
+              <?php
+                    }
+              
+                  } 
+
                   else 
                   {
                 ?>
@@ -666,7 +713,14 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
           </div>
 
         </div>
-
+<?php 
+   
+    if(isset($_SESSION['old_data']))
+    {
+      $data = $_SESSION['old_data'];
+      unset($_SESSION['old_data']);
+    }
+?>
         <div class="form">
           <div id="sendmessage">Your message has been sent. Thank you!</div>
           <div id="errormessage">Message Sent Failed</div>
