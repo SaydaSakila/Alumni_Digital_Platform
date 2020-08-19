@@ -83,9 +83,11 @@
 
   <main id="main">
 
+
     <!--==========================
       Featured Services Section
     ============================-->
+    <!--
     <section id="featured-services">
       <div class="container">
         <div class="row">
@@ -110,7 +112,9 @@
 
         </div>
       </div>
-    </section><!-- #featured-services -->
+    </section> -->
+<!-- #featured-services -->
+
 
     <!--==========================
       About Us Section
@@ -127,9 +131,9 @@
 
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
-              <div class="img">
+              <div class="card">
                 <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                <div class="icon"><a href="#"><i class="ion-ios-speedometer-outline"></i></a></div>
               </div>
               <h2 class="title"><a href="#">Our Mission</a></h2>
               <p>
@@ -179,7 +183,7 @@
           <h3>Career Opportunity</h3>
           <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
         </header>
-
+<!--
         <div class="row">
 
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
@@ -214,24 +218,28 @@
           </div>
 
         </div>
-
+-->
       </div>
     </section><!-- #services -->
 
     <!--==========================
       Call To Action Section
     ============================-->
+    <!--
     <section id="call-to-action" class="wow fadeIn">
       <div class="container text-center">
         <h3>Call To Action</h3>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <a class="cta-btn" href="#">Call To Action</a>
       </div>
-    </section><!-- #call-to-action -->
+    </section>
+    -->
+    <!-- #call-to-action -->
 
     <!--==========================
       Skills Section
     ============================-->
+    <!--
     <section id="skills">
       <div class="container">
 
@@ -270,10 +278,11 @@
 
       </div>
     </section>
-
+-->
     <!--==========================
       Facts Section
     ============================-->
+    <!--
     <section id="facts"  class="wow fadeIn">
       <div class="container">
 
@@ -311,7 +320,9 @@
         </div>
 
       </div>
-    </section><!-- #facts -->
+    </section>
+    -->
+    <!-- #facts -->
 
     <!--==========================
       Portfolio Section
@@ -777,17 +788,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
     }
-    if(isset($_SESSION['old_data']))
-    {
-      $data = $_SESSION['old_data'];
-      unset($_SESSION['old_data']);
-    }
-
-    //if(isset($_SESSION['old_data']))
-   // {
-   //   $data = $_SESSION['old_data'];
-  //    unset($_SESSION['old_data']);
-  //  }
+  
 ?>
         <div class="form">
         <!--  <div id="sendmessage">Your message has been sent. Thank you!</div>-->

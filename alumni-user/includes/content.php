@@ -83,9 +83,11 @@
 
   <main id="main">
 
+
     <!--==========================
       Featured Services Section
     ============================-->
+    <!--
     <section id="featured-services">
       <div class="container">
         <div class="row">
@@ -110,7 +112,9 @@
 
         </div>
       </div>
-    </section><!-- #featured-services -->
+    </section> -->
+<!-- #featured-services -->
+
 
     <!--==========================
       About Us Section
@@ -127,9 +131,9 @@
 
           <div class="col-md-4 wow fadeInUp">
             <div class="about-col">
-              <div class="img">
+              <div class="card">
                 <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                <div class="icon"><a href="#"><i class="ion-ios-speedometer-outline"></i></a></div>
               </div>
               <h2 class="title"><a href="#">Our Mission</a></h2>
               <p>
@@ -176,10 +180,10 @@
       <div class="container">
 
         <header class="section-header wow fadeInUp">
-          <h3>Services</h3>
+          <h3>Career Opportunity</h3>
           <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
         </header>
-
+<!--
         <div class="row">
 
           <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
@@ -214,24 +218,28 @@
           </div>
 
         </div>
-
+-->
       </div>
     </section><!-- #services -->
 
     <!--==========================
       Call To Action Section
     ============================-->
+    <!--
     <section id="call-to-action" class="wow fadeIn">
       <div class="container text-center">
         <h3>Call To Action</h3>
         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <a class="cta-btn" href="#">Call To Action</a>
       </div>
-    </section><!-- #call-to-action -->
+    </section>
+    -->
+    <!-- #call-to-action -->
 
     <!--==========================
       Skills Section
     ============================-->
+    <!--
     <section id="skills">
       <div class="container">
 
@@ -270,10 +278,11 @@
 
       </div>
     </section>
-
+-->
     <!--==========================
       Facts Section
     ============================-->
+    <!--
     <section id="facts"  class="wow fadeIn">
       <div class="container">
 
@@ -311,7 +320,9 @@
         </div>
 
       </div>
-    </section><!-- #facts -->
+    </section>
+    -->
+    <!-- #facts -->
 
  <!--==========================
       Portfolio Section
@@ -346,7 +357,7 @@
 //alumni blog
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id";
+            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 
@@ -354,14 +365,14 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
   //student blog
     $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id ORDER BY id DESC";
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
     //admin blog
     $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
+            LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
     $posts2 = $db->getData($query2);
 ?>
         <div class="row ">
@@ -375,28 +386,33 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="col-sm-4 "  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post['category_name'];  
-                                    if($post['user_id']==$user_id){?>  
-                                    <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" >Edit</a>
-                                    <a href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" >Delete</a>
+                         <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                        <p class="card-text"><?php echo $post['content']; ?>
                                         
-                                <?php }?>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                            <p class="card-text"><?php echo $post['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post['user_name']; ?> (<?php echo $post['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                        <?php /*echo $post['category_name']; */ 
+                                                if($post['user_id']==$user_id){?>  
+                                                <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                    
+                                            <?php }?>
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
                 </div>
             </div>
                                   
@@ -405,80 +421,6 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
              
                   } 
 
-                if ($posts1) 
-                {
-                  while($post1 = $posts1->fetch_assoc()) 
-                  {
-              ?>
-                                    
-            <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post1['category_name']; 
-                           
-                                    if($post1['student_id']==$student_id){?>  
-                                  <a href="edit-post.php?edit=<?php echo $post1['id']; ?>" style="float:right;" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i>Edit</a>
-                                    <a href="delete-post.php?delete=<?php echo $post1['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</a>
-                                        
-                                <?php }?>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post1['title']; ?></h5>
-                            <p class="card-text"><?php echo $post1['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                
-                                <li class="list-group-item">By: <?php echo $post1['student_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                
-                                <li class="list-group-item"><form action="" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
-                                  
-              <?php
-                    }
-              
-                  }
-                  if ($posts2) 
-                {
-                  while($post2 = $posts2->fetch_assoc()) 
-                  {
-              ?>
-                                    
-            <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post2['category_name']; ?>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post2['title']; ?></h5>
-                            <p class="card-text"><?php echo $post2['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post2['admin_name']; ?> (<?php echo $post2['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
-                                  
-              <?php
-                  }
-             
-                  } 
 
                   else 
                   {
@@ -638,6 +580,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     <!--==========================
       Clients Section
     ============================-->
+    <!--
     <section id="clients" class="wow fadeInUp">
       <div class="container">
 
@@ -657,11 +600,13 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
         </div>
 
       </div>
-    </section><!-- #clients -->
+    </section>
+    --><!-- #clients -->
 
     <!--==========================
       Clients Section
     ============================-->
+    <!--
     <section id="testimonials" class="section-bg wow fadeInUp">
       <div class="container">
 
@@ -729,7 +674,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
         </div>
 
       </div>
-    </section><!-- #testimonials -->
+    </section>
+    -->
+    <!-- #testimonials -->
 
     <!--==========================
       Team Section
@@ -737,7 +684,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     <section id="team">
       <div class="container">
         <div class="section-header wow fadeInUp">
-          <h3>Team</h3>
+          <h3>Events</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
 
@@ -823,6 +770,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     <!--==========================
       Contact Section
     ============================-->
+    <!--
     <section id="contact" class="section-bg wow fadeInUp">
       <div class="container">
 
@@ -886,3 +834,5 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
         </div>
 
       </div>
+      -->
+      

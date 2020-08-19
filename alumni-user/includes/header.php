@@ -89,7 +89,7 @@
             <ul>
               <li><a href="post-add.php">Post Blog</a></li>
               <!--<li><a href="posts.php">View Blogs</a></li>-->
-              <li><a href="#portfolio">All Blogs</a></li>
+              <li><a href="posts.php">All Blogs</a></li>
 
             </ul>
           </li>
