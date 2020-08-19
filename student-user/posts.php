@@ -47,7 +47,7 @@
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                         <div class="card-header">
-                            <?php echo $post['title']; 
+                            <?php echo $post['category_name']; 
                            
                                     if($post['student_id']==$student_id){?>  
                                   <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i>Edit</a>
@@ -56,7 +56,7 @@
                                 <?php }?>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['category_name']; ?></h5>
+                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
                             <p class="card-text"><?php echo $post['content']; ?>
                             
                         </div>

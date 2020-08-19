@@ -360,10 +360,10 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                         <div class="card-header">
-                            <?php echo $post['title']; ?>
+                            <?php echo $post['category_name']; ?>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['category_name']; ?></h5>
+                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
                             <p class="card-text"><?php echo $post['content']; ?>
                             
                         </div>
