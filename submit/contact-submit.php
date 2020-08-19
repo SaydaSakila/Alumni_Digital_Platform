@@ -16,7 +16,7 @@
         {    
                 // store register
                 $insert_query = "INSERT into contacts (`name`, `email`, `subject`, `message`) 
-                    VALUES('$name', '$email', '$subject', '$message' )";
+                    VALUES ('$name', '$email', '$subject', '$message' )";
                 $run = $db->store($insert_query);
                  //var_dump($run);
                /* if ($run) 
