@@ -77,7 +77,7 @@
                                                 <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
                                                     
                                             <?php }?>
-                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?> </li>
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
                                          <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
                                         
                                           <!--  <li class="list-group-item"><form action="" id="usrform" >

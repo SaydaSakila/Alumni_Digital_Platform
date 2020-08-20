@@ -357,22 +357,22 @@
 //alumni blog
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id";
+            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
     $posts = $db->getData($query);
-    //$user_id= $_SESSION['id'];
+    $user_id= $_SESSION['id'];
 
  
   //student blog
-    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as user_name FROM `sposts` 
+    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id ORDER BY id DESC";
     $posts1 = $db->getData($query1);
     //$student_id= $_SESSION['id'];
 
     //admin blog
-    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as user_name FROM `posts` 
+    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
+            LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
     $posts2 = $db->getData($query2);
    /* $UnionJoinPosts= "SELECT 'Alumni' as  title, content, user_name, created_at
                       FROM $query
@@ -394,28 +394,34 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                   {
               ?>
                                     
-            <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post['category_name']; ?>
+                          <div class="col-sm-4 "  >
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                 <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?></small>
+                                        
+                                        <p class="card-text"><?php echo $post['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                       
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                            <p class="card-text"><?php echo $post['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post['user_name']; ?>, (<?php echo $post['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
                                   
               <?php
                   }
@@ -428,31 +434,34 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                   {
               ?>
                                     
-            <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post1['category_name']; ?>
-                           
+                          <div class="col-sm-4 "  >
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                 <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post1['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post1['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post1['student_name']; ?></small>
+                                        
+                                        <p class="card-text"><?php echo $post1['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                       
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post1['title']; ?></h5>
-                            <p class="card-text"><?php echo $post1['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                
-                                <li class="list-group-item">By: <?php echo $post1['user_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                
-                                <li class="list-group-item"><form action="" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
                                   
               <?php
                     }
@@ -465,27 +474,33 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
             <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post2['category_name']; ?>
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                 <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post2['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post2['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post2['admin_name']; ?></small>
+                                        
+                                        <p class="card-text"><?php echo $post2['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                       
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post2['title']; ?></h5>
-                            <p class="card-text"><?php echo $post2['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post2['user_name']; ?> (<?php echo $post2['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
                                   
               <?php
                   }
