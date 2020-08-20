@@ -395,7 +395,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                                  <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
                                     <div class="card-header">
                                         <?php echo $post['category_name'];?>
@@ -408,7 +408,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         
                                     </div>
                                     <div class="card-footer">
-                                        <a href="first.php">Read More..</a>
+                                        <a href="login.php">Read More..</a>
                                        
                                                 <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
                                          <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
@@ -424,6 +424,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                                   
               <?php
+                break;
                   }
              
                   } 
@@ -435,8 +436,8 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
-                                 <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                                 <img src="img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
                                     <div class="card-header">
                                         <?php echo $post1['category_name'];?>
                                     </div>
@@ -448,7 +449,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         
                                     </div>
                                     <div class="card-footer">
-                                        <a href="first.php">Read More..</a>
+                                        <a href="login.php">Read More..</a>
                                        
                                                 <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
                                          <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
@@ -464,6 +465,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                                   
               <?php
+                break;
                     }
               
                   }
@@ -474,8 +476,8 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
             <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
-                                 <img src="img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                                 <img src="img/portfolio/card1.jpg" class="card-img-top" alt="Card Image">
                                     <div class="card-header">
                                         <?php echo $post2['category_name'];?>
                                     </div>
@@ -487,7 +489,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         
                                     </div>
                                     <div class="card-footer">
-                                        <a href="first.php">Read More..</a>
+                                        <a href="login.php">Read More..</a>
                                        
                                                 <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
                                          <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
@@ -503,6 +505,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                         </div>
                                   
               <?php
+              break;
                   }
              
                   } 
@@ -514,6 +517,12 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                 <?php
                   }
                 ?>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-12">
+         
+              <a href="login.php" class="btn btn-success btn-block"  >View All Blogs</a>
+          </div>
         </div>
 
 <!-- ######### Try -->

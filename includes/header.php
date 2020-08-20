@@ -76,6 +76,7 @@
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
+          <li><a href="user-list.php">Our Alumnus</a></li>
           <li><a href="#services">Career Opportunity</a></li>
           <li><a href="#portfolio">Blog</a></li>
           <!--<li><a href="posts.php">Blog</a></li>-->
