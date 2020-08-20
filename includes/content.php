@@ -402,7 +402,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?></small>
+                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
                                         
                                         <p class="card-text"><?php echo $post['content']; ?>
                                         
@@ -443,7 +443,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post1['title'];?></h5>
-                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post1['student_name']; ?></small>
+                                        <small class="text-muted"><?php $d=strtotime($post1['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post1['student_name']; ?></small>
                                         
                                         <p class="card-text"><?php echo $post1['content']; ?>
                                         
@@ -483,7 +483,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post2['title'];?></h5>
-                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post2['admin_name']; ?></small>
+                                        <small class="text-muted"><?php $d=strtotime($post2['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post2['admin_name']; ?></small>
                                         
                                         <p class="card-text"><?php echo $post2['content']; ?>
                                         

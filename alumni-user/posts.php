@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?></small>
+                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
                                         
                                         <p class="card-text"><?php echo $post['content']; ?>
                                         
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['student_name']; ?></small>
+                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
 
                                         <p class="card-text"><?php echo $post['content']; ?>
                                         

@@ -72,7 +72,7 @@
                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
                     This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago <?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?></small></p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago <?php /*$d=strtotime($post['created_at']);*/ echo date("d M, Y"/*,$d*/); ?></small></p>
                 </div>
                 <div class="card-footer">
                     <form action="" id="usrform" >
