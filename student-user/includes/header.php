@@ -88,10 +88,15 @@
             <ul>
               <li><a href="post-add.php">Post Blog</a></li>
               <!--<li><a href="posts.php">View Blogs</a></li>-->
-              <li><a href="#portfolio">All Blogs</a></li>
+              <li><a href="posts.php">All Blogs</a></li>
             </ul>
           </li>
-          <li><a href="#team">Events</a></li> 
+          <li class="menu-has-children"><a href="#team">Events</a>
+            <ul>
+              <li><a href="">Post Event</a></li>
+              <li><a href="">View Events</a></li>
+            </ul>
+          </li> 
           
           <li class="menu-has-children"><a href=""><?php echo $name; ?> 
               <img src="../student-user/img/stuavater.png" alt="Avatar" style="width:30px;height:30px;"></a>

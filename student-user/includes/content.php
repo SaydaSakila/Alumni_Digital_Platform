@@ -354,10 +354,11 @@
 
 <!-- ######### Try -->
 <?php 
+
 //alumni blog
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id ";
+            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 
@@ -372,91 +373,111 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     //admin blog
     $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id ";
+            LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
     $posts2 = $db->getData($query2);
+
 ?>
         <div class="row ">
             <?php
+            if ($posts1) 
+                {
+                  while($post = $posts1->fetch_assoc()) 
+                  {
+              ?>
+                                    
+            <div class="col-sm-4 "  >
+                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                         <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['student_name']; ?></small>
+                                        
+                                        <p class="card-text"><?php echo $post['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                        <?php /*echo $post['category_name']; */ 
+                                                if($post['student_id']==$student_id){?>  
+                                                <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                    
+                                            <?php }?>
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['student_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
+                </div>
+            </div>
+                                  
+              <?php
+                    break;
+
+                  }
+                  
+                  }
                 if ($posts) 
                 {
                   while($post = $posts->fetch_assoc()) 
                   {
+                    //if ($post === 1) 
+                        //break;
+    
               ?>
                                     
             <div class="col-sm-4 "  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post['category_name'];  
-                                    if($post['user_id']==$user_id){?>  
-                                    <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" >Edit</a>
-                                    <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" >Delete</a>
+                         <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post['user_name']; ?></small>
                                         
-                                <?php }?>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                            <p class="card-text"><?php echo $post['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post['user_name']; ?> (<?php echo $post['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
+                                        <p class="card-text"><?php echo $post['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                        <?php /*echo $post['category_name']; */ 
+                                                if($post['user_id']==$user_id){?>  
+                                                <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                    
+                                            <?php }?>
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
                 </div>
             </div>
                                   
               <?php
+                    break;
+
                   }
              
                   } 
 
-                if ($posts1) 
-                {
-                  while($post1 = $posts1->fetch_assoc()) 
-                  {
-              ?>
-                                    
-            <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post1['category_name']; 
-                           
-                                    if($post1['student_id']==$student_id){?>  
-                                  <a href="edit-post.php?edit=<?php echo $post1['id']; ?>" style="float:right;" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i>Edit</a>
-                                    <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post1['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</a>
-                                        
-                                <?php }?>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post1['title']; ?></h5>
-                            <p class="card-text"><?php echo $post1['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                
-                                <li class="list-group-item">By: <?php echo $post1['student_name']; ?> (<?php echo $post1['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                
-                                <li class="list-group-item"><form action="" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
-                                  
-              <?php
-                    }
-              
-                  }
+                
                   if ($posts2) 
                 {
                   while($post2 = $posts2->fetch_assoc()) 
@@ -464,29 +485,36 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
             <div class="col-sm-4 "  >
-                <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                    <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                        <div class="card-header">
-                            <?php echo $post2['category_name']; ?>
+                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                                 <img src="img/portfolio/card1.jpg" class="card-img-top" alt="Card Image">
+                                    <div class="card-header">
+                                        <?php echo $post2['category_name'];?>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $post2['title'];?></h5>
+                                        <small class="text-muted"><?php /*$d=strtotime("created_at");*/ echo date("d M, Y"/*,$d*/); ?> By: <?php echo $post2['admin_name']; ?></small>
+                                        
+                                        <p class="card-text"><?php echo $post2['content']; ?>
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="first.php">Read More..</a>
+                                       
+                                                <!-- <li class="list-group-item"><?php /*$d=strtotime("created_at");*/ //echo date("d M, Y"/*,$d*/); ?> By: <?php //echo $post['user_name']; ?> </li>
+                                         <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
+                                        
+                                          <!--  <li class="list-group-item"><form action="" id="usrform" >
+                                                <input type="text" name="comment" placeholder="Enter Your Comments">
+                                                <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                            </form></li>
+                                            <li class="list-group-item"><input type="text" class="form-control" name="comment"  placeholder="Enter Your Comments" />&#160;<?php /*echo $post['comments']; */?>
+                                            <input type="submit" class="form-control" name="submit" class="btn btn-success" value="submit" /></li>-->
+                                    </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $post2['title']; ?></h5>
-                            <p class="card-text"><?php echo $post2['content']; ?>
-                            
-                        </div>
-                        <div class="card-footer">
-                          
-                                <li class="list-group-item">By: <?php echo $post2['admin_name']; ?> (<?php echo $post2['created_at']; ?>)</li>
-                              <!--  <li class="list-group-item">Post Time : <?php // echo $post['created_at']; ?></li>-->
-                                <li class="list-group-item"><form action="login.php" id="usrform" >
-                                    <input type="text" name="comment" placeholder="Enter Your Comments">
-                                    <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                                </form></li>
-                        </div>
-                </div>
-            </div>
                                   
               <?php
+                break;
                   }
              
                   } 
@@ -498,6 +526,12 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                 <?php
                   }
                 ?>
+        </div><br>
+        <div class="row">
+          <div class="col-lg-12">
+         
+              <a href="posts.php" class="btn btn-success btn-block"  >Read All Blogs</a>
+          </div>
         </div>
 
 <!-- ######### Try -->
