@@ -7,84 +7,96 @@
     $users = $db->getData($query); 
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
 <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
                             background-attachment: fixed;">
-                            
-<div class="col-sm" style="margin-top:150px;margin-left:80px;margin-right:50px;margin-bottom:50px;
-                                    border-radius:10px;box-sizing: border-box;">
-<div class="card" style="backgroung-color:#333;">
-    <div class="card-header">
-        <h3  style="border:2px solid #5c5c5e; border-radius:5px; margin-top:100px;padding: 5px;" class="card-title" ><b>Alumni List </b> </h3>
-        
-        
-        
-    </div>
-    <div class="card-body">
-        <?php 
-
-        if (isset($_SESSION['message'])): ?>
-        <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
-            <?php 
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-            ?>
-        </div>
-        <?php endif ?>
-
-        <table class="table table-bordered" style="text-align:center;">
-            <thead >
-                <tr>
-                    <th colspan="11" style="background: #17a2b8; color:white;"><h4><b>Alumnus Record</b></h4></th>
-                </tr>
-
-                <tr >
-                    <!--<th>ID</th>-->
-                    <th>University ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Job Location</th>
-                    <th>Batch</th>
-                    <th>Passing_Year</th>
-                    <th>Photo</th> 
-                    
-                </tr>
-            </thead>
-            <tbody>
+        <div class="container" style="margin-top:150px;margin-bottom:50px;
+                                                border-radius:10px;box-sizing: border-box;">
+                <div class="card-header">
+                    <h2 style="border:2px solid #fff;color:#fff; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Alumni List</b></h2>   
+                </div>
+            <div class="row ">
+                
                 <?php 
                     if ($users) {
                         while($user = $users->fetch_assoc()) {
+                ?><br>
+                    <div class="card" style="width:100%;">
+                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John" class="rounded-circle" 
+                            style="width:50%; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
+                             <?php /* echo $user['photo'] */ ?>                                                                                                       
+                        <h1><?php echo $user['name'] ?></h1>
+                        <p class="title">Works at: <?php echo $user['address'] ?></p>
+                        <p>Position: </p>
+                            <div style="margin: 24px 0;">
+                                
+                                <a href="#"><i class="fa fa-twitter"></i></a>  
+                                <a href="#"><i class="fa fa-linkedin"></i></a>  
+                                <a href="#"><i class="fa fa-facebook"></i></a> 
+                            </div>
+                        <p><button><?php echo $user['email'] ?></button></p>
+                    </div><br>
+                    
+                <?php
+                            }
+                        } else {
                             ?>
                                 <tr>
-                                    <!--<td><?php //echo $user['id'] ?></td>-->
-                                    <td><?php echo $user['username'] ?></td>
-                                    <td><?php echo $user['name'] ?></td>
-                                    <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['phone'] ?></td>
-                                    <td><?php echo $user['address'] ?></td>
-                                    <td><?php echo $user['batch'] ?></td>
-                                    <td><?php echo $user['passingyear'] ?></td>
-                                    <td><?php /* echo $user['photo'] */ ?></td>
-                                    
+                                    <td colspan="11">No User Found</td>
                                 </tr>
                             <?php
                         }
-                    } else {
-                        ?>
-                            <tr>
-                                <td colspan="11">No User Found</td>
-                            </tr>
-                        <?php
-                    }
                 ?>
-            </tbody>
-        </table>
+               
+            </div>
+        </div>
     </div>
-    </div>
-</div>
-</div>
-
+</body>
+</html>
 <?php
     // include footer file
     include dirname(__FILE__). '/includes/footer.php';
