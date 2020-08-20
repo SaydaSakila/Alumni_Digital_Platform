@@ -59,18 +59,18 @@
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                                  <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                                    <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
                                         
-                                        <p class="card-text"><?php echo $post['content']; ?>
+                                      
                                         
                                     </div>
                                     <div class="card-footer">
-                                        <a href="first.php">Read More..</a>
+                                        <a href="first.php?id=<?php echo $post['id'];?>">Read Details..</a>
                                         <?php /*echo $post['category_name']; */ 
                                                 if($post['user_id']==$user_id){?>  
                                                 <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
@@ -106,7 +106,7 @@
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                          <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                                    <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">

@@ -1,25 +1,71 @@
 <?php
-    $page_title = 'Blog List';
+    $page_title = 'Blog Details';
     // header include
     include dirname(__FILE__). '/includes/header.php';
    $db = new Database();
 
-    if(isset($_GET['edit'])){
-        $id=$_GET['edit'];
+    if(isset($_GET['id'])){
+        $id=$_GET['id'];
+       
         
+        //$query = "SELECT * FROM uposts WHERE id='$id'";
         $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
-                LEFT JOIN categories ON uposts.category_id=categories.id 
-                LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
-        $posts = $db->getData($query);
+            LEFT JOIN categories ON uposts.category_id=categories.id 
+            LEFT JOIN users ON uposts.user_id=users.id
+            WHERE uposts.id = '$id'";
+        $posts =  $db->conn->query($query);
         $user_id= $_SESSION['id'];
-        $run  = $db->conn->query($posts);
-        $post = $run->fetch_assoc();
+
+        //$run  = $db->conn->query($posts);
         
-        //var_dump($data);die();   
+        $post = $posts->fetch_assoc();
+        
+        //student blog
+    $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
+            LEFT JOIN categories ON sposts.category_id=categories.id 
+            LEFT JOIN students ON sposts.student_id=students.id";
+    $posts1 = $db->getData($query1);
+    $student_id= $_SESSION['id'];
+           // $post = $posts1->fetch_assoc();
+
+
+    //admin blog
+    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
+            LEFT JOIN categories ON posts.category_id=categories.id 
+            LEFT JOIN admins ON posts.admin_id=admins.id";
+    $posts2 = $db->getData($query2);
+           // $post = $posts2->fetch_assoc();
+
+        //var_dump($post);die();   
     }
-    
+
+ 
+
 ?>
-<!--
+
+
+            <div class="col-lg-8 offset-sm-2" style="width:auto;height:auto;margin-top:100px;margin-bottom:100px;">
+                <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="...">
+                <div class="card-header">Category: 
+                    <?php echo $post['category_name'];?>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $post['title'];?></h5>
+                    <small class="text-muted">Uploaded at <?php /*$d=strtotime($post['created_at']);*/ echo date("d M, Y"/*,$d*/); ?> By <?php echo $post['user_name']; ?></p>
+                    <p class="card-text"><?php echo $post['content']; ?></p>
+                </div>
+                <div class="card-footer">
+                    <form action="" id="usrform" >                    
+
+                        <input type="text" name="comment" placeholder="Enter Your Comments">
+                        <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                    </form>
+                </div>
+            </div>
+
+
+
+            <!--
             <div class="" style="backgroung-color:#333">
                 <div class="row" >
                 
@@ -57,30 +103,6 @@
                         
                 </div>
             </div>-->
-
-            <div class="col-lg-8 offset-sm-2" style="width:auto;height:auto;margin-top:100px;margin-bottom:100px;">
-                <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.<br><bbr>
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago <?php /*$d=strtotime($post['created_at']);*/ echo date("d M, Y"/*,$d*/); ?></small></p>
-                </div>
-                <div class="card-footer">
-                    <form action="" id="usrform" >
-                        <input type="text" name="comment" placeholder="Enter Your Comments">
-                        <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
-                    </form>
-                </div>
-            </div>
 <?php
     // footer include
     include dirname(__FILE__). '/includes/footer.php';

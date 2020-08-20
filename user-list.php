@@ -10,7 +10,8 @@
 <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
                             background-attachment: fixed;">
-<div class="col-sm" style="margin-top:150px;margin-left:50px;margin-right:50px;margin-bottom:50px;
+                            
+<div class="col-sm" style="margin-top:150px;margin-left:80px;margin-right:50px;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
 <div class="card" style="backgroung-color:#333;">
     <div class="card-header">
@@ -39,9 +40,9 @@
 
                 <tr >
                     <!--<th>ID</th>-->
+                    <th>University ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>University ID</th>
                     <th>Phone</th>
                     <th>Job Location</th>
                     <th>Batch</th>
@@ -57,9 +58,9 @@
                             ?>
                                 <tr>
                                     <!--<td><?php //echo $user['id'] ?></td>-->
+                                    <td><?php echo $user['username'] ?></td>
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['username'] ?></td>
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>
