@@ -8,49 +8,6 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
-</head>
-<body>
 <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
                             background-attachment: fixed;">
@@ -64,7 +21,8 @@ button:hover, a:hover {
                 <?php 
                     if ($users) {
                         while($user = $users->fetch_assoc()) {
-                ?><br>
+                ?>
+                <div class="col-sm-4 "  >
                     <div class="card" style="width:100%;">
                         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="John" class="rounded-circle" 
                             style="width:50%; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
@@ -79,8 +37,8 @@ button:hover, a:hover {
                                 <a href="#"><i class="fa fa-facebook"></i></a> 
                             </div>
                         <p><button><?php echo $user['email'] ?></button></p>
-                    </div><br>
-                    
+                    </div><br> 
+                </div>    
                 <?php
                             }
                         } else {
@@ -95,8 +53,7 @@ button:hover, a:hover {
             </div>
         </div>
     </div>
-</body>
-</html>
+
 <?php
     // include footer file
     include dirname(__FILE__). '/includes/footer.php';
