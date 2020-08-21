@@ -2,6 +2,8 @@
     $page_title = 'Update Blog ';
     // include header file
     include dirname(__FILE__). '/includes/header.php';
+    // contents include
+    include dirname(__FILE__). '/includes/sidebar.php';
    $db = new Database();
 
     if(isset($_GET['edit'])){

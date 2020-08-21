@@ -2,6 +2,8 @@
     $page_title = 'Post Create';
     // header include
     include dirname(__FILE__).'/includes/header.php';
+    // contents include
+    include dirname(__FILE__). '/includes/sidebar.php';
 
     $query = "SELECT * FROM categories";
     $categories = $db->getData($query);
@@ -13,7 +15,7 @@
                         background-attachment: fixed;">
 
             <div class="col-md-12">
-                <div class="card" style="margin-top:100px;margin-left:100px;margin-right:100px;margin-bottom:70px;background-color:#333;
+                <div class="container" style="margin-top:100px;margin-left:100px;margin-right:100px;margin-bottom:70px;background-color:#333;
                                     border-radius:10px;">
                     <div class="card-header">
                         <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Blog</h3>

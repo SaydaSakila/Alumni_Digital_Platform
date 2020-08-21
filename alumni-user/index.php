@@ -8,6 +8,10 @@
     // contents include
     include dirname(__FILE__). '/includes/content.php';
 ?>
+<?php
+    // contents include
+    include dirname(__FILE__). '/includes/sidebar.php';
+?>
 
 <?php
     // footer include

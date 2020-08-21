@@ -3,6 +3,9 @@
     // header include
     include dirname(__FILE__). '/includes/header.php';
  
+    // saidebar include
+    include dirname(__FILE__). '/includes/sidebar.php';
+
     $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
             LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
@@ -27,7 +30,7 @@
     <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
                             background-attachment: fixed;">
-        <div class="col-sm" style="margin-top:150px;margin-left:150px;margin-right:150px;margin-bottom:50px;
+        <div class="container" style="margin-top:150px;margin-left:150px;margin-right:150px;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
             <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
                                     border-radius:10px;">-->
@@ -105,7 +108,7 @@
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
 
-                                        <p class="card-text"><?php echo $post['content']; ?>
+                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
                                         
                                     </div>
                                     <div class="card-footer">

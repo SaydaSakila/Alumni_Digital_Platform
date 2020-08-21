@@ -5,10 +5,10 @@
   <!--==========================
     Footer
   ============================-->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+  <footer id="footer" >
+    <div class="footer-top" >
+      <div class="container" >
+        <div class="row" >
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Alumni Digital Platform</h3>

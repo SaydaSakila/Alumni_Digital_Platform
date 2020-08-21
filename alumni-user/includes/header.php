@@ -57,7 +57,47 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
 
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin-top:0px;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
   <!-- =======================================================
     Theme Name: BizPage
     Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
@@ -103,6 +143,8 @@
           <li class="menu-has-children"><a href="#home"><?php echo $name; ?> 
               <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
+              <li><a href="">DASHBOARD</a></li>
+
               <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">EDIT PROFILE</a></li>
               <li class="nav-item">
                   <a href="logout.php" class="nav-link" title="Logout">LOG-OUT

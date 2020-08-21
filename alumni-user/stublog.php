@@ -2,6 +2,8 @@
     $page_title = 'Blog Details';
     // header include
     include dirname(__FILE__). '/includes/header.php';
+    // contents include
+    include dirname(__FILE__). '/includes/sidebar.php';
    $db = new Database();
 
     if(isset($_GET['id'])){
