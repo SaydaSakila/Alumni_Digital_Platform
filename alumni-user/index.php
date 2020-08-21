@@ -10,7 +10,7 @@
 ?>
 <?php
     // contents include
-    include dirname(__FILE__). '/includes/sidebar.php';
+    //include dirname(__FILE__). '/includes/sidebar.php';
 ?>
 
 <?php

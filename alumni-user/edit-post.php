@@ -3,7 +3,7 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     // contents include
-    include dirname(__FILE__). '/includes/sidebar.php';
+    //include dirname(__FILE__). '/includes/sidebar.php';
    $db = new Database();
 
     if(isset($_GET['edit'])){
@@ -25,15 +25,18 @@
    
 ?>
 
-<div class="row" style="background-image: url('assets/img/3.jpg');background-size: cover;
-                        background-position: center center;
-                        background-attachment: fixed;">
-    <div class="col-md-6 offset-md-3">
-        <div class="container" style="margin-top:100px;margin-bottom:70px;background-color:#333;
-                                border-radius:10px;
-                                ">
+<div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
+                <div class="container" style="margin-top:100px;margin-bottom:70px;
+                                    border-radius:10px;">
+                    
+                    <div class="row" >
+                    <?php
+                        // contents include
+                        include dirname(__FILE__). '/includes/dashsidebar.php';
+                    ?>
+                        <div class="col-md-9 " style="background-color:#333;">
             <div class="card-header">
-                <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;background-color:#333;" class="card-title">Edit Blog </h3>
+                <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Edit Blog </h3>
             </div>
             <form action="update-post.php" method="POST">
             <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>

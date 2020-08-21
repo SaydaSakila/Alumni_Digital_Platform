@@ -143,9 +143,9 @@ body {
           <li class="menu-has-children"><a href="#home"><?php echo $name; ?> 
               <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
-              <li><a href="">DASHBOARD</a></li>
-
-              <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">EDIT PROFILE</a></li>
+              <li><a href="dashboard.php">DASHBOARD</a></li>
+              <li><a href="#">MY PROFILE</a></li>
+              <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">UPDATE PROFILE</a></li>
               <li class="nav-item">
                   <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
                       <i class="fas fa-sign-out-alt"></i>

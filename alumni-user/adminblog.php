@@ -3,7 +3,7 @@
     // header include
     include dirname(__FILE__). '/includes/header.php';
     // contents include
-    include dirname(__FILE__). '/includes/sidebar.php';
+    //include dirname(__FILE__). '/includes/sidebar.php';
    $db = new Database();
 
     if(isset($_GET['id'])){
@@ -20,9 +20,10 @@
     }
 
 ?>
-<div class="row" style="background-image: url('img/3.jpg');background-size: cover;
+<!--<div class="row" style="background-image: url('img/3.jpg');background-size: cover;
                             background-position: center center;
-                            background-attachment: fixed;">
+                            background-attachment: fixed;">-->
+<div class="row">
     <div class="container" style="margin-top:150px;margin-bottom:50px;
                                                 border-radius:10px;box-sizing: border-box;">
         <div class="row" style="background-color:#fff">

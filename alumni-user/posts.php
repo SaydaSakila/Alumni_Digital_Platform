@@ -4,7 +4,7 @@
     include dirname(__FILE__). '/includes/header.php';
  
     // saidebar include
-    include dirname(__FILE__). '/includes/sidebar.php';
+    //include dirname(__FILE__). '/includes/sidebar.php';
 
     $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
@@ -27,20 +27,18 @@
 
     
 ?>
-    <div class="row" style="background-image: url('img/3.jpg');background-size: cover;
-                            background-position: center center;
-                            background-attachment: fixed;">
+    <div class="row" >
         <div class="container" style="margin-top:150px;margin-left:150px;margin-right:150px;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
             <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
                                     border-radius:10px;">-->
                 <div class="card-header">
-                    <h3 style="border:2px solid #fff;color:#fff; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
+                    <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
                     <div class="card-header-action">
                         <a href="post-add.php" class="btn btn-success">Add New Blog</a>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="container">
                     <?php 
 
                         if (isset($_SESSION['message'])): ?>

@@ -3,7 +3,7 @@
     // header include
     include dirname(__FILE__). '/includes/header.php';
     // contents include
-    include dirname(__FILE__). '/includes/sidebar.php';
+    //include dirname(__FILE__). '/includes/sidebar.php';
     $query = "SELECT * FROM categories";
     $categories = $db->getData($query);
 ?>
