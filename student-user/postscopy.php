@@ -2,35 +2,42 @@
     $page_title = 'Blog List';
     // header include
     include dirname(__FILE__). '/includes/header.php';
- 
+   if(isset($_GET['id'])){
+        $category_id=$_GET['id'];
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
     $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
+            LEFT JOIN users ON uposts.user_id=users.id 
+            WHERE uposts.category_id = '$category_id'
+            ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 
     //student blog
     $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id 
+             WHERE sposts.category_id = '$category_id'
+             ORDER BY id DESC";
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
-     $query1 = "SELECT * FROM categories";
-        $categories = $db->getData($query1);
-        $id= $_SESSION['id'];
+     $query2 = "SELECT * FROM categories";
+        $categories = $db->getData($query2);
 
     //admin blog
-    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
+    $query3 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
-    $posts2 = $db->getData($query2);
+            LEFT JOIN admins ON posts.admin_id=admins.id
+            WHERE posts.category_id = '$category_id'
+            ORDER BY id DESC";
     $admin_id= $_SESSION['id'];
 
-    
+    $posts3 = $db->getData($query3);
+
+   }
 ?>
     <div class="row" >
     
@@ -45,7 +52,7 @@
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
                         <div class="card-header-action">
-                            <!--<a href="post-add.php" class="btn btn-success">Add New Blog</a>-->
+                            <a href="post-add.php" class="btn btn-success">Add New Blog</a>
                         </div>
                     </div>
                     <?php 
@@ -60,10 +67,13 @@
                         <?php endif ?>
                     <div class="row ">
                         <?php
+                        
                             if ($posts) 
                             {
-                            while($post = $posts->fetch_assoc()) 
+                                while($post = $posts->fetch_assoc()) 
                             {
+                               // if($post['category_id']!= $category_id){
+                                  //  continue; }
                         ?>
                                                 
                         <div class="col-sm-4 "  >
@@ -102,6 +112,8 @@
                             {
                             while($post = $posts1->fetch_assoc()) 
                             {
+                                //if($post['category_id']!= $category_id){
+                                   // continue; }
                         ?>
                                                 
                         <div class="col-sm-4 "  >
@@ -119,7 +131,7 @@
                                                     
                                                 </div>
                                                 <div class="card-footer">
-                                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read Details..</a>
+                                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read More..</a>
                                                     <?php /*echo $post['category_name']; */ 
                                                             if($post['student_id']==$student_id){?>  
                                                             <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
@@ -134,11 +146,10 @@
                         <?php
                             }
                         
-                            } 
-                            
-                            if ($posts2) 
+                            }
+                            if ($posts3) 
                             {
-                            while($post = $posts2->fetch_assoc()) 
+                            while($post = $posts3->fetch_assoc()) 
                             {
                         ?>
                                                 
@@ -173,13 +184,18 @@
                             }
                         
                             } 
+ 
 
-                            else 
-                            {
+                            //else 
+                           // {
                         ?>
-                                <div class="card text-center"><p>No Blog found</p></div>
+                           <!-- <div class="card">
+                                <div class="card-body" style="height:100%;width:100%;"><h3>No Blog Found</h3></div>
+                            </div>-->
                             <?php
-                            }
+                            //}
+                        
+                   
                             ?>
                     </div>
                 </div>
@@ -189,10 +205,9 @@
                         <ul class="dashboard-nav block" >
                             <?php 
                             if ($categories) {
-                                while($category = $categories->fetch_assoc()) 
-                            {
+                                while($category = $categories->fetch_assoc()) {
                                     
-                            ?>
+                        ?>
                                    <li> <a class="dropdown-item" href="postscopy.php?id=<?php echo $category['id']; ?>" style="color:#1e90ff"><?php echo $category['name'] ?></a></li>
                         <?php
                                 }

@@ -156,11 +156,8 @@ button:hover, a:hover {
           <li><a href="user-list.php">Alumni List</a></li>
           <li><a href="#services">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="posts.php">Blog</a></li>
-          <li class="menu-has-children"><a href="#team">Events</a>
-            <ul>
-              <li><a href="">Post Event</a></li>
-              <li><a href="">View Events</a></li>
-            </ul>
+          <li class="menu-has-children"><a href="events.php">Events</a>
+            
           </li>
           
           <li class="menu-has-children"><a href="#home"><?php echo $name; ?> 

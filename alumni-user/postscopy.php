@@ -2,37 +2,42 @@
     $page_title = 'Blog List';
     // header include
     include dirname(__FILE__). '/includes/header.php';
- 
+   if(isset($_GET['id'])){
+        $category_id=$_GET['id'];
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
     $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
+            LEFT JOIN users ON uposts.user_id=users.id 
+            WHERE uposts.category_id = '$category_id'
+            ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 
     //student blog
     $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id 
+             WHERE sposts.category_id = '$category_id'
+             ORDER BY id DESC";
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
      $query2 = "SELECT * FROM categories";
         $categories = $db->getData($query2);
 
-        $sql="SELECT * FROM posts WHERE id='$category_id'";
-        $id= $_SESSION['id'];
-        $category =  $db->conn->query($sql);
-/*
     //admin blog
-    $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
+    $query3 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
-    $posts2 = $db->getData($query2);*/
+            LEFT JOIN admins ON posts.admin_id=admins.id
+            WHERE posts.category_id = '$category_id'
+            ORDER BY id DESC";
+    $admin_id= $_SESSION['id'];
 
-    
+    $posts3 = $db->getData($query3);
+
+   }
 ?>
     <div class="row" >
     
@@ -62,17 +67,17 @@
                         <?php endif ?>
                     <div class="row ">
                         <?php
-                        if($category){
-                            while($category1 = $category->fetch_assoc()){
-                                if($category1['id']==$id){
+                        
                             if ($posts) 
                             {
-                            while($post = $posts->fetch_assoc()) 
+                                while($post = $posts->fetch_assoc()) 
                             {
+                               // if($post['category_id']!= $category_id){
+                                  //  continue; }
                         ?>
                                                 
                         <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                  <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
                                     <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
@@ -107,10 +112,12 @@
                             {
                             while($post = $posts1->fetch_assoc()) 
                             {
+                                //if($post['category_id']!= $category_id){
+                                   // continue; }
                         ?>
                                                 
                         <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:500px;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
                                     <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
                                                 <div class="card-header">Category:
@@ -139,18 +146,56 @@
                         <?php
                             }
                         
+                            }
+                            if ($posts3) 
+                            {
+                            while($post = $posts3->fetch_assoc()) 
+                            {
+                        ?>
+                                                
+                        <div class="col-sm-4 "  >
+                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
+                                <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                                    <img src="../img/portfolio/web3.jpg" class="card-img-top" alt="Card Image">
+                                                <div class="card-header">Category:
+                                                    <?php echo $post['category_name'];?>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                                    <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['admin_name']; ?></small>
+
+                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                                    
+                                                </div>
+                                                <div class="card-footer">
+                                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read Details..</a>
+                                                    <?php /*echo $post['category_name']; */ 
+                                                            if($post['admin_id']==$admin_id){?>  
+                                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                                
+                                                        <?php }?>
+                                                        
+                                                </div>
+                            </div>
+                        </div>
+                                            
+                        <?php
+                            }
+                        
                             } 
+ 
 
                             else 
                             {
                         ?>
-                                <div class="card text-center"><p>No Blog found</p></div>
+                             <!-- <div class="card">
+                                <div class="card-body" style="height:100%;width:100%;"><h3>No Blog Found</h3></div>
+                            </div>-->
                             <?php
                             }
-                        }
-
-                        }
-                    }
+                        
+                   
                             ?>
                     </div>
                 </div>

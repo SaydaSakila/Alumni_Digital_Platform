@@ -14,7 +14,7 @@
             LEFT JOIN categories ON sposts.category_id=categories.id 
             LEFT JOIN students ON sposts.student_id=students.id WHERE sposts.id = '$id'";
     $posts1 = $db->conn->query($query1);
-    //$student_id= $_SESSION['id'];
+    $student_id= $_SESSION['id'];
      $post = $posts1->fetch_assoc();
 
     }
@@ -28,7 +28,14 @@
                    
                     <img src="img/3.jpg" class="card-img-top" alt="...">
                     <div class="card-header">Category: 
-                        <?php echo $post['category_name'];?>
+                        <?php echo $post['category_name'];
+                        
+                            if($post['student_id']==$student_id){?>  
+
+                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                
+                        <?php }?>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $post['title'];?></h5>

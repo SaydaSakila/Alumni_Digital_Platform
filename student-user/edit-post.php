@@ -10,7 +10,8 @@
         $sql = "SELECT * from sposts where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();
-        
+        $query = "SELECT * FROM categories";
+    $categories = $db->getData($query);
         //var_dump($data);die();   
     }
     if (isset($_SESSION['old_data'])) 
@@ -19,8 +20,7 @@
         unset($_SESSION['old_data']);
     }
     
-    $query = "SELECT * FROM categories";
-    $categories = $db->getData($query);
+    
 ?>
 
 
