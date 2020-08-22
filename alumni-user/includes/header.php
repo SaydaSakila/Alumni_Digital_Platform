@@ -97,6 +97,43 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
 </style>
   <!-- =======================================================
     Theme Name: BizPage
@@ -123,7 +160,7 @@ body {
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.php">Home</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="user-list.php">Alumni List</a></li>
           <li><a href="#services">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children"><a href="#team">Events</a>
@@ -137,7 +174,7 @@ body {
               <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
               <li><a href="dashboard.php">DASHBOARD</a></li>
-              <li><a href="#">MY PROFILE</a></li>
+              <li><a href="profile.php?id=<?php echo $id;?>">MY PROFILE</a></li>
               <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">UPDATE PROFILE</a></li>
               <li class="nav-item">
                   <a href="logout.php" class="nav-link" title="Logout">LOG-OUT

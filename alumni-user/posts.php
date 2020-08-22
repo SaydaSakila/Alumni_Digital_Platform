@@ -31,13 +31,15 @@
     
 ?>
     <div class="row" >
-        <div class="container" style="margin-top:150px;margin-left:150px;margin-right:150px;margin-bottom:50px;
-                                    border-radius:10px;box-sizing: border-box;">
+    
+        <div class="container" >
             <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
                                     border-radius:10px;">-->
-                                    <div class="row">
-                
-                <div class="col-md-9">
+                                    
+            <div class="row" style="margin-top:150px;margin-left:auto;margin-bottom:50px;
+                                    border-radius:10px;box-sizing: border-box;">
+    
+                <div class="col-md-10">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
                         <div class="card-header-action">
@@ -141,15 +143,15 @@
                             ?>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="dashboard-sidebar" style="width: 220px;padding:10px;position:fixed;">
                         <h3>Category List</h3>
-                        <ul class="dashboard-nav block">
+                        <ul class="dashboard-nav block" >
                             <?php 
                             if ($categories) {
                                 while($category = $categories->fetch_assoc()) {
                         ?>
-                                    <a class="dropdown-item" href="#"><?php echo $category['name'] ?></a>
+                                   <li> <a class="dropdown-item" href="#" style="color:#1e90ff"><?php echo $category['name'] ?></a></li>
                         <?php
                                 }
                             }
