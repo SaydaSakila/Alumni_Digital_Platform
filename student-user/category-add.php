@@ -11,9 +11,7 @@
     }
 ?>
 
-    <div class="row" style="background-image: url('assets/img/3.jpg');background-size: cover;
-                        background-position: center center;
-                        background-attachment: fixed;">
+    <div class="row">
     
         <div class="col-md-6 offset-md-3">
             <div class="container" style="margin-top:100px;margin-bottom:70px;background-color:#333;

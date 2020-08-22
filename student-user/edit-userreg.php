@@ -18,16 +18,16 @@
         unset($_SESSION['old_data']);
     }
 ?>
-
-<div class="row" style="background-image: url('assets/img/5.jpg');background-size: cover;
-                        background-position: center center;
-                        background-attachment: fixed;">
-    <div class="col-md-6 offset-md-3">
-        <div class="container" style="margin-top:100px;margin-bottom:70px;">
-        <div id="ui" style="background-color:#333;
-                        margin-top:50px;
-                        border-radius:10px;
-                        opacity:0.9;">
+<div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
+                <div class="container" style="margin-top:100px;margin-bottom:70px;
+                                    border-radius:10px;">
+                    
+                    <div class="row" >
+                    <?php
+                        // contents include
+                        include dirname(__FILE__). '/includes/dashsidebar.php';
+                    ?>
+                        <div class="col-md-9 " style="background-color:#333;">
             <div class="card-header" >
                 <h3 class="card-title" style="text-align:center;color:#fff;">Edit User Information - Student</h3>
             </div>

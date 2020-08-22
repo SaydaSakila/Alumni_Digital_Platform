@@ -17,7 +17,7 @@
       unset($_SESSION['success']);
   }
     $id = $_SESSION['id'];
-    $name = $_SESSION['username'];
+    $name = $_SESSION['name'];
 
     $db = new Database();
     //var_dump($db);die();
