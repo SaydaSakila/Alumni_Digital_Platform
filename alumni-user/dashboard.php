@@ -58,7 +58,7 @@
                                        <td><?php echo $post['id']; ?></td>
                                        <td><?php echo $post['title']; ?></td>
                                        <td><?php echo $post['category_name']; ?></td>
-                                       <td><?php echo $post['content']; ?></td>
+                                       <td><?php echo substr($post['content'],0,10); ?></td>
                                        <td><?php echo $post['user_name']; ?></td>
                                        <td><?php echo $post['created_at']; ?></td>
                                        <td>

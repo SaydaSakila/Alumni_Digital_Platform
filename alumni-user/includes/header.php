@@ -125,14 +125,7 @@ body {
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Career Opportunity</a></li>
-          <li class="menu-has-children"><a href="#portfolio">Blog</a>
-            <ul>
-              <li><a href="post-add.php">Post Blog</a></li>
-              <!--<li><a href="posts.php">View Blogs</a></li>-->
-              <li><a href="posts.php">All Blogs</a></li>
-
-            </ul>
-          </li>
+          <li class="menu-has-children"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children"><a href="#team">Events</a>
             <ul>
               <li><a href="">Post Event</a></li>
