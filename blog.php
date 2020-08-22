@@ -39,9 +39,9 @@
                     </div>
                     <div class="card-footer">
                         <form action="" id="usrform" >                    
-
-                            <input type="text" name="comment" placeholder="Enter Your Comments">
-                            <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                <label><h4>Leave a Comment</h4></label>
+                            <textarea name="comments" id="summernote" rows="5" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
+                            <input type="submit" name="submit" class="btn btn-success btn-block" value="Post">
                         </form>
                     </div>
                

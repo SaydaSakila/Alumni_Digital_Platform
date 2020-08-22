@@ -35,7 +35,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Blog Record</b></h3></th>
+                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
                     </tr>
                     <tr>
                         <th>ID</th>

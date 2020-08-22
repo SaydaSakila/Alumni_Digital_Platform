@@ -19,9 +19,12 @@
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
-     $query1 = "SELECT * FROM categories";
-        $categories = $db->getData($query1);
+     $query2 = "SELECT * FROM categories";
+        $categories = $db->getData($query2);
+
+        $sql="SELECT * FROM posts WHERE id='$category_id'";
         $id= $_SESSION['id'];
+        $category =  $db->conn->query($sql);
 /*
     //admin blog
     $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
@@ -59,6 +62,9 @@
                         <?php endif ?>
                     <div class="row ">
                         <?php
+                        if($category){
+                            while($category1 = $category->fetch_assoc()){
+                                if($category1['id']==$id){
                             if ($posts) 
                             {
                             while($post = $posts->fetch_assoc()) 
@@ -141,6 +147,10 @@
                                 <div class="card text-center"><p>No Blog found</p></div>
                             <?php
                             }
+                        }
+
+                        }
+                    }
                             ?>
                     </div>
                 </div>

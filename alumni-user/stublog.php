@@ -20,12 +20,12 @@
     }
 
 ?>
-<div class="row" >
-    <div class="container" style="margin-top:150px;margin-bottom:50px;
-                                                border-radius:10px;box-sizing: border-box;">
-        <div class="row" style="background-color:#fff">
-            <div class="col-lg-8 offset-sm-2" style="width:auto;height:auto;margin-top:100px;margin-bottom:100px;">
-                
+ <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
+        <div class="container">
+            <div class="row" style="padding:120px 0px;">
+                <?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
+                <div class="col-sm-9 " style="background-color:#fff;width:auto;height:auto;margin-top:0px;margin-bottom:100px;">
+                   
                     <img src="img/3.jpg" class="card-img-top" alt="...">
                     <div class="card-header">Category: 
                         <?php echo $post['category_name'];?>
@@ -37,9 +37,9 @@
                     </div>
                     <div class="card-footer">
                         <form action="" id="usrform" >                    
-
-                            <input type="text" name="comment" placeholder="Enter Your Comments">
-                            <input type="submit" name="submit" class="btn btn-success btn-sm" value="Post">
+                                <label><h4>Leave a Comment</h4></label>
+                            <textarea name="comments" id="summernote" rows="5" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
+                            <input type="submit" name="submit" class="btn btn-success btn-block" value="Post">
                         </form>
                     </div>
                
