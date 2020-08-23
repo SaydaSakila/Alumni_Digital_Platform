@@ -107,7 +107,7 @@ button:hover, a:hover {
    <!--==========================
     Header
   ============================-->
-  <header id="header">
+  <header id="header" class="header-scrolled">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
@@ -126,8 +126,8 @@ button:hover, a:hover {
           <!--<li><a href="posts.php">Blog</a></li>-->
           <li><a href="#team">Events</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="menu-has-children"><a href="">LOG-IN</a>
-            <ul>
+          <li class="menu-has-children"><a href="#">LOG-IN</a>
+            <ul class="nav-menu">
               <li><a href="alumni-user/login.php">ALUMNI</a></li>
               <li><a href="student-user/stulogin.php">STUDENT</a></li>
             </ul>

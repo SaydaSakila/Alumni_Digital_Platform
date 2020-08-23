@@ -148,7 +148,7 @@ button:hover, a:hover {
   <!--==========================
     Header
   ============================-->
-  <header id="header">
+  <header id="header" class="header-scrolled">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left">
