@@ -16,10 +16,11 @@
             LEFT JOIN users ON uposts.user_id=users.id
             WHERE uposts.id = '$id'";
         $posts =  $db->conn->query($query);
-        $posts1 = $db->getData($query);
+        $post = $posts->fetch_assoc();
+
+       // $posts1 = $db->getData($query);
 
         $user_id= $_SESSION['id'];
-        $post = $posts->fetch_assoc();
         $query1 = "SELECT * FROM categories";
         $categories = $db->getData($query1);
 
@@ -28,7 +29,7 @@
  <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
         <div class="container">
             <div class="row" style="padding:120px 0px;">
-                <?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
+<?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
                 <div class="col-sm-9 " style="background-color:#fff;width:auto;height:auto;margin-top:0px;margin-bottom:100px;">
                     <img src="../img/portfolio/app3.jpg" class="card-img-top" alt="...">
                     <div class="card-header">Category: 

@@ -69,7 +69,7 @@
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
         -->
-        Designed by <a href="https://bootstrapmade.com/">16303029</a>
+        Designed by <a href="" style="color:#13a456">Sayda Parvin</a>
       </div>
     </div>
   </footer><!-- #footer -->

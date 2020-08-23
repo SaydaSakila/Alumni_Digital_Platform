@@ -155,7 +155,7 @@
                                                     
                                                 </div>
                                                 <div class="card-footer">
-                                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read Details..</a>
+                                                    <a  href="adminblog.php?id=<?php echo $post['id'];?>">Read Details..</a>
                                                     <?php /*echo $post['category_name']; */ 
                                                             if($post['admin_id']==$admin_id){?>  
                                                             <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>

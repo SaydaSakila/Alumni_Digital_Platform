@@ -357,7 +357,8 @@
 //alumni blog
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
+            LEFT JOIN users ON uposts.user_id=users.id 
+            ORDER BY id DESC";
     $posts = $db->getData($query);
     //$user_id= $_SESSION['id'];
 

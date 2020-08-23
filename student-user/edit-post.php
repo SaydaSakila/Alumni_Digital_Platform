@@ -11,7 +11,7 @@
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();
         $query = "SELECT * FROM categories";
-    $categories = $db->getData($query);
+        $categories = $db->getData($query);
         //var_dump($data);die();   
     }
     if (isset($_SESSION['old_data'])) 
