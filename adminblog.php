@@ -18,9 +18,7 @@
     }
 
 ?>
-<div class="row" style="background-image: url('img/3.jpg');background-size: cover;
-                            background-position: center center;
-                            background-attachment: fixed;">
+<div class="row" style="background-color:#ddd">
     <div class="container" style="margin-top:150px;margin-bottom:50px;
                                                 border-radius:10px;box-sizing: border-box;">
         <div class="row" style="background-color:#fff">
@@ -35,11 +33,12 @@
                         <small class="text-muted">Uploaded at <?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By <?php echo $post['admin_name']; ?></p>
                         <p class="card-text"><?php echo $post['content']; ?></p>
                     </div>
-                    <div class="card-footer">
-                        <form action="" id="usrform" >                    
-                                <label><h4>Leave a Comment</h4></label>
-                            <textarea name="comments" id="summernote" rows="5" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
-                            <input type="submit" name="submit" class="btn btn-success btn-block" value="Post">
+                    <div class="card-footer" >
+                        <label><h4>Leave Your Comment Below</h4></label>
+                        <form action="" id="usrform" style="display:flex;box-siziing:border-box;" >                    
+                              <img src="img/16303029.jpg" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
+                            <textarea name="comments" rows="1" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
+                            <input type="submit" name="submit" class="btn btn-success" value="Comment">
                         </form>
                     </div>
                

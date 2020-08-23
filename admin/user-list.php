@@ -30,7 +30,7 @@
         <table class="table table-bordered" style="text-align:center;">
             <thead >
                 <tr>
-                    <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
+                    <th colspan="13" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
                 </tr>
 
                 <tr >
@@ -42,8 +42,10 @@
                     <th>Address</th>
                     <th>Batch</th>
                     <th>Passing_Year</th>
+                    <th>Company Name</th>
+                    <th>Job Title</th>
                     <th>Photo</th> 
-                    <th colspan="2">Action</th>
+                    <th colspan="1">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,12 +62,13 @@
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>
                                     <td><?php echo $user['passingyear'] ?></td>
+                                    <td><?php echo $user['cname'] ?></td>
+                                    <td><?php echo $user['jposition'] ?></td>
                                     <td><?php /* echo $user['photo'] */ ?></td>
                                     <td>
-                                        <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                    </td>
-                                    <td>
-                                        <a href="delete-userreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                        <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                    
+                                        <a href="delete-userreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php

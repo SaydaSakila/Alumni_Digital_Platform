@@ -31,8 +31,9 @@
                              <?php /* echo $user['photo'] */ ?>                                                                                                       
                         <h1><?php echo $student['name'] ?></h1>
                         
-                        <p class="title">Works at: <?php echo $student['address'] ?></p>
-                        <p>University ID<?php echo $student['username'] ?><br>
+                        
+                        <p class="title">University ID: <?php echo $student['username'] ?>
+                        <p >Address <?php echo $student['address'] ?></p><br>
                         Phone: <?php echo $student['phone'] ?><br>
                             Batch: <?php echo $student['batch'] ?><br>
                             

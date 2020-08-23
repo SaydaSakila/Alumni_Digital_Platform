@@ -26,8 +26,8 @@
                             style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                              <?php /* echo $user['photo'] */ ?>                                                                                                      
                         <h1><?php echo $user['name'] ?></h1>
-                        <p class="title">Works at: <?php echo $user['address'] ?></p>
-                        <p>Position: </p>
+                        <p class="title">Works at: <?php echo $user['cname'] ?></p>
+                        <p>Position: <?php echo $user['jposition'] ?></p>
                             <div style="margin: 24px 0;">
                                 
                                 <a href="#"><i class="fa fa-twitter"></i></a>  

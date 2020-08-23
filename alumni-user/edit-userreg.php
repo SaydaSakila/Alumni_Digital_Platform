@@ -181,6 +181,41 @@
                                 </span>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="_cname">Company Name</label>
+                            <input type="text" name="cname" id="_cname" value="<?php 
+                                    if(isset($data['cname'])) 
+                                    {
+                                        echo $data['cname'];
+                                    }
+                                ?>" class="form-control" placeholder="Update Your Job Location">
+                            <span class="text-danger">
+                                <?php 
+                                    if(isset($err['cname'])) {
+                                        echo $err['cname'];
+                                    }
+                                ?>
+                            </span>
+                        </div>
+                            <div class="form-group col-lg-6">
+                                <label for="_jposition">Job Title</label>
+                                <input type="text" name="jposition" id="_jposition" value="<?php 
+                                    if(isset($data['jposition'])) 
+                                    {
+                                        echo $data['jposition'];
+                                    }
+                                ?>" class="form-control" placeholder="Update Your Job Position">
+                                <span class="text-danger">
+                                    <?php 
+                                        if(isset($err['jposition'])) {
+                                            echo $err['jposition'];
+                                        }
+                                    ?>
+                                </span>
+                            </div>
+                        </div>
                     
                             <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>

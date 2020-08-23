@@ -21,13 +21,16 @@
         $address = $_POST['address'];
         $batch = $_POST['batch'];
         $passingyear = $_POST['passingyear'];
+        $cname = $_POST['cname'];
+        $jposition = $_POST['jposition'];
 
 
         if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
         {
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', passingyear='$passingyear' where id='$id'";
+            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', 
+            cname = '$cname',jposition = '$jposition', passingyear='$passingyear' where id='$id'";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();

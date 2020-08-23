@@ -124,6 +124,28 @@
                             ?>
                         </span>
                     </div>
+                    <div class="form-group">
+                        <label for="_cname">Company Name</label>
+                        <input type="text" name="cname" id="_cname" value='<?php  echo $data['cname']; ?>' class="form-control" placeholder="Update Your Job Location">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['cname'])) {
+                                    echo $err['cname'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="_jposition">Job Title</label>
+                        <input type="text" name="jposition" id="_jposition" value='<?php  echo $data['jposition']; ?>' class="form-control" placeholder="Update Your Job Position">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['jposition'])) {
+                                    echo $err['jposition'];
+                                }
+                            ?>
+                        </span>
+                    </div>
                 
                         <div class="form-group">
                              <label for="exampleFormControlFile1">Image file Input</label>

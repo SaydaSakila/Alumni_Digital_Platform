@@ -24,13 +24,11 @@
 
     
 ?>
-<div class="row" style="background-image: url('img/3.jpg');background-size: cover;
-                            background-position: center center;
-                            background-attachment: fixed;">
+<div class="row" style="background-color:#ddd">
     <div class="container" style="margin-top:150px;margin-bottom:50px;
                                                 border-radius:10px;box-sizing: border-box;">
         <div class="card-header">
-            <h2 style="border:2px solid #fff;color:#fff; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blogs</b></h2>   
+            <h2 style="border:2px solid #333;color:#333; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blogs</b></h2>   
         </div>
        <div class="row ">
             <?php

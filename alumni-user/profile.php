@@ -31,7 +31,7 @@
                              <?php /* echo $user['photo'] */ ?>                                                                                                       
                         <h1><?php echo $user['name'] ?></h1>
                         
-                        <p class="title">Works at: <?php echo $user['address'] ?></p>
+                        <p class="title">Works at: <?php echo $user['cname'] ?>(<?php echo $user['jposition'] ?>)</p>
                         <p>University ID<?php echo $user['username'] ?><br>
                         Phone: <?php echo $user['phone'] ?><br>
                             Batch: <?php echo $user['batch'] ?><br>

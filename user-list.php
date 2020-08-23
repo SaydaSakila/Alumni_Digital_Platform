@@ -8,13 +8,11 @@
 
 ?>
 
-<div class="row" style="background-image: url('img/3.jpg');background-size: cover;
-                            background-position: center center;
-                            background-attachment: fixed;">
+<div class="row" style="background-color:#ddd">
         <div class="container" style="margin-top:150px;margin-bottom:50px;
                                                 border-radius:10px;box-sizing: border-box;">
                 <div class="card-header">
-                    <h2 style="border:2px solid #fff;color:#fff; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Alumni List</b></h2>   
+                    <h2 style="border:2px solid #333;color:#333; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Alumni List</b></h2>   
                 </div>
             <div class="row ">
                 
@@ -28,8 +26,8 @@
                             style="width:50%; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                              <?php /* echo $user['photo'] */ ?>                                                                                                       
                         <h1><?php echo $user['name'] ?></h1>
-                        <p class="title">Works at: <?php echo $user['address'] ?></p>
-                        <p>Position: </p>
+                        <p class="title">Works at: <?php echo $user['cname'] ?></p>
+                        <p>Position: <?php echo $user['jposition'] ?></p>
                             <div style="margin: 24px 0;">
                                 
                                 <a href="#"><i class="fa fa-twitter"></i></a>  
