@@ -117,22 +117,46 @@
                                     </span>
                                 </div>
                             </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
-                                        if(isset($data['email'])) 
-                                        {
-                                            echo $data['email'];
-                                        }
-                                    ?>">
-                                    <span class = "text-danger">
-                                        <?php 
-                                        if(isset($errors['email'])) 
-                                        {
-                                            echo $errors['email'];
-                                        }
-                                        ?>
-                                    </span>
+                                <div class="row">
+                                    <div class="form-group col-lg-6">
+                                        <label for="">Email</label>
+                                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
+                                            if(isset($data['email'])) 
+                                            {
+                                                echo $data['email'];
+                                            }
+                                        ?>">
+                                        <span class = "text-danger">
+                                            <?php 
+                                            if(isset($errors['email'])) 
+                                            {
+                                                echo $errors['email'];
+                                            }
+                                            ?>
+                                        </span>
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label for="" style="color:#fff">Department</label>
+                                        <select name="department"  class="form-control">
+                                            <option value="">Select Department</option>
+                                            <?php
+                                                if ($departments) {
+                                                    while($department = $departments->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $department['id']; ?>"><?php echo $department['name']; ?></option>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($err['department'])) {
+                                                    echo $err['department'];
+                                                }
+                                            ?>
+                                        </span>
+                                    </div>
                                 </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">

@@ -6,7 +6,7 @@
     $query = "SELECT * FROM users";
     $users = $db->getData($query); 
 
-    $query1 = "SELECT * FROM departments";
+    $query1 = "SELECT * FROM departments WHERE users.department_id = '$department_id'";
         $departments = $db->getData($query1);
         $id= $_SESSION['id'];
 
