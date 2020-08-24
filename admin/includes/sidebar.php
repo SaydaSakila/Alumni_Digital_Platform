@@ -134,6 +134,30 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Event Manage
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="event-add.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add New Event</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="events.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Event List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link"  >
                   <i class="fas fa-sign-out-alt" style="margin-left:5px"></i>
