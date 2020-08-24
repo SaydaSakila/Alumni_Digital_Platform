@@ -35,7 +35,7 @@
                 
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
-                header('location:../student-user/posts.php');
+                header('location:../student-user/index.php');
             } 
             else 
             {

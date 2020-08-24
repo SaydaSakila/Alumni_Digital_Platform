@@ -38,7 +38,7 @@
                         <form action="" id="usrform" style="display:flex;box-siziing:border-box;" >                    
                               <img src="img/16303029.jpg" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
                             <textarea name="comments" rows="1" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
-                            <input type="submit" name="submit" class="btn btn-success" value="Comment">
+                            <a href="login.php" class="btn btn-success btn-block"  >Comment</a>
                         </form>
                     </div>
                

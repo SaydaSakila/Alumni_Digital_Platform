@@ -29,7 +29,7 @@
                 <!-- Latest compiled JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
-                    body{
+                   body{
                         background-image: url(img/a.jpg);
                         background-size: cover;
                         background-position: center center;
@@ -58,15 +58,15 @@
 
         <div class="container">
             <div class="row">
-            <div class="col-lg-3"> </div>
+                <div class="col-lg-3"> </div>
                 <div class="col-sm-6"> 
                     <div id="ui">
-                    <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
-                   <div class="row " style="display:flex;text-align:center;padding-left:30px"> 
-                        <h3 class="text-center" style="color:#fff;text-align:center;">ALUMNI LOGIN |</h3>
-                        <h3 class="text-center inactive" style="color:#fff;"><a href="stulogin.php"> | STUDENT LOGIN</a></h3>
+                    <img src="img/stuavater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
+                    <div class="row " style="display:flex;text-align:center;padding-left:30px"> 
+                        <h3 class="text-center" style="color:#fff;text-align:center;">STUDENT LOGIN |</h3>
+                        <h3 class="text-center inactive" style="color:#fff;"><a href="login.php"> | ALUMNI LOGIN</a></h3>
                     </div>
-                        <form action="submit/login-submit.php" method="POST" class="form-group ">
+                        <form action="submit/stulogin-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
                                     echo '<div class="alert alert-success " role="alert">'.$message['success_message'].'</div>';
@@ -76,38 +76,35 @@
                                 }
                               
                             ?>
-                            
-                            <div class="form-group">
-                               
-                                <label for="">University ID</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
-                                    if(isset($data['username'])) 
-                                    {
-                                        echo $data['username'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['username'])) 
-                                    {
-                                        echo $errors['username'];
-                                    }
-                                ?>
-                                </span>
-                                
-                            </div>
-                            <div class="form-group">   
+                                <div class="form-group">
+
+                                     <label for="">University ID</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
+                                        if(isset($data['username'])) 
+                                        {
+                                            echo $data['username'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                    <?php 
+                                        if(isset($errors['username'])) 
+                                        {
+                                            echo $errors['username'];
+                                        }
+                                    ?>
+                                    </span>
+                                </div>
+                                <div class="form-group">
+
                                     <label for="">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
-                                    
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                         required value="<?php 
+                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
                                         }
                                     ?>">
-                                    
                                     <span class = "text-danger">
                                         <?php 
                                         if(isset($errors['password'])) 
@@ -116,11 +113,11 @@
                                         }
                                         ?>
                                     </span><br>
-                            </div>
-                                <input type="submit"  name="ialulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
+                                </div>
+                                <input type="submit"  name="istulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="alumni-user/alumni-registration.php" class="btn btn-primary " style="float:left">New Alumni Registration</a> 
+                                    <a href="student-user/sturegistration.php" class="btn btn-primary " style="float:left">New Student Registration</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
@@ -131,10 +128,44 @@
                         </form>
                     </div>
                 </div>
-                
             </div>
         
         </div>
+
+        <script>
+            var myInput = document.getElementById("psw");
+
+            var length = document.getElementById("length");
+
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() 
+            {
+                document.getElementById("message").style.display = "block";
+            }
+
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() 
+            {
+                document.getElementById("message").style.display = "none";
+            }
+
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() 
+            {
+    
+                // Validate length
+                if(myInput.value.length >= 8) 
+                {
+                    length.classList.remove("invalid");
+                    length.classList.add("valid");
+                } 
+                else 
+                {
+                    length.classList.remove("valid");
+                    length.classList.add("invalid");
+                }
+            }
+        </script>
 
     </body>
 </html>

@@ -45,7 +45,8 @@
                                     <textarea name="comments" rows="1" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input type="submit" name="submit" class="btn btn-success " value="Comment">
+                                <a href="login.php" class="btn btn-success btn-block"  >Comment</a>
+                                    
                                 </div>
                         </form>
                     </div>
