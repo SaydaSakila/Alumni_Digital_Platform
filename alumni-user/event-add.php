@@ -34,22 +34,22 @@
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
                             ?>
-                            <form action="submit/post-add-submit.php" method="POST">
-                                <div class="form-group">
-                                    <label for="" style="color:#fff">Title</label>
-                                    <input type="text" name="title" class="form-control" placeholder="Enter Event Title">
+                            <form action="submit/event-add-submit.php" method="POST" style="background-color:#fff;">
+                                <div class="form-group" >
+                                    <label for="" style="color:#333;">Event Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Enter Event Name">
                                     <span class="text-danger">
                                         <?php 
-                                            if(isset($err['title'])) {
-                                                echo $err['title'];
+                                            if(isset($err['name'])) {
+                                                echo $err['name'];
                                             }
                                         ?>
                                     </span>
                                 </div>
 
-                                <div class="form-group" style="background-color:#fff;">
-                                    <label for="" style="color:#333">Content</label>
-                                    <textarea name="content" id="summernote" rows="5" class="form-control"  placeholder="Enter Event Content"></textarea>
+                                <div class="form-group" >
+                                    <label for="" style="color:#333;">Event Details</label>
+                                    <textarea name="content"  id="summernote" rows="5" class="form-control"  placeholder="Enter Event Information"></textarea>
                                     <span class="text-danger">
                                         <?php 
                                             if(isset($err['content'])) {
@@ -60,17 +60,25 @@
                                     
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1" style="color:#fff;">Enter Event Date</label>
-                                    <input type="date" class="form-control-file" id="exampleFormControlFile1">
+                                    <label for="exampleFormControlFile1" style="color:#333;">Enter Event Date</label>
+                                    <input type="date" name="date" class="form-control-file" id="exampleFormControlFile1">
+                                    <span class="text-danger">
+                                        <?php 
+                                            if(isset($err['date'])) {
+                                                echo $err['date'];
+                                            }
+                                        ?>
+                                    </span>
                                 </div>
 
                                 
 
                                 <div class="form-group">
-                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="alu-post_submit">Publish Event</button>
+                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="eventpost_submit">Publish Event</button>
                                 </div>
                                 
                             </form>
+
                         </div>
                     </div>
             </div>

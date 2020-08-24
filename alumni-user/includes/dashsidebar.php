@@ -19,7 +19,7 @@
                 <a href="" style="color:#17a2b8">Event Manage</a>
                 <ul>
                     <li><a href="event-add.php" style="color:#2C3E50">Add New Events</a></li>
-                    <li><a href="#" style="color:#2C3E50">My Event List</a></li>
+                    
                 </ul>
             </li>
             
