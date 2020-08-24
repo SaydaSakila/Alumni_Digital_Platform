@@ -1,4 +1,7 @@
 <?php 
+
+include dirname(__FILE__).'/../database/database.php';
+ $db = new Database();
     session_start();
     if (isset($_SESSION['errors'])) 
     {
@@ -15,6 +18,8 @@
       $data = $_SESSION['old_data'];
       unset($_SESSION['old_data']);
     }
+    $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
 ?>
 <!DOCTYPE html>
     <html lang="en">

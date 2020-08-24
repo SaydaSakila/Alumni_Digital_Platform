@@ -1,11 +1,11 @@
 <?php    
     include dirname(__FILE__). '/includes/header.php';
 
-    $page_title = 'Blog List';
+    $page_title = 'Job List';
     
-    $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
-            LEFT JOIN categories ON uposts.category_id=categories.id 
-            LEFT JOIN users ON uposts.user_id=users.id ORDER BY id DESC";
+    $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
+            LEFT JOIN departments ON jobs.dept_id=departments.id 
+            LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 ?>
@@ -35,15 +35,23 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
+                        <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Job Post Record</b></h3></th>
                     </tr>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
-                        <th>Category</th>
-                        <th>Content</th>
-                        <!--<th>Created By</th>-->
+                        <th>Experience</th>
+                        <th>Company Name</th>
+                        <th>Job Location</th>
+                        <th>Salary</th>
+                        <th>Working Hour</th>
+                        <th>Job info</th>
+                        <th>Qualification</th>
+                        <th>Deadline</th>
                         <th>Created At</th>
+                        
+                        <th>Department</th>
+                       <!-- <th>Created By</th>-->
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -56,15 +64,22 @@
                                 
                                     <tr>
                                        <td><?php echo $post['id']; ?></td>
-                                       <td><?php echo $post['title']; ?></td>
-                                       <td><?php echo $post['category_name']; ?></td>
-                                       <td><?php echo substr($post['content'],0,10); ?></td>
-                                      <!-- <td><?php //echo $post['user_name']; ?></td>-->
+                                       <td><?php echo $post['title']; ?></td>                                      
+                                       <td><?php echo $post['experience']; ?></td>
+                                       <td><?php echo $post['cname']; ?></td>
+                                       <td><?php echo $post['address']; ?></td>
+                                       <td><?php echo $post['salary']; ?></td>
+                                       <td><?php echo $post['hour']; ?></td>
+                                       <td><?php echo substr($post['info'],0,10); ?></td>
+                                       <td><?php echo $post['education']; ?></td>
+                                       <td><?php echo $post['deadline']; ?></td>
                                        <td><?php echo $post['created_at']; ?></td>
+                                       <td><?php echo $post['department_name']; ?></td>
+                                      <!-- <td><?php// echo $post['user_name']; ?></td>-->
                                        <td>
                                        <a href="blog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
-                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
+                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                        </td>
                                     </tr>
                                 <?php

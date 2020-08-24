@@ -28,7 +28,7 @@
             $username_exists = $db->getData($username_exists_query);
             if ($username_exists) 
             {
-                $errors['username'] = "Username Already Exist";
+                $errors['username'] = "University ID Already Exist";
             }
             if ($email_exists || $username_exists) 
             {

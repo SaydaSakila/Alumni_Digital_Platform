@@ -42,19 +42,19 @@
                                 ?><br>
                                     <div class="card mb-3" style="max-width: 740px;height:auto;">
                                         <div class="row no-gutters">
-                                            <div class="col-md-4" style="background-color:#424949;color:#fff">
+                                            <div class="col-md-3" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
                                            --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y ",$d); ?></h2>
                                             </div>
                                             <div class="col-md-8" style="text-align:left;">
-                                                <div class="card-header">
-                                                    Event Name: <?php echo $event['name']; ?><br>
+                                                <div class="card-header"><h4>
+                                                    Event Name: <?php echo $event['name']; ?></h4>
                                                     <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
                                                 </div>
                                                 <div class="card-body">
                                                     
-                                                    <p class="card-text"><?php echo substr($event['content'],0,10); ?>..</p>
-                                                    <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;" >Read Details</a>
+                                                    <p class="card-text"><?php echo substr($event['content'], 0, 10); ?>..</p>
+                                                    <p><a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;" >Read Details</a></p>
                                                 </div>
                                             </div>
                                         </div>

@@ -12,14 +12,14 @@
     {
         $id=$_GET['delete'];
         
-        $sql = "DELETE FROM uposts where id='$id'";
+        $sql = "DELETE FROM jobs where id='$id'";
         $result = $db->conn->query($sql);
         //var_dump($result);
         if($result)
         {
-            $_SESSION['message'] = "Blog ID $id Data Deleted Successfully!!";
+            $_SESSION['message'] = "Job Post ID $id Data Deleted Successfully!!";
             $_SESSION['msg_type'] = "danger";
-            header('location:dashboard.php');
+            header('location:jobboard.php');
             
         }
      
