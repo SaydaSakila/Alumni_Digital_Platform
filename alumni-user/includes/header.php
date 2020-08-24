@@ -161,7 +161,7 @@ button:hover, a:hover {
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.php">Home</a></li>
           <li><a href="user-list.php">Alumni List</a></li>
-          <li><a href="#services">Career Opportunity</a></li>
+          <li><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children"><a href="events.php">Events</a>
             
