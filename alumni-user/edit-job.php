@@ -34,24 +34,23 @@
                         // contents include
                         include dirname(__FILE__). '/includes/dashsidebar.php';
                     ?>
-                        <div class="col-md-9 " style="background-color:#333;">
+        <div class="col-md-9 " style="background-color:#333;">
             <div class="card-header">
                 <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Edit Job Post </h3>
             </div>
-        <form action="update-job.php" method="POST">
-            <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>
+            <form action="update-job.php" method="POST">
+                <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>
                 <div class="card-body">
-                    <?php 
-                        if (isset($message['success_message'])) {
-                            echo '<div class="alert alert-success">'.$message['success_message'].'</div>';
-                        }
-                        if (isset($message['error_message'])) {
-                            echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
-                        }
-                    ?>
+                        <?php 
+                            if (isset($message['success_message'])) {
+                                echo '<div class="alert alert-success">'.$message['success_message'].'</div>';
+                            }
+                            if (isset($message['error_message'])) {
+                                echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
+                            }
+                        ?>
 
-                   
-                            <div class="row">
+                                <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label for="" style="color:#fff">Title</label>
                                             <input type="text" name="title" class="form-control" value='<?php  echo $data['title']; ?>' placeholder="Update Job Title">
@@ -184,9 +183,9 @@
                                             </span>
                                         </div>
                                     </div>
-                </div>
+                                </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-success btn-lg btn-block" name="job-update_post">UPDATE JOB Details</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block" name="job-update_post">UPDATE JOB DETAILS</button>
                 </div>
             </form>
         </div>

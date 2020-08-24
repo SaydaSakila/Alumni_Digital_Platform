@@ -8,7 +8,8 @@
 
     $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
             LEFT JOIN departments ON jobs.dept_id=departments.id 
-            LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
+            LEFT JOIN users ON jobs.user_id=users.id 
+            WHERE jobs.`dept_id` = '$department_id' ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 

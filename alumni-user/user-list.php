@@ -34,7 +34,7 @@
                                 <h3><?php echo $user['name'] ?></h3>
                                 <p class="title">Works at: <?php echo $user['cname'] ?></p>
                                 <p>Position: <?php echo $user['jposition'] ?></p>
-                                <p>Department: <?php echo $user['department'] ?></p> 
+                                <p>Department: <?php //echo $user['department'] ?></p> 
                                  
                                 <p><button><?php echo $user['email'] ?></button></p>
                             </div>

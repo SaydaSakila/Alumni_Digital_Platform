@@ -5,7 +5,8 @@
     
     $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
             LEFT JOIN departments ON jobs.dept_id=departments.id 
-            LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
+            LEFT JOIN users ON jobs.user_id=users.id 
+            ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 ?>
@@ -77,7 +78,7 @@
                                        <td><?php echo $post['department_name']; ?></td>
                                       <!-- <td><?php// echo $post['user_name']; ?></td>-->
                                        <td>
-                                       <a href="blog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
+                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
                                             <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
                                             <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                        </td>
