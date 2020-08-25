@@ -39,21 +39,21 @@ include dirname(__FILE__).'/../database/database.php';
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
                     body{
-                        background-image: url(assets/img/a.jpg);
+                        background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     #ui{
-                        background-color:#333;
+                        background-color:#fff;
                         padding-left:30px;
                         padding-right:30px;
                         padding-top:30px;
                         padding-bottom:2px;
                         margin-top:40px;
                         border-radius:10px;
-                        opacity:0.9;
+                        
                     }
                     #ui label,h3{
                         color:#fff;
@@ -74,7 +74,7 @@ include dirname(__FILE__).'/../database/database.php';
                 <div class="col-lg-6"> 
                     <div id="ui">
                         <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
-                        <h3 class="text-center">ALUMNI REGISTRATION</h3>
+                        <h3 class="text-center" style="color:#000;">ALUMNI REGISTRATION</h3>
                         <form action="submit/alu-register-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
@@ -88,7 +88,7 @@ include dirname(__FILE__).'/../database/database.php';
                             <div class="row">
                             
                                 <div class="col-lg-6">
-                                    <label for="">Name</label>
+                                    <label for="" style="color:#000;">Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter Your Name" value="<?php 
                                         if(isset($data['name'])) 
                                         {
@@ -105,7 +105,7 @@ include dirname(__FILE__).'/../database/database.php';
                                     </span>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="">University ID</label>
+                                    <label for="" style="color:#000;">University ID</label>
                                     <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
                                         if(isset($data['username'])) 
                                         {
@@ -124,7 +124,7 @@ include dirname(__FILE__).'/../database/database.php';
                             </div>
                                 <div class="row">
                                     <div class="form-group col-lg-6">
-                                        <label for="">Email</label>
+                                        <label for="" style="color:#000;">Email</label>
                                         <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
                                             if(isset($data['email'])) 
                                             {
@@ -141,7 +141,7 @@ include dirname(__FILE__).'/../database/database.php';
                                         </span>
                                     </div>
                                     <div class="form-group col-lg-6">
-                                        <label for="" style="color:#fff">Department</label>
+                                        <label for="" style="color:#000;">Department</label>
                                         <select name="department"  class="form-control">
                                             <option value="">Select Department</option>
                                             <?php
@@ -165,7 +165,7 @@ include dirname(__FILE__).'/../database/database.php';
                                 </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <label for="">Password</label>
+                                    <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
                                         value="<?php 
@@ -184,7 +184,7 @@ include dirname(__FILE__).'/../database/database.php';
                                     </span>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="">Confirm Password</label>
+                                    <label for="" style="color:#000;">Confirm Password</label>
                                     <input type="password" name="confpassword" class="form-control" placeholder="Confirm Your Password" value="<?php 
                                         if(isset($data['confpassword'])) 
                                         {
@@ -203,7 +203,7 @@ include dirname(__FILE__).'/../database/database.php';
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <label for="_batch">Batch</label>
+                                    <label for="_batch" style="color:#000;">Batch</label>
                                     <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch" value="<?php 
                                                 if(isset($data['batch'])) 
                                                 {
@@ -219,7 +219,7 @@ include dirname(__FILE__).'/../database/database.php';
                                     </span>
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label for="_passingyear">Passing Year</label>
+                                    <label for="_passingyear" style="color:#000;">Passing Year</label>
                                     <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Enter Passing Year" value="<?php 
                                                 if(isset($data['passingyear'])) 
                                                 {

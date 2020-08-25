@@ -30,21 +30,21 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
                     body{
-                        background-image: url(assets/img/a.jpg);
+                        background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     #ui{
-                        background-color:#333;
+                        background-color:#fff;
                         padding:30px;
                         margin-top:80px;
                         border-radius:10px;
-                        opacity:0.9;
+                        
                     }
                     #ui label,h1{
-                        color:#fff;
+                        color:#000;
                     }
                     .center {
                         display: block;

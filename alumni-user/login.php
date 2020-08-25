@@ -30,18 +30,18 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
                     body{
-                        background-image: url(assets/img/a.jpg);
+                        background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     #ui{
-                        background-color:#333;
+                        background-color:#fff;
                         padding:30px;
                         margin-top:80px;
                         border-radius:10px;
-                        opacity:0.9;
+                        
                     }
                     #ui label,h1{
                         color:#fff;
@@ -62,7 +62,7 @@
                 <div class="col-lg-6"> 
                     <div id="ui">
                     <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
-                    <h1 class="text-center">ALUMNI LOGIN</h1>
+                    <h1 class="text-center" style="color:#000;">ALUMNI LOGIN</h1>
                         <form action="submit/login-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
@@ -76,7 +76,7 @@
                             
                             <div class="form-group">
                                
-                                <label for="">University ID</label>
+                                <label for="" style="color:#000;">University ID</label>
                                 <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
                                     if(isset($data['username'])) 
                                     {
@@ -94,7 +94,7 @@
                                 
                             </div>
                             <div class="form-group">   
-                                    <label for="">Password</label>
+                                    <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 

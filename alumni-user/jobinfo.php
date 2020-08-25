@@ -84,7 +84,7 @@
                                     
                                     <div class="card-footer">
                                         For Apply Send Your CV to   
-                                        " <b><i><u><?php echo $post['user_email'];?></u></i></b> "
+                                        "<b><i><u><?php echo $post['user_email'];?></u></i></b>" (*Photograph must be enclosed with CV.)
 
                                         <?php if($post['user_id']==$user_id){?>  
                                                 <a href="edit-job.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="edit" ></a>

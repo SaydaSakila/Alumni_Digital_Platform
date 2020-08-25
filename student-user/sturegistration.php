@@ -38,27 +38,27 @@ include dirname(__FILE__).'/../database/database.php';
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
                     body{
-                        background-image: url(assets/img/a.jpg);
+                        background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     #ui{
-                        background-color:#333;
+                        background-color:#fff;
                         padding-left:30px;
                         padding-right:30px;
                         padding-top:30px;
                         padding-bottom:2px;
                         margin-top:40px;
                         border-radius:10px;
-                        opacity:0.9;
+                        
                     }
                     #ui label{
-                        color:#fff;
+                        color:#000;
                     }
                     #ui h3{
-                        color:#fff;
+                        color:#000;
                     }
                     .center {
                         display: block;

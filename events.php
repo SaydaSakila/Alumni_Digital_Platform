@@ -41,7 +41,7 @@
                             while($event = $events->fetch_assoc()) {
                                 ?><br>
                                     <div class="card mb-3" style="max-width: 740px;height:auto;">
-                                        <div class="row no-gutters">
+                                        <div class="row ">
                                             <div class="col-md-3" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
                                            --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y ",$d); ?></h2>

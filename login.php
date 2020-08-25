@@ -30,18 +30,18 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
                 <style>
                     body{
-                        background-image: url(img/a.jpg);
+                        background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     #ui{
-                        background-color:#333;
+                        background-color:#fff;
                         padding:30px;
                         margin-top:80px;
                         border-radius:10px;
-                        opacity:0.9;
+                        
                     }
                     #ui label,h1{
                         color:#fff;
@@ -63,7 +63,7 @@
                     <div id="ui">
                     <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
                    <div class="row " style="display:flex;text-align:center;padding-left:30px"> 
-                        <h3 class="text-center" style="color:#fff;text-align:center;">ALUMNI LOGIN |</h3>
+                        <h3 class="text-center" style="color:#000;text-align:center;">ALUMNI LOGIN |</h3>
                         <h3 class="text-center inactive" style="color:#fff;"><a href="stulogin.php"> | STUDENT LOGIN</a></h3>
                     </div>
                         <form action="submit/login-submit.php" method="POST" class="form-group ">
@@ -79,7 +79,7 @@
                             
                             <div class="form-group">
                                
-                                <label for="">University ID</label>
+                                <label for="" style="color:#000;">University ID</label>
                                 <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
                                     if(isset($data['username'])) 
                                     {
@@ -97,7 +97,7 @@
                                 
                             </div>
                             <div class="form-group">   
-                                    <label for="">Password</label>
+                                    <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
