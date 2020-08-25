@@ -156,8 +156,8 @@ include dirname(__FILE__).'/../database/database.php';
                                         </select>
                                         <span class="text-danger">
                                             <?php 
-                                                if(isset($err['department'])) {
-                                                    echo $err['department'];
+                                                if(isset($errors['department'])) {
+                                                    echo $errors['department'];
                                                 }
                                             ?>
                                         </span>
@@ -168,7 +168,7 @@ include dirname(__FILE__).'/../database/database.php';
                                     <label for="">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
+                                        value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
@@ -212,8 +212,8 @@ include dirname(__FILE__).'/../database/database.php';
                                             ?>">
                                     <span class="text-danger">
                                         <?php 
-                                            if(isset($err['batch'])) {
-                                                echo $err['batch'];
+                                            if(isset($errors['batch'])) {
+                                                echo $errors['batch'];
                                             }
                                         ?>
                                     </span>
@@ -228,8 +228,8 @@ include dirname(__FILE__).'/../database/database.php';
                                     ?>">
                                     <span class="text-danger">
                                         <?php 
-                                            if(isset($err['passingyear'])) {
-                                                echo $err['passingyear'];
+                                            if(isset($errors['passingyear'])) {
+                                                echo $errors['passingyear'];
                                             }
                                         ?>
                                     </span><br>

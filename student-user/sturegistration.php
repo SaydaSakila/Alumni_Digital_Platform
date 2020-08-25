@@ -1,4 +1,6 @@
 <?php 
+include dirname(__FILE__).'/../database/database.php';
+ $db = new Database();
     session_start();
     if (isset($_SESSION['errors'])) 
     {
@@ -15,6 +17,8 @@
       $data = $_SESSION['old_data'];
       unset($_SESSION['old_data']);
     }
+    $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -120,29 +124,53 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group ">
-                                <label for="">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
-                                    if(isset($data['email'])) 
-                                    {
-                                        echo $data['email'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                    <?php 
-                                    if(isset($errors['email'])) 
-                                    {
-                                        echo $errors['email'];
-                                    }
-                                    ?>
-                                </span>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter Your Email" value="<?php 
+                                        if(isset($data['email'])) 
+                                        {
+                                            echo $data['email'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                        <?php 
+                                        if(isset($errors['email'])) 
+                                        {
+                                            echo $errors['email'];
+                                        }
+                                        ?>
+                                    </span>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="" style="color:#fff">Department</label>
+                                    <select name="department"  class="form-control">
+                                        <option value="">Select Department</option>
+                                        <?php
+                                            if ($departments) {
+                                                while($department = $departments->fetch_assoc()) {
+                                                    ?>
+                                                        <option value="<?php echo $department['id']; ?>"><?php echo $department['name']; ?></option>
+                                                    <?php
+                                                }
+                                            }
+                                        ?>
+                                    </select>
+                                    <span class="text-danger">
+                                        <?php 
+                                            if(isset($errors['department'])) {
+                                                echo $errors['department'];
+                                            }
+                                        ?>
+                                    </span>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label for="">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
+                                        value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
@@ -186,8 +214,8 @@
                                             ?>">
                                     <span class="text-danger">
                                         <?php 
-                                            if(isset($err['batch'])) {
-                                                echo $err['batch'];
+                                            if(isset($errors['batch'])) {
+                                                echo $errors['batch'];
                                             }
                                         ?>
                                     </span><br>

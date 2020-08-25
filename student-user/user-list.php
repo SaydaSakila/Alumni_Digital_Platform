@@ -3,7 +3,8 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     //get users list
-    $query = "SELECT * FROM users";
+     $query = "SELECT users.*, departments.name as department_name FROM `users` 
+        LEFT JOIN departments ON users.dept_id=departments.id ORDER BY id DESC";
     $users = $db->getData($query); 
 
 ?>
@@ -27,14 +28,10 @@
                              <?php /* echo $user['photo'] */ ?>                                                                                                      
                         <h1><?php echo $user['name'] ?></h1>
                         <p class="title">Works at: <?php echo $user['cname'] ?></p>
-                        <p>Position: <?php echo $user['jposition'] ?></p>
-                            <div style="margin: 24px 0;">
-                                
-                                <a href="#"><i class="fa fa-twitter"></i></a>  
-                                <a href="#"><i class="fa fa-linkedin"></i></a>  
-                                <a href="#"><i class="fa fa-facebook"></i></a> 
-                            </div>
-                        <p><button><?php echo $user['email'] ?></button></p>
+                        <p>Position: <?php echo $user['jposition']; ?></p>
+                                <p>Department: <?php echo $user['department_name']; ?></p> 
+                                 
+                                <p><button><?php echo $user['email']; ?></button></p>
                     </div><br> 
                 </div>    
                 <?php

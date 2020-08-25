@@ -9,22 +9,22 @@
     $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
             LEFT JOIN departments ON jobs.dept_id=departments.id 
             LEFT JOIN users ON jobs.user_id=users.id 
-            WHERE jobs.`dept_id` = '$department_id' ORDER BY id DESC";
+            WHERE jobs.`dept_id` = '$id' ORDER BY id DESC";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
 
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
-        $id= $_SESSION['id'];
+       // $id= $_SESSION['id'];
 
 ?>
 
 <div class="row" >
-        <div class="container" >
+    <div class="container" >
                 
-            <div class="row " style="margin-top:100px;margin-bottom:50px;
+        <div class="row " style="margin-top:100px;margin-bottom:50px;
                                                 border-radius:10px;box-sizing: border-box;">
-                <div class="col-md-10">
+            <div class="col-md-10">
                 <div class="card-header">
                     <h2 style="border:2px solid #333;color:#333; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Job Section</b></h2>   
                 </div>
@@ -88,7 +88,7 @@
                 </div>
                  <div class="col-md-2">
                     <div class="dashboard-sidebar" style="width: 220px;padding-left:5px;position:fixed;">
-                        <h3><b>Sort with Department Name</b></h3>
+                        <h3><b>Department Name</b></h3>
                         <ul class="dashboard-nav block" >
                             <?php 
                             if ($departments) {

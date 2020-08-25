@@ -51,9 +51,7 @@
                 <div class="col-md-10">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
-                        <div class="card-header-action">
-                            <a href="post-add.php" class="btn btn-success">Add New Blog</a>
-                        </div>
+                        
                     </div>
                     <?php 
 

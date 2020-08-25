@@ -3,7 +3,9 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     //get users list
-    $query = "SELECT * FROM students";
+    
+    $query = "SELECT students.*, departments.name as department_name FROM `students` 
+        LEFT JOIN departments ON students.dept_id=departments.id ORDER BY id DESC";
     $users = $db->getData($query); 
 
 ?>
@@ -37,6 +39,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
+                    <th>Department</th>
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Batch</th>
@@ -54,6 +57,7 @@
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>
+                                    <td><?php echo $user['department_name'] ?></td>
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>

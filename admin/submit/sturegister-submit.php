@@ -13,13 +13,14 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $username = $_POST['username'];
+        $department = htmlspecialchars(trim($_POST['department']));
         $universityid = $_POST['universityid'];
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address']; 
         $batch = $_POST['batch'];
 
-        if($name && $email && $username && $password && $batch && $universityid)
+        if($name && $email && $username && $department && $password && $batch && $universityid)
         {
             // unique validation
             $email_exists_query = "SELECT * FROM students WHERE email = '$email'";
@@ -49,7 +50,8 @@
             {
                 $password = sha1($password);
                 // store register
-                $insert_query = "INSERT INTO students (name, email, username, universityid, password, phone, address, batch) VALUES('$name', '$email', '$username', '$universityid', '$password', '$phone', '$address', '$batch')";
+                $insert_query = "INSERT INTO students (name, email, username, dept_id, universityid, password, phone, address, batch) 
+                    VALUES('$name', '$email', '$username', '$department', '$universityid', '$password', '$phone', '$address', '$batch')";
                 $run = $db->store($insert_query);
                 //var_dump($run);
                 if ($run) 
@@ -77,6 +79,9 @@
             if (empty($username)) 
             {
                 $errors['username'] = "Username Field Can not be Empty";
+            }
+            if (empty($department)) {
+                $errors['department'] = "Department Field can not be Empty";            
             }
             if (empty($password)) 
             {

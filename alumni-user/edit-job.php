@@ -12,6 +12,7 @@
         $sql = "SELECT * from jobs where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();
+
         $query = "SELECT * FROM departments";
         $departments = $db->getData($query);
         //var_dump($data);die();   
@@ -125,7 +126,8 @@
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label for="" style="color:#fff">Job Information</label>
-                                            <input type="text" name="info" class="form-control" value='<?php  echo $data['info']; ?>' placeholder="Update Job Information">
+                                          <!--  <input type="text" name="info" class="form-control" value='<?php  //echo $data['info']; ?>' placeholder="Update Job Information">-->
+                                            <textarea name="info" rows="1" class="form-control" id="" placeholder="Update Job Information"> <?php  echo $data['info']; ?></textarea>
                                             <span class="text-danger">
                                                 <?php 
                                                     if(isset($err['info'])) {

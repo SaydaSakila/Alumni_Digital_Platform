@@ -11,10 +11,11 @@
         $name = $_POST['name'];
         $username = $_POST['username'];
         $email = htmlspecialchars(trim($_POST['email']));
+        $department = htmlspecialchars(trim($_POST['department']));
         $password = $_POST['password'];
         $confpassword = $_POST['confpassword'];
         $batch = $_POST['batch'];
-        if ($name && $username  && $password && $confpassword && $batch)
+        if ($name && $username && $department  && $password && $confpassword && $batch)
         {
             // unique validation
             $email_exists_query = "SELECT * FROM users WHERE email = '$email'";
@@ -34,13 +35,19 @@
                 $_SESSION['errors'] = $errors;
                 header('location:../sturegistration.php');
             }
+            if(strlen($password)<8)
+            {
+                $errors['password']='Your Password must contain at least 8 or more characters';
+                $_SESSION['errors'] = $errors;
+                header('location:../sturegistration.php');
+            }
             if($password==$confpassword)
             {
                 $password = sha1($_POST['password']);
                 
                 // store register
-                $insert_query = "INSERT into students (`name`, `username`, `email`, `password`, `batch`) 
-                    VALUES('$name', '$username', '$email', '$password', '$batch' )";
+                $insert_query = "INSERT into students (`name`, `username`, `email`, `dept_id`, `password`, `batch`) 
+                    VALUES('$name', '$username', '$email', $department, '$password', '$batch' )";
                 $run = $db->store($insert_query);
                  //var_dump($run);
                 if ($run) 
@@ -76,6 +83,9 @@
             if (empty($email)) 
             {
                 $errors['email'] = "Email Field Can not be Empty";            
+            }
+            if (empty($department)) {
+                $errors['department'] = "Department Field can not be Empty";            
             }
             if (empty($password)) 
             {

@@ -3,8 +3,9 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     //get users list
-    $query = "SELECT * FROM users";
-    $users = $db->getData($query); 
+    $query = "SELECT users.*, departments.name as department_name FROM `users` 
+        LEFT JOIN departments ON users.dept_id=departments.id ORDER BY id DESC";
+    $users = $db->getData($query);
 
 ?>
 
@@ -30,7 +31,7 @@
         <table class="table table-bordered" style="text-align:center;">
             <thead >
                 <tr>
-                    <th colspan="13" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
+                    <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
                 </tr>
 
                 <tr >
@@ -38,6 +39,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
+                    <th>Department</th>
                     <th>Phone</th>
                     <th>Address</th>
                     <th>Batch</th>
@@ -58,6 +60,7 @@
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>
+                                    <td><?php echo $user['department_name'] ?></td>
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
                                     <td><?php echo $user['batch'] ?></td>

@@ -111,7 +111,8 @@
                                     <div class="row">
                                         <div class="form-group col-lg-6">
                                             <label for="" style="color:#fff">Job Information</label>
-                                            <input type="text" name="info" class="form-control" placeholder="Enter Job Information">
+                                           <!-- <input type="text" name="info" class="form-control" placeholder="Enter Job Information">-->
+                                            <textarea name="info" id="" rows="1" class="form-control"  placeholder="Enter Job Information"></textarea>
                                             <span class="text-danger">
                                                 <?php 
                                                     if(isset($err['info'])) {

@@ -9,14 +9,8 @@
       $data = $_SESSION['old_data'];
       unset($_SESSION['old_data']);
     }
-   /*if(isset($_GET['user'])){
-        $id=$_GET['user'];
-        
-        $sql = "SELECT * from users where id='$id'";
-        $user = mysqli_fetch_assoc($db->conn->query($sql));
-        //var_dump($data);
- 
-    }*/
+   $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
 ?>
 
 <div class="row">
@@ -84,6 +78,28 @@
                             ?>
                         </span>
                     </div>
+                                    <div class="form-group">
+                                        <label for="" >Department</label>
+                                        <select name="department"  class="form-control">
+                                            <option value="">Select Department</option>
+                                            <?php
+                                                if ($departments) {
+                                                    while($department = $departments->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $department['id']; ?>"><?php echo $department['name']; ?></option>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($err['department'])) {
+                                                    echo $err['department'];
+                                                }
+                                            ?>
+                                        </span>
+                                    </div>
                     <div class="form-group">
                         <label for="_pass">Password</label>
                         <input type="password" name="password" id="_pass" class="form-control" placeholder="Enter Password" value="<?php 
