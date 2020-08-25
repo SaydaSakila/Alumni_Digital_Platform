@@ -20,7 +20,7 @@
             <div class="row" style="margin-top:150px;margin-left:auto;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
     
-                <div class="container" style="background-color:#ddd;padding:20px;">
+                <div class="container" style="width:850px;background-color:#ddd;padding:20px;">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Events</b></h3>
                         
@@ -58,7 +58,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> <br>             
+                                    </div>              
                        
                                             
                         <?php

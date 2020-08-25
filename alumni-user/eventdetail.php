@@ -23,7 +23,7 @@
             <div class="row" style="margin-top:150px;margin-left:auto;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
     
-                <div class="container">
+                <div class="container" style="width:850px;">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Event Details</b></h3>
                         
