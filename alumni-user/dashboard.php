@@ -35,14 +35,14 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
+                        <th colspan="12" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
                     </tr>
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
                         <th>Category</th>
                         <th>Content</th>
-                        <!--<th>Created By</th>-->
+                        <th>Photo</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -59,7 +59,7 @@
                                        <td><?php echo $post['title']; ?></td>
                                        <td><?php echo $post['category_name']; ?></td>
                                        <td><?php echo substr($post['content'],0,10); ?></td>
-                                      <!-- <td><?php //echo $post['user_name']; ?></td>-->
+                                       <td><?php echo $post['photo']; ?></td>
                                        <td><?php echo $post['created_at']; ?></td>
                                        <td>
                                        <a href="blog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>

@@ -2,14 +2,11 @@
     $page_title = 'Update User Information - Alumni';
     // include header file
     include dirname(__FILE__). '/includes/header.php';
-    // contents include
-    //include dirname(__FILE__). '/includes/sidebar.php';
     $db = new Database();
 
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
-        //$id = $_SESSION['id'];
-        
+
         $sql = "SELECT * from users where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();   
@@ -19,6 +16,11 @@
         $data = $_SESSION['old_data'];
         unset($_SESSION['old_data']);
     }
+    if (isset($_SESSION['file_errors'])) {
+        $file_err = $_SESSION['file_errors'];
+        unset($_SESSION['file_errors']);
+    }
+
 ?>
 
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
@@ -218,8 +220,19 @@
                         </div>
                     
                             <div class="form-group">
-                                <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <label for="exampleFormControlFile1" style="color:#fff;">Upload Your Image</label>
+                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
+
                             </div>
                     
 

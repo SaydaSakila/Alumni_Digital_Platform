@@ -4,7 +4,10 @@
     include dirname(__FILE__).'/includes/header.php';
     // contents include
    // include dirname(__FILE__). '/includes/sidebar.php';
-
+    if (isset($_SESSION['file_errors'])) {
+        $file_err = $_SESSION['file_errors'];
+        unset($_SESSION['file_errors']);
+    }
     $query = "SELECT * FROM categories";
     $categories = $db->getData($query);
 ?>
@@ -84,7 +87,17 @@
                                 </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
                             </div>
                                 <div class="form-group">
                                     <button class="btn btn-success btn-lg btn-block" type="submit" name="alu-post_submit">Save Blog</button>

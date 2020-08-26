@@ -1,5 +1,6 @@
 <?php    
-    include dirname(__FILE__). '/includes/header.php';
+         $page_title = 'Job List';
+        include dirname(__FILE__). '/includes/header.php';
 
     //$page_title = 'Job List';
     
