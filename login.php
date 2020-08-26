@@ -34,7 +34,6 @@
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
-
                     }
                     #ui{
                         background-color:#fff;

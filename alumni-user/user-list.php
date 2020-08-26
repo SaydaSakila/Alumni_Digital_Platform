@@ -30,7 +30,7 @@
                         ?>
                         <div class="col-sm-4 "  ><br>
                             <div class="card" style="width:100%;height:auto">
-                                <img src="../img/16303029.jpg" alt="Avater" class="rounded-circle" 
+                                <img src="../img/avater.png" alt="Avater" class="rounded-circle" 
                                     style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                                     <?php /* echo $user['photo'] */ ?>                                                                                                       
                                 <h3><?php echo $user['name']; ?></h3>

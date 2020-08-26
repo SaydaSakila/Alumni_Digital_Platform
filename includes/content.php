@@ -119,65 +119,99 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h4 style="margin-left:30px;font-size:25px;"><b>Objectives</b></h4>
+          <p>Alumni Digital Platform plays a vital role by assisting the alumni in developing 
+linkage with industries, multinational organizations as well as other firms and companies. 
+Besides that, it assists the students by giving instructions about what to do or not. 
+It also provides job opportunities to the alumni and students of IUBAT. Here Alumni and students botha
+can read and write blog which is very helpfull for all.</p>
+            <h4 style="margin-left:30px;font-size:25px;"><b>Preamble</b></h4>
+          <p>
+            We, the Alumni of the IUBAT—International University of Business Agriculture and Technology,
+ develop mutual interest among ourselves, establish mutually beneficial relations between 
+Student and Alumni, and promote the interests of students do hereby form into a
+platform and adopt this constitution.</p>
+        
         </header>
 
-        <div class="row about-cols">
-
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="card">
-                <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><a href="#"><i class="ion-ios-speedometer-outline"></i></a></div>
-              </div>
-              <h2 class="title"><a href="#">Our Mission</a></h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-plan.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Plan</a></h2>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-vision.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Vision</a></h2>
-              <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
+        
       </div>
     </section><!-- #about -->
 
     <!--==========================
       Services Section
     ============================-->
+    <?php
+    $page_title = 'User List - Alumni';
+    // include header file
+    //include dirname(__FILE__). '/includes/header.php';
+    //get users list
+    $query = "SELECT * FROM users";
+    $users = $db->getData($query); 
+
+    $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
+            LEFT JOIN departments ON jobs.dept_id=departments.id 
+            LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
+    $posts = $db->getData($query);
+    $user_id= $_SESSION['id'];
+
+
+?>
     <section id="services">
       <div class="container">
 
         <header class="section-header wow fadeInUp">
           <h3>Career Opportunity</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+          <p>This is the Platform where Alumni or Student both can view Job related any news.</p>
         </header>
+        <div class="row " >
+              <?php 
+              if ($posts) 
+                  {
+                  while($post = $posts->fetch_assoc()) 
+                  {
+              ?>
+              <div class="col-sm-1"></div>                       
+                  <div class="col-sm-10 "  >
+                      <div class="container" style="width:auto;height:auto;margin-top:20px;background-color:#ddd;border:2px solid #333;padding:5px;" >
+                            <!--<img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                          <div class="hover" style="background-color: #fff">
+                              <div class="card-header" style="display:flex;">
+                              
+                                  <a href="jobinfo.php?id=<?php echo $post['id'];?>">
+                                  <h4 style="color:#0d4fb2;"><b><?php echo $post['title']; ?></b></h4></a> 
+                                  <span style="margin-left:20px;padding:5px;"><small>Experience : <?php echo $post['experience']; ?></small></span>
+                                  
+                                  
+                              </div>
+                              <div class="" style="display:flex;margin-left:20px;margin-top:10px;">
+                                  <h5 style="color:#0d4fb2"><img src="img/company.png" alt="Location" > <?php echo $post['cname']; ?></h5><span style="margin-left:30px;"><img src="img/location.png" alt="Location" > <?php echo $post['address']; ?></span>
+                              </div>
+                              <div class="" style="display:flex;margin-left:20px;">
+                                  <h5 style=""><img src="img/money.png" alt="Salary" > <b>Salary : <?php echo $post['salary']; ?></b></h5><span style="margin-left:55px;"><img src="img/hour.png" alt="Time" > <?php echo $post['hour']; ?></span>
+                              </div>    
+                                <p style="margin-left:20px;">Educational Qualifications : <?php echo $post['education']; ?></p>
+                                  <p style="margin-left:20px;"><?php //echo substr($post['info'],0,50); ?></p>
+                                
+                                  
+                              
+                              <div class="card-footer">
+                                  Department : 
+                                  <?php echo $post['department_name'];?>
+                                  <small class="text-muted" style="margin-left:150px;"><img src="img/posttime.png" alt="Time" > Posted On : <?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?></small>
+                                  <small class="text-muted" style="margin-left:100px;"><img src="img/deadline.png" alt="Time" >  Apply before : <?php $d=strtotime($post['deadline']); echo date("d M, Y",$d); ?></small>
+                                          
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                                            
+                        <?php
+                        break;
+                            }     
+                            } 
+                            ?>
+             </div>       
 <!--
         <div class="row">
 
@@ -330,16 +364,16 @@
         </header>
 
         <div class="row">
-          <div class="col-lg-12">
+        <!--  <div class="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-app">Academic</li>
               <li data-filter=".filter-card">Career</li>
               <li data-filter=".filter-web">Others</li>
             </ul>
-          </div>
+          </div>-->
         </div>
-        <div class="row">
+        <div class="row" style="margin-top:30px;">
           <div class="col-lg-12">
          
               <a href="login.php" class="btn btn-success btn-block"  >Add New Blog</a>
@@ -370,16 +404,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             LEFT JOIN categories ON posts.category_id=categories.id 
             LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
     $posts2 = $db->getData($query2);
-   /* $UnionJoinPosts= "SELECT 'Alumni' as  title, content, user_name, created_at
-                      FROM $query
-                      UNION
-                      SELECT 'Student', title, content, user_name, created_at
-                      FROM $query1
-                      UNION
-                      SELECT 'Admin', title, content, user_name, created_at
-                      FROM $query2
-                      Order by created_at DESC";   
-     $posts4 = $db->getData($UnionJoinPosts);*/
+ 
 
 ?>
         <div class="row ">

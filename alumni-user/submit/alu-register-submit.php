@@ -36,6 +36,20 @@
                 $_SESSION['errors'] = $errors;
                 header('location:../alumni-registration.php');
             }
+            
+// Variable to check
+$email = "abcde@example.com";
+
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validate e-mail
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  echo("$email is a valid email address");
+} else {
+  echo("$email is not a valid email address");
+}
+
             if(strlen($password)<8)
             {
                 $errors['password']='Your Password must contain at least 8 or more characters';
