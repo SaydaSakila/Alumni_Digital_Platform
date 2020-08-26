@@ -9,6 +9,7 @@
         $title = htmlspecialchars(trim($_POST['title']));
         $content = $_POST['content'];
         $category = htmlspecialchars(trim($_POST['category']));
+        $file_rename = $_POST['photo'];
 
         if ($title && $content && $category) {
             //$admin_id = $_SESSION['admin_id'];

@@ -119,7 +119,7 @@ button:hover, a:hover {
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.php">Home</a></li>
-          <li><a href="#about">About Us</a></li>
+          
           <li><a href="user-list.php">Alumni List</a></li>
           <li><a href="job.php">Career Opportunity</a></li>
           <li><a href="posts.php">Blog</a></li>

@@ -59,7 +59,7 @@
                                        <td><?php echo $post['title']; ?></td>
                                        <td><?php echo $post['category_name']; ?></td>
                                        <td><?php echo substr($post['content'],0,10); ?></td>
-                                       <td><?php echo $post['photo']; ?></td>
+                                       <td><img src="uploads/<?php echo $post['photo']; ?>"></td>
                                        <td><?php echo $post['created_at']; ?></td>
                                        <td>
                                        <a href="blog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>

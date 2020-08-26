@@ -23,6 +23,7 @@
         $passingyear = $_POST['passingyear'];
         $cname = $_POST['cname'];
         $jposition = $_POST['jposition'];
+        $file_rename = $_POST['photo'];
 
 
         if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
@@ -51,7 +52,7 @@
                 
                 if (empty($file_errors)) {
                     $file_rename = substr(md5(time()), 0, 10).'.'.$ext;
-                    $upload_directory = '../uploads/'. $file_rename;
+                    $upload_directory = './uploads/'. $file_rename;
 
                     if (!move_uploaded_file($tmp_name, $upload_directory)) {
                         $_SESSION['file_errors'] = ['Faled to upload file'];

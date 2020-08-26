@@ -64,11 +64,11 @@
                             {
                             while($post = $posts->fetch_assoc()) 
                             {
-                        ?>
+                        ?><br>
                              <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/app3.jpg" class="card-img-top" alt="Card Image">
+                                     <img src="uploads/<?php echo $post['photo'];?>" class="card-img-top" alt="Blog Image">
                                 <div class="card-header">Category:
                                     <?php echo $post['category_name'];?>
                                 </div>
@@ -90,7 +90,7 @@
                                         
                                 </div>
                             </div>
-                        </div>                   
+                        </div>                  
                         
                                             
                         <?php
@@ -108,7 +108,7 @@
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
+                                    <img src="uploads/<?php echo $post['photo'];?>" class="card-img-top" alt="Blog Image">
                                 <div class="card-header">Category:
                                     <?php echo $post['category_name'];?>
                                 </div>
@@ -146,7 +146,7 @@
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web3.jpg" class="card-img-top" alt="Card Image">
+                                    <img src="uploads/<?php echo $post['photo'];?>" class="card-img-top" alt="Blog Image">
                                                 <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>

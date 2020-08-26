@@ -14,13 +14,13 @@
         $email = $_POST['email'];
         $username = $_POST['username'];
         $department = htmlspecialchars(trim($_POST['department']));
-        $universityid = $_POST['universityid'];
+        //$universityid = $_POST['universityid'];
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address']; 
         $batch = $_POST['batch'];
 
-        if($name && $email && $username && $department && $password && $batch && $universityid)
+        if($name && $email && $username && $department && $password && $batch /*&& $universityid*/)
         {
             // unique validation
             $email_exists_query = "SELECT * FROM students WHERE email = '$email'";
@@ -35,13 +35,13 @@
             {
                 $errors['username'] = "Username Already Exist";
             }
-            $universityid_exists_query = "SELECT * FROM students WHERE universityid = '$universityid'";
+           /* $universityid_exists_query = "SELECT * FROM students WHERE universityid = '$universityid'";
             $universityid_exists = $db->getData($universityid_exists_query);
             if ($universityid_exists) 
             {
                 $errors['universityid'] = "University ID Already Exist";
-            }
-            if ($email_exists || $username_exists || $universityid_exists) 
+            }*/
+            if ($email_exists || $username_exists /*|| $universityid_exists*/) 
             {
                 $_SESSION['errors'] = $errors;
                 header('location:../student-register.php');
@@ -50,8 +50,8 @@
             {
                 $password = sha1($password);
                 // store register
-                $insert_query = "INSERT INTO students (name, email, username, dept_id, universityid, password, phone, address, batch) 
-                    VALUES('$name', '$email', '$username', '$department', '$universityid', '$password', '$phone', '$address', '$batch')";
+                $insert_query = "INSERT INTO students (name, email, username, dept_id/*, universityid*/, password, phone, address, batch) 
+                    VALUES('$name', '$email', '$username', '$department', '$password', '$phone', '$address', '$batch')";
                 $run = $db->store($insert_query);
                 //var_dump($run);
                 if ($run) 
@@ -91,10 +91,10 @@
             {
                 $errors['batch'] = "batch Field Can not be Empty";
             }
-            if (empty($universityid)) 
+           /* if (empty($universityid)) 
             {
                 $errors['universityid'] = "University ID Field Can not be Empty";
-            }
+            }*/
             $_SESSION['errors'] = $errors;
             header('location:../student-register.php');
         }

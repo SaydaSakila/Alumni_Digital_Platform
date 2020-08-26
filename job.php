@@ -59,12 +59,12 @@
                                         
                                     </div>
                                     <div class="" style="display:flex;margin-left:20px;margin-top:10px;">
-                                        <h5 style="color:#0d4fb2"><img src="img/company.png" alt="Location" > <?php echo $post['cname']; ?></h5><span style="margin-left:30px;"><img src="img/location.png" alt="Location" > <?php echo $post['address']; ?></span>
+                                        <h5 style="color:#0d4fb2"><img src="img/company.png" alt="Location" > <?php echo $post['cname']; ?></h5><span style="margin-left:30px;margin-top:10px;"><img src="img/location.png" alt="Location" > <?php echo $post['address']; ?></span>
                                     </div>
-                                    <div class="" style="display:flex;margin-left:20px;">
-                                        <h5 style=""><img src="img/money.png" alt="Salary" > <b>Salary : <?php echo $post['salary']; ?></b></h5><span style="margin-left:55px;"><img src="img/hour.png" alt="Time" > <?php echo $post['hour']; ?></span>
+                                    <div class="" style="display:flex;margin-left:20px;margin-top:5px;">
+                                        <h5 style=""><img src="img/money.png" alt="Salary" > <b>Salary : <?php echo $post['salary']; ?></b></h5><span style="margin-left:55px;margin-top:5px;"><img src="img/hour.png" alt="Time" > <?php echo $post['hour']; ?></span>
                                     </div>    
-                                      <p style="margin-left:20px;">Educational Qualifications : <?php echo $post['education']; ?></p>
+                                      <p style="margin-left:20px;margin-top:5px;">Educational Qualifications : <?php echo $post['education']; ?></p>
                                        <p style="margin-left:20px;"><?php //echo substr($post['info'],0,50); ?></p>
                                       
                                         

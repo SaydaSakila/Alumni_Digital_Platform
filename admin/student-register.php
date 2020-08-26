@@ -100,22 +100,7 @@
                                             ?>
                                         </span>
                                     </div>
-                    <div class="form-group">
-                        <label for="_universityid">University ID</label>
-                        <input type="text" name="universityid" id="_universityid" class="form-control" placeholder="Enter Student University ID" value="<?php 
-                                    if(isset($data['universityid'])) 
-                                    {
-                                        echo $data['universityid'];
-                                    }
-                                ?>">
-                        <span class="text-danger">
-                            <?php 
-                                if(isset($err['universityid'])) {
-                                    echo $err['universityid'];
-                                }
-                            ?>
-                        </span>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="_pass">Password</label>
                         <input type="password" name="password" id="_pass" class="form-control" placeholder="Enter Student Password" value="<?php 
