@@ -36,7 +36,7 @@
                 <div class="card-header">
                     <h3 class="card-title" style="text-align:center;color:#fff;">Edit User Information - Alumni</h3>
                 </div>
-                <form action="update-userreg.php" method="POST">
+                <form action="update-userreg.php" method="POST" enctype="multipart/form-data">
                    
                     <div class="card-body">
                         <?php 
@@ -82,7 +82,8 @@
                                 </span>
                             </div>
                         </div>
-                            <div class="form-group ">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
                                 <label for="_email" style="color:#fff;">Email</label>
                                 <input type="email" name="email" id="_email" class="form-control" placeholder="Update Your Email" value="<?php 
                                     if(isset($data['email'])) 
@@ -98,6 +99,23 @@
                                     ?>
                                 </span>
                             </div>
+                             <div class="form-group col-lg-6">
+                                <label for="_fb" style="color:#fff;">Facebook Link</label>
+                                <input type="fb" name="fb" id="_fb"  class="form-control" placeholder="Update Your Facebook Profile Link" value="<?php 
+                                    if(isset($data['fb'])) 
+                                    {
+                                        echo $data['fb'];
+                                    }
+                                ?>">
+                                <span class="text-danger">
+                                    <?php 
+                                        if(isset($err['fb'])) {
+                                            echo $err['fb'];
+                                        }
+                                    ?>
+                                </span>
+                            </div>
+                        </div>
                         
                         <div class="row">
                             <div class="form-group col-lg-6">
@@ -219,8 +237,8 @@
                             </div>
                         </div>
                     
-                            <div class="form-group">
-                                <label for="exampleFormControlFile1" style="color:#fff;">Upload Your Image</label>
+                              <div class="form-group">
+                                <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
                                 <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
                                 <span class="text-danger">
                                     <?php 
@@ -232,7 +250,6 @@
                                     }
                                     ?>
                                 </span>
-
                             </div>
                     
 

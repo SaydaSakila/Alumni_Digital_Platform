@@ -67,7 +67,7 @@
                                     <td><?php echo $user['passingyear'] ?></td>
                                     <td><?php echo $user['cname'] ?></td>
                                     <td><?php echo $user['jposition'] ?></td>
-                                    <td><?php /* echo $user['photo'] */ ?></td>
+                                    <td style="width:50px;height: 50px;"><?php  echo $user['photo']  ?> </td>
                                     <td>
                                         <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
                                     

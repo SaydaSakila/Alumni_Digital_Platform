@@ -153,7 +153,7 @@ platform and adopt this constitution.</p>
             LEFT JOIN departments ON jobs.dept_id=departments.id 
             LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
     $posts = $db->getData($query);
-    $user_id= $_SESSION['id'];
+    //$user_id= $_SESSION['id'];
 
 
 ?>

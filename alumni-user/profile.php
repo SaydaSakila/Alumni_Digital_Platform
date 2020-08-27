@@ -26,7 +26,7 @@
                 <div class="col-md-9 "  >
                 <h3 style="text-align:center;"><b><?php echo $user['name'] ?>'s Profile</b></h3>
                     <div class="card" style="width:100%;height:auto">
-                        <img src="../img/avater.png" alt="Avater" class="rounded-circle" 
+                        <img src="uploads/<?php echo $user['photo']; ?>" alt="Avater" class="rounded-circle" 
                             style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                              <?php /* echo $user['photo'] */ ?>                                                                                                       
                         <h1><?php echo $user['name'] ?></h1>
@@ -36,9 +36,12 @@
                         Phone: <?php echo $user['phone'] ?><br>
                             Batch: <?php echo $user['batch'] ?><br>
                             Passing Year: <?php echo $user['passingyear'] ?><br>
-                        <button><?php echo $user['email'] ?></button><br>
-                        <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success btn-block"><i class="fas fa-user-edit"></i>Update Profile</a></p>
-                    </div><br> 
+                            <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
+                            <a  href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block">Facebook Profile</a>
+                            
+                        
+                        <button><a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success btn-block"><i class="fas fa-user-edit"></i>UPDATE PROFILE</a></button></p>
+                    </div>
                 </div>    
                 <?php
                             }

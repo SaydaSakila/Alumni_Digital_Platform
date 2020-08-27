@@ -119,65 +119,99 @@
 
         <header class="section-header">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h4 style="margin-left:30px;font-size:25px;"><b>Objectives</b></h4>
+          <p>Alumni Digital Platform plays a vital role by assisting the alumni in developing 
+linkage with industries, multinational organizations as well as other firms and companies. 
+Besides that, it assists the students by giving instructions about what to do or not. 
+It also provides job opportunities to the alumni and students of IUBAT. Here Alumni and students botha
+can read and write blog which is very helpfull for all.</p>
+            <h4 style="margin-left:30px;font-size:25px;"><b>Preamble</b></h4>
+          <p>
+            We, the Alumni of the IUBAT—International University of Business Agriculture and Technology,
+ develop mutual interest among ourselves, establish mutually beneficial relations between 
+Student and Alumni, and promote the interests of students do hereby form into a
+platform and adopt this constitution.</p>
+        
         </header>
 
-        <div class="row about-cols">
-
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="card">
-                <img src="img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><a href="#"><i class="ion-ios-speedometer-outline"></i></a></div>
-              </div>
-              <h2 class="title"><a href="#">Our Mission</a></h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-plan.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Plan</a></h2>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem  doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="about-col">
-              <div class="img">
-                <img src="img/about-vision.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Vision</a></h2>
-              <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
+        
       </div>
     </section><!-- #about -->
 
     <!--==========================
       Services Section
     ============================-->
+    <?php
+    $page_title = 'User List - Alumni';
+    // include header file
+    //include dirname(__FILE__). '/includes/header.php';
+    //get users list
+    $query = "SELECT * FROM users";
+    $users = $db->getData($query); 
+
+    $query = "SELECT jobs.*, departments.name as department_name, users.name as user_name FROM `jobs` 
+            LEFT JOIN departments ON jobs.dept_id=departments.id 
+            LEFT JOIN users ON jobs.user_id=users.id ORDER BY id DESC";
+    $posts = $db->getData($query);
+    $user_id= $_SESSION['id'];
+
+
+?>
     <section id="services">
       <div class="container">
 
         <header class="section-header wow fadeInUp">
           <h3>Career Opportunity</h3>
-          <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus, ad pro quaestio laboramus. Ei ubique vivendum pro. At ius nisl accusam lorenta zanos paradigno tridexa panatarel.</p>
+          <p>This is the Platform where Alumni or Student both can view Job related any news.</p>
         </header>
+        <div class="row " >
+              <?php 
+              if ($posts) 
+                  {
+                  while($post = $posts->fetch_assoc()) 
+                  {
+              ?>
+              <div class="col-sm-1"></div>                       
+                  <div class="col-sm-10 "  >
+                      <div class="container" style="width:auto;height:auto;margin-top:20px;background-color:#ddd;border:2px solid #333;padding:5px;" >
+                            <!--<img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                          <div class="hover" style="background-color: #fff">
+                              <div class="card-header" style="display:flex;">
+                              
+                                  <a href="jobinfo.php?id=<?php echo $post['id'];?>">
+                                  <h4 style="color:#0d4fb2;"><b><?php echo $post['title']; ?></b></h4></a> 
+                                  <span style="margin-left:20px;padding:5px;"><small>Experience : <?php echo $post['experience']; ?></small></span>
+                                  
+                                  
+                              </div>
+                              <div class="" style="display:flex;margin-left:20px;margin-top:10px;">
+                                  <h5 style="color:#0d4fb2"><img src="../img/company.png" alt="Location" > <?php echo $post['cname']; ?></h5><span style="margin-left:30px;margin-top:5px;"><img src="../img/location.png" alt="Location" > <?php echo $post['address']; ?></span>
+                              </div>
+                              <div class="" style="display:flex;margin-left:20px;margin-top:5px;">
+                                  <h5 style=""><img src="../img/money.png" alt="Salary" > <b>Salary : <?php echo $post['salary']; ?></b></h5><span style="margin-left:55px;margin-top:5px;"><img src="../img/hour.png" alt="Time" > <?php echo $post['hour']; ?></span>
+                              </div>    
+                                <p style="margin-left:20px;margin-top:10px;">Educational Qualifications : <?php echo $post['education']; ?></p>
+                                  <p style="margin-left:20px;"><?php //echo substr($post['info'],0,50); ?></p>
+                                
+                                  
+                              
+                              <div class="card-footer">
+                                  Department : 
+                                  <?php echo $post['department_name'];?>
+                                  <small class="text-muted" style="margin-left:150px;"><img src="../img/posttime.png" alt="Time" > Posted On : <?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?></small>
+                                  <small class="text-muted" style="margin-left:100px;"><img src="../img/deadline.png" alt="Time" >  Apply before : <?php $d=strtotime($post['deadline']); echo date("d M, Y",$d); ?></small>
+                                          
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                                            
+                        <?php
+                        break;
+                            }     
+                            } 
+                            ?>
+             </div>       
 <!--
         <div class="row">
 
@@ -216,7 +250,6 @@
 -->
       </div>
     </section><!-- #services -->
-
     <!--==========================
       Call To Action Section
     ============================-->
@@ -749,91 +782,71 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     -->
     <!-- #testimonials -->
 
-    <!--==========================
+   <!--==========================
       Team Section
     ============================-->
+    <?php
+    $page_title = 'Event List';
+    // header include
+    //include dirname(__FILE__). '/includes/header.php';
+ 
+    // saidebar include
+    //include dirname(__FILE__). '/includes/sidebar.php';
+
+     $query1 = "SELECT * FROM `events` ORDER BY id DESC";
+        $events = $db->getData($query1);
+        //$id= $_SESSION['id'];
+    
+?>
     <section id="team">
       <div class="container">
         <div class="section-header wow fadeInUp">
           <h3>Events</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          
         </div>
+            <div class="container ">
+                        <?php
+                        if ($events) {
+                            while($event = $events->fetch_assoc()) {
+                                ?><br>
+                                    <div class="card mb-3" style="max-width: 800px;height:auto;;">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-3" style="background-color:#424949;color:#fff">
+                                                <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
+                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y ",$d); ?></h2>
+                                            </div>
+                                            <div class="col-md-8" style="text-align:left;">
+                                                <div class="card-header">
+                                                    Event Name: <?php echo $event['name']; ?><br>
+                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
+                                                </div>
+                                                <div class="card-body" style="padding:20px;">
+                                                    
+                                                    <p class="card-text"><?php echo substr(Strip_tags($event['content']), 0, 50); ?>..</p>
+                                                    <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;text-align:right;" >Read Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>              
+                       
+                                            
+                        <?php
+                        break;
+                            }
+                        
+                                    
+                            } 
 
-        <div class="row">
+                     
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
-            <div class="member">
-              <img src="img/team-1.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="member">
-              <img src="img/team-2.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="member">
-              <img src="img/team-3.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="member">
-              <img src="img/team-4.jpg" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+                            else 
+                            {
+                        ?>
+                                <div class="card text-center"><p>No Events found</p></div>
+                            <?php
+                            }
+                            ?>
+                    </div>
 
       </div>
     </section><!-- #team -->

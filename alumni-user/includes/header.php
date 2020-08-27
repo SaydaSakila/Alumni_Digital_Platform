@@ -18,6 +18,7 @@
   }
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
+   // $photo = $_SESSION['photo'];
 
     $db = new Database();
     //var_dump($db);die();
@@ -35,7 +36,7 @@
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
@@ -168,7 +169,8 @@ button:hover, a:hover {
           </li>
           
           <li class="menu-has-children"><a href="#home"><?php echo $name; ?> 
-              <img src="../alumni-user/img/avater.png" alt="Avatar" style="width:30px;height:30px;"></a>
+             <!-- <img src="../../uploads/<?php //echo $photo['photo']; ?>" -->
+            <img src="img/avater.png"  alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
               <li><a href="dashboard.php">DASHBOARD</a></li>
               <li><a href="profile.php?id=<?php echo $id;?>">MY PROFILE</a></li>

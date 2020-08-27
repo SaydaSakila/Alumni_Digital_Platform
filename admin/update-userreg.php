@@ -23,10 +23,46 @@
         $passingyear = $_POST['passingyear'];
         $cname = $_POST['cname'];
         $jposition = $_POST['jposition'];
+        $file_rename = $_POST['photo'];
 
 
         if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
         {
+             $file_rename = ''; 
+            
+            if (isset($_FILES['image'])) {
+                $file_name = $_FILES['image']['name'];
+                $tmp_name = $_FILES['image']['tmp_name'];
+                $file_size = $_FILES['image']['size'];
+                $allow = ['jpg', 'png', 'jpeg', 'gif'];
+        
+                //extension
+                $div = explode('.', $file_name);
+                $ext = strtolower(end($div));
+
+            
+               //check extension
+                if (!in_array($ext, $allow)) {
+                    $file_errors[] = 'File must be the following type: '. implode(', ', $allow);
+                }
+                
+                if ($file_size > (1024*5024)) {
+                    $file_errors[] = "File size should be more than 4MB";
+                } 
+                
+                if (empty($file_errors)) {
+                    $file_rename = substr(md5(time()), 0, 10).'.'.$ext;
+                    $upload_directory = '../../uploads/'. $file_rename;
+
+                    if (!move_uploaded_file($tmp_name, $upload_directory)) {
+                        $_SESSION['file_errors'] = ['Faled to upload file'];
+                        header('location:user-list.php');
+                    }
+                } else {
+                    $_SESSION['file_errors'] = $file_errors;
+                    header('location:user-list.php');
+                }
+            }
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',
             phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', 
