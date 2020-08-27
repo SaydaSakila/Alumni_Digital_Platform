@@ -12,8 +12,8 @@
         
        $query = "SELECT jobs.*, departments.name as department_name, users.email as user_email FROM `jobs` 
             LEFT JOIN departments ON jobs.dept_id=departments.id 
-            LEFT JOIN users ON jobs.user_id=users.id 
-            ORDER BY id DESC";
+            LEFT JOIN users ON jobs.user_id=users.id WHERE jobs.id='$id'";
+            
         $posts =  $db->conn->query($query);
         $post = $posts->fetch_assoc();
 
@@ -25,8 +25,8 @@
 ?>
  <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
         <div class="container">
-            <div class="row" style="padding:120px 0px;">
-                    <?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
+            <div class="row" style="padding:20px 0px;">
+                    <?php //include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
                 <div class="col-sm-9 "  >
                             <div class="container" style="width:auto;height:auto;background-color:#ddd;border:2px solid #fff;padding:20px;" >
                                  <!--<img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->

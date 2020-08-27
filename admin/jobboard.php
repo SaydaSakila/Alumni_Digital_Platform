@@ -12,17 +12,17 @@
     $user_id= $_SESSION['id'];
 ?>
 
-<div id="dashboard">
-                <div class="container" >
-                    
-                    <div class="row" >
-                    <?php
-                        // contents include
-                       // include dirname(__FILE__). '/includes/dashsidebar.php';
-                    ?>
-                        <div class="col-md-12 " >
+
+                   
+                       
         
-        <div class="container">
+    <div class="card">
+    <div class="card-header">
+        <h3  style="border:2px solid #5c5c5e; border-radius:5px; padding: 7px;" class="card-title" ><b>Job Circular</b> </h3>
+        <a href="job-add.php" class="btn btn-secondary" > Add New Job</a>
+        
+        
+    </div>
         <?php 
 
         if (isset($_SESSION['message'])): ?>
@@ -78,9 +78,9 @@
                                        <td><?php echo $post['department_name']; ?></td>
                                       <td><?php echo $post['user_name']; ?></td>
                                        <td>
-                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
-                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                        </td>
                                     </tr>
                                 <?php
@@ -89,17 +89,15 @@
                         } else {
                             ?>
                             <tr>
-                                <td>No Blog found</td>
+                                <td>No Job found</td>
                             </tr>
                         <?php
                         }
                     ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-    </div>
-    </div>
+    </div>    
+  
 
 <?php
     // footer include

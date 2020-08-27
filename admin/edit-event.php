@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group" >
                         <label for="" >Event Details</label>
-                        <textarea name="content" id="summernote" rows="5" value='<?php  echo $data['content']; ?>' class="form-control"  placeholder="Update Event Information"></textarea>
+                        <textarea name="content"  rows="5"  class="form-control"  placeholder="Update Event Information"> <?php  echo $data['content']; ?></textarea>
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['content'])) {

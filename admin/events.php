@@ -47,6 +47,8 @@
                         <th>Event Details</th>
                         <th>Event Date</th>
                         <th>Event Create Time</th>
+                        <th>Photo</th>
+
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -61,9 +63,10 @@
                                         <td><?php echo $event['content'] ?></td>
                                         <td><?php echo $event['date'] ?></td>
                                        <td><?php echo $event['created_at'] ?></td>
+                                       <td><?php echo $event['photo'] ?></td>
                                         <td>
-                                            <a href="edit-event.php?edit=<?php echo $event['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                            <a href="delete-event.php?delete=<?php echo $event['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                            <a href="edit-event.php?edit=<?php echo $event['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                            <a href="delete-event.php?delete=<?php echo $event['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php

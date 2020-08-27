@@ -11,7 +11,7 @@
 
 
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
-                <div class="container" style="margin-top:100px;margin-bottom:70px;
+                <div class="container" style="margin-bottom:10px;
                                     border-radius:10px;">
                     
                     <div class="row" >
@@ -19,11 +19,11 @@
                         // contents include
                         //include dirname(__FILE__). '/includes/dashsidebar.php';
                     ?>
-                        <div class="col-md-9 " style="background-color:#333;">
+                        <div class="col-md-9 " style="background-color:#fff;">
                             <div class="card-header">
-                                <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Job Circular</h3>
+                                <h3 style="border:2px solid #333; border-radius:5px; padding: 7px;text-align:center;color:#333;" class="card-title">Create Job Circular</h3>
                                 <div class="card-header-action">
-                                    <a href="job.php" class="btn btn-success">New Job List</a>
+                                    <a href="jobboard.php" class="btn btn-success">New Job List</a>
                                 </div>
                             </div>
                             <?php 
@@ -38,7 +38,7 @@
                                 <form action="submit/job-add-submit.php" method="POST">
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Title</label>
+                                            <label for="" style="color:#333">Title</label>
                                             <input type="text" name="title" class="form-control" placeholder="Enter Job Title">
                                             <span class="text-danger">
                                                 <?php 
@@ -49,7 +49,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Experience</label>
+                                            <label for="" style="color:#333">Experience</label>
                                             <input type="text" name="experience" class="form-control" placeholder="Enter Expected Job Experience">
                                             <span class="text-danger">
                                                 <?php 
@@ -62,7 +62,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Company Name</label>
+                                            <label for="" style="color:#333">Company Name</label>
                                             <input type="text" name="cname" class="form-control" placeholder="Enter Company Name">
                                             <span class="text-danger">
                                                 <?php 
@@ -73,7 +73,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Company Location</label>
+                                            <label for="" style="color:#333">Company Location</label>
                                             <input type="text" name="address" class="form-control" placeholder="Enter Company Location">
                                             <span class="text-danger">
                                                 <?php 
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
-                                            <label for="" style="color:#fff">Salary Range</label>
+                                            <label for="" style="color:#333">Salary Range</label>
                                             <input type="text" name="salary" class="form-control" placeholder="Enter Salary Range">
                                             <span class="text-danger">
                                                 <?php 
@@ -97,7 +97,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Working Hour </label>
+                                            <label for="" style="color:#333">Working Hour </label>
                                             <input type="text" name="hour" class="form-control" placeholder="Part Time / Full Time">
                                             <span class="text-danger">
                                                 <?php 
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Job Information</label>
+                                            <label for="" style="color:#333">Job Information</label>
                                            <!-- <input type="text" name="info" class="form-control" placeholder="Enter Job Information">-->
                                             <textarea name="info" id="" rows="1" class="form-control"  placeholder="Enter Job Information"></textarea>
                                             <span class="text-danger">
@@ -122,7 +122,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Educational Qualification</label>
+                                            <label for="" style="color:#333">Educational Qualification</label>
                                             <input type="text" name="education" class="form-control" placeholder="Enter Educational Qualification">
                                             <span class="text-danger">
                                                 <?php 
@@ -135,7 +135,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
-                                            <label for="" style="color:#fff">Application Deadline</label>
+                                            <label for="" style="color:#333">Application Deadline</label>
                                             <input type="date" name="deadline" class="form-control" placeholder="Enter Application Deadline">
                                             <span class="text-danger">
                                                 <?php 
@@ -147,7 +147,7 @@
                                         </div>
                                         
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Department</label>
+                                            <label for="" style="color:#333">Department</label>
                                             <select name="department"  class="form-control">
                                                 <option value="">Select Department</option>
                                                 <?php

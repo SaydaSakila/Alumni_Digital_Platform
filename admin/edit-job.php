@@ -33,11 +33,11 @@
                     <div class="row" >
                     <?php
                         // contents include
-                        include dirname(__FILE__). '/includes/dashsidebar.php';
+                        //include dirname(__FILE__). '/includes/dashsidebar.php';
                     ?>
-        <div class="col-md-9 " style="background-color:#333;">
+        <div class="col-md-9 " style="background-color:#fff;">
             <div class="card-header">
-                <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Edit Job Post </h3>
+                <h3 style="border:2px solid #333; border-radius:5px; padding: 7px;text-align:center;color:#333;" class="card-title">Edit Job Post </h3>
             </div>
             <form action="update-job.php" method="POST">
                 <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>
@@ -53,7 +53,7 @@
 
                                 <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Title</label>
+                                            <label for="" style="color:#333">Title</label>
                                             <input type="text" name="title" class="form-control" value='<?php  echo $data['title']; ?>' placeholder="Update Job Title">
                                             <span class="text-danger">
                                                 <?php 
@@ -64,7 +64,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Experience</label>
+                                            <label for="" style="color:#333">Experience</label>
                                             <input type="text" name="experience" class="form-control" value='<?php  echo $data['experience']; ?>' placeholder="Update Expected Job Experience">
                                             <span class="text-danger">
                                                 <?php 
@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Company Name</label>
+                                            <label for="" style="color:#333">Company Name</label>
                                             <input type="text" name="cname" class="form-control" value='<?php  echo $data['cname']; ?>' placeholder="Update Company Name">
                                             <span class="text-danger">
                                                 <?php 
@@ -88,7 +88,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Company Location</label>
+                                            <label for="" style="color:#333">Company Location</label>
                                             <input type="text" name="address" class="form-control" value='<?php  echo $data['address']; ?>' placeholder="Update Company Location">
                                             <span class="text-danger">
                                                 <?php 
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
-                                            <label for="" style="color:#fff">Salary Range</label>
+                                            <label for="" style="color:#333">Salary Range</label>
                                             <input type="text" name="salary" class="form-control" value='<?php  echo $data['salary']; ?>' placeholder="Update Salary Range">
                                             <span class="text-danger">
                                                 <?php 
@@ -112,7 +112,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Working Hour </label>
+                                            <label for="" style="color:#333">Working Hour </label>
                                             <input type="text" name="hour" class="form-control" value='<?php  echo $data['hour']; ?>' placeholder="Part Time / Full Time">
                                             <span class="text-danger">
                                                 <?php 
@@ -125,7 +125,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Job Information</label>
+                                            <label for="" style="color:#333">Job Information</label>
                                           <!--  <input type="text" name="info" class="form-control" value='<?php  //echo $data['info']; ?>' placeholder="Update Job Information">-->
                                             <textarea name="info" rows="1" class="form-control" id="" placeholder="Update Job Information"> <?php  echo $data['info']; ?></textarea>
                                             <span class="text-danger">
@@ -137,7 +137,7 @@
                                             </span>
                                         </div>
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Educational Qualification</label>
+                                            <label for="" style="color:#333">Educational Qualification</label>
                                             <input type="text" name="education" class="form-control" value='<?php  echo $data['education']; ?>' placeholder="Update Educational Qualification">
                                             <span class="text-danger">
                                                 <?php 
@@ -150,7 +150,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
-                                            <label for="" style="color:#fff">Application Deadline</label>
+                                            <label for="" style="color:#333">Application Deadline</label>
                                             <input type="date" name="deadline" class="form-control" value='<?php  echo $data['deadline']; ?>' placeholder="Update Application Deadline">
                                             <span class="text-danger">
                                                 <?php 
@@ -162,7 +162,7 @@
                                         </div>
                                         
                                         <div class="form-group col-lg-6">
-                                            <label for="" style="color:#fff">Department</label>
+                                            <label for="" style="color:#333">Department</label>
                                             <select name="department"  class="form-control">
                                                 <option value="">Select Department</option>
                                                 <?php

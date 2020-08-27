@@ -55,7 +55,7 @@
 
                     <div class="form-group" style="background-color:#fff;">
                         <label for="" >Content</label>
-                        <textarea name="content" rows="5" class="form-control" id="summernote" placeholder="Update Blog Content"> <?php  echo $data['content']; ?></textarea>
+                        <textarea name="content" rows="5" class="form-control"  placeholder="Update Blog Content"> <?php  echo $data['content']; ?></textarea>
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['content'])) {

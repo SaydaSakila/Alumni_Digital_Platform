@@ -41,6 +41,7 @@
                             <th>Content</th>
                             <th>Created By</th>
                             <th>Created At</th>
+                            <th>Photo</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -58,11 +59,12 @@
                                         <td><?php echo $post['content']; ?></td>
                                         <td><?php echo $post['user_name']; ?></td>
                                         <td><?php echo $post['created_at']; ?></td>
+                                        <td><?php echo $post['photo'];?></td>
                                        
                                         <td>
                                         
-                                                <a href="uedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                                <a href="udelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                                <a href="uedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                                <a href="udelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                        
                                         

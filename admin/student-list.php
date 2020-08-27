@@ -44,7 +44,7 @@
                     <th>Address</th>
                     <th>Batch</th>
                     <th>Photo</th> 
-                    <th colspan="2">Action</th>
+                    <th >Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,20 +53,19 @@
                         while($user = $users->fetch_assoc()) {
                             ?>
                                 <tr>
-                                    <td><?php echo $user['id'] ?></td>
-                                    <td><?php echo $user['name'] ?></td>
-                                    <td><?php echo $user['email'] ?></td>
-                                    <td><?php echo $user['username'] ?></td>
-                                    <td><?php echo $user['department_name'] ?></td>
-                                    <td><?php echo $user['phone'] ?></td>
+                                    <td><?php echo $user['id']; ?></td>
+                                    <td><?php echo $user['name']; ?></td>
+                                    <td><?php echo $user['email']; ?></td>
+                                    <td><?php echo $user['username']; ?></td>
+                                    <td><?php echo $user['department_name']; ?></td>
+                                    <td><?php echo $user['phone']; ?></td>
                                     <td><?php echo $user['address'] ?></td>
-                                    <td><?php echo $user['batch'] ?></td>
-                                    <td><?php /* echo $user['photo'] */ ?></td> 
+                                    <td><?php echo $user['batch']; ?></td>
+                                    <td><?php  echo $user['photo']; ?></td> 
                                     <td>
-                                        <a href="edit-studentreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                    </td>
-                                    <td>
-                                        <a href="delete-studentreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                        <a href="edit-studentreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                    
+                                        <a href="delete-studentreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php
