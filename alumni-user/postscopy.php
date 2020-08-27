@@ -74,29 +74,31 @@
                                   //  continue; }
                         ?>
                                                 
-                        <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
-                                 <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">Category:
-                                        <?php echo $post['category_name'];?>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
-                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?></p>
-                                      
-                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="blog.php?id=<?php echo $post['id'];?>">Read Details..</a>
-                                        <?php /*echo $post['category_name']; */ 
-                                                if($post['user_id']==$user_id){?>  
-                                                <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
-                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
-                                                    
-                                            <?php }?>
+                        
+                             <div class="col-sm-4 "  ><br>
+                            <div class="card" style="width:auto;height:auto;margin-top:0px;" >
+                                <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
+                                     <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
+                                    <?php echo $post['category_name'];?>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                    <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
+
+                                    <p class="card-text"><?php echo substr($post['content'],0,150); ?>..</p>
+                                    
+                                </div>
+                                <div class="card-footer">
+                                    <a  href="blog.php?id=<?php echo $post['id'];?>">Read Details..</a>
+                                    <?php /*echo $post['category_name']; */ 
+                                            if($post['user_id']==$user_id){?>  
+                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
                                                 
-                                    </div>
+                                        <?php }?>
+                                        
+                                </div>
                             </div>
                         </div>
                                             
@@ -114,32 +116,33 @@
                                    // continue; }
                         ?>
                                                 
-                        <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
+                        <div class="col-sm-4 "  ><br>
+                            <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
-                                                <div class="card-header">Category:
-                                                    <?php echo $post['category_name'];?>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                                    <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
+                                    <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
+                                    <?php echo $post['category_name'];?>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $post['title'];?></h5>
+                                    <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
 
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read More..</a>
-                                                    <?php /*echo $post['category_name']; */ 
-                                                            if($post['student_id']==$student_id){?>  
-                                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
-                                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
-                                                                
-                                                        <?php }?>
-                                                        
-                                                </div>
+                                    <p class="card-text"><?php echo substr($post['content'],0,150); ?>..</p>
+                                    
+                                </div>
+                                <div class="card-footer">
+                                    <a  href="stublog.php?id=<?php echo $post['id'];?>">Read Details..</a>
+                                    <?php /*echo $post['category_name']; */ 
+                                            if($post['student_id']==$student_id){?>  
+                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
+                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                
+                                        <?php }?>
+                                        
+                                </div>
                             </div>
                         </div>
+                                     
                                             
                         <?php
                             }
@@ -151,10 +154,10 @@
                             {
                         ?>
                                                 
-                        <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
+                        <div class="col-sm-4 "  ><br>
+                            <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web3.jpg" class="card-img-top" alt="Card Image">
+                                    <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                                 <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>
@@ -162,7 +165,7 @@
                                                     <h5 class="card-title"><?php echo $post['title'];?></h5>
                                                     <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['admin_name']; ?></small>
 
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                                    <p class="card-text"><?php echo substr($post['content'],0,150); ?>..</p>
                                                     
                                                 </div>
                                                 <div class="card-footer">

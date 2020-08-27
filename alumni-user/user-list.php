@@ -5,7 +5,8 @@
     //get users list
     //$query = "SELECT * FROM users";
     $query = "SELECT users.*, departments.name as department_name FROM `users` 
-        LEFT JOIN departments ON users.dept_id=departments.id ORDER BY id DESC";
+        LEFT JOIN departments ON users.dept_id=departments.id 
+        ORDER BY id DESC";
     $users = $db->getData($query); 
 
     $query1 = "SELECT * FROM departments";

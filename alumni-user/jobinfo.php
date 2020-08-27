@@ -12,7 +12,7 @@
         
        $query = "SELECT jobs.*, departments.name as department_name, users.email as user_email FROM `jobs` 
             LEFT JOIN departments ON jobs.dept_id=departments.id 
-            LEFT JOIN users ON jobs.user_id=users.id ";
+            LEFT JOIN users ON jobs.user_id=users.id WHERE jobs.id='$id'";
             
         $posts =  $db->conn->query($query);
         $post = $posts->fetch_assoc();

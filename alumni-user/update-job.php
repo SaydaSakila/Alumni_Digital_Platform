@@ -28,7 +28,14 @@
         if(!empty($title) && !empty($experience) && !empty($department) && !empty($cname) && !empty($address) 
             && !empty($salary) && !empty($info) && !empty($hour) &&  !empty($education) && !empty($deadline))
         {
-	        $sql = "UPDATE `jobs` SET `dept_id`='$department',`title`='$title',
+            if (date('Y-m-d') > $deadline) {
+                $errors['deadline'] = "Deadline Cannot be previous date";
+                $_SESSION['errors'] = $errors;
+
+                header('location:edit-job.php');
+            }
+	       else{
+                $sql = "UPDATE `jobs` SET `dept_id`='$department',`title`='$title',
                 `experience`='$experience',`cname`='$cname',`address`='$address',`salary`='$salary',`hour`='$hour',
                 `info`='$info',`education`='$education',`deadline`='$deadline' WHERE id='$id'";
             $result = $db->conn->query($sql);
@@ -43,6 +50,7 @@
                 $_SESSION['msg_type'] = "danger";
                 header('location:jobboard.php');
             }
+           }
             
         }
         else

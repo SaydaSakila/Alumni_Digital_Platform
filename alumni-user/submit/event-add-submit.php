@@ -11,8 +11,14 @@
         $date = $_POST['date'];
 
         if ($name && $content && $date) {
-           
-            // store Event
+            if (date('Y-m-d') > $date) {
+                $errors['date'] = "Event date Cannot be previous date";
+                $_SESSION['errors'] = $errors;
+
+                header('location:../event-add.php');
+            }
+           else{
+                // store Event
             $query = "INSERT INTO `events`( `name`, `content`, `date`) VALUES ('$name','$content','$date')";
             $run = $db->store($query);
             //var_dump($query);
@@ -26,6 +32,7 @@
             $_SESSION['success'] = $success;
             header('location:../event-add.php');
             
+           }
             
         } else {
             if (empty($name)) {

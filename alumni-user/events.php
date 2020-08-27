@@ -39,8 +39,8 @@
                         <?php
                         if ($events) {
                             while($event = $events->fetch_assoc()) {
-                                ?><br>
-                                    <div class="card mb-3" style="max-width: 740px;height:auto;">
+                                ?>
+                                    <div class="card mb-3" style="max-width: 740px;height:auto;;">
                                         <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
@@ -51,10 +51,10 @@
                                                     Event Name: <?php echo $event['name']; ?><br>
                                                     <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
                                                 </div>
-                                                <div class="card-body">
+                                                <div class="card-body" style="padding:20px;">
                                                     
-                                                    <p class="card-text"><?php echo substr($event['content'],0,10); ?>..</p>
-                                                    <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;" >Read Details</a>
+                                                    <p class="card-text"><?php echo substr(Strip_tags($event['content']), 0, 50); ?>..</p>
+                                                    <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;text-align:right;" >Read Details</a>
                                                 </div>
                                             </div>
                                         </div>

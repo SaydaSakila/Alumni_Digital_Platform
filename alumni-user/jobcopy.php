@@ -3,6 +3,9 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     //get users list
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
     $query = "SELECT * FROM users";
     $users = $db->getData($query); 
 
@@ -16,7 +19,7 @@
 
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
-        $id= $_SESSION['id'];
+        //$id= $_SESSION['id'];
 
 ?>
 

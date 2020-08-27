@@ -4,9 +4,14 @@
     include dirname(__FILE__). '/includes/header.php';
     //get users list
     //$query = "SELECT * FROM users";
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
     $query = "SELECT users.*, departments.name as department_name FROM `users` 
-        LEFT JOIN departments ON users.dept_id=departments.id ORDER BY id DESC";
-    $users = $db->getData($query); 
+        LEFT JOIN departments ON users.dept_id=departments.id 
+         WHERE users.`dept_id` = '$id'
+         ORDER BY id DESC";
+    $users = $db->getData($query);
 
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
@@ -30,7 +35,7 @@
                         ?>
                         <div class="col-sm-4 "  ><br>
                             <div class="card" style="width:100%;height:auto">
-                                <img src="../img/16303029.jpg" alt="Avater" class="rounded-circle" 
+                                <img src="../img/avater.png" alt="Avater" class="rounded-circle" 
                                     style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                                     <?php /* echo $user['photo'] */ ?>                                                                                                       
                                 <h3><?php echo $user['name']; ?></h3>
@@ -45,9 +50,7 @@
                                     }
                                 } else {
                                     ?>
-                                        <tr>
-                                            <td colspan="11">No User Found</td>
-                                        </tr>
+                                        <div class="card text-center" style="margin-top:170px;margin-bottom:120px;"><h3>No Alumni found</h3></div>
                                     <?php
                                 }
                         ?>

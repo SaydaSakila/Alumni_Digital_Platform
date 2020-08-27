@@ -18,24 +18,33 @@
         $department = htmlspecialchars(trim($_POST['department']));
 
         if ($title && $experience && $department && $cname && $address && $salary && $hour && $info && $education && $deadline) {
-            //$admin_id = $_SESSION['admin_id'];
-            $user_id = $_SESSION['id'];
-           
-            // store Post
-            $query = "INSERT INTO jobs (dept_id, user_id, title, experience, cname, address, salary, 
-                        hour, info, education, deadline) VALUES('$department', '$user_id', '$title', 
-                        '$experience', '$cname', '$address', '$salary', '$hour', '$info', '$education', '$deadline')";
-            //$query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";
-            $run = $db->store($query);
             
-            if ($run) {
-                $success['success_message'] = "Job Post Added Successfully";
-            } else {
-                $success['error_message'] = "Failed to Add Post ".$db->error;
-            }
+            if (date('Y-m-d') > $deadline) {
+                $errors['deadline'] = "Deadline Cannot be previous date";
+                $_SESSION['errors'] = $errors;
 
-            $_SESSION['success'] = $success;
-            header('location:../job-add.php');
+                header('location:../job-add.php');
+            }            
+            else {
+                //$admin_id = $_SESSION['admin_id'];
+                $user_id = $_SESSION['id'];
+            
+                // store Post
+                $query = "INSERT INTO jobs (dept_id, user_id, title, experience, cname, address, salary, 
+                            hour, info, education, deadline) VALUES('$department', '$user_id', '$title', 
+                            '$experience', '$cname', '$address', '$salary', '$hour', '$info', '$education', '$deadline')";
+                //$query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";
+                $run = $db->store($query);
+                
+                if ($run) {
+                    $success['success_message'] = "Job Post Added Successfully";
+                } else {
+                    $success['error_message'] = "Failed to Add Post ".$db->error;
+                }
+
+                $_SESSION['success'] = $success;
+                header('location:../job-add.php');
+            }
             
             
         } else {

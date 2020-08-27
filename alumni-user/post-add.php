@@ -37,7 +37,7 @@
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
                             ?>
-                            <form action="submit/post-add-submit.php" method="POST">
+                            <form action="submit/post-add-submit.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="" style="color:#fff">Title</label>
                                     <input type="text" name="title" class="form-control" placeholder="Enter Post Title">
