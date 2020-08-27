@@ -74,12 +74,7 @@
                                         <?php echo $post['department_name'];?>
                                         <small class="text-muted" style="margin-left:150px;"><img src="img/posttime.png" alt="Time" > Posted On : <?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?></small>
                                         <small class="text-muted" style="margin-left:100px;"><img src="img/deadline.png" alt="Time" >  Apply before : <?php $d=strtotime($post['deadline']); echo date("d M, Y",$d); ?></small>
-                                         <?php /*echo $post['category_name']; */ 
-                                                if($post['user_id']==$user_id){?>  
-                                                <a href="edit-job.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="img/edit.png" alt="edit" ></a>
-                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="img/delete.png" alt="delete" ></a>
-                                                    
-                                        <?php }?>       
+                                               
                                     </div>
                                 </div>
                             </div>

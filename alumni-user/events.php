@@ -6,7 +6,7 @@
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
-     $query1 = "SELECT * FROM `events`";
+     $query1 = "SELECT * FROM `events`ORDER BY id DESC";
         $events = $db->getData($query1);
         //$id= $_SESSION['id'];
     

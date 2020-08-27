@@ -15,7 +15,7 @@
     //student blog
     $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id ORDER BY id DESC";
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
@@ -26,7 +26,7 @@
     //admin blog
     $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
+            LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
     $posts2 = $db->getData($query2);
     $admin_id= $_SESSION['id'];
 
