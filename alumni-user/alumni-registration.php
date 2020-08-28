@@ -20,6 +20,9 @@ include dirname(__FILE__).'/../database/database.php';
     }
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
+
+        $query = "SELECT * FROM batches";
+        $batches = $db->getData($query);
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -203,20 +206,26 @@ include dirname(__FILE__).'/../database/database.php';
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <label for="_batch" style="color:#000;">Batch</label>
-                                    <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch" value="<?php 
-                                                if(isset($data['batch'])) 
-                                                {
-                                                    echo $data['batch'];
+                                    <label for="" style="color:#000;">Batch</label>
+                                        <select name="batch"  class="form-control">
+                                            <option value="">Select Batch</option>
+                                            <?php
+                                                if ($batches) {
+                                                    while($batch = $batches->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
+                                                        <?php
+                                                    }
                                                 }
-                                            ?>">
-                                    <span class="text-danger">
-                                        <?php 
-                                            if(isset($errors['batch'])) {
-                                                echo $errors['batch'];
-                                            }
-                                        ?>
-                                    </span>
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($err['batch'])) {
+                                                    echo $err['batch'];
+                                                }
+                                            ?>
+                                        </span>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="_passingyear" style="color:#000;">Passing Year</label>

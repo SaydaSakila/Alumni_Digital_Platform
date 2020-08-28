@@ -46,7 +46,7 @@
                 $password = sha1($_POST['password']);
                 
                 // store register
-                $insert_query = "INSERT into students (`name`, `username`, `email`, `dept_id`, `password`, `batch`) 
+                $insert_query = "INSERT into students (`name`, `username`, `email`, `dept_id`, `password`, `batch_id`) 
                     VALUES('$name', '$username', '$email', $department, '$password', '$batch' )";
                 $run = $db->store($insert_query);
                  //var_dump($run);

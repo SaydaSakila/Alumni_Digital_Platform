@@ -4,8 +4,9 @@
     include dirname(__FILE__). '/includes/header.php';
     //get users list
     //$query = "SELECT * FROM users";
-    $query = "SELECT users.*, departments.name as department_name FROM `users` 
+    $query = "SELECT users.*, departments.name as department_name, `batches`.name as batch_name FROM `users` 
         LEFT JOIN departments ON users.dept_id=departments.id 
+        LEFT JOIN `batches` ON users.batch_id=`batches`.id
         ORDER BY id DESC";
     $users = $db->getData($query); 
 
@@ -37,11 +38,10 @@
                                 <h3><?php echo $user['name']; ?></h3>
                                 <p class="title">Works at: <?php echo $user['cname']; ?></p>
                                 <p>Position: <?php echo $user['jposition']; ?><br>
-                                Department: <?php echo $user['department_name']; ?> </p>
+                                Department: <?php echo $user['department_name']; ?> <br>
+                                Batch: <?php echo $user['batch_name']; ?></p>
                                  
-                                      
-                                    
-                                    <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a>
+                                <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a>
                                     
                                 
                                 <p><button><?php echo $user['email']; ?></button></p>
@@ -61,7 +61,7 @@
                 </div>
                  <div class="col-md-2">
                     <div class="dashboard-sidebar" style="width: 220px;padding:10px;position:fixed;">
-                        <h3><b>Department List</b></h3>
+                        <h3><b>Departments</b></h3>
                         <ul class="dashboard-nav block" >
                             <?php 
                             if ($departments) {

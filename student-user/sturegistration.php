@@ -19,6 +19,8 @@ include dirname(__FILE__).'/../database/database.php';
     }
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
+         $query = "SELECT * FROM batches";
+        $batches = $db->getData($query);
 ?>
 <!DOCTYPE html>
     <html lang="en">
@@ -205,20 +207,26 @@ include dirname(__FILE__).'/../database/database.php';
                             </div>
                                 <div class="form-group ">
 
-                                    <label for="_batch">Batch</label>
-                                    <input type="text" name="batch" id="_batch" class="form-control" placeholder="Enter Batch" value="<?php 
-                                                if(isset($data['batch'])) 
-                                                {
-                                                    echo $data['batch'];
+                                     <label for="" >Batch</label>
+                                        <select name="batch"  class="form-control">
+                                            <option value="">Select Batch</option>
+                                            <?php
+                                                if ($batches) {
+                                                    while($batch = $batches->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
+                                                        <?php
+                                                    }
                                                 }
-                                            ?>">
-                                    <span class="text-danger">
-                                        <?php 
-                                            if(isset($errors['batch'])) {
-                                                echo $errors['batch'];
-                                            }
-                                        ?>
-                                    </span><br>
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($err['batch'])) {
+                                                    echo $err['batch'];
+                                                }
+                                            ?>
+                                        </span>
                                 </div>                            
                            
                                 <input type="submit"  name="studentregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>

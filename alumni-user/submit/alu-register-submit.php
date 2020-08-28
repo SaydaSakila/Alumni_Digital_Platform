@@ -37,18 +37,6 @@
                 header('location:../alumni-registration.php');
             }
             
-// Variable to check
-$email = "abcde@example.com";
-
-// Remove all illegal characters from email
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-// Validate e-mail
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  echo("$email is a valid email address");
-} else {
-  echo("$email is not a valid email address");
-}
 
             if(strlen($password)<8)
             {
@@ -61,7 +49,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $password = sha1($_POST['password']);
                 
                 // store register
-                $insert_query = "INSERT into users (`name`, `username`, `email`, `dept_id`, `password`, `batch`, `passingyear`) 
+                $insert_query = "INSERT into users (`name`, `username`, `email`, `dept_id`, `password`, `batch_id`, `passingyear`) 
                     VALUES('$name', '$username', '$email', $department, '$password', '$batch', '$passingyear' )";
                 $run = $db->store($insert_query);
                  //var_dump($run);
