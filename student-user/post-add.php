@@ -34,7 +34,7 @@
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
                             ?>
-                            <form action="submit/post-add-submit.php" method="POST">
+                            <form action="submit/post-add-submit.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="" style="color:#fff">Title</label>
                                     <input type="text" name="title" class="form-control" placeholder="Enter Post Title">
@@ -82,13 +82,24 @@
                                         ?>
                                     </span>
                                 </div>
-
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
+                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
+                            </div>
                                 <div class="form-group">
-                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="alu-post_submit">Save Blog</button>
+                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="stu-post_submit">Save Blog</button>
                                 </div>
-                                <div class="form-group ">
-                                    <a href="category-add.php" class="btn btn-warning" style="float:right" >Want to Add Category?</a>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>

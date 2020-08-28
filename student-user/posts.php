@@ -15,7 +15,7 @@
     //student blog
     $query1 = "SELECT sposts.*, categories.name as category_name, students.name as student_name FROM `sposts` 
             LEFT JOIN categories ON sposts.category_id=categories.id 
-            LEFT JOIN students ON sposts.student_id=students.id";
+            LEFT JOIN students ON sposts.student_id=students.id ORDER by id DESC";
     $posts1 = $db->getData($query1);
     $student_id= $_SESSION['id'];
 
@@ -26,7 +26,7 @@
    //admin blog
     $query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id";
+            LEFT JOIN admins ON posts.admin_id=admins.id ORDER by id DESC";
     $posts2 = $db->getData($query2);
     $admin_id= $_SESSION['id'];
     
@@ -67,7 +67,7 @@
                          <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
+                                     <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                                 <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>
@@ -75,7 +75,7 @@
                                                     <h5 class="card-title"><?php echo $post['title'];?></h5>
                                                     <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
 
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                                    <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 50);  ?>..</p>
                                                     
                                                 </div>
                                                 <div class="card-footer">
@@ -106,14 +106,14 @@
                                                 
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
-                                 <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                                 <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                     <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
-                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?></p>
+                                        <p class="card-text"><?phpecho substr(Strip_tags($post['content']), 0, 50); ?></p>
                                       
                                         
                                     </div>
@@ -143,7 +143,7 @@
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web3.jpg" class="card-img-top" alt="Card Image">
+                                    <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                                 <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>
@@ -151,7 +151,7 @@
                                                     <h5 class="card-title"><?php echo $post['title'];?></h5>
                                                     <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['admin_name']; ?></small>
 
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                                    <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 50); ?>..</p>
                                                     
                                                 </div>
                                                 <div class="card-footer">

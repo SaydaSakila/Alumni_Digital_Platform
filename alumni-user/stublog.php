@@ -26,7 +26,7 @@
                 <?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
                 <div class="col-sm-9 " style="background-color:#fff;width:auto;height:auto;margin-top:0px;margin-bottom:100px;">
                    
-                    <img src="img/3.jpg" class="card-img-top" alt="...">
+                    <img src="uploads/<?php echo $post['photo']; ?>" style="width:100%;height: auto;padding:10px">
                     <div class="card-header">Category: 
                         <?php echo $post['category_name'];?>
                     </div>

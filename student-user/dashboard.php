@@ -35,7 +35,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
+                        <th colspan="12" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
                     </tr>
                     <tr>
                         <th>ID</th>
@@ -44,6 +44,7 @@
                         <th>Content</th>
                         <th>Created By</th>
                         <th>Created At</th>
+                        <th>Photo</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -61,6 +62,7 @@
                                        <td><?php echo substr($post['content'],0,10); ?></td>
                                        <td><?php echo $post['user_name']; ?></td>
                                        <td><?php echo $post['created_at']; ?></td>
+                                       <td><img src="uploads/<?php echo $post['photo']; ?>" style="width:50px;height: auto"></td>
                                        <td>
                                        <a href="stublog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
                                             <a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>

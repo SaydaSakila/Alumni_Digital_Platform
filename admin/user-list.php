@@ -31,7 +31,7 @@
         <table class="table table-bordered" style="text-align:center;">
             <thead >
                 <tr>
-                    <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
+                    <th colspan="15" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
                 </tr>
 
                 <tr >
@@ -47,6 +47,7 @@
                     <th>Company Name</th>
                     <th>Job Title</th>
                     <th>Photo</th> 
+                    <th>Facebook Link</th>
                     <th colspan="1">Action</th>
                 </tr>
             </thead>
@@ -68,6 +69,7 @@
                                     <td><?php echo $user['cname'] ?></td>
                                     <td><?php echo $user['jposition'] ?></td>
                                     <td style="width:50px;height: 50px;"><?php  echo $user['photo']  ?> </td>
+                                    <td><?php echo $user['fb'] ?></td>
                                     <td>
                                         <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
                                     

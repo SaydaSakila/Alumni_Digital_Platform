@@ -31,18 +31,19 @@
                         ?>
                         <div class="col-sm-4 "  ><br>
                             <div class="card" style="width:100%;height:auto">
-                                <img src="uploads/<?php echo $user['photo']; ?>" alt="Avater" class="" 
-                                    style="width:100%;height:auto; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
+                                <img src="uploads/<?php echo $user['photo']; ?>" alt="Avater" class="rounded-circle"
+                                    style="width:100px;height:100px;; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                                     <?php /* echo $user['photo'] */ ?>                                                                                                       
                                 <h3><?php echo $user['name']; ?></h3>
                                 <p class="title">Works at: <?php echo $user['cname']; ?></p>
-                                <p>Position: <?php echo $user['jposition']; ?></p>
-                                <p>Department: <?php echo $user['department_name']; ?></p> 
-                                 <div style="margin: 5px 0;">
+                                <p>Position: <?php echo $user['jposition']; ?><br>
+                                Department: <?php echo $user['department_name']; ?> </p>
+                                 
                                       
-                                    <a href="<?php $user['fb'] ?>" alt="Facebook Profile Link" target="_blank"><i class="fa fa-facebook"></i></a>
                                     
-                                </div>
+                                    <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a>
+                                    
+                                
                                 <p><button><?php echo $user['email']; ?></button></p>
                             </div>
                         </div>    

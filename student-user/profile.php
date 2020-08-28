@@ -26,7 +26,7 @@
                 <div class="col-md-9 "  >
                 <h3 style="text-align:center;"><b><?php echo $student['name'] ?>'s Profile</b></h3>
                     <div class="card" style="width:100%;height:auto">
-                        <img src="../img/stuavater.png" alt="Avater" class="rounded-circle" 
+                        <img src="uploads/<?php echo $student['photo']; ?>" alt="Avater" class="rounded-circle" 
                             style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                              <?php /* echo $user['photo'] */ ?>                                                                                                       
                         <h1><?php echo $student['name'] ?></h1>

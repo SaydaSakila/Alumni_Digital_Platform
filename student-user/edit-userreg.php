@@ -31,7 +31,7 @@
             <div class="card-header" >
                 <h3 class="card-title" style="text-align:center;color:#fff;">Edit User Information - Student</h3>
             </div>
-                <form action="update-userreg.php" method="POST">
+                <form action="update-userreg.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value='<?php  echo $data['id']; ?>' ></input>
                     <div class="card-body">
                         <?php 
@@ -162,9 +162,19 @@
                             </div>
                         </div>
                     
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
                             </div>
                     
 
