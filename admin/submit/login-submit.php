@@ -38,7 +38,9 @@
             } 
             else 
             {
-                $errors['email'] = "Invalid Email or Password"; 
+               // echo "<script>alert('Wrong Username or password!')</script>";
+                $errors['email'] = "Invalid Email or Password";
+                //$errors['email'] = "<script>alert('Wrong Email or password!')</script>";
                 $_SESSION['errors'] = $errors;
                 header('location:../login.php');
             }

@@ -15,16 +15,17 @@
         $password = $_POST['password'];
         $confpassword = $_POST['confpassword'];
         $batch = $_POST['batch'];
+        $message = "University ID: $username, Department ID: $department and Batch ID: $batch  would like to request an account for Student.";
         if ($name && $username && $department  && $password && $confpassword && $batch)
         {
             // unique validation
-            $email_exists_query = "SELECT * FROM users WHERE email = '$email'";
+            $email_exists_query = "SELECT * FROM sturequests WHERE email = '$email'";
             $email_exists = $db->getData($email_exists_query);
             if ($email_exists) 
             {
                 $errors['email'] = "Email Already Exist";
             }
-            $username_exists_query = "SELECT * FROM users WHERE username = '$username'";
+            $username_exists_query = "SELECT * FROM sturequests WHERE username = '$username'";
             $username_exists = $db->getData($username_exists_query);
             if ($username_exists) 
             {
@@ -46,13 +47,14 @@
                 $password = sha1($_POST['password']);
                 
                 // store register
-                $insert_query = "INSERT into students (`name`, `username`, `email`, `dept_id`, `password`, `batch_id`) 
-                    VALUES('$name', '$username', '$email', $department, '$password', '$batch' )";
+                $insert_query = "INSERT into sturequests (`name`, `username`, `email`, `dept_id`, `password`, `batch_id`, `message`) 
+                    VALUES('$name', '$username', '$email', $department, '$password', '$batch', '$message' )";
                 $run = $db->store($insert_query);
                  //var_dump($run);
                 if ($run) 
                 {
-                    $success['success_message'] = "Student Registered Successfully";
+                    $success['success_message'] = "Pending Request Send Successfully";
+                    $success['success_message'] = "<script>alert('Your account request is now pending for approval. Please wait for confirmation. Thank you.!')</script>";
                 } 
                 else 
                 {
