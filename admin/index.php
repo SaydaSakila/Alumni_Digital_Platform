@@ -13,7 +13,7 @@
                 $query = "SELECT * from `requests` ORDER by id DESC";
                $request = $db->getData($query);
                ?>
-               <div class="container"><h2 style="color:#E74C3C">Login Requests from Alumni</h2>
+               <div class="container"><h2 style="color:#E74C3C"><u>Login Requests from Alumni</u></h2>
                <?php
                 if ($request) {
                             while($req = $request->fetch_assoc()) {
@@ -40,7 +40,7 @@
                 $query = "SELECT * from `sturequests` ORDER by id DESC";
                $request = $db->getData($query);
                ?>
-               <div class="container"><h2 style="color:#E74C3C">Login Requests from Student</h2>
+               <div class="container"><h2 style="color:#E74C3C"><u>Login Requests from Student</u></h2>
                <?php
                 if ($request) {
                             while($req = $request->fetch_assoc()) {
@@ -53,6 +53,7 @@
                         <a onclick="return confirm('Do You Want to delete this Request?')" href="rejectstu.php?id=<?php echo $req['id'] ?>" class="btn btn-secondary my-2">Reject</a>
                       </p>
                     <small><i><?php echo $req['created_at'] ?></i></small>
+            
             <?php
                     }
                 }else{
