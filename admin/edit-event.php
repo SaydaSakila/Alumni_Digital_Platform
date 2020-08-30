@@ -3,19 +3,20 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
    $db = new Database();
-
+if (isset($_SESSION['old_data'])) 
+    {
+        $data = $_SESSION['old_data'];
+        unset($_SESSION['old_data']);
+    }
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
         
         $sql = "SELECT * from events where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();   
+        //var_dump($data);die();
     }
-    if (isset($_SESSION['old_data'])) 
-    {
-        $data = $_SESSION['old_data'];
-        unset($_SESSION['old_data']);
-    }
+    
 ?>
 
 <div class="row">
@@ -71,6 +72,18 @@
                             ?>
                         </span>
                     </div>
+                     <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Active Status</label>
+                        </div>
+                        <select class="custom-select" name='status' id="inputGroupSelect01" >
+                         
+                           
+                            <option value="0">Inactive</option>
+                            <option value="1">Active</option>
+                        </select>
+                    </div>
+
                     
                 </div>
                 <div class="card-footer">

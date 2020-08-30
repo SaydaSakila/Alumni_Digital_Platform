@@ -10,6 +10,9 @@
         $name = htmlspecialchars(trim($_POST['name']));
         $content = $_POST['content'];
         $date = $_POST['date'];
+        $batch = $_POST['batch'];
+        $department = htmlspecialchars(trim($_POST['department']));
+        $status = 0;
 
         if ($name && $content && $date) {
             if (date('Y-m-d') > $date) {
@@ -20,9 +23,9 @@
             }
            else{
                 // store Event
-            $query = "INSERT INTO `events`( `name`, `content`, `date`) VALUES ('$name','$content','$date')";
+            $query = "INSERT INTO `events` ( `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$name','$content','$date', '$batch', '$department', '$status')";
             $run = $db->store($query);
-            //var_dump($query);
+            //var_dump($query);die();
             
             if ($run) {
                 $success['success_message'] = "Event Added Successfully";

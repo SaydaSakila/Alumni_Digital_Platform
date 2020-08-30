@@ -40,8 +40,8 @@
                                     
                           <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="https://www.mdis.edu.sg/blog/wp-content/uploads/2017/05/make-money-blogging-1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">Category: 
+                                 <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category: 
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -81,8 +81,8 @@
                                     
                           <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                                 <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post1['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -121,8 +121,8 @@
                                     
             <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="img/portfolio/card1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                                 <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">

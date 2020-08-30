@@ -74,8 +74,8 @@ include dirname(__FILE__).'/../database/database.php';
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-3"> </div>
-                <div class="col-lg-6"> 
+                <div class="col-lg-2"> </div>
+                <div class="col-lg-8"> 
                     <div id="ui">
                     <img src="img/stuavater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
                     <h3 class="text-center">STUDENT REGISTRATION</h3>
@@ -243,7 +243,7 @@ include dirname(__FILE__).'/../database/database.php';
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-3"> </div>
+                <div class="col-lg-2"> </div>
             </div>
         
         </div>

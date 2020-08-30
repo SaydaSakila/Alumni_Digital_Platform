@@ -48,7 +48,9 @@
                         <th>Event Date</th>
                         <th>Event Create Time</th>
                         <th>Photo</th>
-
+                        <th>Batch</th>
+                        <th>Department</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -64,6 +66,29 @@
                                         <td><?php echo $event['date'] ?></td>
                                        <td><?php echo $event['created_at'] ?></td>
                                        <td><?php echo $event['photo'] ?></td>
+                                       <td><?php echo $event['batch_id'] ?></td>
+                                       <td><?php echo $event['dept_id'] ?></td>
+                                      
+                                       <?php  
+                                            if($event['status']==0){
+                                            ?> 
+                                                <td style="text-align:center;">
+                                                    <a style="color:#800000; border:2px solid #800000;
+                                                        background:white;border-radius:5px;padding: 5px;"><b>Inactive</b></a>
+                                                </td>
+                                        <?php
+                                            }
+                                            else{
+                                            ?> 
+                                                <td style="text-align:center;">
+                                                <a style="color:#2E8857;border-radius:5px; border:2px solid #2E8857;
+                                                        background:white;padding: 5px;">
+                                                    <b>Active</b></a>
+                                                </td>
+                                        <?php            
+                                            }
+                                            ?>
+
                                         <td>
                                             <a href="edit-event.php?edit=<?php echo $event['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
                                             <a href="delete-event.php?delete=<?php echo $event['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

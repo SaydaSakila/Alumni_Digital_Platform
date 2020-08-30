@@ -16,11 +16,12 @@
         $name = $_POST['name'];
         $content = $_POST['content'];
         $date = $_POST['date'];
+        $status = $_POST['status'];
 
         if(!empty($name) && !empty($content) && !empty($date))
         {
 	        $sql = "UPDATE events SET name='$name', content='$content',
-                        date='$date' where id='$id' ";
+                        date='$date', status='$status' where id='$id' ";
             $result = $db->conn->query($sql);
 
             if($result){

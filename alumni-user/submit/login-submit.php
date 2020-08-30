@@ -40,8 +40,28 @@
             } 
             else 
             {
-                $errors['username'] = "Invalid University ID or Password"; 
-                $_SESSION['errors'] = $errors;
+                $query1 = "SELECT * FROM requests WHERE username='$username' AND password='$password'";
+                $run  = $db->conn->query($query1);
+                //var_dump($run);
+                if ($run->num_rows > 0) 
+                {
+                $user = $run->fetch_assoc();
+                //var_dump($user);die();
+                //$success['success_message'] = "<script>alert('Your account request is now pending for approval. Please wait for confirmation. Thank you.!')</script>";
+               /* $_SESSION['username'] = $user['username'];
+                $_SESSION['actor'] = "users";
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];*/
+
+                    $errors['username'] = "<script>alert('Your account request is still pending for approval. Please wait for confirmation. Thank you.!')</script>"; 
+                    $_SESSION['errors'] = $errors;
+                //header('location:../index.php');
+                }
+                else{
+                    $errors['username'] = "Invalid University ID or Password"; 
+                    $_SESSION['errors'] = $errors;
+                }
+                
                 header('location:../login.php');
             }
             

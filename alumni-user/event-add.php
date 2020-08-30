@@ -2,11 +2,10 @@
     $page_title = 'Post Create';
     // header include
     include dirname(__FILE__).'/includes/header.php';
-    // contents include
-   // include dirname(__FILE__). '/includes/sidebar.php';
-
-   // $query = "SELECT * FROM categories";
-   // $categories = $db->getData($query);
+    $query = "SELECT * FROM batches";
+        $batches = $db->getData($query);
+         $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
 ?>
 
 
@@ -70,7 +69,50 @@
                                         ?>
                                     </span>
                                 </div>
-
+                                <div class="form-group ">
+                                    <label for="" style="color:#000;">Batch</label>
+                                        <select name="batch"  class="form-control">
+                                            <option value="">Select Batch</option>
+                                            <?php
+                                                if ($batches) {
+                                                    while($batch = $batches->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($err['batch'])) {
+                                                    echo $err['batch'];
+                                                }
+                                            ?>
+                                        </span>
+                                </div>
+                                 <div class="form-group">
+                                        <label for="" style="color:#000;">Department</label>
+                                        <select name="department"  class="form-control">
+                                            <option value="">Select Department</option>
+                                            <?php
+                                                if ($departments) {
+                                                    while($department = $departments->fetch_assoc()) {
+                                                        ?>
+                                                            <option value="<?php echo $department['id']; ?>"><?php echo $department['name']; ?></option>
+                                                        <?php
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <span class="text-danger">
+                                            <?php 
+                                                if(isset($errors['department'])) {
+                                                    echo $errors['department'];
+                                                }
+                                            ?>
+                                        </span>
+                                    </div>
                                 
 
                                 <div class="form-group">

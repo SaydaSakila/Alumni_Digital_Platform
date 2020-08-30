@@ -5,7 +5,11 @@
         $errors = $_SESSION['errors'];
         unset($_SESSION['errors']);
     }
-
+if(isset($_SESSION['success']))
+    {
+      $message = $_SESSION['success'];
+      unset($_SESSION['success']);
+    }
     if(isset($_SESSION['old_data']))
     {
       $data = $_SESSION['old_data'];

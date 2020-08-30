@@ -20,7 +20,8 @@
         $file_err = $_SESSION['file_errors'];
         unset($_SESSION['file_errors']);
     }
-
+$query = "SELECT * FROM batches";
+        $batches = $db->getData($query);
 ?>
 
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
@@ -151,7 +152,8 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-lg-6">
                             <label for="_address" style="color:#fff;">Address</label>
                             <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address" value="<?php 
                                 if(isset($data['address'])) 
@@ -167,23 +169,7 @@
                                 ?>
                             </span>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-lg-6">
-                                <label for="_batch" style="color:#fff;">Batch No</label>
-                                <input type="text" name="batch" id="_batch" class="form-control" placeholder="Update Your Batch Info" value="<?php 
-                                    if(isset($data['batch'])) 
-                                    {
-                                        echo $data['batch'];
-                                    }
-                                ?>">
-                                <span class="text-danger">
-                                    <?php 
-                                        if(isset($err['batch'])) {
-                                            echo $err['batch'];
-                                        }
-                                    ?>
-                                </span>
-                            </div>
+                            
                             <div class="form-group col-lg-6">
                                 <label for="_passingyear" style="color:#fff;">Passing Year</label>
                                 <input type="text" name="passingyear" id="_passingyear" class="form-control" placeholder="Update Your Passing Year Info" value="<?php 

@@ -5,7 +5,12 @@
     // contents include
     //include dirname(__FILE__). '/includes/sidebar.php';
    $db = new Database();
-
+ if (isset($_SESSION['old_data'])) 
+    {
+        $data = $_SESSION['old_data'];
+        unset($_SESSION['old_data']);
+    }
+    
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
         
@@ -16,12 +21,7 @@
         $categories = $db->getData($query);
         //var_dump($data);die();   
     }
-    if (isset($_SESSION['old_data'])) 
-    {
-        $data = $_SESSION['old_data'];
-        unset($_SESSION['old_data']);
-    }
-    
+   
    
 ?>
 

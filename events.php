@@ -6,7 +6,10 @@
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
-     $query1 = "SELECT * FROM `events` ORDER BY id DESC";
+     $query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
+        LEFT JOIN `batches` ON events.batch_id=`batches`.id 
+        LEFT JOIN departments ON events.dept_id=departments.id
+        WHERE `status` = '1' ORDER BY id DESC"; 
         $events = $db->getData($query1);
         //$id= $_SESSION['id'];
     
@@ -49,7 +52,9 @@
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
-                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
+                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>
+                                                    <b> [Batch: <?php echo $event['batch_name']; ?>
+                                                    Department: <?php echo $event['department_name']; ?>]</b></small>
                                                 </div>
                                                 <div class="card-body" style="padding:20px;">
                                                     

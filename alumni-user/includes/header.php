@@ -134,6 +134,37 @@ a {
 button:hover, a:hover {
   opacity: 0.7;
 }
+	.gallery-container{
+			max-width:1000px;
+			margin:auto;
+			overflow:auto;
+			text-align:center;
+		}
+		.gallery-container h1{
+			margin-top:100px;
+			width:100%;
+      text-align:center;
+			
+		}
+		.gallery{
+			margin:10px;
+			border:1px solid #ccc;
+			float:left;
+			width:300px;
+		}
+    
+		.gallery img{
+			width:100%;
+			height:150px;
+			
+		}
+    
+		.gallery-desc{
+			padding:15px;
+			text-align:center;
+			color:#333;
+			 
+		}
 
 </style>
   <!-- =======================================================
@@ -165,6 +196,7 @@ button:hover, a:hover {
           <li><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children"><a href="events.php">Events</a>
+          <li class="menu-has-children"><a href="memory.php">Memory</a>
             
           </li>
           

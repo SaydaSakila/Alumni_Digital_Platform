@@ -27,7 +27,7 @@
         
         <div class="table">
             <div class="table-cell">
-                <div class="login-box">
+                <div class="login-box" style="width:500px;">
                     <div class="login-header">
                         <img src="assets/img/adminlogo.png" id="icon" alt="User Icon" style="height:70px;width:70px;" />
                         <h2 style="color: #585858">ADMIN LOGIN</h2>
@@ -72,10 +72,10 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <input type="submit" name="login_submit" class="login-btn" value="LOGIN">
+                                <input type="submit" name="login_submit" class="btn btn-primary btn-block" value="LOGIN">
                             </div>
                             <div class="form-group" >
-                                <a href="admin-registration.php" class="btn btn-primary btn-lg btn-block " >New Admin Registration</a>
+                                <a href="admin-registration.php" class="btn btn-secondary btn-block " >New Admin Registration</a>
                             </div>
                             
                         </form>

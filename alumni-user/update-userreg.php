@@ -19,15 +19,15 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $batch = $_POST['batch'];
+        //$batch = $_POST['batch'];
         $passingyear = $_POST['passingyear'];
         $cname = $_POST['cname'];
         $jposition = $_POST['jposition'];
         $fb = $_POST['fb'];
-        $file_rename = $_POST['photo'];
+       // $file_rename = $_POST['photo'];
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($passingyear) )
         {
              $file_rename = ''; 
             
@@ -53,7 +53,7 @@
                 
                 if (empty($file_errors)) {
                     $file_rename = substr(md5(time()), 0, 10).'.'.$ext;
-                    $upload_directory = 'uploads/'. $file_rename;
+                    $upload_directory = '../uploads/'. $file_rename;
 
                     if (!move_uploaded_file($tmp_name, $upload_directory)) {
                         $_SESSION['file_errors'] = ['Faled to upload file'];
@@ -66,7 +66,7 @@
             }
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',phone='$phone', 
-                email='$email', address='$address', password='$password' , batch='$batch', cname = '$cname',
+                email='$email', address='$address', password='$password' ,  cname = '$cname',
                 jposition = '$jposition', passingyear='$passingyear', photo='$file_rename' , fb='$fb'
                 where id='$id'";
 

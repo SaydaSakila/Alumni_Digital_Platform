@@ -33,7 +33,7 @@
         <div class="table">
             <div class="table-cell">
                 
-                    <div class="login-box">
+                    <div class="login-box" style="width:50%">
                         <div class="login-header">
                         
                             <h4 style="color: #585858"><img src="assets/img/registration.png" id="icon" alt="User Icon" 
@@ -140,11 +140,11 @@
                                     </span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit"  name="registration_submit" class="login-btn" value="REGISTRATION" >
+                                    <input type="submit"  name="registration_submit" class="btn btn-primary btn-block" value="REGISTRATION" >
                                 </div>
                                 <div class="form-group"  >
                                     
-                                    <a href="login.php" class="btn btn-primary btn-lg btn-block" >Login as Admin</a>
+                                    <a href="login.php" class="btn btn-secondary btn-block" >Login as Admin</a>
                                 </div>
                                 </div>
                             </form>

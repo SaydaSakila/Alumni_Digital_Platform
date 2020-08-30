@@ -37,10 +37,17 @@
                     </div>
                     <div class="card-footer" >
                         <label><h4>Leave Your Comment Below</h4></label>
-                        <form action="" id="usrform" style="display:flex;box-siziing:border-box;" >                    
-                              <img src="img/16303029.jpg" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
-                            <textarea name="comments" rows="1" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
-                            <input type="submit" name="submit" class="btn btn-success" value="Comment">
+                       <form action="" id="usrform" method="" style="display:flex;box-siziing:border-box;" >                    
+                                <div class="col-sm-1">
+                                    <img src="img/avater.png" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
+                                </div>
+                                <div class="col-sm-9" style="height:auto;">
+                                    <textarea name="comments" rows="1" class="form-control"  placeholder="Enter Your  Comments"></textarea><br>
+                                </div>
+                                <div class="col-sm-2">
+                                <a href="" class="btn btn-success">Comment</a>
+                                    
+                                </div>
                         </form>
                     </div>
                

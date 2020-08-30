@@ -73,8 +73,8 @@ include dirname(__FILE__).'/../database/database.php';
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-3"> </div>
-                <div class="col-lg-6"> 
+                <div class="col-lg-2"> </div>
+                <div class="col-lg-8"> 
                     <div id="ui">
                         <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
                         <h3 class="text-center" style="color:#000;">ALUMNI REGISTRATION</h3>
@@ -259,45 +259,11 @@ include dirname(__FILE__).'/../database/database.php';
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-3"> </div>
+                <div class="col-lg-2"> </div>
             </div>
         
         </div>
 
-        <script>
-            var myInput = document.getElementById("psw");
-
-            var length = document.getElementById("length");
-
-            // When the user clicks on the password field, show the message box
-            myInput.onfocus = function() 
-            {
-                document.getElementById("message").style.display = "block";
-            }
-
-            // When the user clicks outside of the password field, hide the message box
-            myInput.onblur = function() 
-            {
-                document.getElementById("message").style.display = "none";
-            }
-
-            // When the user starts to type something inside the password field
-            myInput.onkeyup = function() 
-            {
-    
-                // Validate length
-                if(myInput.value.length >= 8) 
-                {
-                    length.classList.remove("invalid");
-                    length.classList.add("valid");
-                } 
-                else 
-                {
-                    length.classList.remove("valid");
-                    length.classList.add("invalid");
-                }
-            }
-        </script>
-
+        
     </body>
 </html>

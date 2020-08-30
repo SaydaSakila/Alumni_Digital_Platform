@@ -67,8 +67,8 @@
                          <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                     <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
-                                                <div class="card-header">Category:
+                                     <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>
                                                 <div class="card-body">
@@ -106,8 +106,8 @@
                                                 
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
-                                 <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
-                                    <div class="card-header">Category:
+                                <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -143,8 +143,8 @@
                         <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:450px;margin-top:20px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="uploads/<?php echo $post['photo']; ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
-                                                <div class="card-header">Category:
+                                    <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                                     <?php echo $post['category_name'];?>
                                                 </div>
                                                 <div class="card-body">

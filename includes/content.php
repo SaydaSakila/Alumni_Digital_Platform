@@ -416,9 +416,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="img/portfolio/card3.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                <img src="./uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -448,9 +448,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                <img src="./uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -479,9 +479,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               ?>
                                     
             <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
-                                 <img src="img/portfolio/app3.jpg" class="card-img-top" alt="Card Image">
-                                    <div class="card-header">
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
+                                <img src="./uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
+                                <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>
                                     </div>
                                     <div class="card-body">
@@ -676,7 +676,10 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
-     $query1 = "SELECT * FROM `events` ORDER BY id DESC";
+     $query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
+        LEFT JOIN `batches` ON events.batch_id=`batches`.id 
+        LEFT JOIN departments ON events.dept_id=departments.id
+        WHERE `status` = '1' ORDER BY id DESC";
         $events = $db->getData($query1);
         //$id= $_SESSION['id'];
     
@@ -701,7 +704,9 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
-                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
+                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>
+                                                    <b> [Batch: <?php echo $event['batch_name']; ?>
+                                                    Department: <?php echo $event['department_name']; ?>]</b></small>
                                                 </div>
                                                 <div class="card-body" style="padding:20px;">
                                                     
