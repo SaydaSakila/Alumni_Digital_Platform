@@ -9,8 +9,28 @@
 					<h1 class="section-title" style="text-align:center;">Gallery of <b>Iftar Mahfil</b> 2019</h1>
 					
 				<div class="gallery">
-				<div class="zoom">
+					<div class="zoom">
+						<img src="img/memory/ff1.JPG  ">
+					</div>
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/ff2.JPG  ">
+					</div>	
+				</div>
+				<div class="gallery">
+					<div class="zoom">
 						<img src="img/memory/f2.JPG  ">
+					</div>
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/f4.JPG  ">
+					</div>	
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/f3.JPG  ">
 					</div>
 				</div>
 				<div class="gallery">

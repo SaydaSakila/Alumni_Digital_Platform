@@ -11,6 +11,10 @@
 						<div class="gallery-desc" >Alumni Day-2020</div></a>
 				</div>	
 				<div class="gallery">
+					<a href="memorycon.php">	<img src="img/memory/c1.JPG ">
+						<div class="gallery-desc" >Convocation-2019</div></a>
+				</div>
+				<div class="gallery">
 					<a href="memoryicfl19.php">	<img src="img/memory/8.JPG  ">
 						<div class="gallery-desc" >ICFL-2019</div></a>
 				</div>

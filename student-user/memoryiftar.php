@@ -33,7 +33,11 @@
 						<img src="img/memory/18.JPG ">
 					</div>	
 				</div>
-				
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/i1.JPG ">
+					</div>	
+				</div>
 				
 				
             

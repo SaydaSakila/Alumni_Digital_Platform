@@ -28,6 +28,33 @@
 						<img src="img/memory/a24.JPG ">
 					</div>	
 				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/al3.JPG ">
+					</div>	
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/al2.JPG  ">
+					</div>	
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/al1.JPG  ">
+					</div>	
+				</div>
+				
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/al6.JPG ">
+					</div>	
+				</div>
+				<div class="gallery">
+					<div class="zoom">
+						<img src="img/memory/al5.JPG ">
+					</div>	
+				</div>
+				
 				
 				
 				
