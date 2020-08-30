@@ -165,14 +165,23 @@ button:hover, a:hover {
 			color:#333;
 			 
 		}
+    .zoom {
+      padding: 0px;
+    
+      transition: transform .2s;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .zoom:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5); 
+    }
 
 </style>
-  <!-- =======================================================
-    Theme Name: BizPage
-    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
+
 </head>
 
 <body>
@@ -196,7 +205,7 @@ button:hover, a:hover {
           <li><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children"><a href="events.php">Events</a>
-          <li class="menu-has-children"><a href="memory.php">Memory</a>
+          <li class="menu-has-children"><a href="memory.php">Memories</a>
             
           </li>
           

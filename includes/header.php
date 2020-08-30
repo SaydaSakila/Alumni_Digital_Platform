@@ -98,6 +98,52 @@ a {
 button:hover, a:hover {
   opacity: 0.7;
 }
+	.gallery-container{
+			max-width:1000px;
+			margin:auto;
+			overflow:auto;
+			text-align:center;
+		}
+		.gallery-container h1{
+			margin-top:100px;
+			width:100%;
+      text-align:center;
+			
+		}
+		.gallery{
+			margin:10px;
+			border:1px solid #ccc;
+			float:left;
+			width:300px;
+		}
+    
+		.gallery img{
+			width:100%;
+			height:150px;
+			
+		}
+    
+		.gallery-desc{
+			padding:15px;
+			text-align:center;
+			color:#333;
+			 
+		}
+    .zoom {
+      padding: 0px;
+    
+      transition: transform .2s;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .zoom:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5); 
+    }
+
 </style>
 </head>
 
@@ -125,6 +171,7 @@ button:hover, a:hover {
           <li><a href="posts.php">Blog</a></li>
           <!--<li><a href="posts.php">Blog</a></li>-->
           <li><a href="events.php">Events</a></li>
+          <li><a href="memory.php">Memories</a></li>
           
           <li class="menu-has-children"><a href="login.php">LOG-IN</a>
             <ul class="nav-menu">

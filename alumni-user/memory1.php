@@ -3,37 +3,30 @@
     // header include
     include dirname(__FILE__).'/includes/header.php';
 ?>
-            <div class="gallery-container" >
+ <div class="row">
+            <div class="container" style="margin-top:150px;margin-bottom:200px;">
 			
-					<h1 class="section-title">Gallery of <b>NCPC</b> 2018</h1>
+					<h1 class="section-title" style="text-align:center;">Gallery of <b>NCPC</b> 2018</h1>
 					
 				<div class="gallery">
-					<img src="img/memory/4.JPG  ">
-						
+				<div class="zoom">
+						<img src="img/memory/4.JPG  ">
+					</div>
 				</div>
 				<div class="gallery">
-					<img src="img/memory/9.JPG  ">
-						
+					<div class="zoom">
+						<img src="img/memory/9.JPG  ">
+					</div>	
 				</div>
 				<div class="gallery">
-						<img src="img/memory/12.JPG ">
-						
+					<div class="zoom">
+						<img src="img/memory/5.JPG ">
+					</div>	
 				</div>
-				<div class="gallery">
-					<a href="">	<img src="img/memory/11.JPG ">
-						<div class="gallery-desc" >IITS-2017</div></a>
-				</div>
-				<div class="gallery">
-				<a href="">	<img src="img/memory/3.JPG  ">
-						<div class="gallery-desc" >IUPC-2016</div></a>
-				</div>
-				<div class="gallery">
-					<a href="">	<img src="img/aa16.jpg  ">
-						<div class="gallery-desc" >Add a Description of the image</div></a>
-				</div>
+				
             
 			</div>
-
+</div>
 <?php
     // footer include
     include dirname(__FILE__). '/includes/footer.php';
