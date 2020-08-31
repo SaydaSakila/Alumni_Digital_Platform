@@ -30,7 +30,8 @@
                 <div class="col-md-9 "  >
                 <h3 style="text-align:center;"><b><?php echo $user['name'] ?>'s Profile</b></h3>
                     <div class="card" style="width:100%;height:auto">
-                        <img src="../uploads/<?php echo $user['photo']; ?>" alt="Avater" class="rounded-circle" 
+                       
+                        <img src="../uploads/<?php if($user['photo']!= NULL){ echo $user['photo'];}else{ ?>avater.png <?php  } ?>" alt="Avater" class="rounded-circle" 
                             style="width:100px;height:100px; display: block;margin-top:20px;margin-left: auto;margin-right: auto;">
                              <?php  ?>                                                                                                       
                         <h1><?php echo $user['name'] ?></h1>

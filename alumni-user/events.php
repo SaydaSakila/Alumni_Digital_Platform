@@ -45,7 +45,7 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
                                         <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
-                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y ",$d); ?></h2>
+                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:sa",$d); ?></h2>
                                             </div>
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">

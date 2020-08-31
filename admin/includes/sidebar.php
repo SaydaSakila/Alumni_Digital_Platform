@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="position:fixed;">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
       <img src="assets/img/data.png"

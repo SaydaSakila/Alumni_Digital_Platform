@@ -20,20 +20,18 @@
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-                <!-- jQuery library -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-                <!-- Popper JS -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-                <!-- Latest compiled JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+             
                 <style>
                    body{
                         background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
+
+                    }
+                    .sakila{
+                        background: rgba(0,0,0,0.75);
+                        height: 100vh;
 
                     }
                     #ui{
@@ -55,7 +53,7 @@
                 </style>
         </head>
     <body>
-
+    <div class="sakila">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3"> </div>
@@ -99,13 +97,15 @@
 
                                     <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
-                                    <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                        pattern="(?=.*\d).{8,}" title="Must contain at least 8 or more characters" required value="<?php 
+                                    <input type="password" id="myInput" name="password" class="form-control" placeholder="Enter Your Password" 
+                                       
+                                        value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
                                         }
                                     ?>">
+                                    <input type="checkbox" onclick="myFunction()"> Show Password
                                     <span class = "text-danger">
                                         <?php 
                                         if(isset($errors['password'])) 
@@ -133,41 +133,25 @@
             </div>
         
         </div>
-
+    </div>
         <script>
-            var myInput = document.getElementById("psw");
-
-            var length = document.getElementById("length");
-
-            // When the user clicks on the password field, show the message box
-            myInput.onfocus = function() 
-            {
-                document.getElementById("message").style.display = "block";
+            function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
             }
-
-            // When the user clicks outside of the password field, hide the message box
-            myInput.onblur = function() 
-            {
-                document.getElementById("message").style.display = "none";
-            }
-
-            // When the user starts to type something inside the password field
-            myInput.onkeyup = function() 
-            {
-    
-                // Validate length
-                if(myInput.value.length >= 8) 
-                {
-                    length.classList.remove("invalid");
-                    length.classList.add("valid");
-                } 
-                else 
-                {
-                    length.classList.remove("valid");
-                    length.classList.add("invalid");
-                }
             }
         </script>
+   <!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                <!-- Popper JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+                <!-- Latest compiled JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     </body>
 </html>

@@ -46,6 +46,11 @@ include dirname(__FILE__).'/../database/database.php';
                         background-attachment: fixed;
 
                     }
+                    .sakila{
+                        background: rgba(0,0,0,0.75);
+                        height: 100vh;
+
+                    }
                     #ui{
                         background-color:#fff;
                         padding-left:30px;
@@ -71,7 +76,7 @@ include dirname(__FILE__).'/../database/database.php';
                 </style>
         </head>
     <body>
-
+    <div class="sakila">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2"> </div>
@@ -250,7 +255,7 @@ include dirname(__FILE__).'/../database/database.php';
         
         </div>
 
-      
+     </div> 
 
     </body>
 </html>

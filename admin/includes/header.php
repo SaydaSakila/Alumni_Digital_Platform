@@ -53,6 +53,9 @@
 
  <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap-3.1.1.min.css" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css" />
+
 <style>
 
 .notification {
@@ -75,14 +78,50 @@
   background-color: red;
   color: white;
 }
+
+.multiselect {
+  width: 100%;
+}
+
+.selectBox {
+  position: relative;
+  
+}
+
+.selectBox select {
+  width: 100%;
+  padding:5px;
+  
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
 </style>
  
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
-<div class="wrapper">
+<div class="wrapper" >
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light" >
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -164,7 +203,7 @@
 ?>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" >
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">

@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1" style="color:#333;">Enter Event Date</label>
-                                    <input type="date" name="date" class="form-control-file" id="exampleFormControlFile1">
+                                    <input type="datetime-local" name="date" class="form-control-file" id="exampleFormControlFile1">
                                     <span class="text-danger">
                                         <?php 
                                             if(isset($err['date'])) {

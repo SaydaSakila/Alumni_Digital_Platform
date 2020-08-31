@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1" >Enter Event Date</label>
-                                    <input type="date" name="date" class="form-control-file" id="exampleFormControlFile1">
+                                    <input type="datetime-local" name="date" class="form-control-file" id="exampleFormControlFile1">
                                     <span class="text-danger">
                                         <?php 
                                             if(isset($err['date'])) {
@@ -69,7 +69,7 @@
                                     </span>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="" style="color:#000;">Batch</label>
+                                    <label for="" style="color:#000;">Mark Batch</label>
                                         <select name="batch"  class="form-control">
                                             <option value="">Select Batch</option>
                                             <?php
@@ -77,6 +77,7 @@
                                                     while($batch = $batches->fetch_assoc()) {
                                                         ?>
                                                             <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
+                                                            
                                                         <?php
                                                     }
                                                 }
@@ -91,7 +92,7 @@
                                         </span>
                                 </div>
                                 <div class="form-group">
-                                        <label for="" style="color:#000;">Department</label>
+                                        <label for="" style="color:#000;">Mark Department</label>
                                         <select name="department"  class="form-control">
                                             <option value="">Select Department</option>
                                             <?php

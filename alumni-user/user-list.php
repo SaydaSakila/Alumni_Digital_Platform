@@ -1,5 +1,6 @@
 <?php
     $page_title = 'User List - Alumni';
+    
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     //get users list
@@ -27,6 +28,7 @@
                 </div>
                     <div class="row ">
                         <?php 
+            
                             if ($users) {
                                 while($user = $users->fetch_assoc()) {
                         ?>

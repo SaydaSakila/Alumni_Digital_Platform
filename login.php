@@ -20,13 +20,18 @@
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
                 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <style>
                     body{
                         background-image: url(img/aa5.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
+                    }
+                    .sakila{
+                        background: rgba(0,0,0,0.75);
+                        height: 100vh;
+
                     }
                     #ui{
                         background-color:#fff;
@@ -48,7 +53,7 @@
                 </style>
         </head>
     <body>
-
+<div class="sakila">
         <div class="container">
             <div class="row">
             <div class="col-lg-3"> </div>
@@ -95,13 +100,13 @@
                                     <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
                                     
-                                    <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
-                                         required value="<?php 
+                                    <input type="password" id="myInput" name="password" class="form-control" placeholder="Enter Your Password" 
+                                          value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
                                         }
-                                    ?>">
+                                    ?>"><input type="checkbox" onclick="myFunction()" > Show Password
                                     
                                     <span class = "text-danger">
                                         <?php 
@@ -131,7 +136,18 @@
             </div>
         
         </div>
-<!-- jQuery library -->
+    </div>
+        <script>
+            function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+        </script>
+                <!-- jQuery library -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
                 <!-- Popper JS -->
