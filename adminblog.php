@@ -24,7 +24,7 @@
         <div class="row" style="background-color:#fff">
             <div class="col-lg-8 offset-sm-2" style="width:auto;height:auto;margin-top:100px;margin-bottom:100px;">
                 
-                    <img src="img/3.jpg" class="card-img-top" alt="...">
+                    <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>"  style="width:100%;height: auto;padding:10px">
                     <div class="card-header">Category: 
                         <?php echo $post['category_name'];?>
                     </div>

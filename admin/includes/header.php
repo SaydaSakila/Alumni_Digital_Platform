@@ -17,10 +17,19 @@
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
   }
-
     $db = new Database();
     //var_dump($db);die();
+        $query1 = "SELECT * FROM `events` WHERE `status` = 0";
+        $events = $db->getData($query1);
+        $numberEvent = mysqli_num_rows($events);
 
+        $query = "SELECT * FROM `requests` ";
+        $requests = $db->getData($query);
+        $numberreq = mysqli_num_rows($requests);
+        $querys = "SELECT * FROM `sturequests` ";
+        $srequests = $db->getData($querys);
+        $snumberreq = mysqli_num_rows($srequests);
+        $res = $numberreq + $snumberreq;
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +53,29 @@
 
  <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<style>
 
+.notification {
+  
+  
+  text-decoration: none;
+  
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+
+.notification .badge {
+  position: absolute;
+  top: -0px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+</style>
  
 </head>
 <body class="hold-transition sidebar-mini">
@@ -60,7 +91,10 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">Home</a>
       </li>
-      
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php" class="nav-link notification"> 
+        <span >Pending Request</span><span class="badge"><?php echo $res; ?></span></a>
+      </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="user-list.php" class="nav-link">Alumni List</a>
       </li>
@@ -77,8 +111,10 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="jobboard.php" class="nav-link">Job List</a>
       </li>
+      
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="events.php" class="nav-link">Events List</a>
+        <a href="events.php" class="nav-link notification"> 
+        <span >Events List</span><span class="badge"><?php echo $numberEvent; ?></span></a>
       </li>
     </ul>
 

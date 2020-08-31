@@ -37,7 +37,7 @@
                 
                 if (empty($file_errors)) {
                     $file_rename = substr(md5(time()), 0, 10).'.'.$ext;
-                    $upload_directory = '../uploads/'. $file_rename;
+                    $upload_directory = '../../uploads/'. $file_rename;
 
                     if (!move_uploaded_file($tmp_name, $upload_directory)) {
                         $_SESSION['file_errors'] = ['Faled to upload file'];

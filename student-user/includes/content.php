@@ -366,10 +366,10 @@ platform and adopt this constitution.</p>
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <!--<li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-app">Academic</li>
               <li data-filter=".filter-card">Career</li>
-              <li data-filter=".filter-web">Others</li>
+              <li data-filter=".filter-web">Others</li>-->
             </ul>
           </div>
         </div>
@@ -417,7 +417,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="col-sm-4 "  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                         <img src="../img/portfolio/web1.jpg" class="card-img-top" alt="Card Image">
+                         <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                     <div class="card-header">
                                         <?php echo $post['category_name'];?>
                                     </div>
@@ -425,7 +425,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
                                         
-                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 20); ?>..</p>
                                         
                                     </div>
                                     <div class="card-footer">
@@ -467,7 +467,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
             <div class="col-sm-4 "  >
                 <div class="card" style="width:auto;height:500px;margin-top:20px;" >
                     <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                         <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
+                         <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                     <div class="card-header">
                                         <?php echo $post['category_name'];?>
                                     </div>
@@ -475,7 +475,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
                                         
-                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 20); ?>..</p>
                                         
                                     </div>
                                     <div class="card-footer">
@@ -515,7 +515,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                     
             <div class="col-sm-4 "  >
                             <div class="card" style="width:auto;height:500px;margin-top:20px;" >
-                                 <img src="img/portfolio/card1.jpg" class="card-img-top" alt="Card Image">
+                                 <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                     <div class="card-header">
                                         <?php echo $post2['category_name'];?>
                                     </div>
@@ -523,7 +523,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         <h5 class="card-title"><?php echo $post2['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post2['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post2['admin_name']; ?></small>
                                         
-                                        <p class="card-text"><?php echo substr($post2['content'],0,10); ?>..</p>
+                                        <p class="card-text"><?php echo substr(Strip_tags($post2['content']), 0, 20); ?>..</p>
                                         
                                     </div>
                                     <div class="card-footer">

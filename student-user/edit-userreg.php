@@ -3,7 +3,11 @@
     // include header file
     include dirname(__FILE__). '/includes/header.php';
     $db = new Database();
-
+if (isset($_SESSION['old_data'])) 
+    {
+        $data = $_SESSION['old_data'];
+        unset($_SESSION['old_data']);
+    }
     if(isset($_GET['edit'])){
         $id=$_GET['edit'];
         //$id = $_SESSION['id'];
@@ -12,11 +16,7 @@
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();   
     }
-    if (isset($_SESSION['old_data'])) 
-    {
-        $data = $_SESSION['old_data'];
-        unset($_SESSION['old_data']);
-    }
+    
 ?>
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
                 <div class="container" style="margin-top:100px;margin-bottom:70px;
