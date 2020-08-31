@@ -6,7 +6,7 @@
      $query = "SELECT users.*, departments.name as department_name, `batches`.name as batch_name FROM `users` 
         LEFT JOIN departments ON users.dept_id=departments.id 
         LEFT JOIN `batches` ON users.batch_id=`batches`.id 
-        ORDER BY id DESC";
+        ORDER BY id ASC";
     $users = $db->getData($query);
     
 

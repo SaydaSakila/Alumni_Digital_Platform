@@ -19,15 +19,8 @@
                 <meta charset="utf-8">
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-                <!-- jQuery library -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-                <!-- Popper JS -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-                <!-- Latest compiled JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+                
                 <style>
                     body{
                         background-image: url(img/aa5.jpg);
@@ -51,6 +44,7 @@
                         margin-right: auto;
                         width: 50%;
                         }
+                        
                 </style>
         </head>
     <body>
@@ -65,6 +59,7 @@
                         <h3 class="text-center" style="color:#000;text-align:center;">ALUMNI LOGIN |</h3>
                         <h3 class="text-center inactive" style="color:#fff;"><a href="stulogin.php"> | STUDENT LOGIN</a></h3>
                     </div>
+                    <div class="form">
                         <form action="submit/login-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
@@ -75,10 +70,11 @@
                                 }
                               
                             ?>
-                            
+                            <div class="form" style="margin-top:20px;">
                             <div class="form-group">
                                
-                                <label for="" style="color:#000;">University ID</label>
+                                <label for="" style="color:#000;">University ID</label><br>
+                                
                                 <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
                                     if(isset($data['username'])) 
                                     {
@@ -116,6 +112,7 @@
                                         ?>
                                     </span><br>
                             </div>
+                            </div>
                                 <input type="submit"  name="ialulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
@@ -134,6 +131,13 @@
             </div>
         
         </div>
+<!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+                <!-- Popper JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+                <!-- Latest compiled JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>

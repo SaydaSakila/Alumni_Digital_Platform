@@ -89,6 +89,7 @@ include dirname(__FILE__).'/../database/database.php';
                                 }
                               
                             ?>
+                        <div class="form" style="margin-top:20px;">
                             <div class="row">
                             
                                 <div class="col-lg-6">
@@ -227,6 +228,7 @@ include dirname(__FILE__).'/../database/database.php';
                                                 }
                                             ?>
                                         </span>
+                                    </div>
                                 </div>                            
                            
                                 <input type="submit"  name="studentregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>
@@ -248,40 +250,7 @@ include dirname(__FILE__).'/../database/database.php';
         
         </div>
 
-        <script>
-            var myInput = document.getElementById("psw");
-
-            var length = document.getElementById("length");
-
-            // When the user clicks on the password field, show the message box
-            myInput.onfocus = function() 
-            {
-                document.getElementById("message").style.display = "block";
-            }
-
-            // When the user clicks outside of the password field, hide the message box
-            myInput.onblur = function() 
-            {
-                document.getElementById("message").style.display = "none";
-            }
-
-            // When the user starts to type something inside the password field
-            myInput.onkeyup = function() 
-            {
-    
-                // Validate length
-                if(myInput.value.length >= 8) 
-                {
-                    length.classList.remove("invalid");
-                    length.classList.add("valid");
-                } 
-                else 
-                {
-                    length.classList.remove("valid");
-                    length.classList.add("invalid");
-                }
-            }
-        </script>
+      
 
     </body>
 </html>

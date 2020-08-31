@@ -88,6 +88,7 @@ include dirname(__FILE__).'/../database/database.php';
                                 }
                               
                             ?>
+                        <div class="form" style="margin-top:20px;">
                             <div class="row">
                             
                                 <div class="col-lg-6">
@@ -244,6 +245,7 @@ include dirname(__FILE__).'/../database/database.php';
                                     </span><br>
                                 </div>
                             </div>
+                        </div>
                            
                                 <input type="submit"  name="alumniregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>
                             <div class="row">

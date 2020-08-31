@@ -76,6 +76,7 @@
                                 }
                               
                             ?>
+                            <div class="form" style="margin-top:20px;">
                                 <div class="form-group">
 
                                      <label for="" style="color:#000;">University ID</label>
@@ -114,6 +115,7 @@
                                         ?>
                                     </span><br>
                                 </div>
+                            </div>
                                 <input type="submit"  name="istulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
