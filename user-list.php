@@ -35,8 +35,10 @@
                         <p>Position: <?php echo $user['jposition']; ?></p>
                                 <p>Department: <?php echo $user['department_name']; ?><br>
                                 Batch: <?php echo $user['batch_name']; ?></p></p> 
-                                <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a> 
-                                <p><button><?php echo $user['email']; ?></button></p>
+                                <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
+                                    
+                                
+                                <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                     </div><br> 
                 </div>    
                 <?php

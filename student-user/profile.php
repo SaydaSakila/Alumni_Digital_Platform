@@ -36,9 +36,7 @@
                         <p >Address <?php echo $student['address'] ?></p><br>
                         Phone: <?php echo $student['phone'] ?><br>
                             Batch: <?php echo $student['batch'] ?><br>
-                            
-                            
-                        <button><?php echo $student['email'] ?></button><br>
+                           <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $student['email'] ?></div>
                         <a href="edit-userreg.php?edit=<?php echo $student['id']; ?>" class="btn btn-success btn-block"><i class="fas fa-user-edit"></i>Update Profile</a></p>
                     </div><br> 
                 </div>    

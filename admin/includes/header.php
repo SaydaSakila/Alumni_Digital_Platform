@@ -92,7 +92,7 @@
         <a href="index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link notification"> 
+        <a href="pending.php" class="nav-link notification"> 
         <span >Pending Request</span><span class="badge"><?php echo $res; ?></span></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">

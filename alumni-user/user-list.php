@@ -7,7 +7,7 @@
     $query = "SELECT users.*, departments.name as department_name, `batches`.name as batch_name FROM `users` 
         LEFT JOIN departments ON users.dept_id=departments.id 
         LEFT JOIN `batches` ON users.batch_id=`batches`.id
-        ORDER BY id DESC";
+        ORDER BY id ASC";
     $users = $db->getData($query); 
 
     $query1 = "SELECT * FROM departments";
@@ -41,10 +41,10 @@
                                 Department: <?php echo $user['department_name']; ?> <br>
                                 Batch: <?php echo $user['batch_name']; ?></p>
                                  
-                                <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a>
+                                <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
                                     
                                 
-                                <p><button><?php echo $user['email']; ?></button></p>
+                                <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                             </div>
                         </div>    
                         <?php

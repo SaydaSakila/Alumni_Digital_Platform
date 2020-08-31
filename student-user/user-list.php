@@ -34,10 +34,10 @@
                                 Department: <?php echo $user['department_name']; ?> <br>
                                 Batch: <?php echo $user['batch_name']; ?></p>
                                  
-                                <a href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Facebook Profile <i class="fa fa-facebook"></i></a>
+                              <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
                                     
                                 
-                                <p><button><?php echo $user['email']; ?></button></p>
+                                <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                             </div> 
                 </div>    
                 <?php

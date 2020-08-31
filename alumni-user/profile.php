@@ -40,8 +40,9 @@
                         Phone: <?php echo $user['phone'] ?><br>
                             Batch: <?php echo $user['batch_name']; ?><br>
                             Passing Year: <?php echo $user['passingyear'] ?><br>
+                            <a  href="<?php echo $user['fb']; ?>" target="_blank" class="fa fa-facebook"></a>
                             <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
-                            <a  href="<?php echo $user['fb']; ?>" target="_blank" class="btn btn-primary btn-block">Facebook Profile</a>
+                            
                             
                         
                         <button><a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success btn-block"><i class="fas fa-user-edit"></i>UPDATE PROFILE</a></button></p>

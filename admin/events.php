@@ -6,7 +6,10 @@
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
 
-     $query1 = "SELECT * FROM `events`";
+     $query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
+        LEFT JOIN `batches` ON events.batch_id=`batches`.id 
+        LEFT JOIN departments ON events.dept_id=departments.id
+         ORDER BY id DESC";
         $events = $db->getData($query1);
         //$id= $_SESSION['id'];
     
@@ -66,15 +69,15 @@
                                         <td><?php echo $event['date'] ?></td>
                                        <td><?php echo $event['created_at'] ?></td>
                                        <td><?php echo $event['photo'] ?></td>
-                                       <td><?php echo $event['batch_id'] ?></td>
-                                       <td><?php echo $event['dept_id'] ?></td>
+                                       <td><?php echo $event['batch_name'] ?></td>
+                                       <td><?php echo $event['department_name'] ?></td>
                                       
                                        <?php  
                                             if($event['status']==0){
                                             ?> 
                                                 <td style="text-align:center;">
                                                     <a style="color:#800000; border:2px solid #800000;
-                                                        background:white;border-radius:5px;padding: 5px;"><b>Inactive</b></a>
+                                                        background:white;border-radius:5px;padding: 5px;">Hide</a>
                                                 </td>
                                         <?php
                                             }
@@ -83,7 +86,7 @@
                                                 <td style="text-align:center;">
                                                 <a style="color:#2E8857;border-radius:5px; border:2px solid #2E8857;
                                                         background:white;padding: 5px;">
-                                                    <b>Active</b></a>
+                                                    Show</a>
                                                 </td>
                                         <?php            
                                             }

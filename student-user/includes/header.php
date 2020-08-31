@@ -177,7 +177,24 @@ button:hover, a:hover {
       -webkit-transform: scale(1.5); /* Safari 3-8 */
       transform: scale(1.5); 
     }
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 0%;
+}
 
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
 
 </style>
 </head>
