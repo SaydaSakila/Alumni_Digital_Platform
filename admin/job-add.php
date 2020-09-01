@@ -19,7 +19,7 @@
                         // contents include
                         //include dirname(__FILE__). '/includes/dashsidebar.php';
                     ?>
-                        <div class="col-md-9 " style="background-color:#fff;">
+                        <div class="col-md-10 " style="background-color:#fff;">
                             <div class="card-header">
                                 <h3 style="border:2px solid #333; border-radius:5px; padding: 7px;text-align:center;color:#333;" class="card-title">Create Job Circular</h3>
                                 <div class="card-header-action">

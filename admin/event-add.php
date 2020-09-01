@@ -10,14 +10,11 @@
 
 
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
-                <div class="container" >
-                    
-                    <div class="row" >
-                    <?php
-                        // contents include
-                       // include dirname(__FILE__). '/includes/dashsidebar.php';
-                    ?>
-                        <div class="container" style="padding:20px;background-color:#fff">
+        <div class="container" >
+            
+            <div class="col-sm-8" >
+
+                <div class="container" style="padding:20px;background-color:#fff">
                     <div class="card-header">
                         <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center" class="card-title">Create Event</h3>
                         <div class="card-header-action">
@@ -75,10 +72,10 @@
                                             <?php
                                                 if ($batches) {
                                                     while($batch = $batches->fetch_assoc()) {
-                                                        ?>
-                                                            <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
+                                                    ?>
+                                                        <option value="<?php echo $batch['id']; ?>"><?php echo $batch['name']; ?></option>
                                                             
-                                                        <?php
+                                                    <?php
                                                     }
                                                 }
                                             ?>

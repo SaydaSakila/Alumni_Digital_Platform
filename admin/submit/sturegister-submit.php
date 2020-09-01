@@ -50,7 +50,7 @@
             {
                 $password = sha1($password);
                 // store register
-                $insert_query = "INSERT INTO students (name, email, username, dept_id/*, universityid*/, password, phone, address, batch) 
+                $insert_query = "INSERT INTO students (name, email, username, dept_id/*, universityid*/, password, phone, address, batch_id) 
                     VALUES('$name', '$email', '$username', '$department', '$password', '$phone', '$address', '$batch')";
                 $run = $db->store($insert_query);
                 //var_dump($run);

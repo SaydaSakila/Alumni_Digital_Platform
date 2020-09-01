@@ -6,7 +6,7 @@
             LEFT JOIN categories ON sposts.category_id=categories.id 
             LEFT JOIN students ON sposts.student_id=students.id";
     $posts = $db->getData($query);
-    $student_id= $_SESSION['id'];
+    //$student_id= $_SESSION['id'];
 ?>
 <div class="row" >
     <div class="col">

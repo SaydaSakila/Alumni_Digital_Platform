@@ -6,7 +6,7 @@
             LEFT JOIN categories ON uposts.category_id=categories.id 
             LEFT JOIN users ON uposts.user_id=users.id";
     $posts = $db->getData($query);
-    $user_id= $_SESSION['id'];
+   // $user_id= $_SESSION['id'];
 ?>
 <div class="row" >
     <div class="col">

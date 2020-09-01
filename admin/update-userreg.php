@@ -19,14 +19,14 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $batch = $_POST['batch'];
+        //$batch = $_POST['batch'];
         $passingyear = $_POST['passingyear'];
         $cname = $_POST['cname'];
         $jposition = $_POST['jposition'];
         $file_rename = $_POST['photo'];
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) && !empty($passingyear) )
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($passingyear) )
         {
              $file_rename = ''; 
             
@@ -65,7 +65,7 @@
             }
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', 
+            phone='$phone', email='$email', address='$address', password='$password' ,
             cname = '$cname',jposition = '$jposition', passingyear='$passingyear' where id='$id' ";
 
             $result = $db->conn->query($sql);

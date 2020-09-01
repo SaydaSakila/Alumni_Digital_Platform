@@ -21,14 +21,14 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $batch = $_POST['batch'];
+        //$batch = $_POST['batch'];
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch) )
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) )
         {
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE students SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch' where id='$id' ";
+            phone='$phone', email='$email', address='$address', password='$password' where id='$id' ";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();

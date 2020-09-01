@@ -102,17 +102,7 @@ if (isset($_SESSION['old_data']))
                             ?>
                         </span>
                     </div>
-                    <div class="form-group">
-                        <label for="_batch">Batch No</label>
-                        <input type="text" name="batch" id="_batch" value='<?php  echo $data['batch']; ?>' class="form-control" placeholder="Update Your Batch Info">
-                        <span class="text-danger">
-                            <?php 
-                                if(isset($err['batch'])) {
-                                    echo $err['batch'];
-                                }
-                            ?>
-                        </span>
-                    </div>
+                    
                 
                         <div class="form-group">
                              <label for="exampleFormControlFile1">Image file Input</label>
