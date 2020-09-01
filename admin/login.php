@@ -20,12 +20,16 @@
     <title>Login</title>
     <link href="assets/css/login.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
-    <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');background-position: center center;  background-repeat: no-repeat;background-attachment: fixed;background-size: cover;" >
+
+    <div class="login-wrapper" style=" background-image: url('assets/img/c16.jpg');background-position: center center;
+        background-attachment: fixed;background-size: cover;height:100vh;" >
         
-        <div class="table">
+        <div class="table" style="background: rgba(0,0,0,0.55);height:100vh;">
             <div class="table-cell">
                 <div class="login-box" style="width:500px;">
                     <div class="login-header">
@@ -75,7 +79,7 @@
                                 <input type="submit" name="login_submit" class="btn btn-primary btn-block" value="LOGIN">
                             </div>
                             <div class="form-group" >
-                                <a href="admin-registration.php" class="btn btn-secondary btn-block " >New Admin Registration</a>
+                                <a href="admin-registration.php" class="btn btn-secondary btn-block btn-sm" >New Admin Registration</a>
                             </div>
                             
                         </form>
@@ -83,41 +87,9 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div> 
+  
 
-    <script>
-        var myInput = document.getElementById("psw");
-
-        var length = document.getElementById("length");
-
-        // When the user clicks on the password field, show the message box
-        myInput.onfocus = function() 
-        {
-            document.getElementById("message").style.display = "block";
-        }
-
-        // When the user clicks outside of the password field, hide the message box
-        myInput.onblur = function() 
-        {
-            document.getElementById("message").style.display = "none";
-        }
-
-        // When the user starts to type something inside the password field
-        myInput.onkeyup = function() 
-        {
- 
-            // Validate length
-            if(myInput.value.length >= 8) 
-            {
-                length.classList.remove("invalid");
-                length.classList.add("valid");
-            } 
-            else 
-            {
-                length.classList.remove("valid");
-                length.classList.add("invalid");
-            }
-        }
-    </script>  
+     
 </body>
 </html>

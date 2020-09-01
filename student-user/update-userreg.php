@@ -19,10 +19,10 @@
         $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $batch = $_POST['batch'];
+        
 
 
-        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password) && !empty($batch))
+        if(!empty($name) && !empty($username) && !empty($phone) && !empty($email) && !empty($address) && !empty($password))
         {  $file_rename = ''; 
             
             if (isset($_FILES['image'])) {
@@ -60,7 +60,7 @@
             }
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE students SET name='$name', username='$username',
-            phone='$phone', email='$email', address='$address', password='$password' , batch='$batch', photo='$file_rename' where id='$id'";
+            phone='$phone', email='$email', address='$address', password='$password' , photo='$file_rename' where id='$id'";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();
@@ -104,10 +104,7 @@
             {
                 $errors['address'] = "Address Field Can not be Empty";            
             }
-            if (empty($batch)) 
-            {
-                $errors['batch'] = "Batch Field Can not be Empty";            
-            }
+           
            
             $_SESSION['errors'] = $errors;
             header('location:edit-userreg.php');

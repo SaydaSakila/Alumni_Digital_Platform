@@ -14,7 +14,7 @@
 
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
-        $id= $_SESSION['id'];
+        //$id= $_SESSION['id'];
 
 ?>
 

@@ -39,7 +39,7 @@
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
                                  <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                 <div class="card-header">Category: 
                                         <?php echo $post['category_name'];?>
@@ -80,7 +80,7 @@
               ?>
                                     
                           <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
                                  <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                 <div class="card-header">Category:
                                         <?php echo $post1['category_name'];?>
@@ -120,7 +120,7 @@
               ?>
                                     
             <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:400px;margin-top:20px;" >
+                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
                                  <img src="uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
                                 <div class="card-header">Category:
                                         <?php echo $post['category_name'];?>

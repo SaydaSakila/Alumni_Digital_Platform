@@ -22,14 +22,14 @@
 
                 <style>
                     body{
-                        background-image: url(img/aa5.jpg);
+                        background-image: url(img/c16.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     .sakila{
-                        background: rgba(0,0,0,0.75);
+                        background: rgba(0,0,0,0.55);
                         height: 100vh;
 
                     }
@@ -113,11 +113,11 @@
                                 <input type="submit"  name="stulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="sturegistration.php" class="btn btn-primary " style="float:left">New Student Registration</a> 
+                                    <a href="sturegistration.php" class="btn btn-primary btn-sm" style="float:left">New Student Registration</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
-                                    <a href="../index.php" class="btn btn-warning" style="float:right" >Home Page</a>
+                                    <a href="../index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
                             </div>
                           

@@ -32,24 +32,17 @@ include dirname(__FILE__).'/../database/database.php';
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-                <!-- jQuery library -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-                <!-- Popper JS -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-                <!-- Latest compiled JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+               
                 <style>
-                    body{
-                        background-image: url(img/aa5.jpg);
+                   body{
+                        background-image: url(img/c16.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
 
                     }
                     .sakila{
-                        background: rgba(0,0,0,0.75);
+                        background: rgba(0,0,0,0.55);
                         height: 100vh;
 
                     }
@@ -255,11 +248,11 @@ include dirname(__FILE__).'/../database/database.php';
                                 <input type="submit"  name="alumniregistration_submit" class="btn btn-success btn-block btn-lg" value="REGISTRATION" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="login.php" class="btn btn-primary " style="float:left">Login as Alumni</a> 
+                                    <a href="login.php" class="btn btn-primary btn-sm" style="float:left">Login as Alumni</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
-                                    <a href="../index.php" class="btn btn-warning" style="float:right" >Home Page</a>
+                                    <a href="../index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
                             </div>
                           
@@ -271,6 +264,13 @@ include dirname(__FILE__).'/../database/database.php';
         
         </div>
 </div>
-        
+        <!-- jQuery library -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                <!-- Popper JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+                <!-- Latest compiled JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     </body>
 </html>

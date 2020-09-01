@@ -28,9 +28,9 @@
 
 </head>
 <body>
-    <div class="login-wrapper" style=" background-image: url('assets/img/a.jpg');  background-repeat: no-repeat;background-attachment: fixed;
+    <div class="login-wrapper" style=" background-image: url('assets/img/c16.jpg'); background-attachment: fixed;
         background-size: cover;background-position: center center;">
-        <div class="table">
+        <div class="table" style="background: rgba(0,0,0,0.55);height:100vh;">
             <div class="table-cell">
                 
                     <div class="login-box" style="width:50%">
@@ -144,7 +144,7 @@
                                 </div>
                                 <div class="form-group"  >
                                     
-                                    <a href="login.php" class="btn btn-secondary btn-block" >Login as Admin</a>
+                                    <a href="login.php" class="btn btn-secondary btn-block btn-sm" >Login as Admin</a>
                                 </div>
                                 </div>
                             </form>

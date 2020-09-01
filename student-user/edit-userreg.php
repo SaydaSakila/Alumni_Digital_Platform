@@ -127,8 +127,8 @@ if (isset($_SESSION['old_data']))
                                 </span>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-lg-6">
+                        
+                            <div class="form-group ">
                                 <label for="_address" style="color:#fff;">Address</label>
                                 <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address" value="<?php 
                                     if(isset($data['address'])) 
@@ -144,23 +144,8 @@ if (isset($_SESSION['old_data']))
                                     ?>
                                 </span>
                             </div>
-                            <div class="form-group col-lg-6">
-                                <label for="_batch" style="color:#fff;">Batch No</label>
-                                <input type="text" name="batch" id="_batch" class="form-control" placeholder="Update Your Batch Info" value="<?php 
-                                    if(isset($data['batch'])) 
-                                    {
-                                        echo $data['batch'];
-                                    }
-                                ?>">
-                                <span class="text-danger">
-                                    <?php 
-                                        if(isset($err['batch'])) {
-                                            echo $err['batch'];
-                                        }
-                                    ?>
-                                </span>
-                            </div>
-                        </div>
+                            
+                        
                     
                            <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>

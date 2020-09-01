@@ -20,7 +20,7 @@
     
         <div class="container" >
           
-            <div class="row" style="margin-top:60px;margin-left:auto;margin-bottom:50px;
+            <div class="row" style="margin-top:160px;margin-left:auto;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
     
                 <div class="container">

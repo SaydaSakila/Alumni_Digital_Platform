@@ -22,14 +22,15 @@
                 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <style>
-                    body{
-                        background-image: url(img/aa5.jpg);
+                     body{
+                        background-image: url(img/c16.jpg);
                         background-size: cover;
                         background-position: center center;
                         background-attachment: fixed;
+
                     }
                     .sakila{
-                        background: rgba(0,0,0,0.75);
+                        background: rgba(0,0,0,0.55);
                         height: 100vh;
 
                     }
@@ -53,7 +54,7 @@
                 </style>
         </head>
     <body>
-<div class="sakila">
+    <div class="sakila">
         <div class="container">
             <div class="row">
             <div class="col-lg-3"> </div>
@@ -121,11 +122,11 @@
                                 <input type="submit"  name="ialulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="alumni-user/alumni-registration.php" class="btn btn-primary " style="float:left">New Alumni Registration</a> 
+                                    <a href="alumni-user/alumni-registration.php" class="btn btn-primary btn-sm" style="float:left">New Alumni Registration</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
-                                    <a href="index.php" class="btn btn-warning" style="float:right" >Home Page</a>
+                                    <a href="index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
                             </div>
                           

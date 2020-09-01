@@ -35,7 +35,7 @@
                         
                         
                         <p class="title">University ID: <?php echo $student['username'] ?><br>
-                        Address <?php echo $student['address'] ?><br>
+                        Address: <?php echo $student['address'] ?><br>
                         Phone: <?php echo $student['phone'] ?><br>
                             Batch: <?php echo $student['batch_name'] ?><br>
                            <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $student['email'] ?></div>
