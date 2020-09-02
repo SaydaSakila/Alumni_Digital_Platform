@@ -21,7 +21,10 @@
     //var_dump($db);die();
         $query1 = "SELECT * FROM `events` WHERE `status` = 0";
         $events = $db->getData($query1);
-        $numberEvent = mysqli_num_rows($events);
+        if($events==NULL){
+          $numberEvent=0;
+        }else{
+        $numberEvent = mysqli_num_rows($events);}
 
         $query = "SELECT * FROM `requests` ";
         $requests = $db->getData($query);
@@ -42,6 +45,7 @@
   <title>Alumni Digital Platform</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   
   <!-- Font Awesome -->
@@ -61,10 +65,7 @@
 <style>
 
 .notification {
-  
-  
   text-decoration: none;
-  
   position: relative;
   display: inline-block;
   border-radius: 2px;
@@ -131,12 +132,12 @@
       </li>
       
      
-      <li class="nav-item d-none d-sm-inline-block active">
+      <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="pending.php" class="nav-link notification"> 
-        <span >Pending Request</span><span class="badge"><?php echo $res; ?></span></a>
+        <span>Pending Request</span><span class="badge"><?php echo $res; ?></span></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="user-list.php" class="nav-link">Alumni List</a>

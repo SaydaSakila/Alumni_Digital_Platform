@@ -21,7 +21,8 @@ class Database
     public function getData($queryy)
     {
         $result = $this->conn->query($queryy);
-        if($result->num_rows > 0)
+       
+        if(!empty($result) && $result->num_rows > 0)
         {
             return $result;
         }

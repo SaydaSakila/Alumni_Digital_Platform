@@ -6,10 +6,8 @@
         $batches = $db->getData($query);
          $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
-?>
-
-
-<div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
+?> 
+    <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
         <div class="container" >
             
             <div class="col-sm-8" >
@@ -67,7 +65,7 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for="" style="color:#000;">Mark Batch</label>
-                                        <select name="batch"  class="form-control">
+                                        <select name="batch[]" multiple  class="form-control">
                                             <option value="">Select Batch</option>
                                             <?php
                                                 if ($batches) {
@@ -102,6 +100,7 @@
                                                 }
                                             ?>
                                         </select>
+                                        
                                         <span class="text-danger">
                                             <?php 
                                                 if(isset($errors['department'])) {
@@ -117,7 +116,7 @@
                                 
                             </form>
                         </div>
-                    </div>
+                </div>
             </div>
     </div>
 

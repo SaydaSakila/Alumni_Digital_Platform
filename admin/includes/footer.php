@@ -30,58 +30,22 @@
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
     });
   </script>
-<script >
-  var expanded = false;
-
-  function showCheckboxes() {
-    var checkboxes = document.getElementById("checkboxes");
-    if (!expanded) {
-      checkboxes.style.display = "block";
-      expanded = true;
-    } else {
-      checkboxes.style.display = "none";
-      expanded = false;
-    }
-  }
-
-</script>
-<script>
-$(document).ready(function(){
- $('#framework').multiselect({
-  nonSelectedText: 'Select Batch',
-  enableFiltering: true,
-  enableCaseInsensitiveFiltering: true,
-  buttonWidth:'400px'
- });
- 
- $('#framework_form').on('submit', function(event){
-  event.preventDefault();
-  var form_data = $(this).serialize();
-  $.ajax({
-   url:"insert.php",
-   method:"POST",
-   data:form_data,
-   success:function(data)
-   {
-    $('#framework option:selected').each(function(){
-     $(this).prop('selected', false);
-    });
-    $('#framework').multiselect('refresh');
-    alert(data);
-   }
-  });
- });
- 
- 
+  <script>
+// Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
 });
 </script>
+
 
 </body>
 </html>

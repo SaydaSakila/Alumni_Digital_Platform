@@ -34,8 +34,7 @@
                 $_SESSION['actor'] = "users";
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
-
-
+            
                 header('location:../index.php');
             } 
             else 
