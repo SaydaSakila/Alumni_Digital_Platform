@@ -23,7 +23,7 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
     
                 <div class="container" style="width:850px;background-color:#ddd;padding:20px;">
                     <div class="">
-                        <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Events</b></h3>
+                        <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>My Events</b></h3>
                         
                     </div>
                     <?php 
