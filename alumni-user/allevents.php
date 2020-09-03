@@ -1,5 +1,5 @@
 <?php
-    $page_title = 'My Event List';
+    $page_title = 'ALL Event List';
     // header include
     include dirname(__FILE__). '/includes/header.php';
  
@@ -8,7 +8,7 @@
 $query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
         LEFT JOIN `batches` ON events.batch_id=`batches`.id 
         LEFT JOIN departments ON events.dept_id=departments.id
-        WHERE `status` = '1' AND `batch_id` =  $batch ORDER BY id DESC";
+        WHERE `status` = '1'  ORDER BY id DESC";
         $events = $db->getData($query1);
         //$id= $_SESSION['id'];    
 ?>
@@ -75,7 +75,7 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
                             else 
                             {
                         ?>
-                                <div class="card text-center" style="margin-top:100px;margin-bottom:100px;"><h2>No Events Found for My Batch</h2></div>
+                                <div class="card text-center" style="margin-top:100px;margin-bottom:100px;"><h2>No Events Found</h2></div>
                             <?php
                             }
                             ?>

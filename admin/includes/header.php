@@ -1,7 +1,7 @@
 <?php 
   //header file include
   include dirname(__FILE__).'/../../database/database.php';
-
+$activePage = basename($_SERVER['PHP_SELF'], ".php");
   session_start();
   //if (!isset($_SESSION['username'])) {
     if (!isset($_SESSION['username']) || ($_SESSION['actor']!== "admins")) {
@@ -24,17 +24,28 @@
         if($events==NULL){
           $numberEvent=0;
         }else{
-        $numberEvent = mysqli_num_rows($events);}
+        $numberEvent = mysqli_num_rows($events);
+      }
 
         $query = "SELECT * FROM `requests` ";
         $requests = $db->getData($query);
+        if($requests==NULL){
+          $numberreq=0;
+        }else{
         $numberreq = mysqli_num_rows($requests);
+      }
+        
         $querys = "SELECT * FROM `sturequests` ";
         $srequests = $db->getData($querys);
+        if($srequests==NULL){
+          $snumberreq=0;
+        }else{
         $snumberreq = mysqli_num_rows($srequests);
-        $res = $numberreq + $snumberreq;
+      }
+        
+        $pending = $numberreq + $snumberreq;
 
-         $activePage = basename($_SERVER['PHP_SELF'], ".php");
+         
 ?>
 
 <!DOCTYPE html>
@@ -137,7 +148,7 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="pending.php" class="nav-link notification"> 
-        <span>Pending Request</span><span class="badge"><?php echo $res; ?></span></a>
+        <span>Pending Request</span><span class="badge"><?php echo $pending; ?></span></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="user-list.php" class="nav-link">Alumni List</a>
