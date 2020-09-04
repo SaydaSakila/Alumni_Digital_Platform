@@ -53,7 +53,7 @@
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-building"></i>
               <p>
                 Department Manage
                 <i class="right fas fa-angle-left"></i>
@@ -78,7 +78,7 @@
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-user-graduate"></i>
               <p>
                 Alumni Manage
                 <i class="right fas fa-angle-left"></i>
@@ -125,7 +125,7 @@
           </li>
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fab fa-blogger"></i>
             <p>
               Blog Manage
               <i class="right fas fa-angle-left"></i>
@@ -161,7 +161,7 @@
          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-briefcase"></i>
               <p>
                 Job Manage
                 <i class="right fas fa-angle-left"></i>
@@ -185,7 +185,7 @@
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Event Manage
                 <i class="right fas fa-angle-left"></i>
@@ -208,7 +208,7 @@
           </li>
           <li class="nav-item">
                 <a href="contact.php" class="nav-link"  >
-                  <i class="nav-icon fas fa-users"></i>
+                  <i class="nav-icon fas fa-address-book"></i>
                   <p >Contact List</p>
                 </a>
               </li>

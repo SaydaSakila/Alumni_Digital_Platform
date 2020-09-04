@@ -8,7 +8,7 @@
     $query = "SELECT users.*, departments.name as department_name, `batches`.name as batch_name FROM `users` 
         LEFT JOIN departments ON users.dept_id=departments.id 
         LEFT JOIN `batches` ON users.batch_id=`batches`.id
-        ORDER BY id ASC";
+        ORDER BY id DESC";
     $users = $db->getData($query); 
 
     $query1 = "SELECT * FROM departments";
@@ -39,12 +39,13 @@
                                     <?php /* echo $user['photo'] */ ?>                                                                                                       
                                 <h3><?php echo $user['name']; ?></h3>
                                 <p class="title">Works at: <?php echo $user['cname']; ?></p>
-                                <p>Position: <?php echo $user['jposition']; ?><br>
+                               Position: <?php echo $user['jposition']; ?><br>
                                 Department: <?php echo $user['department_name']; ?> <br>
-                                Batch: <?php echo $user['batch_name']; ?></p>
-                                 
-                                <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
-                                    
+                                Batch: <?php echo $user['batch_name']; ?>
+                                <div class="text-center" style="display:flex;margin-left:85px;"> 
+                                    <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
+                                    <a  href="<?php echo $user['link']; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                </div>    
                                 
                                 <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                             </div>

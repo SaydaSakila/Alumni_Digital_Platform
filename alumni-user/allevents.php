@@ -45,7 +45,7 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
                                         <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
-                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:sa",$d); ?></h2>
+                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
                                             </div>
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
@@ -56,7 +56,7 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
                                                 </div>
                                                 <div class="card-body" style="padding:20px;">
                                                     
-                                                    <p class="card-text"><?php echo substr(Strip_tags($event['content']), 0, 50); ?>..</p>
+                                                    <p class="card-text"><?php echo substr(Strip_tags($event['content']), 0, 120); ?>..</p>
                                                     <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;text-align:right;" >Read Details</a>
                                                 </div>
                                             </div>

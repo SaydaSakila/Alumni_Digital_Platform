@@ -24,10 +24,10 @@
                                     border-radius:10px;box-sizing: border-box;">
     
                 <div class="container" style="background-color:#ddd;padding:20px;">
-                    <div class="">
-                        <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Events</b></h3>
+                   
                         
-                    </div>
+                        
+                   
                     <?php 
 
                         if (isset($_SESSION['message'])): ?>
@@ -38,7 +38,7 @@
                                 ?>
                             </div>
                         <?php endif ?>
-                    <div class="container ">
+                    <div class="container "><h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Events</b></h3>
                         <?php
                         if ($events) {
                             while($event = $events->fetch_assoc()) {
@@ -47,7 +47,7 @@
                                        <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
-                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:sa",$d); ?></h2>
+                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
                                             </div>
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">

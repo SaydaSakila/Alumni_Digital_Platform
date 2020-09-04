@@ -122,12 +122,13 @@
                                 <input type="submit"  name="ialulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="alumni-user/alumni-registration.php" class="btn btn-primary btn-sm" style="float:left">New Alumni Registration</a> 
+                                    <a href="alumni-user/alumni-registration.php" class="btn btn-primary btn-sm" style="float:left">Alumni Registration</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
                                     <a href="index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
+                                <a href="alumni-user/forgotpass.php" style="margin-left:15px;">I Forgot My Password</a>
                             </div>
                           
                         </form>

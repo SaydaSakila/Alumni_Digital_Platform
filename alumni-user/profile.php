@@ -42,6 +42,7 @@
                             Batch: <?php echo $user['batch_name']; ?><br>
                             Passing Year: <?php echo $user['passingyear'] ?><br>
                             <a  href="<?php echo $user['fb']; ?>" target="_blank" class="fa fa-facebook"></a>
+                            <a  href="<?php echo $user['link']; ?>" target="_blank" class="fa fa-linkedin"></a>
                             <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                             
                             

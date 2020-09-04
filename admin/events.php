@@ -2,15 +2,13 @@
     $page_title = 'Event List';
     // header include
     include dirname(__FILE__). '/includes/header.php';
- 
-    // saidebar include
-    //include dirname(__FILE__). '/includes/sidebar.php';
 
-     $query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
+    $query = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
         LEFT JOIN `batches` ON events.batch_id=`batches`.id 
         LEFT JOIN departments ON events.dept_id=departments.id
          ORDER BY id DESC";
-        $events = $db->getData($query1);
+        //$query = "SELECT * FROM `events` WHERE `dept_id` IN ('3','2')";
+        $events = $db->getData($query);
         //$id= $_SESSION['id'];
     
 ?>
@@ -71,7 +69,12 @@
                                        <td><?php echo $event['photo'] ?></td>
                                        <td><?php echo $event['batch_name'] ?></td>
                                        <td><?php echo $event['department_name'] ?></td>
-                                      
+                                     <!--<td><?php 
+                                       // $batch_ids = json_decode($event['batch_id']);
+                                       ?></td> 
+                                         <td><?php 
+                                       // $dept_ids = json_decode($event['dept_id']);
+                                       ?></td>-->
                                        <?php  
                                             if($event['status']==0){
                                             ?> 
@@ -84,9 +87,8 @@
                                             else{
                                             ?> 
                                                 <td style="text-align:center;">
-                                                <a style="color:#2E8857;border-radius:5px; border:2px solid #2E8857;
-                                                        background:white;padding: 5px;">
-                                                    Show</a>
+                                                    <a style="color:#2E8857;border-radius:5px; border:2px solid #2E8857;
+                                                        background:white;padding: 5px;">Show</a>
                                                 </td>
                                         <?php            
                                             }

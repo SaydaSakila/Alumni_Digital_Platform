@@ -214,7 +214,7 @@ button:hover, a:hover {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-  border-radius: 0%;
+  border-radius: 10%;
 }
 
 .fa:hover {
@@ -226,7 +226,11 @@ button:hover, a:hover {
   color: white;
   padding: 10px;
 }
-
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  padding: 10px;
+}
 </style>
 
 </head>

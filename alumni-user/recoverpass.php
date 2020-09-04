@@ -1,11 +1,14 @@
 <?php 
+
+include dirname(__FILE__).'/../database/database.php';
+ $db = new Database();
     session_start();
     if (isset($_SESSION['errors'])) 
     {
         $errors = $_SESSION['errors'];
         unset($_SESSION['errors']);
     }
-if(isset($_SESSION['success']))
+    if(isset($_SESSION['success']))
     {
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
@@ -15,18 +18,21 @@ if(isset($_SESSION['success']))
       $data = $_SESSION['old_data'];
       unset($_SESSION['old_data']);
     }
+    $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
+
 ?>
 <!DOCTYPE html>
     <html lang="en">
         <head>
-            <title>Login</title>
+            <title>Registration</title>
                 <meta charset="utf-8">
                 <!-- Latest compiled and minified CSS -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-                
+               
                 <style>
-                    body{
+                   body{
                         background-image: url(img/c16.jpg);
                         background-size: cover;
                         background-position: center center;
@@ -40,12 +46,15 @@ if(isset($_SESSION['success']))
                     }
                     #ui{
                         background-color:#fff;
-                        padding:30px;
-                        margin-top:80px;
+                        padding-left:30px;
+                        padding-right:30px;
+                        padding-top:30px;
+                        padding-bottom:2px;
+                        margin-top:40px;
                         border-radius:10px;
                         
                     }
-                    #ui label,h1{
+                    #ui label,h3{
                         color:#fff;
                     }
                     .center {
@@ -58,14 +67,14 @@ if(isset($_SESSION['success']))
         </head>
     <body>
 <div class="sakila">
-        <div class="container">
-            <div class="row">
+        <div class="container" >
+            <div class="row" >
                 <div class="col-lg-3"> </div>
-                <div class="col-lg-6"> 
+                <div class="col-lg-6" style="margin-top:40px;"> 
                     <div id="ui">
-                    <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
-                    <h1 class="text-center" style="color:#000;">ALUMNI LOGIN</h1>
-                        <form action="submit/login-submit.php" method="POST" class="form-group ">
+                        <img src="img/avater.png" id="icon" alt="User Icon" class="center" style="height:70px;width:70px;" />
+                       <!-- <h3 class="text-center" style="color:#000;">ALUMNI REGISTRATION</h3>-->
+                        <form action="submit/recover-submit.php" method="POST" class="form-group ">
                             <?php 
                                 if (isset($message['success_message'])) {
                                     echo '<div class="alert alert-success " role="alert">'.$message['success_message'].'</div>';
@@ -75,38 +84,20 @@ if(isset($_SESSION['success']))
                                 }
                               
                             ?>
-                            <div class="form" style="margin-top:20px;">
-                            <div class="form-group">
-                               
-                                <label for="" style="color:#000;">University ID</label>
-                                <input type="text" name="username" class="form-control" placeholder="Enter Your University ID" value="<?php 
-                                    if(isset($data['username'])) 
-                                    {
-                                        echo $data['username'];
-                                    }
-                                ?>">
-                                <span class = "text-danger">
-                                <?php 
-                                     if(isset($errors['username'])) 
-                                    {
-                                        echo $errors['username'];
-                                    }
-                                ?>
-                                </span>
-                                
-                            </div>
-                            <div class="form-group">   
+                        <div class="form" style="margin-top:20px;">
+                           
+                             <div class="form-group text-center" style="padding:10px;"><h5>You are only one step a way from your new password, recover your password now.</h5></div>
+
+                                <div class="form-group ">
                                     <label for="" style="color:#000;">Password</label>
                                     <!-- <input type="password" name="password" class="form-control" placeholder="Enter Your Password">-->
-                                    
-                                    <input type="password" id="myInput" name="password" class="form-control" placeholder="Enter Your Password" 
-                                         required value="<?php 
+                                    <input type="password" id="psw" name="password" class="form-control" placeholder="Enter Your Password" 
+                                        value="<?php 
                                         if(isset($data['password'])) 
                                         {
                                             echo $data['password'];
                                         }
-                                    ?>"><input type="checkbox" onclick="myFunction()" > Show Password
-                                    
+                                    ?>">
                                     <span class = "text-danger">
                                         <?php 
                                         if(isset($errors['password'])) 
@@ -114,39 +105,48 @@ if(isset($_SESSION['success']))
                                             echo $errors['password'];
                                         }
                                         ?>
-                                    </span><br>
+                                    </span>
                                 </div>
-                            </div>
-                                <input type="submit"  name="alulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
+                                <div class="form-group ">
+                                    <label for="" style="color:#000;">Confirm Password</label>
+                                    <input type="password" name="confpassword" class="form-control" placeholder="Confirm Your Password" value="<?php 
+                                        if(isset($data['confpassword'])) 
+                                        {
+                                            echo $data['confpassword'];
+                                        }
+                                    ?>">
+                                    <span class = "text-danger">
+                                    <?php 
+                                        if(isset($errors['confpassword'])) 
+                                        {
+                                            echo $errors['confpassword'];
+                                        }
+                                    ?>
+                                    </span>
+                                </div>
+                           
+                            
+                        </div>
+                           
+                                <input type="submit"  name="recover_submit" class="btn btn-primary btn-block" value="Change Password" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="alumni-registration.php" class="btn btn-primary btn-sm" style="float:left">Alumni Registration</a> 
+                                    <a href="login.php"  style="float:left">Alumni Login</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">
                                     <a href="../index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
-                                <a href="forgotpass.php" style="margin-left:15px;">I Forgot My Password</a>
                             </div>
                           
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-3"> </div>
+                <div class="col-lg-2"> </div>
             </div>
         
         </div>
 </div>
-       <script>
-            function myFunction() {
-            var x = document.getElementById("myInput");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-            }
-        </script>
         <!-- jQuery library -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -154,7 +154,6 @@ if(isset($_SESSION['success']))
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
                 <!-- Latest compiled JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
     </body>
 </html>

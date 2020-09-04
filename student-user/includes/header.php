@@ -196,7 +196,11 @@ button:hover, a:hover {
   background: #3B5998;
   color: white;
 }
-
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+  padding: 10px;
+}
 </style>
 </head>
 

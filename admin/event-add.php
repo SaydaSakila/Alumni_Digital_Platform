@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1" >Enter Event Date</label>
-                                    <input type="datetime-local" name="date" class="form-control-file" id="exampleFormControlFile1">
+                                    <input type="datetime-local" name="date" class="form-control form-control-file" id="exampleFormControlFile1">
                                     <span class="text-danger">
                                         <?php 
                                             if(isset($err['date'])) {
@@ -65,8 +65,8 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for="" style="color:#000;">Mark Batch</label>
-                                        <select name="batch[]" multiple  class="form-control">
-                                            <option value="">Select Batch</option>
+                                        <select name="batch[]"class="select2 form-control"  multiple="multiple" data-placeholder="Select Batch" style="width: 100%;">
+                                           
                                             <?php
                                                 if ($batches) {
                                                     while($batch = $batches->fetch_assoc()) {
@@ -86,10 +86,11 @@
                                             ?>
                                         </span>
                                 </div>
+                                
                                 <div class="form-group">
                                         <label for="" style="color:#000;">Mark Department</label>
-                                        <select name="department"  class="form-control">
-                                            <option value="">Select Department</option>
+                                        <select name="department[]"  class="select2 form-control"  multiple="multiple" data-placeholder="Select Department" style="width: 100%;">
+                                            
                                             <?php
                                                 if ($departments) {
                                                     while($department = $departments->fetch_assoc()) {
@@ -109,6 +110,18 @@
                                             ?>
                                         </span>
                                     </div>
+                                    <div class="form-group">
+                  <!--<label>Multiple</label>
+                  <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                    <option>Alabama</option>
+                    <option>Alaska</option>
+                    <option>California</option>
+                    <option>Delaware</option>
+                    <option>Tennessee</option>
+                    <option>Texas</option>
+                    <option>Washington</option>
+                  </select>
+                </div>-->
 
                                 <div class="form-group">
                                     <button class="btn btn-success btn-lg btn-block" type="submit" name="eventpost_submit">Publish Event</button>

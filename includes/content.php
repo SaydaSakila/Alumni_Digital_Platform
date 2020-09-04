@@ -211,7 +211,13 @@ platform and adopt this constitution.</p>
                             }     
                             } 
                             ?>
-             </div>       
+             </div>   <br>
+             <div class="row">
+          <div class="col-lg-12">
+         
+              <a href="job.php" class="btn btn-success btn-block"  >View All Job</a>
+          </div>
+        </div>    
 <!--
         <div class="row">
 
@@ -735,8 +741,14 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                             }
                             ?>
                     </div>
-
+<div class="row">
+          <div class="col-lg-12">
+         
+              <a href="events.php" class="btn btn-success btn-block"  >View All Events</a>
+          </div>
+        </div>
       </div>
+      
     </section><!-- #team -->
 
     <!--==========================

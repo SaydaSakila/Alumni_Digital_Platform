@@ -12,7 +12,8 @@
         $date = $_POST['date'];
         $batch = $_POST['batch']; 
         
-        $department = htmlspecialchars(trim($_POST['department']));
+        $department = $_POST['department'];
+
         $status = 0;
 
         if ($name && $content && $date) {
@@ -23,14 +24,12 @@
                 header('location:../event-add.php');
             }
            else{
-               foreach($batch as $b){
-
-               
+            $batch_ids = json_encode($batch);
+            $dept_ids = json_encode($department);
                 // store Event
-            $query = "INSERT INTO `events` ( `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$name','$content','$date', '$b', '$department', '$status')";
+            $query = "INSERT INTO `events` ( `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$name','$content','$date', '$batch_ids', '$dept_ids', '$status')";
             $run = $db->store($query);
-            //var_dump($query);die();
-            }
+       
             if ($run) {
                 $success['success_message'] = "Event Added Successfully";
             } else {
