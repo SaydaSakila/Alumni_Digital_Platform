@@ -11,7 +11,7 @@
         $content = $_POST['content'];
         $date = $_POST['date'];
         $batch = $_POST['batch']; 
-        
+        //$status = $_POST['status'];
         $department = $_POST['department'];
 
         $status = 0;

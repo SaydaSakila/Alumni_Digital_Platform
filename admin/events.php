@@ -2,14 +2,10 @@
     $page_title = 'Event List';
     // header include
     include dirname(__FILE__). '/includes/header.php';
-
-    $query = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
-        LEFT JOIN `batches` ON events.batch_id=`batches`.id 
-        LEFT JOIN departments ON events.dept_id=departments.id
-         ORDER BY id DESC";
-        //$query = "SELECT * FROM `events` WHERE `dept_id` IN ('3','2')";
+   
+        $query = "SELECT * FROM `events` ORDER by id DESC";
         $events = $db->getData($query);
-        //$id= $_SESSION['id'];
+        
     
 ?>
     <div class="row" >
@@ -67,14 +63,29 @@
                                         <td><?php echo $event['date'] ?></td>
                                        <td><?php echo $event['created_at'] ?></td>
                                        <td><?php echo $event['photo'] ?></td>
-                                       <td><?php echo $event['batch_name'] ?></td>
-                                       <td><?php echo $event['department_name'] ?></td>
-                                     <!--<td><?php 
-                                       // $batch_ids = json_decode($event['batch_id']);
-                                       ?></td> 
+                                        <td><?php 
+                                                $ids = json_decode($event['batch_id']);
+                                                $ids = implode(',', $ids);
+                                                
+                                                $batches = $db->getData("SELECT batches.name FROM `batches` WHERE id IN ($ids)");
+                                                if ($batches->num_rows > 0) {
+                                                    while($batch = $batches->fetch_assoc()) {
+                                                        echo $batch['name']. ', ';
+                                                    }
+                                                }
+                                                
+                                        ?></td> 
                                          <td><?php 
-                                       // $dept_ids = json_decode($event['dept_id']);
-                                       ?></td>-->
+                                            $ids = json_decode($event['dept_id']);
+                                                $ids = implode(',', $ids);
+                                                
+                                                $departments = $db->getData("SELECT departments.name FROM `departments` WHERE id IN ($ids)");
+                                                if ($departments->num_rows > 0) {
+                                                    while($department = $departments->fetch_assoc()) {
+                                                        echo $department['name']. ', ';
+                                                    }
+                                                }
+                                       ?></td>
                                        <?php  
                                             if($event['status']==0){
                                             ?> 

@@ -5,18 +5,14 @@
  
     // saidebar include
     //include dirname(__FILE__). '/includes/sidebar.php';
-$query1 = "SELECT events.*, departments.name as department_name, `batches`.name as batch_name FROM `events` 
-        LEFT JOIN `batches` ON events.batch_id=`batches`.id 
-        LEFT JOIN departments ON events.dept_id=departments.id
-        WHERE `status` = '1' AND `batch_id` =  $batch ORDER BY id DESC";
-        $events = $db->getData($query1);
+        // $query1 = "SELECT * FROM `events` WHERE `status` = '1' AND JSON_CONTAINS(batch_id, '[$batch]') ORDER BY id DESC";
+       
+        // $events = $db->getData($query1);
         //$id= $_SESSION['id'];    
 ?>
     <div class="row" >
     
         <div class="container" >
-            <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
-                                    border-radius:10px;">-->
                                     
             <div class="row" style="margin-top:150px;margin-left:auto;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
@@ -50,9 +46,29 @@ $query1 = "SELECT events.*, departments.name as department_name, `batches`.name 
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
-                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>
-                                                    <b> [Batch: <?php echo $event['batch_name']; ?>
-                                                    Department: <?php echo $event['department_name']; ?>]</b></small>
+                                                   <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>
+                                                    <b> [Batch: <?php //echo $event['batch_name']; 
+                                                            $ids = json_decode($event['batch_id']);
+                                                            $ids = implode(',', $ids);
+                                                            
+                                                            $batches = $db->getData("SELECT batches.name FROM `batches` WHERE id IN ($ids)");
+                                                            if ($batches->num_rows > 0) {
+                                                                while($batch = $batches->fetch_assoc()) {
+                                                                    echo $batch['name']. ', ';
+                                                                }
+                                                            }?>
+                                                    Department: <?php //echo $event['department_name']; 
+                                                        $ids = json_decode($event['dept_id']);
+                                            
+                                                        $ids = implode(',', $ids);
+                                                        
+                                                        $departments = $db->getData("SELECT departments.name FROM `departments` WHERE id IN ($ids)");
+                                                        if ($departments->num_rows > 0) {
+                                                            while($department = $departments->fetch_assoc()) {
+                                                                echo $department['name']. ', ';
+                                                            }
+                                                        }
+                                                ?>]</b></small>
                                                 </div>
                                                 <div class="card-body" style="padding:20px;">
                                                     

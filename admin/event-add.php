@@ -111,18 +111,17 @@
                                         </span>
                                     </div>
                                     <div class="form-group">
-                  <!--<label>Multiple</label>
-                  <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                    <option>Alabama</option>
-                    <option>Alaska</option>
-                    <option>California</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
-                  </select>
-                </div>-->
-
+                                    <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text" for="inputGroupSelect01">Active Status</label>
+                                            </div>
+                                            <select class="custom-select" name='status' id="inputGroupSelect01" >
+                                            
+                                            
+                                                <option value="0">Inactive</option>
+                                                <option value="1">Active</option>
+                                            </select>
+                                        </div>
                                 <div class="form-group">
                                     <button class="btn btn-success btn-lg btn-block" type="submit" name="eventpost_submit">Publish Event</button>
                                 </div>

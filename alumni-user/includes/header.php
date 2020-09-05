@@ -25,13 +25,18 @@
     $run  = $db->conn->query($sql);
     $user = $run->fetch_assoc();
 
-    $batch = $user['batch_id'];
-    $query = "SELECT * FROM `events` WHERE `status` = 1 AND `batch_id` =  $batch";
-        $events = $db->getData($query);
-         if($events==NULL){
-          $numberEvent=0;
-        }else{
-        $numberEvent = mysqli_num_rows($events);}
+    $user_batch_id = $user['batch_id'];
+    $user_department_id = $user['dept_id'];
+
+    $query =  "SELECT * FROM `events` WHERE `status`='1' AND JSON_CONTAINS(batch_id, '[\"$user_batch_id\"]') 
+                  AND JSON_CONTAINS(dept_id, '[\"$user_department_id\"]') 
+                  ORDER BY id DESC";
+    $events = $db->getData($query);
+    if($events==NULL){
+      $numberEvent=0;
+    }else{
+      $numberEvent = mysqli_num_rows($events);
+    }
    
     
 

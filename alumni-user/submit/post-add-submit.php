@@ -33,7 +33,7 @@
                     $file_errors[] = 'File must be the following type: '. implode(', ', $allow);
                 }
                 
-                if ($file_size > (1024*1240)) {
+                if ($file_size > (1024*5240)) {
                     $file_errors[] = "File size should be more than 1MB";
                 } 
                 

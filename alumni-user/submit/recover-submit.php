@@ -28,7 +28,7 @@
                 $sql = "UPDATE users SET password='$password' where id='$id'";
                // $run = $db->conn->query($sql);
                 $run = $db->store($sql);
-                 var_dump($run);die();
+                 //var_dump($run);die();
                 if ($run) 
                 {
                     $success['success_message'] = "Password Recovered Successfully";
