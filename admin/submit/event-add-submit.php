@@ -11,10 +11,10 @@
         $content = $_POST['content'];
         $date = $_POST['date'];
         $batch = $_POST['batch']; 
-        //$status = $_POST['status'];
+        $status = $_POST['status'];
         $department = $_POST['department'];
 
-        $status = 0;
+        //$status = 0;
 
         if ($name && $content && $date) {
             if (date('Y-m-d') > $date) {

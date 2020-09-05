@@ -14,7 +14,10 @@ if (isset($_SESSION['old_data']))
         $sql = "SELECT * from events where id='$id'";
         $run  = $db->conn->query($sql);
         $data = $run->fetch_assoc();   
-        //var_dump($data);die();
+         $query = "SELECT * FROM batches";
+        $batches = $db->getData($query);
+         $query1 = "SELECT * FROM departments";
+        $departments = $db->getData($query1);
     }
     
 ?>
@@ -72,6 +75,52 @@ if (isset($_SESSION['old_data']))
                             ?>
                         </span>
                     </div>
+                   <!-- <div class="form-group ">
+                        <label for="" style="color:#000;">Mark Batch</label>
+                            <select name="batch[]"class="select2 form-control"  multiple="multiple" data-placeholder="Select Batch" style="width: 100%;">
+                                
+                                <?php
+                                    // if ($batches) {
+                                    //     while($batch = $batches->fetch_assoc()) {
+                                    //     ?>
+                                    //         <option value="<?php //echo $batch['id']; ?>" <?php //echo $batch['id']== $data['batch_id'] ? "Selected" : "" ?> ><?php //echo $batch['name']; ?></option>
+                                                
+                                    //     <?php
+                                    //     }
+                                    // }
+                                ?>
+                            </select>
+                            <span class="text-danger">
+                                <?php 
+                                    // if(isset($err['batch'])) {
+                                    //     echo $err['batch'];
+                                    // }
+                                ?>
+                            </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="color:#000;">Mark Department</label>
+                        <select name="department[]"  class="select2 form-control"  multiple="multiple" data-placeholder="Select Department" style="width: 100%;">
+                            
+                            <?php
+                                // if ($departments) {
+                                //     while($department = $departments->fetch_assoc()) {
+                                //         ?>
+                                //             <option value="<?php //echo $department['id']; ?>" <?php //echo $department['id']== $data['dept_id'] ? "Selected" : "" ?>><?php// echo $department['name']; ?></option>
+                                //         <?php
+                                //     }
+                                // }
+                            ?>
+                        </select>
+                        
+                        <span class="text-danger">
+                            <?php 
+                                // if(isset($errors['department'])) {
+                                //     echo $errors['department'];
+                                // }
+                            ?>
+                        </span>
+                    </div>-->
                      <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Active Status</label>

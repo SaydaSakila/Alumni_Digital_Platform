@@ -87,7 +87,7 @@
                                         </span>
                                 </div>
                                 
-                                <div class="form-group">
+                                    <div class="form-group">
                                         <label for="" style="color:#000;">Mark Department</label>
                                         <select name="department[]"  class="select2 form-control"  multiple="multiple" data-placeholder="Select Department" style="width: 100%;">
                                             

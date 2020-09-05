@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="form-group ">
                                     <label for="" style="color:#000;">Batch</label>
-                                        <select name="batch"  class="form-control">
+                                        <select name="batch[]"  class="form-control">
                                             <option value="">Select Batch</option>
                                             <?php
                                                 if ($batches) {
@@ -93,7 +93,7 @@
                                 </div>
                                  <div class="form-group">
                                         <label for="" style="color:#000;">Department</label>
-                                        <select name="department"  class="form-control">
+                                        <select name="department[]"  class="form-control">
                                             <option value="">Select Department</option>
                                             <?php
                                                 if ($departments) {

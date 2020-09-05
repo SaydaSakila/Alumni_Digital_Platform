@@ -16,6 +16,8 @@
         $name = $_POST['name'];
         $content = $_POST['content'];
         $date = $_POST['date'];
+        //$batch = $_POST['batch'];
+        //$department = $_POST['department'];
         $status = $_POST['status'];
 
         if(!empty($name) && !empty($content) && !empty($date))

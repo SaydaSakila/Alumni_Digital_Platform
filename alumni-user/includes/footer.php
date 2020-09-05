@@ -22,7 +22,8 @@
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <!-- <div id="preloader"></div> -->
-
+<!-- Select2 -->
+<script src="assets/plugins/select2/js/select2.full.min.js"></script>
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -47,7 +48,10 @@
 <script>
     $(document).ready(function() {
         $('#summernote').summernote();
-        height: 100
+
+        if ($('.select2').length > 0) {
+          $('.select2').select2();
+        }
     });
   </script>
 

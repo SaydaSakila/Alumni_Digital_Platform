@@ -40,14 +40,13 @@
                                     <div class="card mb-4" style="max-width: 740px;height:auto;;">
                                         <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
-                                                <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
-                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
+                                               <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
                                             </div>
                                             <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
                                                    <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>
-                                                    <b> [Batch: <?php //echo $event['batch_name']; 
+                                                    <b> [Batch: <?php  
                                                             $ids = json_decode($event['batch_id']);
                                                             $ids = implode(',', $ids);
                                                             
@@ -57,7 +56,7 @@
                                                                     echo $batch['name']. ', ';
                                                                 }
                                                             }?>
-                                                    Department: <?php //echo $event['department_name']; 
+                                                    Department: <?php  
                                                         $ids = json_decode($event['dept_id']);
                                             
                                                         $ids = implode(',', $ids);

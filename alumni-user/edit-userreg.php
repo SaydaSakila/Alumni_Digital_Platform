@@ -206,7 +206,7 @@ $query = "SELECT * FROM batches";
 
                         <div class="row">
                             <div class="form-group col-lg-6">
-                                <label for="_cname">Company Name</label>
+                                <label for="_cname" style="color:#fff;">Company Name</label>
                             <input type="text" name="cname" id="_cname" value="<?php 
                                     if(isset($data['cname'])) 
                                     {
@@ -222,7 +222,7 @@ $query = "SELECT * FROM batches";
                             </span>
                         </div>
                             <div class="form-group col-lg-6">
-                                <label for="_jposition">Job Title</label>
+                                <label for="_jposition" style="color:#fff;">Job Title</label>
                                 <input type="text" name="jposition" id="_jposition" value="<?php 
                                     if(isset($data['jposition'])) 
                                     {
@@ -241,7 +241,12 @@ $query = "SELECT * FROM batches";
                     
                               <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" name='image' value="<?php 
+                                    if(isset($data['image'])) 
+                                    {
+                                        echo $data['image'];
+                                    }
+                                ?>" id="exampleFormControlFile1" >
                                 <span class="text-danger">
                                     <?php 
                                     if(isset($file_err)) {

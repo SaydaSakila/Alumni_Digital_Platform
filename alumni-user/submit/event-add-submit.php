@@ -10,7 +10,8 @@
         $content = $_POST['content'];
         $date = $_POST['date'];
         $batch = $_POST['batch'];
-        $department = htmlspecialchars(trim($_POST['department']));
+        $department = $_POST['department'];
+        $status = 0;
 
         if ($name && $content && $date) {
             if (date('Y-m-d') > $date) {
@@ -20,8 +21,10 @@
                 header('location:../event-add.php');
             }
            else{
+                $batch_ids = json_encode($batch);
+            $dept_ids = json_encode($department);
                 // store Event
-            $query = "INSERT INTO `events`( `name`, `content`, `date`, `batch_id`, `dept_id`) VALUES ('$name','$content','$date', '$batch', '$department')";
+            $query = "INSERT INTO `events`( `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$name','$content','$date', '$batch_ids', '$dept_ids', '$status')";
             $run = $db->store($query);
             //var_dump($query);
             
