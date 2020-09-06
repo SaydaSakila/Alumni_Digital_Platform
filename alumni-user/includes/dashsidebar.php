@@ -1,5 +1,5 @@
 <div class="col-md-3" >
-    <div class="dashboard-sidebar" style="width: 220px;color:#17a2b8;padding:10px;position:fixed;">
+    <div class="dashboard-sidebar" style="width: 220px;color:#17a2b8;padding:0px;position:fixed;">
         <h3><b>Dashboard</b></h3>
         <ul class="dashboard-nav block">
             <li><a href="profile.php?id=<?php echo $id;?>" style="color:#17a2b8">My Profile</a>

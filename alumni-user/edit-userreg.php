@@ -100,41 +100,7 @@ $query = "SELECT * FROM batches";
                                     ?>
                                 </span>
                             </div>
-                             <div class="form-group col-lg-6">
-                                <label for="_fb" style="color:#fff;">Facebook Profile</label>
-                                <input type="fb" name="fb" id="_fb"  class="form-control" placeholder="Update Your Facebook Profile Link" value="<?php 
-                                    if(isset($data['fb'])) 
-                                    {
-                                        echo $data['fb'];
-                                    }
-                                ?>">
-                                <span class="text-danger">
-                                    <?php 
-                                        if(isset($err['fb'])) {
-                                            echo $err['fb'];
-                                        }
-                                    ?>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                                <label for="_link" style="color:#fff;">LinkedIn Profile</label>
-                                <input type="link" name="link" id="_link"  class="form-control" placeholder="Update Your LinkedIn Profile Link" value="<?php 
-                                    if(isset($data['link'])) 
-                                    {
-                                        echo $data['link'];
-                                    }
-                                ?>">
-                                <span class="text-danger">
-                                    <?php 
-                                        if(isset($err['link'])) {
-                                            echo $err['link'];
-                                        }
-                                    ?>
-                                </span>
-                            </div>
-                        
-                        <div class="row">
+                            
                             <div class="form-group col-lg-6">
                                 <label for="_pass" style="color:#fff;">Password</label>
                                 <input type="password" name="password" id="_pass"  class="form-control" placeholder="Update Your Password" value="<?php 
@@ -147,6 +113,42 @@ $query = "SELECT * FROM batches";
                                     <?php 
                                         if(isset($err['password'])) {
                                             echo $err['password'];
+                                        }
+                                    ?>
+                                </span>
+                            </div>
+                        </div>
+                        
+                         <div class="form-group ">
+                            <label for="_address" style="color:#fff;">Address</label>
+                            <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address" value="<?php 
+                                if(isset($data['address'])) 
+                                {
+                                    echo $data['address'];
+                                }
+                            ?>">
+                            <span class="text-danger">
+                                <?php 
+                                    if(isset($err['address'])) {
+                                        echo $err['address'];
+                                    }
+                                ?>
+                            </span>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <label for="_fb" style="color:#fff;">Facebook Profile</label>
+                                <input type="fb" name="fb" id="_fb"  class="form-control" placeholder="Update Your Facebook Profile Link" value="<?php 
+                                    if(isset($data['fb'])) 
+                                    {
+                                        echo $data['fb'];
+                                    }
+                                ?>">
+                                <span class="text-danger">
+                                    <?php 
+                                        if(isset($err['fb'])) {
+                                            echo $err['fb'];
                                         }
                                     ?>
                                 </span>
@@ -170,20 +172,20 @@ $query = "SELECT * FROM batches";
                         </div>
                     <div class="row">
                         <div class="form-group col-lg-6">
-                            <label for="_address" style="color:#fff;">Address</label>
-                            <input type="text" name="address" id="_address" class="form-control" placeholder="Update Your Address" value="<?php 
-                                if(isset($data['address'])) 
-                                {
-                                    echo $data['address'];
-                                }
-                            ?>">
-                            <span class="text-danger">
-                                <?php 
-                                    if(isset($err['address'])) {
-                                        echo $err['address'];
+                                <label for="_link" style="color:#fff;">LinkedIn Profile</label>
+                                <input type="link" name="link" id="_link"  class="form-control" placeholder="Update Your LinkedIn Profile Link" value="<?php 
+                                    if(isset($data['link'])) 
+                                    {
+                                        echo $data['link'];
                                     }
-                                ?>
-                            </span>
+                                ?>">
+                                <span class="text-danger">
+                                    <?php 
+                                        if(isset($err['link'])) {
+                                            echo $err['link'];
+                                        }
+                                    ?>
+                                </span>
                         </div>
                             
                             <div class="form-group col-lg-6">

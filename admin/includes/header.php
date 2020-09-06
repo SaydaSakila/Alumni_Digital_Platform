@@ -1,6 +1,7 @@
 <?php 
   //header file include
   include dirname(__FILE__).'/../../database/database.php';
+   $db = new Database();
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
   session_start();
   //if (!isset($_SESSION['username'])) {
@@ -17,7 +18,14 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
   }
-    $db = new Database();
+  
+   if (!function_exists('database_date_formatted')) {
+        function database_date_formatted($date) {
+            return date('Y-m-d', strtotime($date));
+        }
+    }
+
+   
     //var_dump($db);die();
         $query1 = "SELECT * FROM `events` WHERE `status` = 0";
         $events = $db->getData($query1);

@@ -17,6 +17,11 @@
       $message = $_SESSION['success'];
       unset($_SESSION['success']);
   }
+   if (!function_exists('database_date_formatted')) {
+        function database_date_formatted($date) {
+            return date('Y-m-d', strtotime($date));
+        }
+    }
     $id = $_SESSION['id'];
     $name = $_SESSION['name'];
  

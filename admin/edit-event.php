@@ -66,7 +66,7 @@ if (isset($_SESSION['old_data']))
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1" >Update Event Date</label>
-                        <input type="date" name="date" value='<?php  echo $data['date']; ?>' class="form-control-file" id="exampleFormControlFile1">
+                        <input type="date" name="date" value="<?php echo database_date_formatted($data['date']); ?>" class="form-control-file" id="exampleFormControlFile1">
                         <span class="text-danger">
                             <?php 
                                 if(isset($err['date'])) {
@@ -75,52 +75,58 @@ if (isset($_SESSION['old_data']))
                             ?>
                         </span>
                     </div>
-                   <!-- <div class="form-group ">
+                    <?php  
+                        $ids = json_decode($data['batch_id']); 
+                    ?>
+                   <div class="form-group ">
                         <label for="" style="color:#000;">Mark Batch</label>
                             <select name="batch[]"class="select2 form-control"  multiple="multiple" data-placeholder="Select Batch" style="width: 100%;">
                                 
                                 <?php
-                                    // if ($batches) {
-                                    //     while($batch = $batches->fetch_assoc()) {
-                                    //     ?>
-                                    //         <option value="<?php //echo $batch['id']; ?>" <?php //echo $batch['id']== $data['batch_id'] ? "Selected" : "" ?> ><?php //echo $batch['name']; ?></option>
+                                     if ($batches) {
+                                         while($batch = $batches->fetch_assoc()) {
+                                         ?>
+                                             <option value="<?php echo $batch['id']; ?>" <?php echo in_array($batch['id'], $ids) ? "selected" : ""; ?>><?php echo $batch['name']; ?></option>
                                                 
-                                    //     <?php
-                                    //     }
-                                    // }
+                                         <?php
+                                         }
+                                     }
                                 ?>
                             </select>
                             <span class="text-danger">
                                 <?php 
-                                    // if(isset($err['batch'])) {
-                                    //     echo $err['batch'];
-                                    // }
+                                     if(isset($err['batch'])) {
+                                         echo $err['batch'];
+                                     }
                                 ?>
                             </span>
                     </div>
+                    <?php  
+                         $ids = json_decode($data['dept_id']); 
+                    ?>
                     <div class="form-group">
                         <label for="" style="color:#000;">Mark Department</label>
                         <select name="department[]"  class="select2 form-control"  multiple="multiple" data-placeholder="Select Department" style="width: 100%;">
                             
                             <?php
-                                // if ($departments) {
-                                //     while($department = $departments->fetch_assoc()) {
-                                //         ?>
-                                //             <option value="<?php //echo $department['id']; ?>" <?php //echo $department['id']== $data['dept_id'] ? "Selected" : "" ?>><?php// echo $department['name']; ?></option>
-                                //         <?php
-                                //     }
-                                // }
+                                 if ($departments) {
+                                     while($department = $departments->fetch_assoc()) {
+                                         ?>
+                                             <option value="<?php echo $department['id']; ?>" <?php echo in_array($department['id'], $ids) ? "selected" : ""; ?>><?php echo $department['name']; ?></option>
+                                         <?php
+                                     }
+                                 }
                             ?>
                         </select>
                         
                         <span class="text-danger">
                             <?php 
-                                // if(isset($errors['department'])) {
-                                //     echo $errors['department'];
-                                // }
+                                if(isset($errors['department'])) {
+                                     echo $errors['department'];
+                                }
                             ?>
                         </span>
-                    </div>-->
+                    </div>
                      <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Active Status</label>

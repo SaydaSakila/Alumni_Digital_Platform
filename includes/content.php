@@ -393,7 +393,7 @@ platform and adopt this constitution.</p>
 $query = "SELECT uposts.*, categories.name as category_name, users.name as user_name FROM `uposts` 
             LEFT JOIN categories ON uposts.category_id=categories.id 
             LEFT JOIN users ON uposts.user_id=users.id 
-            ORDER BY id DESC";
+            ORDER BY id DESC LIMIT 3";
     $posts = $db->getData($query);
     //$user_id= $_SESSION['id'];
 
@@ -442,73 +442,11 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                           </div>
                                   
               <?php
-                break;
+               // break;
                   }
              
                   } 
-
-                if ($posts1) 
-                {
-                  while($post = $posts1->fetch_assoc()) 
-                  {
-              ?>
-                                    
-                          <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
-                                <img src="./uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
-                                <div class="card-header">Category:
-                                        <?php echo $post['category_name'];?>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
-                                        
-                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 20); ?>....</p>
-                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="stublog.php?id=<?php echo $post['id'];?>">Read More..</a>
-                                       
-                                    </div>
-                            </div>
-                          </div>
-                                  
-              <?php
-                break;
-                    }
-              
-                  }
-                  if ($posts2) 
-                {
-                  while($post = $posts2->fetch_assoc()) 
-                  {
-              ?>
-                                    
-            <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:auto;margin-top:20px;" >
-                                <img src="./uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>" style="width:auto;height: 200px;" class="card-img-top" alt="Blog Image">
-                                <div class="card-header">Category:
-                                        <?php echo $post['category_name'];?>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                        <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['admin_name']; ?></small>
-                                        
-                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 20); ?>....</p>
-                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="adminblog.php?id=<?php echo $post['id'];?>">Read More..</a>
-                                       
-                                    </div>
-                            </div>
-                        </div>
-                                  
-              <?php
-              break;
-                  }
-             
-                  } 
+ 
 
                   else 
                   {
@@ -701,11 +639,11 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                 ?><br>
                                     <div class="card mb-3" style="max-width: 800px;height:auto;;">
                                         <div class="row no-gutters">
-                                            <div class="col-md-4" style="background-color:#424949;color:#fff">
+                                            <div class="col-md-3" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
-                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:sa",$d); ?></h2>
+                                           --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
                                             </div>
-                                            <div class="col-md-8" style="text-align:left;">
+                                            <div class="col-md-9" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
                                                     <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>

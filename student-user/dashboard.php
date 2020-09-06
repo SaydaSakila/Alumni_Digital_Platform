@@ -62,7 +62,7 @@
                                        <td><?php echo substr($post['content'],0,10); ?></td>
                                        <td><?php echo $post['user_name']; ?></td>
                                        <td><?php echo $post['created_at']; ?></td>
-                                       <td><img src="uploads/<?php echo $post['photo']; ?>" style="width:50px;height: auto"></td>
+                                       <td><img src="../uploads/<?php echo $post['photo']; ?>" style="width:50px;height: auto"></td>
                                        <td>
                                        <a href="stublog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
                                             <a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>

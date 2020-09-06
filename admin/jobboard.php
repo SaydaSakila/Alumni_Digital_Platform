@@ -36,7 +36,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Job Post Record</b></h3></th>
+                        <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Job Post Record</b></h3></th>
                     </tr>
                     <tr>
                         <th>ID</th>
@@ -52,7 +52,7 @@
                         <th>Created At</th>
                         
                         <th>Department</th>
-                       <th>Created By</th>
+                       <th>Post By</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -78,9 +78,9 @@
                                        <td><?php echo $post['department_name']; ?></td>
                                       <td><?php echo $post['user_name']; ?></td>
                                        <td>
-                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
-                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                        </td>
                                     </tr>
                                 <?php

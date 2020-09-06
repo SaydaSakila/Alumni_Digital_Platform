@@ -69,10 +69,13 @@
                                                         }
                                                 ?>]</b></small>
                                                 </div>
-                                                <div class="card-body" style="padding:20px;">
-                                                    
+                                                <div class="card-body" style="padding:5px;">
                                                     <p class="card-text"><?php echo substr(Strip_tags($event['content']), 0, 100); ?>..</p>
-                                                    <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;text-align:right;" >Read Details</a>
+                                                    
+                                                   <p> <a href="eventdetail.php?id=<?php echo $event['id'];?>" style="float:right;padding:10px;text-align:right;" >Read Details</a></p>
+                                                </div>
+                                                <div class="card-footer">
+                                                        <p><a href="https://docs.google.com/forms/d/1xLlbKx7Oo5As-iSOayKieAh8bmyf1B3O8DAmvsODn2w/edit" target="_blank">For Registration Click Here</a></p>
                                                 </div>
                                             </div>
                                         </div>

@@ -151,7 +151,7 @@ if (isset($_SESSION['old_data']))
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
                                             <label for="" style="color:#fff">Application Deadline</label>
-                                            <input type="date" name="deadline" class="form-control" value='<?php  echo $data['deadline']; ?>' placeholder="Update Application Deadline">
+                                            <input type="date" name="deadline" class="form-control" value="<?php echo database_date_formatted($data['deadline']); ?>" placeholder="Update Application Deadline">
                                             <span class="text-danger">
                                                 <?php 
                                                     if(isset($err['deadline'])) {

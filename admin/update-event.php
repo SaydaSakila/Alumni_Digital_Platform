@@ -16,14 +16,17 @@
         $name = $_POST['name'];
         $content = $_POST['content'];
         $date = $_POST['date'];
-        //$batch = $_POST['batch'];
-        //$department = $_POST['department'];
+        $batch = $_POST['batch'];
+        $department = $_POST['department'];
         $status = $_POST['status'];
 
         if(!empty($name) && !empty($content) && !empty($date))
         {
+            $batch_ids = json_encode($batch);
+            $dept_ids = json_encode($department);
+
 	        $sql = "UPDATE events SET name='$name', content='$content',
-                        date='$date', status='$status' where id='$id' ";
+                        date='$date', batch_id='$batch_ids', dept_id='$dept_ids', status='$status' where id='$id' ";
             $result = $db->conn->query($sql);
 
             if($result){

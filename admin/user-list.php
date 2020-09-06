@@ -33,7 +33,7 @@
         <table class="table table-bordered" style="text-align:center;">
             <thead >
                 <tr>
-                    <th colspan="15" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
+                    <th colspan="16" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
                 </tr>
 
                 <tr >
@@ -42,14 +42,16 @@
                     <th>Email</th>
                     <th>Username</th>
                     <th>Department</th>
+                    <th>Batch</th>
                     <th>Phone</th>
                     <th>Address</th>
-                    <th>Batch</th>
-                    <th>Passing_Year</th>
+                    
+                    <th>Passing Year</th>
                     <th>Company Name</th>
                     <th>Job Title</th>
                     <th>Photo</th> 
-                    <th>Facebook Link</th>
+                    <th>Facebook ID</th>
+                     <th>Linkedin ID</th>
                     <th colspan="1">Action</th>
                 </tr>
             </thead>
@@ -64,14 +66,16 @@
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>
                                     <td><?php echo $user['department_name'] ?></td>
+                                    <td><?php echo $user['batch_name'] ?></td>
                                     <td><?php echo $user['phone'] ?></td>
                                     <td><?php echo $user['address'] ?></td>
-                                    <td><?php echo $user['batch_name'] ?></td>
+                                    
                                     <td><?php echo $user['passingyear'] ?></td>
                                     <td><?php echo $user['cname'] ?></td>
                                     <td><?php echo $user['jposition'] ?></td>
                                     <td style="width:50px;height: 50px;"><?php  echo $user['photo']  ?> </td>
                                     <td><?php echo $user['fb'] ?></td>
+                                    <td><?php echo $user['link'] ?></td>
                                     <td>
                                         <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
                                     

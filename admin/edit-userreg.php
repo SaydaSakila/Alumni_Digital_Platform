@@ -136,6 +136,28 @@ if (isset($_SESSION['old_data']))
                             ?>
                         </span>
                     </div>
+                    <div class="form-group">
+                        <label for="_fb">Facebook Profile</label>
+                        <input type="text" name="fb" id="_fb" value='<?php  echo $data['fb']; ?>' class="form-control" placeholder="Update Your FB id">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['fb'])) {
+                                    echo $err['fb'];
+                                }
+                            ?>
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="_link">Linkedin Profile</label>
+                        <input type="text" name="link" id="_link" value='<?php  echo $data['link']; ?>' class="form-control" placeholder="Update Your Linkedin id">
+                        <span class="text-danger">
+                            <?php 
+                                if(isset($err['link'])) {
+                                    echo $err['link'];
+                                }
+                            ?>
+                        </span>
+                    </div>
                 
                         <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>

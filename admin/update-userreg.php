@@ -23,6 +23,8 @@
         $passingyear = $_POST['passingyear'];
         $cname = $_POST['cname'];
         $jposition = $_POST['jposition'];
+        $fb = $_POST['fb'];
+        $link = $_POST['link'];
         $file_rename = $_POST['photo'];
 
 
@@ -66,7 +68,7 @@
             $password = sha1($_POST['password']);
 	        $sql = "UPDATE users SET name='$name', username='$username',
             phone='$phone', email='$email', address='$address', password='$password' ,
-            cname = '$cname',jposition = '$jposition', passingyear='$passingyear' where id='$id' ";
+            cname = '$cname',jposition = '$jposition', passingyear='$passingyear',  fb='$fb', link='$link' where id='$id' ";
 
             $result = $db->conn->query($sql);
             //var_dump($result) ; die();

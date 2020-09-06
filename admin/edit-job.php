@@ -27,14 +27,10 @@ if (isset($_SESSION['old_data']))
 ?>
 
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
-                <div class="container" style="margin-top:100px;margin-bottom:70px;
-                                    border-radius:10px;">
+    <div class="container" style="border-radius:10px;">
                     
-                    <div class="row" >
-                    <?php
-                        // contents include
-                        //include dirname(__FILE__). '/includes/dashsidebar.php';
-                    ?>
+    <div class="row" >
+                    
         <div class="col-md-9 " style="background-color:#fff;">
             <div class="card-header">
                 <h3 style="border:2px solid #333; border-radius:5px; padding: 7px;text-align:center;color:#333;" class="card-title">Edit Job Post </h3>
@@ -151,7 +147,7 @@ if (isset($_SESSION['old_data']))
                                     <div class="row">
                                         <div class="form-group col-lg-6 ">
                                             <label for="" style="color:#333">Application Deadline</label>
-                                            <input type="date" name="deadline" class="form-control" value='<?php  echo $data['deadline']; ?>' placeholder="Update Application Deadline">
+                                            <input type="date" name="deadline" class="form-control" value="<?php echo database_date_formatted($data['deadline']); ?>" placeholder="Update Application Deadline">
                                             <span class="text-danger">
                                                 <?php 
                                                     if(isset($err['deadline'])) {
