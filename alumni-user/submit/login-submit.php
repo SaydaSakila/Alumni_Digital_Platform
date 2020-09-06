@@ -34,7 +34,8 @@
                 $_SESSION['actor'] = "users";
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
-            
+                $_SESSION['user_type'] = 'users';
+
                 header('location:../index.php');
             } 
             else 
@@ -45,13 +46,6 @@
                 if ($run->num_rows > 0) 
                 {
                 $user = $run->fetch_assoc();
-                //var_dump($user);die();
-                //$success['success_message'] = "<script>alert('Your account request is now pending for approval. Please wait for confirmation. Thank you.!')</script>";
-               /* $_SESSION['username'] = $user['username'];
-                $_SESSION['actor'] = "users";
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['name'] = $user['name'];*/
-
                     $errors['username'] = "<script>alert('Your account request is still pending for approval. Please wait for confirmation. Thank you.!')</script>"; 
                     $_SESSION['errors'] = $errors;
                 //header('location:../index.php');

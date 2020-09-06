@@ -2,6 +2,7 @@
   //header file include
   include dirname(__FILE__).'/../../database/database.php';
     $db = new Database();
+    
     $activePage = basename($_SERVER['PHP_SELF'], ".php");
   session_start();
   if (!isset($_SESSION['username']) || ($_SESSION['actor']!== "users")) {
@@ -29,6 +30,10 @@
     $sql = "SELECT * FROM users WHERE `id` = $id";
     $run  = $db->conn->query($sql);
     $user = $run->fetch_assoc();
+
+     $postsql = "SELECT * FROM uposts WHERE `id` = $id";
+    $run  = $db->conn->query($postsql);
+    $post = $run->fetch_assoc();
 
     $user_batch_id = $user['batch_id'];
     $user_department_id = $user['dept_id'];
@@ -221,7 +226,7 @@ button:hover, a:hover {
     }
 .fa {
   padding: 0px;
-  font-size: 30px;
+  font-size: 20px;
   width: 50px;
   text-align: center;
   text-decoration: none;
@@ -242,6 +247,14 @@ button:hover, a:hover {
   background: #007bb5;
   color: white;
   padding: 10px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height:200px;
+  border-radius: 50%;
 }
 </style>
 

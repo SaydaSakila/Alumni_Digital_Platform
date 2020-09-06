@@ -47,3 +47,4 @@
     } else {
         header('location:../category-add.php');
     }
+    ?>

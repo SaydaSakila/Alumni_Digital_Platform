@@ -42,6 +42,26 @@ if (isset($_SESSION['old_data']))
                                 echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                             }
                         ?>
+                        <div class="form-group">
+                                <img src="../uploads/<?php if($data['photo']!= NULL){ echo $data['photo'];}else{ ?>stuavater.png <?php  } ?>" alt="User Avater" class="center" ><br>
+                                <label for="exampleFormControlFile1" style="color:#fff;">Update Your Profile Image</label>
+                                <input type="file" class="form-control-file " name='image' value="<?php 
+                                        if(isset($data['photo'])) 
+                                        {
+                                            echo $data['photo'];
+                                        }
+                                    ?>" id="exampleFormControlFile1" >
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
+                            </div>
                         <div class="row">
                             <div class="form-group col-lg-6">
                                 <label for="_name" style="color:#fff;">Name</label>
@@ -147,20 +167,7 @@ if (isset($_SESSION['old_data']))
                             
                         
                     
-                           <div class="form-group">
-                                <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
-                                <span class="text-danger">
-                                    <?php 
-                                    if(isset($file_err)) {
-                                        echo implode(' | ', $file_err);
-                                    }
-                                    if(isset($err['file_error'])) {
-                                        $err['file_error'];
-                                    }
-                                    ?>
-                                </span>
-                            </div>
+                           
                     
 
                     </div>

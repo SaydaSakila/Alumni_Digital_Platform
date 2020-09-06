@@ -201,6 +201,14 @@ button:hover, a:hover {
   color: white;
   padding: 10px;
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height:200px;
+  border-radius: 50%;
+}
 </style>
 </head>
 
