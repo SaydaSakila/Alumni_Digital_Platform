@@ -28,14 +28,14 @@
         $categories = $db->getData($query2);
 
     //admin blog
-    $query3 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
+    /*$query3 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
             LEFT JOIN categories ON posts.category_id=categories.id 
             LEFT JOIN admins ON posts.admin_id=admins.id
             WHERE posts.category_id = '$category_id'
             ORDER BY id DESC";
-    $admin_id= $_SESSION['id'];
+    $admin_id= $_SESSION['id'];*/
 
-    $posts3 = $db->getData($query3);
+    //$posts3 = $db->getData($query3);
 
    }
 ?>
@@ -85,7 +85,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
-                                        <p class="card-text"><?php echo substr($post['content'],0,10); ?></p>
+                                        <p class="card-text"><?phpecho substr(Strip_tags($post['content']), 0, 50); ?></p>
                                       
                                         
                                     </div>
@@ -127,7 +127,7 @@
                                                     <h5 class="card-title"><?php echo $post['title'];?></h5>
                                                     <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['student_name']; ?></small>
 
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
+                                                    <p class="card-text"><?phpecho substr(Strip_tags($post['content']), 0, 50); ?>..</p>
                                                     
                                                 </div>
                                                 <div class="card-footer">
@@ -147,43 +147,7 @@
                             }
                         
                             }
-                            if ($posts3) 
-                            {
-                            while($post = $posts3->fetch_assoc()) 
-                            {
-                        ?>
-                                                
-                        <div class="col-sm-4 "  >
-                            <div class="card" style="width:auto;height:450px;margin-top:20px;" >
-                                <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">-->
-                                    <img src="../img/portfolio/web3.jpg" class="card-img-top" alt="Card Image">
-                                                <div class="card-header">Category:
-                                                    <?php echo $post['category_name'];?>
-                                                </div>
-                                                <div class="card-body">
-                                                    <h5 class="card-title"><?php echo $post['title'];?></h5>
-                                                    <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['admin_name']; ?></small>
-
-                                                    <p class="card-text"><?php echo substr($post['content'],0,10); ?>..</p>
-                                                    
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a  href="adminblog.php?id=<?php echo $post['id'];?>">Read Details..</a>
-                                                    <?php /*echo $post['category_name']; */ 
-                                                            if($post['admin_id']==$admin_id){?>  
-                                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
-                                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
-                                                                
-                                                        <?php }?>
-                                                        
-                                                </div>
-                            </div>
-                        </div>
-                                            
-                        <?php
-                            }
-                        
-                            } 
+                           
  
 
                             //else 

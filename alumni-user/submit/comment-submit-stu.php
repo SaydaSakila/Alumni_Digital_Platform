@@ -27,17 +27,17 @@
                 }
 
                 $_SESSION['success'] = $success;
-                header('location:../blog.php?id='.$post_id);  
+                header('location:../stublog.php?id='.$post_id);  
             
         } else {
             if (empty($comment)) {
                 $errors['comment'] = "Comment field can not be empty";            
             }
             $_SESSION['errors'] = $errors;
-            header('location:../blog.php?id='.$post_id); 
+            header('location:../stublog.php?id='.$post_id); 
         }
         
     } else {
-        header('location:../blog.php?id='.$post_id); 
+        header('location:../stublog.php?id='.$post_id); 
     }
     ?>

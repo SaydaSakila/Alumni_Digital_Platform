@@ -643,7 +643,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
                                            --> <h2  style="padding:30px;text-align:center;"><?php $d=strtotime($event['date']); echo date("d M, Y h:i:s a",$d); ?></h2>
                                             </div>
-                                            <div class="col-md-9" style="text-align:left;">
+                                            <div class="col-md-8" style="text-align:left;">
                                                 <div class="card-header">
                                                     Event Name: <?php echo $event['name']; ?><br>
                                                     <small class="text-muted"><?php $d=strtotime($event['created_at']); echo date("d M, Y h:i:sa",$d); ?>

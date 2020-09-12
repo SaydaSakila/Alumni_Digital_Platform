@@ -82,24 +82,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>              
-                       
-                                            
+                                    </div>                          
                         <?php
-                            }
-                        
-                                    
+                        }       
                             } 
-
-                     
-
-                            else 
-                            {
+                        else 
+                        {
                         ?>
-                                <div class="card text-center" style="margin-top:100px;margin-bottom:100px;"><h2>No Events Found</h2></div>
-                            <?php
-                            }
-                            ?>
+                            <div class="card text-center" style="margin-top:100px;margin-bottom:100px;"><h2>No Events Found</h2></div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
               

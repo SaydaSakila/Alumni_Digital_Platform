@@ -26,10 +26,10 @@
 <div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
         <div class="container">
             <div class="row" style="padding:120px 0px;">
-                <?php include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
+                <?php //include dirname(__FILE__). '/includes/dashsidebar.php'; ?>
                 <div class="col-sm-9 " style="background-color:#fff;width:auto;height:auto;margin-top:0px;margin-bottom:100px;">
                    
-                    <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>"  style="width:100%;height: auto;padding:10px">
+                    <img src="../uploads/<?php if($post['photo']!= NULL){ echo $post['photo'];}else{ ?>blog.jpg <?php  } ?>"  style="width:auto;height: 400px;padding:10px">
                     <div class="card-header">Category: 
                         <?php echo $post['category_name'];?>
                     </div>

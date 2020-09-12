@@ -6,7 +6,7 @@
     $errors = [];
     if (isset($_POST['comment_submit'])) {
         $user_id = $_POST['user_id'];
-        $user_type = 'users';
+        $user_type = 'students';
         $comment = $_POST['comments'];
         $post_id = $_POST['post_id'];
         
@@ -27,17 +27,17 @@
                 }
 
                 $_SESSION['success'] = $success;
-                header('location:../blog.php?id='.$post_id);  
+                header('location:../stublog.php?id='.$post_id);  
             
         } else {
             if (empty($comment)) {
                 $errors['comment'] = "Comment field can not be empty";            
             }
             $_SESSION['errors'] = $errors;
-            header('location:../blog.php?id='.$post_id); 
+            header('location:../stublog.php?id='.$post_id); 
         }
         
     } else {
-        header('location:../blog.php?id='.$post_id); 
+        header('location:../stublog.php?id='.$post_id); 
     }
     ?>

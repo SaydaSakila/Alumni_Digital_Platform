@@ -33,7 +33,6 @@
                 $query = "INSERT INTO jobs (dept_id, user_id, title, experience, cname, address, salary, 
                             hour, info, education, deadline) VALUES('$department', '$user_id', '$title', 
                             '$experience', '$cname', '$address', '$salary', '$hour', '$info', '$education', '$deadline')";
-                //$query = "INSERT INTO posts (category_id, admin_id, title, content) VALUES('$category', '$admin_id', '$title', '$content')";
                 $run = $db->store($query);
                 
                 if ($run) {
