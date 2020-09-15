@@ -65,7 +65,7 @@
                         ?>
                                                 
                         
-                             <div class="col-sm-4 "  ><br>
+                        <div class="col-sm-4 "  ><br>
                             <div class="card" style="width:auto;height:auto;margin-top:0px;" >
                                 <!-- <img src="../img/portfolio/app1.jpg" class="card-img-top" alt="Card Image">
                                      <img src="uploads/<?php //echo $post['photo'];?>" class="card-img-top" alt="Blog Image">-->

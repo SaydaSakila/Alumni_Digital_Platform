@@ -84,8 +84,8 @@ $logid = $_SESSION['id'];
                                                     <img src="img/avater.png" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
                                                 <?php 
                                                 if($logid== $comment['user_id']) {   ?>
-                                                    <a href="edit-comment.php?edit=<?php echo $comment['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="Avatar" ></a>
-                                                    <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-comment.php?delete=<?php echo $comment['id']; ?>" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                    <a href="edit-comment.php?edit=<?php echo $comment['id']; ?>"  title="Edit Comment"  style='font-size:16px'> <i class="fas fa-edit"></i></a>
+                                                    <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-comment.php?delete=<?php echo $comment['id']; ?>" title="Delete Comment" style='font-size:16px'><i class="fas fa-trash-alt" ></i></a>
                                                <?php } ?>
                                                 </div>
                                                 <div class="col-sm-11" style="text-align:left;">
@@ -95,7 +95,7 @@ $logid = $_SESSION['id'];
                                                         if($comment['user_type']=='users'){ echo $comment['user_name'];}?> </h5>
                                                         <small class="text-muted"><?php $d=strtotime($comment['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
                                                    <?php if($post['student_id']==$student_id){?> 
-                                                        <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-comment.php?delete=<?php echo $comment['id']; ?>" style="float:right;" class="btn btn-danger btn-sm">Hide<img src="../alumni-user/img/delete.png" alt="Avatar" ></a>
+                                                        <a href="delete-comment.php?delete=<?php echo $comment['id']; ?>" style="float:right;" title="Hide Comment"><i class="fas fa-eye-slash"></i></a>
                                                     <?php } ?>
                                                    </div>
                                                     <div class="card-body" style="padding:20px;">

@@ -85,6 +85,7 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
 
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 <style>

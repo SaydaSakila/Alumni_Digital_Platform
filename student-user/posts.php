@@ -43,9 +43,7 @@
                 <div class="col-md-10">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Blog List</b></h3>
-                        <div class="card-header-action">
-                            <a href="post-add.php" class="btn btn-success">Add New Blog</a>
-                        </div>
+                        
                     </div>
                     <?php 
 
@@ -113,7 +111,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
-                                        <p class="card-text"><?phpecho substr(Strip_tags($post['content']), 0, 50); ?></p>
+                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 50); ?></p>
                                       
                                         
                                     </div>
