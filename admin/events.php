@@ -5,8 +5,7 @@
    
         $query = "SELECT * FROM `events` ORDER by id DESC";
         $events = $db->getData($query);
-        
-    
+
 ?>
     <div class="row" >
     
@@ -15,7 +14,6 @@
                                     border-radius:10px;">-->
                                     
             <div class="row" >
-    
                 <div class="card" style="padding:20px;">
                     <div class="">
                         <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Event List</b></h3>
@@ -24,7 +22,6 @@
                         </div>
                     </div>
                     <?php 
-
                         if (isset($_SESSION['message'])): ?>
                             <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
                                 <?php 
@@ -47,7 +44,7 @@
                         <th>Photo</th>
                         <th>Batch</th>
                         <th>Department</th>
-                        <th>Status</th>
+                        <th>Current Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -61,8 +58,8 @@
                                         <td><?php echo $event['name'] ?></td>
                                         <td><?php echo $event['content'] ?></td>
                                         <td><?php echo $event['date'] ?></td>
-                                       <td><?php echo $event['created_at'] ?></td>
-                                       <td><?php echo $event['photo'] ?></td>
+                                        <td><?php echo $event['created_at'] ?></td>
+                                        <td><?php echo $event['photo'] ?></td>
                                         <td><?php 
                                                 $ids = json_decode($event['batch_id']);
                                                 $ids = implode(',', $ids);
@@ -72,8 +69,7 @@
                                                     while($batch = $batches->fetch_assoc()) {
                                                         echo $batch['name']. ', ';
                                                     }
-                                                }
-                                                
+                                                }     
                                         ?></td> 
                                          <td><?php 
                                             $ids = json_decode($event['dept_id']);
@@ -90,24 +86,26 @@
                                             if($event['status']==0){
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a style="color:#800000; border:2px solid #800000;
-                                                        background:white;border-radius:5px;padding: 5px;">Hide</a>
+                                                    <button href="eventstatus.php" value="0" name="status" class=" btn-danger">Hide</button>
                                                 </td>
                                         <?php
+                                        ///$status = $_POST['status'];
+
+	       // $sql = "UPDATE events SET status='$status' ";
+           // $result = $db->conn->query($sql);
                                             }
                                             else{
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a style="color:#2E8857;border-radius:5px; border:2px solid #2E8857;
-                                                        background:white;padding: 5px;">Show</a>
+                                                    <button href="" value="1" name="status" class="btn-success">Show</button>
                                                 </td>
                                         <?php            
                                             }
                                             ?>
 
                                         <td>
-                                            <a href="edit-event.php?edit=<?php echo $event['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
-                                            <a href="delete-event.php?delete=<?php echo $event['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                            <a href="edit-event.php?edit=<?php echo $event['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                                            <a href="delete-event.php?delete=<?php echo $event['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php

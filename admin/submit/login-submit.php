@@ -32,6 +32,9 @@
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['actor'] = "admins";
                 $_SESSION['admin_id'] = $user['id'];
+                //$_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
+
                 $_SESSION['user_type'] = 'admins';
 
                 header('location:../index.php');

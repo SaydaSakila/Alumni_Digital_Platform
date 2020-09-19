@@ -3,6 +3,8 @@
   include dirname(__FILE__).'/../../database/database.php';
    $db = new Database();
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
+
+
   session_start();
   //if (!isset($_SESSION['username'])) {
     if (!isset($_SESSION['username']) || ($_SESSION['actor']!== "admins")) {
@@ -24,7 +26,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             return date('Y-m-d', strtotime($date));
         }
     }
-
+$id = $_SESSION['admin_id'];
+    $name = $_SESSION['name'];
    
     //var_dump($db);die();
         $query1 = "SELECT * FROM `events` WHERE `status` = 0";

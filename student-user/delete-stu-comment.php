@@ -20,7 +20,7 @@
         {
             $_SESSION['message'] = "Comment ID $id Data Deleted Successfully!!";
             $_SESSION['msg_type'] = "danger";
-            header('location:blog.php?id='.$post_id);
+            header('location:stublog.php?id='.$post_id);
             
             
         }

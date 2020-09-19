@@ -23,13 +23,6 @@
         $categories = $db->getData($query1);
         $id= $_SESSION['id'];
 
-    //admin blog
-    /*$query2 = "SELECT posts.*, categories.name as category_name, admins.name as admin_name FROM `posts` 
-            LEFT JOIN categories ON posts.category_id=categories.id 
-            LEFT JOIN admins ON posts.admin_id=admins.id ORDER BY id DESC";
-    $posts2 = $db->getData($query2);
-    $admin_id= $_SESSION['id'];*/
-
     
 ?>
     <div class="row" >

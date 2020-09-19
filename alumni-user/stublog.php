@@ -20,6 +20,8 @@ $logid = $_SESSION['id'];
         $comm =  "SELECT comments.*, users.name as user_name, students.name as stu_name FROM `comments` 
             LEFT JOIN users ON comments.user_id=users.id 
             LEFT JOIN students ON comments.user_id=students.id
+             WHERE hide=0
+
             ORDER by id DESC";
         $comments = $db->getData($comm);
 
@@ -85,7 +87,9 @@ $logid = $_SESSION['id'];
                                                 <?php 
                                                 if($logid== $comment['user_id']) {   ?>
                                                     <a href="edit-comment.php?edit=<?php echo $comment['id']; ?>"  title="Edit Comment"  style='font-size:16px'> <i class="fas fa-edit"></i></a>
-                                                    <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-comment.php?delete=<?php echo $comment['id']; ?>" title="Delete Comment" style='font-size:16px'><i class="fas fa-trash-alt" ></i></a>
+                                                    <a onclick="return confirm('Do You Want to delete your comment?')" style='font-size:16px' 
+                                                        href="delete-stu-comment.php?delete=<?php echo $comment['id']; ?>&post_id=<?php echo $post['id']?>" title="Delete Comment">
+                                                            <i class="fas fa-trash-alt"></i></a>
                                                <?php } ?>
                                                 </div>
                                                 <div class="col-sm-11" style="text-align:left;">
@@ -95,7 +99,9 @@ $logid = $_SESSION['id'];
                                                         if($comment['user_type']=='users'){ echo $comment['user_name'];}?> </h5>
                                                         <small class="text-muted"><?php $d=strtotime($comment['created_at']); echo date("d M, Y h:i:sa",$d); ?></small>
                                                    <?php if($post['student_id']==$student_id){?> 
-                                                        <a href="delete-comment.php?delete=<?php echo $comment['id']; ?>" style="float:right;" title="Hide Comment"><i class="fas fa-eye-slash"></i></a>
+                                                        <a  onclick="return confirm('Do You Want to hide this comment?')"
+                                                                href="hide-comment.php?hide=<?php echo $comment['id']; ?>&post_id=<?php echo $post['id']?>" class="eye" style="float:right;" title="Hide Comment">
+                                                                    <i class="fas fa-eye-slash" ></i></a>
                                                     <?php } ?>
                                                    </div>
                                                     <div class="card-body" style="padding:20px;">

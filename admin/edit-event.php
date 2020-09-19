@@ -132,8 +132,6 @@ if (isset($_SESSION['old_data']))
                             <label class="input-group-text" for="inputGroupSelect01">Active Status</label>
                         </div>
                         <select class="custom-select" name='status' id="inputGroupSelect01" >
-                         
-                           
                             <option value="0">Inactive</option>
                             <option value="1">Active</option>
                         </select>

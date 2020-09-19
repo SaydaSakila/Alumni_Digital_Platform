@@ -8,18 +8,17 @@
     $errors = [];
     $success = [];
 
-    if(isset($_GET['delete']))
+    if(isset($_GET['hide']))
     {
-        $id=$_GET['delete'];
+        $comment_id=$_GET['hide'];
         $post_id = $_GET['post_id'];
         
-        $sql = "DELETE FROM comments where id='$id'";
+        $sql = "UPDATE comments set hide=1 where id='$comment_id'  ";
         $result = $db->conn->query($sql);
-        //var_dump($result);
+       // var_dump($result);die();
         if($result)
         {
-            $_SESSION['message'] = "Comment ID $id Data Deleted Successfully!!";
-            $_SESSION['msg_type'] = "danger";
+            
             header('location:blog.php?id='.$post_id);
             
             
