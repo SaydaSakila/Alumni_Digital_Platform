@@ -86,18 +86,14 @@
                                             if($event['status']==0){
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <button href="eventstatus.php" value="0" name="status" class=" btn-danger">Hide</button>
+                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class=" btn-danger btn-block">Hide</a>
                                                 </td>
                                         <?php
-                                        ///$status = $_POST['status'];
-
-	       // $sql = "UPDATE events SET status='$status' ";
-           // $result = $db->conn->query($sql);
                                             }
                                             else{
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <button href="" value="1" name="status" class="btn-success">Show</button>
+                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class="btn-success btn-block">Show</a>
                                                 </td>
                                         <?php            
                                             }

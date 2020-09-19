@@ -21,7 +21,6 @@ $logid = $_SESSION['id'];
             LEFT JOIN users ON comments.user_id=users.id 
             LEFT JOIN students ON comments.user_id=students.id
              WHERE hide=0
-
             ORDER by id DESC";
         $comments = $db->getData($comm);
 

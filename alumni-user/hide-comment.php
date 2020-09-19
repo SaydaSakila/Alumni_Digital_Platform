@@ -15,7 +15,7 @@
         
         $sql = "UPDATE comments set hide=1 where id='$comment_id'  ";
         $result = $db->conn->query($sql);
-       // var_dump($result);die();
+        //var_dump($comment_id);die();
         if($result)
         {
             
