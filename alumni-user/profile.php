@@ -41,8 +41,9 @@
                         Phone: <?php echo $user['phone'] ?><br>
                             Batch: <?php echo $user['batch_name']; ?><br>
                             Passing Year: <?php echo $user['passingyear'] ?><br>
-                            <a  href="<?php echo $user['fb']; ?>" target="_blank" class="fa fa-facebook"></a>
-                            <a  href="<?php echo $user['link']; ?>" target="_blank" class="fa fa-linkedin"></a>
+                                    <a href="<?php echo $user['fb']; ?>" target="_blank" >
+                                        <img src="../alumni-user/img/facebook.png" alt="Avatar" style="width:50px;height:50px;" ></a>
+                                    <a  href="<?php echo $user['link']; ?>" target="_blank"><img src="../alumni-user/img/linkedin.png" alt="Avatar" style="width:50px;height:50px;" ></a>
                             <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
                             
                             

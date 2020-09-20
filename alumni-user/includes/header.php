@@ -232,7 +232,7 @@ button:hover, a:hover {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-  border-radius: 10%;
+  border-radius: 0%;
 }
 
 .fa:hover {

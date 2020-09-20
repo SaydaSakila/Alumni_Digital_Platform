@@ -43,8 +43,9 @@
                                 Department: <?php echo $user['department_name']; ?> <br>
                                 Batch: <?php echo $user['batch_name']; ?>
                                 <div class="text-center" style="display:flex;margin-left:85px;"> 
-                                    <a href="<?php echo $user['fb']; ?>" target="_blank" ><i class="fa fa-facebook"></i></a>
-                                    <a  href="<?php echo $user['link']; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                    <a href="<?php echo $user['fb']; ?>" target="_blank" >
+                                        <img src="../alumni-user/img/facebook.png" alt="Avatar" style="width:75%;height:80%;" ></a>
+                                    <a  href="<?php echo $user['link']; ?>" target="_blank"><img src="../alumni-user/img/linkedin.png" alt="Avatar" style="width:75%;height:80%;" ></a>
                                 </div>    
                                 
                                 <div class="text" style="background-color:#000;color:#fff;padding:5px"><?php echo $user['email'] ?></div>
