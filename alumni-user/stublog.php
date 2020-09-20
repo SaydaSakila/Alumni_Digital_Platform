@@ -85,10 +85,34 @@ $logid = $_SESSION['id'];
                                                     <img src="img/avater.png" alt="Profile avater" style="width:40px;height:auto;border-radius:50%">  
                                                 <?php 
                                                 if($logid== $comment['user_id']) {   ?>
-                                                    <a href="edit-comment.php?edit=<?php echo $comment['id']; ?>"  title="Edit Comment"  style='font-size:16px'> <i class="fas fa-edit"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#editcomment<?php echo $comment['id']; ?>"  title="Edit Comment"  style='font-size:16px'> <i class="fas fa-edit"></i></a>
                                                     <a onclick="return confirm('Do You Want to delete your comment?')" style='font-size:16px' 
                                                         href="delete-stu-comment.php?delete=<?php echo $comment['id']; ?>&post_id=<?php echo $post['id']?>" title="Delete Comment">
                                                             <i class="fas fa-trash-alt"></i></a>
+                                                            <!-- Modal -->
+                                                                <div class="modal fade" id="editcomment<?php echo $comment['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                    <form action="edit-stu-comment.php?edit=<?php echo $comment['id']; ?>" method="POST">
+                                                                    <input type="hidden" name="post_id" value='<?php  echo $post['id']; ?>' ></input>
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLabel" style="width:90%;">Edit Your Comment</h5>
+                                                                            <button type="button" style="width:10%;" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                        
+                                                                            <textarea name="comments" rows="5" class="form-control" ><?php echo $comment['comment']; ?></textarea>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" style="width:20%;" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="submit" style="width:30%;" class="btn btn-primary" >Save changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
                                                <?php } ?>
                                                 </div>
                                                 <div class="col-sm-11" style="text-align:left;">

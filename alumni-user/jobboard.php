@@ -78,9 +78,9 @@
                                        <td><?php echo $post['department_name']; ?></td>
                                       <!-- <td><?php// echo $post['user_name']; ?></td>-->
                                        <td>
-                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
-                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                       <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                                            <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                        </td>
                                     </tr>
                                 <?php

@@ -32,8 +32,9 @@
                     <div class="row" >
                     <?php
                         // contents include
-                        include dirname(__FILE__). '/includes/dashsidebar.php';
+                        //include dirname(__FILE__). '/includes/dashsidebar.php';
                     ?>
+                    <div class="col-sm-2"></div>
                         <div class="col-md-9 " style="background-color:#333;">
             <div class="card-header">
                 <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Edit Blog </h3>

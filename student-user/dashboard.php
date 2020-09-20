@@ -64,9 +64,9 @@
                                        <td><?php echo $post['created_at']; ?></td>
                                        <td><img src="../uploads/<?php echo $post['photo']; ?>" style="width:50px;height: auto"></td>
                                        <td>
-                                       <a href="stublog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary"><i class="fas fa-user-edit"></i><b>View</b></a>
-                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
-                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
+                                       <a href="stublog.php?id=<?php echo $post['id']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i><b>View</b></a>
+                                            <a href="edit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i><b>Edit</b></a>
+                                            <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                        </td>
                                     </tr>
                                 <?php
