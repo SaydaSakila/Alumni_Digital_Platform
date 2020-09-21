@@ -17,12 +17,12 @@
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
-            <ul>
+            <ul style="font-size:10px;">
               <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Career Opportunity</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Blog</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="#">Events</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="user-list.php">Alumni List</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="job.php">Career Opportunity</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="posts.php">Blog</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="events.php">Events</a></li>
             </ul>
           </div>
 
