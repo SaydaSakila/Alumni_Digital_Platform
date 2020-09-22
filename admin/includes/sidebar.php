@@ -138,12 +138,7 @@
                 <p>Categories</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="posts.php" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Admins Blog</p>
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a href="uposts.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -158,6 +153,12 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+                <a href="comments.php" class="nav-link"  >
+                  <i class="nav-icon fas fa-address-book"></i>
+                  <p >Comment List</p>
+                </a>
+              </li>
          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               
@@ -206,7 +207,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+              <li class="nav-item">
                 <a href="contact.php" class="nav-link"  >
                   <i class="nav-icon fas fa-address-book"></i>
                   <p >Contact List</p>

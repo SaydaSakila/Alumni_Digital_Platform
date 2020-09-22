@@ -9,7 +9,7 @@
             LEFT JOIN users ON jobs.user_id=users.id 
             ORDER BY id DESC";
     $posts = $db->getData($query);
-    $user_id= $_SESSION['id'];
+   // $user_id= $_SESSION['id'];
 ?>
 
 
