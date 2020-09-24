@@ -49,7 +49,7 @@ $query = "SELECT * FROM batches";
                             }
                         ?>
                         <div class="form-group">
-                         <img src="../uploads/<?php if($data['photo']!= NULL){ echo $data['photo'];}else{ ?>avater.png <?php  } ?>" alt="User Avater" class="center" ><br>
+                         <img src="../uploads/<?php if($data['photo']!= NULL){ echo $data['photo'];}else{ ?>avater.png <?php  } ?>" alt="User Avater" style="width:80px;height:80px;" class="center" ><br>
                                 <label for="exampleFormControlFile1" style="color:#fff;">Update Your Profile Image</label>
                                 <input type="file" class="form-control-file " name='image' value="<?php 
                                         if(isset($data['photo'])) 

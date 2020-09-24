@@ -230,18 +230,19 @@ button:hover, a:hover {
       <nav id="nav-menu-container">
         <ul class="nav-menu">
         <li class="<?= ($activePage == 'index') ? 'menu-active':''; ?>"><a href="index.php">Home</a></li>
+         <li class="menu-has-children <?= ($activePage == 'memory') ? 'menu-active':''; ?>"><a href="memory.php">Memories</a></li>
           <li class="<?= ($activePage == 'user-list') ? 'menu-active':''; ?>"><a href="user-list.php">Alumni List</a></li>
           <li class="<?= ($activePage == 'job') ? 'menu-active':''; ?>"><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children <?= ($activePage == 'posts') ? 'menu-active':''; ?>"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children <?= ($activePage == 'events') ? 'menu-active':''; ?>"><a href="events.php">Events</a></li>
-          <li class="menu-has-children <?= ($activePage == 'memory') ? 'menu-active':''; ?>"><a href="memory.php">Memories</a></li>
+         
                  
           <li class="menu-has-children <?= ($activePage == 'dashboard' || $activePage == 'profile' || $activePage == 'edit-userreg') ? 'menu-active':''; ?>"><a href="#home"><?php echo $name; ?> 
               <img src="../student-user/img/stuavater.png" alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
-              <li><a href="dashboard.php">DASHBOARD</a></li>
-              <li><a href="profile.php?id=<?php echo $id;?>">MY PROFILE</a></li>
-              <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">UPDATE PROFILE</a></li>
+              <li><a href="profile.php">DASHBOARD</a></li>
+              <!-- <li><a href="profile.php?id=<?php //echo $id;?>">MY PROFILE</a></li>
+              <li><a href="edit-userreg.php?edit=<?php //echo $id; ?>">UPDATE PROFILE</a></li> -->
               <li class="nav-item">
                   <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
                       <i class="fas fa-sign-out-alt"></i>

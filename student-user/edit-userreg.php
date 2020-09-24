@@ -43,7 +43,7 @@ if (isset($_SESSION['old_data']))
                             }
                         ?>
                         <div class="form-group">
-                                <img src="../uploads/<?php if($data['photo']!= NULL){ echo $data['photo'];}else{ ?>stuavater.png <?php  } ?>" alt="User Avater" class="center" ><br>
+                                <img src="../uploads/<?php if($data['photo']!= NULL){ echo $data['photo'];}else{ ?>stuavater.png <?php  } ?>" style="width:80px;height:80px;"  alt="User Avater" class="center" ><br>
                                 <label for="exampleFormControlFile1" style="color:#fff;">Update Your Profile Image</label>
                                 <input type="file" class="form-control-file " name='image' value="<?php 
                                         if(isset($data['photo'])) 

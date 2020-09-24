@@ -9,21 +9,21 @@
             </ul>
             </li>
             <li>
-                <a href="" style="color:#17a2b8">Job Section Manage</a>
+                <a  style="color:#17a2b8">Job Section Manage</a>
                 <ul>
                     <li><a href="job-add.php" style="color:#2C3E50">Add New Job</a></li>
                     <li><a href="jobboard.php" style="color:#2C3E50">My Job Post List</a></li>
                 </ul>
             </li>
             <li>
-                <a href="" style="color:#17a2b8">Blog Manage</a>
+                <a style="color:#17a2b8">Blog Manage</a>
                 <ul>
                     <li><a href="post-add.php" style="color:#2C3E50">Add New Blog</a></li>
                     <li><a href="dashboard.php" style="color:#2C3E50">My Blog List</a></li>
                 </ul>
             </li>
             <li>
-                <a href="" style="color:#17a2b8">Event Manage</a>
+                <a  style="color:#17a2b8">Event Manage</a>
                 <ul>
                     <li><a href="event-add.php" style="color:#2C3E50">Add New Events</a></li>
                     

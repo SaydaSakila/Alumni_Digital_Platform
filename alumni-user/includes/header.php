@@ -305,9 +305,9 @@ button:hover, a:hover {
              <!-- <img src="../../uploads/<?php //echo $photo['photo']; ?>" -->
             <img src="img/avater.png"  alt="Avatar" style="width:30px;height:30px;"></a>
             <ul>
-              <li><a href="dashboard.php">DASHBOARD</a></li>
-              <li><a href="profile.php?id=<?php echo $id;?>">MY PROFILE</a></li>
-              <li><a href="edit-userreg.php?edit=<?php echo $id; ?>">UPDATE PROFILE</a></li>
+              <li><a href="profile.php">DASHBOARD</a></li>
+              <!-- <li><a href="profile.php?id=<?php //echo $id;?>">MY PROFILE</a></li>
+              <li><a href="edit-userreg.php?edit=<?php //echo $id; ?>">UPDATE PROFILE</a></li> -->
               <li class="nav-item">
                   <a href="logout.php" class="nav-link" title="Logout">LOG-OUT
                       <i class="fas fa-sign-out-alt"></i>

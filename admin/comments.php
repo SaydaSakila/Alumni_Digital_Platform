@@ -35,7 +35,7 @@
                     </tr>
                     <tr>
                         <th>ID</th>
-                        <th>Uner Name</th>
+                        <th>Uner ID</th>
                         <th>User Type</th>
                         <th>Comment</th>
                         <th>Blog ID</th>
@@ -61,14 +61,14 @@
                                             if($comment['hide']==0){
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a href="commentstatus.php?edit=<?php echo $comment['id']; ?>&&status=<?php echo $comment['hide']; ?>" class="btn-success btn-block">Show</a>
+                                                    <a href="commentstatus.php?edit=<?php echo $comment['id']; ?>&&hide=<?php echo $comment['hide']; ?>" class="btn-success btn-block">Active</a>
                                                 </td>
                                         <?php
                                             }
                                             else{
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a href="commentstatus.php?edit=<?php echo $comment['id']; ?>&&status=<?php echo $comment['hide']; ?>" class=" btn-danger btn-block">Hide</a>
+                                                    <a href="commentstatus.php?edit=<?php echo $comment['id']; ?>&&hide=<?php echo $comment['hide']; ?>" class=" btn-danger btn-block">Inactive</a>
                                                 </td>
                                         <?php            
                                             }

@@ -21,7 +21,7 @@
             <div class="row" style="margin-top:150px;margin-left:auto;margin-bottom:50px;
                                     border-radius:10px;box-sizing: border-box;">
     
-                <div class="container" style="background-color:#ddd;padding:20px;">
+                <div class="container" style="padding:20px;">
                    
                         
                         
@@ -41,7 +41,7 @@
                         if ($events) {
                             while($event = $events->fetch_assoc()) {
                                 ?><br>
-                                    <div class="card mb-3" style="max-width: 740px;height:auto;">
+                                    <div class="card mb-4" style="max-width: 740px;height:auto;">
                                        <div class="row no-gutters">
                                             <div class="col-md-4" style="background-color:#424949;color:#fff">
                                                 <!--<img src="../img/portfolio/app1.jpg" class="card-img" style="height:100%;" alt="Events Image">
