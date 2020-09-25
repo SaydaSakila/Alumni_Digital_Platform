@@ -12,8 +12,7 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Alumni Digital Platform</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
-          </div>
+            </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
@@ -28,30 +27,21 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+            <p>  
+              1283 (Level 5), <br>
+              Begum Rokeya Sarani,<br>
+              Mirpur, Dhaka-1216. <br>
+              <strong>Phone:</strong> +8801907-092600<br>
+              <strong>Email:</strong> info@datatrixsoft.com<br>
             </p>
 
-             <!-- <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            </div>-->
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
-            </form>
+            <h4>About US</h4>
+            <p>This system is a platform where alumni and current students can get opportunity to enhance their career and build up a communication with each other. From this platform an alumni can easily get noticed about upcoming events which might be useful to them. To keep record of alumni is one of the missions of this system..</p>
+            
           </div>
 
         </div>

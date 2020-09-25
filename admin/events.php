@@ -86,14 +86,14 @@
                                             if($event['status']==0){
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class=" btn-danger btn-block">Hide</a>
+                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class=" btn-danger btn-block">Pending</a>
                                                 </td>
                                         <?php
                                             }
                                             else{
                                             ?> 
                                                 <td style="text-align:center;">
-                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class="btn-success btn-block">Show</a>
+                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class="btn-success btn-block">Approved</a>
                                                 </td>
                                         <?php            
                                             }

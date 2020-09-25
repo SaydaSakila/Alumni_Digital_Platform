@@ -18,26 +18,24 @@
 					<a href="memoryicfl19.php">	<img src="img/memory/8.JPG  ">
 						<div class="gallery-desc" >ICFL-2019</div></a>
 				</div>
-				<div class="gallery">
-				<a href="memory1.php">	<img src="img/memory/5.JPG  ">
-						<div class="gallery-desc" >NCPC-2018</div></a>
-				</div>
-				<div class="gallery">
+				
+				<!-- <div class="gallery">
 				<a href="memoryiupc17.php">	<img src="img/memory/3.JPG  ">
 						<div class="gallery-desc" >IUPC-2016</div></a>
-				</div>
+				</div> -->
 				<div class="gallery">
 					<a href="memoryfalgun.php">	<img src="img/memory/f2.JPG ">
 						<div class="gallery-desc" >Falgun-2020</div></a>
 				</div>
 				
-				
-				
 				<div class="gallery">
 					<a href="memoryiftar.php">	<img src="img/memory/14.JPG ">
 						<div class="gallery-desc" >Iftar</div></a>
 				</div>
-				
+				<div class="gallery">
+				<a href="memory1.php">	<img src="img/memory/5.JPG  ">
+						<div class="gallery-desc" >NCPC-2018</div></a>
+				</div>
                 
 			</div>
 

@@ -24,7 +24,7 @@
         }
     }
     $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
+    $name = $_SESSION['username'];
 
  
     //var_dump($db);die();

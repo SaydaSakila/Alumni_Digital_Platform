@@ -20,7 +20,7 @@
       unset($_SESSION['success']);
   }
     $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
+    $name = $_SESSION['username'];
     $db = new Database();
     $activePage = basename($_SERVER['PHP_SELF'], ".php");
     //var_dump($db);die();
