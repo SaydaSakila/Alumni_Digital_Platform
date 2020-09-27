@@ -1,14 +1,7 @@
 <?php
     $page_title = 'My Event List';
     // header include
-    include dirname(__FILE__). '/includes/header.php';
- 
-    // saidebar include
-    //include dirname(__FILE__). '/includes/sidebar.php';
-        // $query1 = "SELECT * FROM `events` WHERE `status` = '1' AND JSON_CONTAINS(batch_id, '[$batch]') ORDER BY id DESC";
-       
-        // $events = $db->getData($query1);
-        //$id= $_SESSION['id'];    
+    include dirname(__FILE__). '/includes/header.php';   
 ?>
     <div class="row" >
     
@@ -23,7 +16,11 @@
                         
                     </div>
                     <?php 
-
+                    $u_is_show=1;  
+                        $sql = "UPDATE events SET `is_show`= '$u_is_show' WHERE `status`='1' AND JSON_CONTAINS(batch_id, '[\"$user_batch_id\"]') 
+                                    AND JSON_CONTAINS(dept_id, '[\"$user_department_id\"]') ";
+                        $result = $db->conn->query($sql);
+                                
                         if (isset($_SESSION['message'])): ?>
                             <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
                                 <?php 

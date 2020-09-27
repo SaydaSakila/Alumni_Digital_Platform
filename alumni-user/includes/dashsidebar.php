@@ -26,7 +26,13 @@
                 <a  style="color:#17a2b8">Event Manage</a>
                 <ul>
                     <li><a href="event-add.php" style="color:#2C3E50">Add New Events</a></li>
-                    
+                </ul>
+            </li>
+            <li>
+                <a  style="color:#17a2b8">Gallery Manage</a>
+                <ul>
+                    <li><a href="image-add.php" style="color:#2C3E50">Add New Image</a></li>
+                    <li><a href="gallery.php" style="color:#2C3E50">My Image List</a></li>
                 </ul>
             </li>
             

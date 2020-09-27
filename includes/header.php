@@ -188,7 +188,8 @@ button:hover, a:hover {
       <nav id="nav-menu-container">
         <ul class="nav-menu">
    <li class="<?= ($activePage == 'index') ? 'menu-active':''; ?>"><a href="index.php">Home</a></li>
-   <li class="menu-has-children <?= ($activePage == 'memory') ? 'menu-active':''; ?>"><a href="memory.php">Memories</a></li>
+  <li class="menu-has-children <?= ($activePage == 'photogallery') ? 'menu-active':''; ?>"><a href="photogallery.php">Memories</a></li>
+          <!-- <li class="menu-has-children <?/*= ($activePage == 'memory') ? 'menu-active':'';*/?>"><a href="memory.php">Gallery</a></li> -->
           <li class="<?= ($activePage == 'user-list') ? 'menu-active':''; ?>"><a href="user-list.php">Alumni List</a></li>
           <li class="<?= ($activePage == 'job') ? 'menu-active':''; ?>"><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children <?= ($activePage == 'posts') ? 'menu-active':''; ?>"><a href="posts.php">Blog</a></li>

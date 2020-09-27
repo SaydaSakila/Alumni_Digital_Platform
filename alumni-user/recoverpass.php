@@ -20,6 +20,7 @@ include dirname(__FILE__).'/../database/database.php';
     }
     $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
+        
 
 ?>
 <!DOCTYPE html>
@@ -84,6 +85,7 @@ include dirname(__FILE__).'/../database/database.php';
                                 }
                               
                             ?>
+
                         <div class="form" style="margin-top:20px;">
                            
                              <div class="form-group text-center" style="padding:10px;"><h5>You are only one step a way from your new password, recover your password now.</h5></div>

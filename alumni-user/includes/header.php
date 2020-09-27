@@ -46,7 +46,14 @@
     if($events==NULL){
       $numberEvent=0;
     }else{
-      $numberEvent = mysqli_num_rows($events);
+       $mm =  "SELECT * FROM `events` WHERE `is_show`='0' AND `status`='1' AND JSON_CONTAINS(batch_id, '[\"$user_batch_id\"]') 
+                  AND JSON_CONTAINS(dept_id, '[\"$user_department_id\"]') 
+                  ORDER BY id DESC";
+        $ss=$db->getData($mm);
+        if($ss==NULL){
+      $numberEvent=0;}
+      else{
+       $numberEvent = mysqli_num_rows($ss);}
     }
 
     $jobquery = "SELECT * FROM `jobs` WHERE `dept_id` = '$user_department_id'";
@@ -56,7 +63,14 @@
         }else{
         $numberJob = mysqli_num_rows($jobs);
       }
-   
+      
+   $comquery = "SELECT * FROM `comments` WHERE `user_id` = $id";
+        $comms = $db->getData($comquery);
+        if($comms==NULL){
+          $numbercom=0;
+        }else{
+        $numbercom = mysqli_num_rows($comms);
+      }
     
 
 ?>
@@ -287,18 +301,21 @@ button:hover, a:hover {
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="<?= ($activePage == 'index') ? 'menu-active':''; ?>"><a href="index.php">Home</a></li>
-          <li class="menu-has-children <?= ($activePage == 'memory') ? 'menu-active':''; ?>"><a href="memory.php">Memories</a></li>
+           <li class="menu-has-children <?= ($activePage == 'photogallery') ? 'menu-active':''; ?>"><a href="photogallery.php">Memories</a></li>
+          <!-- <li class="menu-has-children <?/*=($activePage == 'memory') ? 'menu-active':'';*/?>"><a href="memory.php">Gallery</a></li> -->
           <li class="<?= ($activePage == 'user-list') ? 'menu-active':''; ?>"><a href="user-list.php">Alumni List</a></li>
           <li class="<?= ($activePage == 'job') ? 'menu-active':''; ?>"><a href="job.php" class="notification">
             <span >Career Opportunity</span><?php if($numberJob!= 0){?><span class="badge"><?php echo $numberJob; ?></span><?php }?></a></li>
           <li class="menu-has-children <?= ($activePage == 'posts') ? 'menu-active':''; ?>"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children <?= ($activePage == 'allevents') ? 'menu-active':''; ?>"><a href="allevents.php">Events</a></li>
           <li class="menu-has-children <?= ($activePage == 'events') ? 'menu-active':''; ?>"><a href="events.php" class="notification">
-              <span >My Events</span><?php if($numberEvent!= 0){?><span class="badge"><?php echo $numberEvent; 
-                    // $evquery="SELECT * FROM `events` WHERE `is_show`='1'";
-                    // $run  = $db->conn->query($evquery);
-                    // $post = $run->fetch_assoc();?></span><?php }?></a></li>
-          <?php ?>
+              <span >My Events</span><?php if($numberEvent!= 0){?><span class="badge"><?php echo $numberEvent; ?></span><?php }?></a></li>
+          <li class="<?= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
+            <span ><i class="fas fa-bell"></i></span><?php if($numbercom!= 0){?><span class="badge "
+               style="background-color:white;color:black; ">
+                <?php echo $numbercom; ?></span><?php }?></a>
+          </li>
+          
           
           
           <li class="menu-has-children <?= ($activePage == 'dashboard' || $activePage == 'profile' || $activePage == 'edit-userreg') ? 'menu-active':''; ?>"><a href="#home"><?php echo $name; ?> 

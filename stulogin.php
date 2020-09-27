@@ -125,6 +125,7 @@
                                 <div class="form-group col-lg-6">
                                     <a href="index.php" class="btn btn-warning btn-sm" style="float:right" >Home Page</a>
                                 </div>
+                                <a href="student-user/forgotpass.php" style="margin-left:15px;">I Forgot My Password</a>
                             </div>
                           
                         </form>

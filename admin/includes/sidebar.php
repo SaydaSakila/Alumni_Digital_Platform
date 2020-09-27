@@ -208,11 +208,17 @@
             </ul>
           </li>
               <li class="nav-item">
+                <a href="gallery.php" class="nav-link"  >
+                  <i class="nav-icon fas fa-image"></i>
+                  <p >Photo List</p>
+                </a>
+              </li>
+               <li class="nav-item">
                 <a href="contact.php" class="nav-link"  >
                   <i class="nav-icon fas fa-address-book"></i>
                   <p >Contact List</p>
                 </a>
-              </li>
+              </li> 
               <li class="nav-item">
                 <a href="logout.php" class="nav-link"  >
                   <i class="fas fa-sign-out-alt" style="margin-left:5px"></i>

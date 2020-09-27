@@ -8,8 +8,7 @@
         $file_err = $_SESSION['file_errors'];
         unset($_SESSION['file_errors']);
     }
-    $query = "SELECT * FROM categories";
-    $categories = $db->getData($query);
+   
 ?>
 
 
@@ -24,9 +23,9 @@
                     ?>
                         <div class="col-md-9 " style="background-color:#333;">
                     <div class="card-header">
-                        <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Blog</h3>
+                        <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Image Gallery</h3>
                         <div class="card-header-action">
-                            <a href="posts.php" class="btn btn-success">Blog List</a>
+                            <a href="gallery.php" class="btn btn-success">Photo List</a>
                         </div>
                     </div>
                             <?php 
@@ -37,7 +36,7 @@
                                     echo '<div class="alert alert-danger">'.$message['error_message'].'</div>';
                                 }
                             ?>
-                            <form action="submit/post-add-submit.php" method="POST" enctype="multipart/form-data">
+                            <form action="submit/image-add-submit.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="" style="color:#fff">Title</label>
                                     <input type="text" name="title" class="form-control" placeholder="Enter Post Title">
@@ -50,41 +49,6 @@
                                     </span>
                                 </div>
 
-                                <div class="form-group" style="background-color:#fff;">
-                                    <label for="" style="color:#333">Content</label>
-                                    <textarea name="content" id="summernote" rows="5" class="form-control"  placeholder="Enter Blog Content"></textarea>
-                                    <span class="text-danger">
-                                        <?php 
-                                            if(isset($err['content'])) {
-                                                echo $err['content'];
-                                            }
-                                        ?>
-                                    </span>
-                                    
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="" style="color:#fff">Category</label>
-                                    <select name="category"  class="form-control">
-                                        <option value="">Select Category</option>
-                                        <?php
-                                            if ($categories) {
-                                                while($category = $categories->fetch_assoc()) {
-                                                    ?>
-                                                        <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
-                                                    <?php
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                    <span class="text-danger">
-                                        <?php 
-                                            if(isset($err['category'])) {
-                                                echo $err['category'];
-                                            }
-                                        ?>
-                                    </span>
-                                </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
                                 <input type="file" class="form-control-file" name='image' id="exampleFormControlFile1">
@@ -100,11 +64,9 @@
                                 </span>
                             </div>
                                 <div class="form-group">
-                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="alu-post_submit">Save Blog</button>
+                                    <button class="btn btn-success btn-lg btn-block" type="submit" name="image_submit">Save Image</button>
                                 </div>
-                                <!-- <div class="form-group ">
-                                    <a href="category-add.php" class="btn btn-warning" style="float:right" >Want to Add Category?</a>
-                                </div> -->
+                               
                             </form>
                         </div>
                     </div>
