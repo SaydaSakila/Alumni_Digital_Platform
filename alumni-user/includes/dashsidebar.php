@@ -1,5 +1,5 @@
 <div class="col-md-3" >
-    <div class="dashboard-sidebar" style="width: 220px;color:#17a2b8;padding:0px;position:fixed;">
+    <div class="dashboard-sidebar" style="width: 210px;color:#17a2b8;padding:0px;position:fixed;">
         <h3><b>Dashboard</b></h3>
         <ul class="dashboard-nav block">
             <li><a href="profile.php?id=<?php echo $id;?>" style="color:#17a2b8">My Profile</a>
@@ -26,6 +26,7 @@
                 <a  style="color:#17a2b8">Event Manage</a>
                 <ul>
                     <li><a href="event-add.php" style="color:#2C3E50">Add New Events</a></li>
+                    <li><a href="myevents.php" style="color:#2C3E50">My Event List</a></li>
                 </ul>
             </li>
             <li>

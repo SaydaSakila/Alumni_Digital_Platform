@@ -62,8 +62,8 @@
                                        <td><?php echo $post['photo']; ?></td>
                                         <td>
                                         
-                                                <a href="sedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
-                                                <a href="sdelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="sedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="sdelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                        
                                         

@@ -77,9 +77,9 @@
                                     <td><?php echo $user['fb'] ?></td>
                                     <td><?php echo $user['link'] ?></td>
                                     <td>
-                                        <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                        <a href="edit-userreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
                                     
-                                        <a href="delete-userreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="delete-userreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php

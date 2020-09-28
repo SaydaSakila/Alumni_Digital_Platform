@@ -44,7 +44,7 @@
                                         <td><?php echo $department['id'] ?></td>
                                         <td><?php echo $department['name'] ?></td>
                                         <td>
-                                            <a href="edit-department.php?edit=<?php echo $department['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
+                                            <a href="edit-department.php?edit=<?php echo $department['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i><b>Edit</b></a>
                                             <a onclick="return confirm('Do You Want to delete this Department?')" href="delete-department.php?delete=<?php echo $department['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                         </td>
                                     </tr>

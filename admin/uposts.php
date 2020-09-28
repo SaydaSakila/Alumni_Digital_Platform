@@ -63,8 +63,8 @@
                                        
                                         <td>
                                         
-                                                <a href="uedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
-                                                <a href="udelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="uedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="udelete-post.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                        
                                         

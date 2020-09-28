@@ -37,6 +37,14 @@ $id = $_SESSION['admin_id'];
         }else{
         $numberEvent = mysqli_num_rows($events);
       }
+      //photo 
+      $img = "SELECT * FROM `images` WHERE `status` = 1 ";
+        $images = $db->getData($img);
+        if($images==NULL){
+          $numberimg=0;
+        }else{
+        $numberimg = mysqli_num_rows($images);
+      }
 
         $query = "SELECT * FROM `requests` ";
         $requests = $db->getData($query);
@@ -182,6 +190,10 @@ $id = $_SESSION['admin_id'];
       <li class="nav-item d-none d-sm-inline-block">
         <a href="events.php" class="nav-link notification"> 
         <span >Events List</span><span class="badge"><?php echo $numberEvent; ?></span></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="gallery.php" class="nav-link notification"> 
+        <span >Photo Gallery</span><span class="badge"><?php echo $numberimg; ?></span></a>
       </li>
     </ul>
 

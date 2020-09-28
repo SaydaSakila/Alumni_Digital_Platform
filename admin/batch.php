@@ -44,7 +44,7 @@
                                         <td><?php echo $batch['id'] ?></td>
                                         <td><?php echo $batch['name'] ?></td>
                                         <td>
-                                            <a href="edit-batch.php?edit=<?php echo $batch['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i><b>Edit</b></a>
+                                            <a href="edit-batch.php?edit=<?php echo $batch['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i><b>Edit</b></a>
                                             <a onclick="return confirm('Do You Want to delete this Batch?')" href="delete-batch.php?delete=<?php echo $batch['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i><b>Delete</b></a>
                                         </td>
                                     </tr>

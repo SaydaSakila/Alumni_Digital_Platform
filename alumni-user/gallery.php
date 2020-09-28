@@ -3,7 +3,7 @@
 
     $page_title = 'Photo List';
     
-    $query = "SELECT * FROM `images` ";
+    $query = "SELECT * FROM `images`";
     $posts = $db->getData($query);
     $user_id= $_SESSION['id'];
    
@@ -40,6 +40,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Photo</th>
+                        <th>Current Status</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -55,6 +56,22 @@
                                        <td><?php echo $post['id']; ?></td>
                                        <td><?php echo $post['title']; ?></td>
                                        <td><img src="../uploads/<?php echo $post['image']; ?>" style="width:100px;height: auto"></td>
+                                        <?php  
+                                            if($post['status']==1){
+                                            ?> 
+                                                <td style="text-align:center;color:white;">
+                                                    <a  class=" btn-warning btn-sm">Pending</a>
+                                                </td>
+                                        <?php
+                                            }
+                                            else{
+                                            ?> 
+                                                <td style="text-align:center;color:white;">
+                                                    <a  class="btn-success btn-sm">Approved</a>
+                                                </td>
+                                        <?php            
+                                            }
+                                            ?>
                                        <td><?php echo $post['created_at']; ?></td>
                                        <td>
                                             

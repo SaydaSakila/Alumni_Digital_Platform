@@ -39,7 +39,7 @@
                         <th colspan="14" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Job Post Record</b></h3></th>
                     </tr>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Title</th>
                         <th>Experience</th>
                         <th>Company Name</th>
@@ -49,9 +49,9 @@
                         <th>Job info</th>
                         <th>Qualification</th>
                         <th>Deadline</th>
-                        <th>Created At</th>
+                        <!-- <th>Created At</th> -->
                         
-                        <th>Department</th>
+                        <!-- <th>Deptartment</th> -->
                        <!-- <th>Created By</th>-->
                         <th>Action</th>
                     </tr>
@@ -64,7 +64,7 @@
                                 {?>
                                 
                                     <tr>
-                                       <td><?php echo $post['id']; ?></td>
+                                       <!-- <td><?php //echo $post['id']; ?></td> -->
                                        <td><?php echo $post['title']; ?></td>                                      
                                        <td><?php echo $post['experience']; ?></td>
                                        <td><?php echo $post['cname']; ?></td>
@@ -74,12 +74,12 @@
                                        <td><?php echo substr($post['info'],0,10); ?></td>
                                        <td><?php echo $post['education']; ?></td>
                                        <td><?php echo $post['deadline']; ?></td>
-                                       <td><?php echo $post['created_at']; ?></td>
-                                       <td><?php echo $post['department_name']; ?></td>
+                                       <!-- <td><?php //echo $post['created_at']; ?></td> -->
+                                       <!-- <td><?php //echo $post['department_name']; ?></td> -->
                                       <!-- <td><?php// echo $post['user_name']; ?></td>-->
                                        <td>
                                        <a href="jobinfo.php?id=<?php echo $post['id']; ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
-                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
+                                            <a href="edit-job.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
                                             <a onclick="return confirm('Do You Want to delete this Post?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                        </td>
                                     </tr>

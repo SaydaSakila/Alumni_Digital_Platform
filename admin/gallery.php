@@ -2,7 +2,7 @@
  $page_title = 'Photo List';  
    include dirname(__FILE__). '/includes/header.php';
 
-    $query = "SELECT * FROM `images` ";
+    $query = "SELECT * FROM `images` ORDER BY id DESC";
     $posts = $db->getData($query);
    
 ?>

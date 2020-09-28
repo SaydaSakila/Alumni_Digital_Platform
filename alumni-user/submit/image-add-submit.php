@@ -8,6 +8,7 @@
     if (isset($_POST['image_submit'])) {
         $title = htmlspecialchars(trim($_POST['title']));
          $file_rename = ''; 
+         $status = 1;
 
         if ($title) {
             $user_id = $_SESSION['id'];
@@ -48,7 +49,7 @@
             }
 
             // store Post
-            $query = "INSERT INTO `images` (title, user_id, image) VALUES('$title', $user_id, '$file_rename')";
+            $query = "INSERT INTO `images` (title, user_id, image, status) VALUES('$title', $user_id, '$file_rename', $status)";
             
             $run = $db->store($query);
             

@@ -22,7 +22,7 @@
                     <div class="card-header">
                         <h3 style="border:2px solid #fff; border-radius:5px; padding: 7px;text-align:center;color:#fff;" class="card-title">Create Event</h3>
                         <div class="card-header-action">
-                            <a href="events.php" class="btn btn-success">Event List</a>
+                            <a href="myevents.php" class="btn btn-success">Event List</a>
                         </div>
                     </div>
                             <?php 

@@ -5,22 +5,21 @@
    
         $query = "SELECT * FROM `events` ORDER by id DESC";
         $events = $db->getData($query);
-
+$user_id= $_SESSION['id'];
 ?>
-    <div class="row" >
+<div id="dashboard" style="display:flex;flex-wrap:wrap;min-height:100vh;">
     
-        <div class="container" >
-            <!--<div class="card" style="margin-top:100px;margin-bottom:70px;background-color:#333;
-                                    border-radius:10px;">-->
+        <div class="container" style="margin-top:100px;margin-bottom:70px;
+                                    border-radius:10px;">
                                     
             <div class="row" >
-                <div class="card" style="padding:20px;">
-                    <div class="">
-                        <h3 style="border:2px solid #000;color:#000; border-radius:5px; padding: 7px;"  class="card-title text-center"><b>Event List</b></h3>
-                        <div class="card-header-action">
-                            <a href="event-add.php" class="btn btn-primary">Add New Event</a>
-                        </div>
-                    </div>
+             <?php
+                        // contents include
+                        include dirname(__FILE__). '/includes/dashsidebar.php';
+                    ?>
+                <div class="col-md-9 " >
+        
+        <div class="container">
                     <?php 
                         if (isset($_SESSION['message'])): ?>
                             <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
@@ -41,7 +40,7 @@
                         <th>Event Details</th>
                         <th>Event Date</th>
                         <th>Event Create Time</th>
-                        <!-- <th>Photo</th> -->
+                
                         <th>Batch</th>
                         <th>Department</th>
                         <th>Current Status</th>
@@ -52,14 +51,15 @@
                     <?php
                         if ($events) {
                             while($event = $events->fetch_assoc()) {
-                                ?>
+                                if($event['user_id']==$user_id)
+                                {?>
                                     <tr>
                                         <td><?php echo $event['id'] ?></td>
                                         <td><?php echo $event['name'] ?></td>
                                         <td><?php echo $event['content'] ?></td>
                                         <td><?php echo $event['date'] ?></td>
                                         <td><?php echo $event['created_at'] ?></td>
-                                        <!-- <td><?php //echo $event['photo'] ?></td> -->
+                                       
                                         <td><?php 
                                                 $ids = json_decode($event['batch_id']);
                                                 $ids = implode(',', $ids);
@@ -85,15 +85,15 @@
                                        <?php  
                                             if($event['status']==0){
                                             ?> 
-                                                <td style="text-align:center;">
-                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class=" btn-danger btn-block">Pending</a>
+                                                <td style="text-align:center;color:white;">
+                                                    <a  class=" btn-warning btn-sm ">Pending</a>
                                                 </td>
                                         <?php
                                             }
                                             else{
                                             ?> 
-                                                <td style="text-align:center;">
-                                                    <a href="eventstatus.php?edit=<?php echo $event['id']; ?>&&status=<?php echo $event['status']; ?>" class="btn-success btn-block">Approved</a>
+                                                <td style="text-align:center;color:white;">
+                                                    <a  class="btn-success btn-sm">Approved</a>
                                                 </td>
                                         <?php            
                                             }
@@ -105,6 +105,7 @@
                                         </td>
                                     </tr>
                                 <?php
+                                }
                             }
                         }
                     ?>

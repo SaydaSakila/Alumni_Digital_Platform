@@ -23,8 +23,9 @@
            else{
                 $batch_ids = json_encode($batch);
             $dept_ids = json_encode($department);
+            $user_id = $_SESSION['id'];
                 // store Event
-            $query = "INSERT INTO `events`( `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$name','$content','$date', '$batch_ids', '$dept_ids', '$status')";
+            $query = "INSERT INTO `events`( `user_id`, `name`, `content`, `date`, `batch_id`, `dept_id`, `status`) VALUES ('$user_id', '$name','$content','$date', '$batch_ids', '$dept_ids', '$status')";
             $run = $db->store($query);
             //var_dump($query);
             

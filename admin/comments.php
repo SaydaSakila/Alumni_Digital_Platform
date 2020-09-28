@@ -76,7 +76,7 @@
                                         <td><?php echo $comment['created_at'] ?></td>
                                         <td>
                                             
-                                            <a href="delete-comment.php?delete=<?php echo $comment['id']; ?>" class="btn btn-danger btn-sm">Delete<i class="fas fa-trash-alt"></i></a>
+                                            <a href="delete-comment.php?delete=<?php echo $comment['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 <?php

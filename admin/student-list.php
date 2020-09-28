@@ -67,9 +67,9 @@
                                     
                                     <td><?php  echo $user['photo']; ?></td> 
                                     <td>
-                                        <a href="edit-studentreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                                        <a href="edit-studentreg.php?edit=<?php echo $user['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i></a>
                                     
-                                        <a href="delete-studentreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                        <a href="delete-studentreg.php?delete=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
                             <?php
