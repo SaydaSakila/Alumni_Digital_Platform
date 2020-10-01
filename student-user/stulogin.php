@@ -113,7 +113,7 @@
                                 <input type="submit"  name="stulogin_submit" class="btn btn-success btn-block btn-lg" value="LOGIN" ><br>
                             <div class="row">
                                 <div class="form-group col-lg-6">
-                                    <a href="sturegistration.php" class="btn btn-primary btn-sm" style="float:left">New Student Registration</a> 
+                                    <a href="sturegistration.php" class="btn btn-primary btn-sm" style="float:left">Student Registration</a> 
                                 </div>
                             
                                 <div class="form-group col-lg-6">

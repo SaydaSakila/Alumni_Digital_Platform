@@ -378,12 +378,12 @@ platform and adopt this constitution.</p>
             </ul>
           </div>-->
         </div>
-        <div class="row" style="margin-top:30px;">
+        <!-- <div class="row" style="margin-top:30px;">
           <div class="col-lg-12">
          
               <a href="login.php" class="btn btn-success btn-block"  >Add New Blog</a>
-          </div>
-        </div>
+          </div> 
+        </div> -->
         
 
 <!-- ######### Try -->
@@ -797,11 +797,11 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
        <div class="row">
           <div class="col-lg-12">
          
-              <a href="events.php" class="btn btn-success btn-block"  >View All Events</a>
+              <a href="allevents.php" class="btn btn-success btn-block"  >View All Events</a>
           </div>
         </div>
       </div>
-    </section><!-- #team -->
+    </section> <!-- #team -->
 
     <!--==========================
       Contact Section

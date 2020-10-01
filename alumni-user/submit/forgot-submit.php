@@ -29,8 +29,18 @@
                 $_SESSION['actor'] = "users";
 
                 $_SESSION['user_id'] = $user['id'];
+                if ($user) 
+                {
+                    $success['success_message'] = "Recovered Password Address Sent to Your Mail Successfully. Login to $email for Recover Password. Thank You!";
+                } 
+                else 
+                {
+                    $success['error_message'] = "Recovered Address Sent Failed ".$db->error;
+                }
+                $_SESSION['success'] = $success;
+               // header('location:../recoverpass.php');
 
-                header('location:../recoverpass.php');
+                header('location:../forgotpass.php');
             } 
             else 
             {

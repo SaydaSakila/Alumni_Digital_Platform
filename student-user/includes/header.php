@@ -24,6 +24,14 @@
     $db = new Database();
     $activePage = basename($_SERVER['PHP_SELF'], ".php");
     //var_dump($db);die();
+
+    $comquery = "SELECT * FROM `comments` WHERE `user_id` = $id";
+        $comms = $db->getData($comquery);
+        if($comms==NULL){
+          $numbercom=0;
+        }else{
+        $numbercom = mysqli_num_rows($comms);
+      }
 ?>
 
 <!DOCTYPE html>
@@ -210,6 +218,23 @@ button:hover, a:hover {
   height:200px;
   border-radius: 50%;
 }
+.notification {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+
+.notification .badge {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
 </style>
 </head>
 
@@ -236,6 +261,12 @@ button:hover, a:hover {
           <li class="<?= ($activePage == 'job') ? 'menu-active':''; ?>"><a href="job.php">Career Opportunity</a></li>
           <li class="menu-has-children <?= ($activePage == 'posts') ? 'menu-active':''; ?>"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children <?= ($activePage == 'events') ? 'menu-active':''; ?>"><a href="events.php">Events</a></li>
+          
+          <li class="<?= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
+            <span ><i class="fas fa-bell"></i></span><?php if($numbercom!= 0){?><span class="badge "
+               style="background-color:white;color:black; ">
+                <?php echo $numbercom; ?></span><?php }?></a>
+          </li> 
          
                  
           <li class="menu-has-children <?= ($activePage == 'dashboard' || $activePage == 'profile' || $activePage == 'edit-userreg') ? 'menu-active':''; ?>"><a href="#home"><?php echo $name; ?> 

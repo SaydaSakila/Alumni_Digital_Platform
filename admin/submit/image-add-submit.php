@@ -39,7 +39,7 @@
                     $upload_directory = '../../uploads/'. $file_rename;
 
                     if (!move_uploaded_file($tmp_name, $upload_directory)) {
-                        $_SESSION['file_errors'] = ['Faled to upload file'];
+                        $_SESSION['file_errors'] = ['Failed to upload file'];
                         header('location:../image-add.php');
                     }
                 } else {
@@ -49,7 +49,7 @@
             }
 
             // store Post
-            $query = "INSERT INTO `images` (title, user_id, image, status) VALUES('$title', $user_id, '$file_rename', $status)";
+            $query = "INSERT INTO `images` (`title`, `user_id`, `image`, `status`) VALUES('$title', $user_id, '$file_rename', $status)";
             
             $run = $db->store($query);
             

@@ -30,8 +30,8 @@
                     $file_errors[] = 'File must be the following type: '. implode(', ', $allow);
                 }
                 
-                if ($file_size > (1024*6240)) {
-                    $file_errors[] = "File size should be more than 4MB";
+                if ($file_size > (1024*5240)) {
+                    $file_errors[] = "File size should be more than 1MB";
                 } 
                 
                 if (empty($file_errors)) {
@@ -39,7 +39,7 @@
                     $upload_directory = '../../uploads/'. $file_rename;
 
                     if (!move_uploaded_file($tmp_name, $upload_directory)) {
-                        $_SESSION['file_errors'] = ['Faled to upload file'];
+                        $_SESSION['file_errors'] = ['Failed to upload file'];
                         header('location:../image-add.php');
                     }
                 } else {
