@@ -262,11 +262,11 @@ button:hover, a:hover {
           <li class="menu-has-children <?= ($activePage == 'posts') ? 'menu-active':''; ?>"><a href="posts.php">Blog</a></li>
           <li class="menu-has-children <?= ($activePage == 'events') ? 'menu-active':''; ?>"><a href="events.php">Events</a></li>
           
-          <li class="<?= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
-            <span ><i class="fas fa-bell"></i></span><?php if($numbercom!= 0){?><span class="badge "
+          <!-- <li class="<?//= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
+            <span ><i class="fas fa-bell"></i></span><?php //if($numbercom!= 0){?><span class="badge "
                style="background-color:white;color:black; ">
-                <?php echo $numbercom; ?></span><?php }?></a>
-          </li> 
+                <?php //echo $numbercom; ?></span><?php //}?></a>
+          </li>  -->
          
                  
           <li class="menu-has-children <?= ($activePage == 'dashboard' || $activePage == 'profile' || $activePage == 'edit-userreg') ? 'menu-active':''; ?>"><a href="#home"><?php echo $name; ?> 

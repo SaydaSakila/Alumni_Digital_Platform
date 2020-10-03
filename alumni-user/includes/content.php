@@ -894,7 +894,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
               <li><i class="ion-ios-arrow-right"></i> <a href="user-list.php">Alumni List</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="job.php">Career Opportunity</a></li>
               <li><i class="ion-ios-arrow-right"></i> <a href="posts.php">Blog</a></li>
-              <li><i class="ion-ios-arrow-right"></i> <a href="events.php">Events</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="allevents.php">Events</a></li>
             </ul>
           </div>
 

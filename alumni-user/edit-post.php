@@ -99,9 +99,26 @@
                         </span>
                     </div>
                             <div class="form-group">
-                                <label for="exampleFormControlFile1" style="color:#fff;">Image file Input</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                            </div>
+                        
+                                <label for="exampleFormControlFile1" style="color:#fff;">Update Image</label>
+                                <input type="file" class="form-control-file " name='image' value="<?php 
+                                        if(isset($data['photo'])) 
+                                        {
+                                            echo $data['photo'];
+                                        }
+                                    ?>" id="exampleFormControlFile1" >
+                                <span class="text-danger">
+                                    <?php 
+                                    if(isset($file_err)) {
+                                        echo implode(' | ', $file_err);
+                                    }
+                                    if(isset($err['file_error'])) {
+                                        $err['file_error'];
+                                    }
+                                    ?>
+                                </span>
+                               
+                        </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success btn-lg btn-block" name="alu-update_post">UPDATE</button>
