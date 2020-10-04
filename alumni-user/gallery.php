@@ -36,7 +36,7 @@
                                 <th colspan="12" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Uploaded Image</b></h3></th>
                             </tr>
                             <tr>
-                                <th>ID</th>
+                                <!-- <th>ID</th> -->
                                 <th>Title</th>
                                 <th>Photo</th>
                                 <th>Current Status</th>
@@ -52,7 +52,7 @@
                                         {?>
                                         
                                             <tr>
-                                            <td><?php echo $post['id']; ?></td>
+                                            <!-- <td><?php// echo $post['id']; ?></td> -->
                                             <td><?php echo $post['title']; ?></td>
                                             <td><img src="../uploads/<?php echo $post['image']; ?>" style="width:100px;height: auto"></td>
                                                 <?php  

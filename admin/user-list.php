@@ -30,14 +30,14 @@
         </div>
         <?php endif ?>
 
-        <table class="table table-bordered" style="text-align:center;">
+        <table class="table table-striped" style="text-align:center;">
             <thead >
                 <tr>
                     <th colspan="16" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Alumnus Record</b></h3></th>
                 </tr>
 
                 <tr >
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
@@ -61,7 +61,7 @@
                         while($user = $users->fetch_assoc()) {
                             ?>
                                 <tr>
-                                    <td><?php echo $user['id'] ?></td>
+                                    <!-- <td><?php //echo $user['id'] ?></td> -->
                                     <td><?php echo $user['name'] ?></td>
                                     <td><?php echo $user['email'] ?></td>
                                     <td><?php echo $user['username'] ?></td>

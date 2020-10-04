@@ -22,6 +22,11 @@
                         </div>
                     </div>
                     <?php 
+
+                    $u_is_show=1;  
+                        $sql = "UPDATE events SET `is_show`= '$u_is_show' WHERE `status`='0' ";
+                        $result = $db->conn->query($sql);
+                        
                         if (isset($_SESSION['message'])): ?>
                             <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
                                 <?php 
@@ -30,7 +35,7 @@
                                 ?>
                             </div>
                         <?php endif ?>
-                    <table class="table">
+                    <table class="table table-striped">
                 <thead>
                     <tr>
                         <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Event Record</b></h3></th>

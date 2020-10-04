@@ -34,8 +34,17 @@ $id = $_SESSION['admin_id'];
         $events = $db->getData($query1);
         if($events==NULL){
           $numberEvent=0;
-        }else{
-        $numberEvent = mysqli_num_rows($events);
+        }
+        else{
+          $mm =  "SELECT * FROM `events` WHERE `is_show`='0' AND `status`='0'  
+                  ORDER BY id DESC";
+          $ss=$db->getData($mm);
+          if($ss==NULL){
+            $numberEvent=0;}
+          else{
+            $numberEvent = mysqli_num_rows($ss);
+          }
+          //$numberEvent = mysqli_num_rows($events);
       }
       //photo 
       $img = "SELECT * FROM `images` WHERE `status` = 1 ";
@@ -43,7 +52,15 @@ $id = $_SESSION['admin_id'];
         if($images==NULL){
           $numberimg=0;
         }else{
-        $numberimg = mysqli_num_rows($images);
+          $mm =  "SELECT * FROM `images` WHERE `is_show`='0' AND  `status`='1'  
+                  ORDER BY id DESC";
+          $ss=$db->getData($mm);
+          if($ss==NULL){
+            $numberimg=0;}
+          else{
+            $numberimg = mysqli_num_rows($ss);
+          }
+          //$numberimg = mysqli_num_rows($images);
       }
 
         $query = "SELECT * FROM `requests` ";
@@ -51,7 +68,7 @@ $id = $_SESSION['admin_id'];
         if($requests==NULL){
           $numberreq=0;
         }else{
-        $numberreq = mysqli_num_rows($requests);
+          $numberreq = mysqli_num_rows($requests);
       }
         
         $querys = "SELECT * FROM `sturequests` ";
@@ -187,13 +204,20 @@ $id = $_SESSION['admin_id'];
         <a href="jobboard.php" class="nav-link">Job List</a>
       </li>
       
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="events.php" class="nav-link notification"> 
-        <span >Events List</span><span class="badge"><?php echo $numberEvent; ?></span></a>
+        <span >Events List</span><span class="badge"><?php //echo $numberEvent; ?></span></a>
+      </li> -->
+      <li class="nav-item d-none d-sm-inline-block"><a href="events.php" class="nav-link notification">
+              <span >Events List</span><?php if($numberEvent!= 0){?><span class="badge"><?php echo $numberEvent; ?></span><?php }?></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="gallery.php" class="nav-link notification"> 
-        <span >Photo Gallery</span><span class="badge"><?php echo $numberimg; ?></span></a>
+        <span >Photo Gallery</span><span class="badge"><?php //echo $numberimg; ?></span></a>
+      </li> -->
+      <li class="nav-item d-none d-sm-inline-block"><a href="gallery.php" class="nav-link notification">
+              <span >Photo Gallery</span><?php if($numberimg!= 0){?><span class="badge"><?php echo $numberimg; ?></span><?php }?></a>
       </li>
     </ul>
 

@@ -431,7 +431,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
                                         <h5 class="card-title"><?php echo $post['title'];?></h5>
                                         <small class="text-muted"><?php $d=strtotime($post['created_at']); echo date("d M, Y",$d); ?> By: <?php echo $post['user_name']; ?></small>
                                         
-                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 20); ?>..>..</p>
+                                        <p class="card-text"><?php echo substr(Strip_tags($post['content']), 0, 30); ?>..</p>
                                         
                                     </div>
                                     <div class="card-footer">
@@ -715,7 +715,7 @@ $query = "SELECT uposts.*, categories.name as category_name, users.name as user_
 
         <div class="section-header">
           <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p>For any Query Please contact with us. Thank You!</p>
         </div>
 
         <div class="row contact-info">

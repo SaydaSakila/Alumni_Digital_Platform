@@ -16,7 +16,10 @@
         
         <div class="container">
         <?php 
-
+                        $u_is_show=1;  
+                        $sql = "UPDATE images SET `is_show`= '$u_is_show' WHERE `status`='1' ";
+                        $result = $db->conn->query($sql);
+                        
         if (isset($_SESSION['message'])): ?>
         <div class="alert alert-<?=$_SESSION['msg_type'] ?>">
             <?php 

@@ -29,7 +29,7 @@
                 ?>
             </div>
             <?php endif ?>
-                <table class="table" style="">
+                <table class="table table-striped" >
                     <thead>
                         <tr>
                             <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><b>Blog Record</b></th>

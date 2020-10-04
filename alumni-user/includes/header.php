@@ -45,15 +45,17 @@
     $events = $db->getData($query);
     if($events==NULL){
       $numberEvent=0;
-    }else{
-       $mm =  "SELECT * FROM `events` WHERE `is_show`='0' AND `status`='1' AND JSON_CONTAINS(batch_id, '[\"$user_batch_id\"]') 
+    }
+    else{
+        $mm =  "SELECT * FROM `events` WHERE `is_show`='0' AND `status`='1' AND JSON_CONTAINS(batch_id, '[\"$user_batch_id\"]') 
                   AND JSON_CONTAINS(dept_id, '[\"$user_department_id\"]') 
                   ORDER BY id DESC";
         $ss=$db->getData($mm);
         if($ss==NULL){
-      $numberEvent=0;}
-      else{
-       $numberEvent = mysqli_num_rows($ss);}
+          $numberEvent=0;}
+        else{
+          $numberEvent = mysqli_num_rows($ss);
+        }
     }
 
     $jobquery = "SELECT * FROM `jobs` WHERE `dept_id` = '$user_department_id'";

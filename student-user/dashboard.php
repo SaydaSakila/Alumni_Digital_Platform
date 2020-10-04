@@ -38,7 +38,7 @@
                         <th colspan="12" style="text-align:center; background: #17a2b8; color:white;"><h3><b>My Blog Record</b></h3></th>
                     </tr>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Title</th>
                         <th>Category</th>
                         <th>Content</th>
@@ -56,7 +56,7 @@
                                 {?>
                                 
                                     <tr>
-                                       <td><?php echo $post['id']; ?></td>
+                                       <!-- <td><?php// echo $post['id']; ?></td> -->
                                        <td><?php echo $post['title']; ?></td>
                                        <td><?php echo $post['category_name']; ?></td>
                                        <td><?php echo substr($post['content'],0,10); ?></td>

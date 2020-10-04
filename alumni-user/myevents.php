@@ -35,7 +35,7 @@ $user_id= $_SESSION['id'];
                         <th colspan="11" style="text-align:center; background: #17a2b8; color:white;"><h3><b>Event Record</b></h3></th>
                     </tr>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Event Name</th>
                         <th>Event Details</th>
                         <th>Event Date</th>
@@ -54,7 +54,7 @@ $user_id= $_SESSION['id'];
                                 if($event['user_id']==$user_id)
                                 {?>
                                     <tr>
-                                        <td><?php echo $event['id'] ?></td>
+                                        <!-- <td><?php //echo $event['id'] ?></td> -->
                                         <td><?php echo $event['name'] ?></td>
                                         <td><?php echo $event['content'] ?></td>
                                         <td><?php echo $event['date'] ?></td>
