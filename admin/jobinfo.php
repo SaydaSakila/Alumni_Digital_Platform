@@ -17,7 +17,7 @@
         $posts =  $db->conn->query($query);
         $post = $posts->fetch_assoc();
 
-        $user_id= $_SESSION['id'];
+       // $user_id= $_SESSION['id'];
         $query1 = "SELECT * FROM departments";
         $departments = $db->getData($query1);
 
@@ -86,11 +86,11 @@
                                         For Apply Send Your CV to   
                                         "<b><i><u><?php echo $post['user_email'];?></u></i></b>" (*Photograph must be enclosed with CV.)
 
-                                        <?php if($post['user_id']==$user_id){?>  
-                                                <a href="edit-job.php?edit=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="edit" ></a>
-                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-job.php?delete=<?php echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="delete" ></a>
+                                        <!-- <?php //if($post['user_id']==$user_id){?>  
+                                                <a href="edit-job.php?edit=<?php //echo $post['id']; ?>" style="float:right;" class="btn btn-success btn-sm"> <img src="../alumni-user/img/edit.png" alt="edit" ></a>
+                                                <a onclick="return confirm('Do You Want to delete this Blog?')" href="delete-job.php?delete=<?php //echo $post['id']; ?>" style="float:right;" class="btn btn-danger btn-sm"><img src="../alumni-user/img/delete.png" alt="delete" ></a>
                                                     
-                                        <?php }?>       
+                                        <?php //}?>        -->
                                     </div>
                                 </div>
                             </div>

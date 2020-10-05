@@ -313,11 +313,11 @@ button:hover, a:hover {
           <li class="menu-has-children <?= ($activePage == 'events') ? 'menu-active':''; ?>"><a href="events.php" class="notification">
               <span >My Events</span><?php if($numberEvent!= 0){?><span class="badge"><?php echo $numberEvent; ?></span><?php }?></a></li>
           
-           <li class="<?= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
-            <span ><i class="fas fa-bell"></i></span><?php if($numbercom!= 0){?><span class="badge "
+           <!-- <li class="<?//= ($activePage == 'notification') ? 'menu-active':''; ?>"><a href="#" class="notification ">
+            <span ><i class="fas fa-bell"></i></span><?php //if($numbercom!= 0){?><span class="badge "
                style="background-color:white;color:black; ">
-                <?php echo $numbercom; ?></span><?php }?></a>
-          </li> 
+                <?php //echo $numbercom; ?></span><?php //}?></a>
+          </li>  -->
           
           
           

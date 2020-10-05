@@ -6,7 +6,7 @@
     $posts = $db->getData($query);
 ?>
  <div class="row">
-            <div class="container" style="margin-top:150px;margin-bottom:200px;margin-left:400px;">
+            <div class="container" style="margin-top:150px;margin-bottom:200px;margin-left:300px;">
             
 				<h1 class="section-title" style="margin-left:400px;">Gallery</h1>
 				<?php

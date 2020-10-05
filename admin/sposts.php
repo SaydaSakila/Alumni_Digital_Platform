@@ -59,7 +59,7 @@
                                         <td><?php echo $post['content']; ?></td>
                                         <td><?php echo $post['student_name']; ?></td>
                                         <td><?php echo $post['created_at']; ?></td>
-                                       <td><?php echo $post['photo']; ?></td>
+                                        <td><img src="../uploads/<?php echo $post['photo']; ?>" style="width:50px;height: auto"></td>
                                         <td>
                                         
                                                 <a href="sedit-post.php?edit=<?php echo $post['id']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></a>
